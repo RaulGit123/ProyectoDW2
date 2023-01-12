@@ -1,0 +1,39 @@
+body {
+    font-family: Roboto Slab;
+}
+
+.text-uppercase {
+    font-family: Montserrat;
+}
+
+.masthead-heading, .btn {
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    color: white;
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    background-image: url("./img/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+@mixin font-size-diff ($sm, $xl, $min-width: 768px) {
+    font-size: $sm;
+    @media (min-width: $min-width) {
+        font-size: $xl;
+    }
+}
+
+.masthead-heading {
+    @include font-size-diff(3.25rem, 4.5rem);
+    line-height: 4.5rem;
+}
+
+.masthead-subheading {
+    @include font-size-diff(1.5rem, 2.25rem);
+}

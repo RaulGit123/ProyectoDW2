@@ -1,0 +1,42 @@
+body {
+  font-family: Roboto Slab;
+}
+
+.text-uppercase {
+  font-family: Montserrat;
+}
+
+.masthead-heading, .btn {
+  font-weight: bold;
+}
+
+header {
+  text-align: center;
+  color: white;
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  background-image: url("./img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+.masthead-heading {
+  font-size: 3.25rem;
+  line-height: 4.5rem;
+}
+@media (min-width: 768px) {
+  .masthead-heading {
+    font-size: 4.5rem;
+  }
+}
+
+.masthead-subheading {
+  font-size: 1.5rem;
+}
+@media (min-width: 768px) {
+  .masthead-subheading {
+    font-size: 2.25rem;
+  }
+}/*# sourceMappingURL=style.css.map */
