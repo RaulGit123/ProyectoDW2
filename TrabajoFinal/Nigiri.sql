@@ -31,7 +31,7 @@ USE `NIGIRI`;
 
 
 CREATE TABLE `Usuarios` (
-  `IdUsuarios` int NOT NULL,
+  `IdUsuarios` int NOT NULL AUTO_INCREMENT,
   `NombreUsuario` varchar(100) NOT NULL,
   `Nombre` varchar(100) NOT NULL,
   `Apellidos` varchar(100) NOT NULL,
