@@ -137,14 +137,14 @@ Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES 
 · 50 g de puerro
 · 50 g de cebolleta
 · Fideos soba","3,50","Miso.jpg","Main courses");
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ("Black garlic chicken ramen","");
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ("Black garlic chicken ramen","");
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+-- Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
