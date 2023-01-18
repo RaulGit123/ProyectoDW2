@@ -100,7 +100,6 @@ CREATE TABLE `Trabajadores` (
 Insert Into `Administrador` (NombreUsuario,Contraseña) VALUES ("Admin","12345");
 
 /*Las secciones serán Entrantes, Ramen, Postres y Bebidas*/
-/*prueba*/
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ("Gyoza","stuffed with pork and vegetables",
 "· 250 gr of minced pork
 · 100g cabbage
