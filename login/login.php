@@ -12,66 +12,66 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$username = $password = "";
+$NombreUsuario = $Contraseña = "";
 $username_err = $password_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
-    // Check if username is empty
-    if(empty(trim($_POST["username"]))){
+    // Check if NombreUsuario is empty
+    if(empty(trim($_POST["NombreUsuario"]))){
         $username_err = "Por favor ingrese su usuario.";
     } else{
-        $username = trim($_POST["username"]);
+        $NombreUsuario = trim($_POST["NombreUsuario"]);
     }
     
-    // Check if password is empty
-    if(empty(trim($_POST["password"]))){
+    // Check if Contraseña is empty
+    if(empty(trim($_POST["Contraseña"]))){
         $password_err = "Por favor ingrese su contraseña.";
     } else{
-        $password = trim($_POST["password"]);
+        $Contraseña = trim($_POST["Contraseña"]);
     }
     
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+        $sql = "SELECT IdUsuarios, NombreUsuario, Contraseña FROM Usuarios WHERE NombreUsuario = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             
             // Set parameters
-            $param_username = $username;
+            $param_username = $NombreUsuario;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Store result
                 mysqli_stmt_store_result($stmt);
                 
-                // Check if username exists, if yes then verify password
+                // Check if NombreUsuario exists, if yes then verify Contraseña
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $id, $NombreUsuario, $hashed_password);
                     if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
+                        if(password_verify($Contraseña, $hashed_password)){
                             // Password is correct, so start a new session
                             session_start();
                             
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
+                            $_SESSION["IdUsuarios"] = $id;
+                            $_SESSION["NombreUsuario"] = $NombreUsuario;                            
                             
                             // Redirect user to welcome page
                             header("location: welcome.php");
                         } else{
-                            // Display an error message if password is not valid
+                            // Display an error message if Contraseña is not valid
                             $password_err = "La contraseña que has ingresado no es válida.";
                         }
                     }
                 } else{
-                    // Display an error message if username doesn't exist
+                    // Display an error message if NombreUsuario doesn't exist
                     $username_err = "No existe cuenta registrada con ese nombre de usuario.";
                 }
             } else{
@@ -101,17 +101,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="wrapper">
-        <h2>Login ConfiguroWeb</h2>
-        <p>Por favor, complete sus credenciales para iniciar sesión.</p>
+        <h2>Bienvenido a nigiri</h2>
+        <p>iniciar sesión.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Usuario</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+                <input type="text" name="NombreUsuario" class="form-control" value="<?php echo $NombreUsuario; ?>">
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Contraseña</label>
-                <input type="password" name="password" class="form-control">
+                <input type="Contraseña" name="Contraseña" class="form-control">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
