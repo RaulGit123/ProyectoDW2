@@ -137,7 +137,15 @@ Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES 
 · 50 g de puerro
 · 50 g de cebolleta
 · Fideos soba","3,50","Miso.jpg","Main courses");
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ("Black garlic chicken ramen","");
+
+Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ("Black garlic chicken ramen","Classic, savory, and comforting. The perfect cozy companion for an evening at home. Overflowing with notes of garlic, scallions, and umami.",
+"· Pumpkin Seed Protein
+· Wheat Gluten
+· Food Starch Modified
+· Sustainable Palm Oil
+· Wheat
+· Contains less than 2% of the following: Yeast Extract, Soybean Powder, Black Garlic Powder, Garlic Powder, Sea Salt, Natural Flavors, Onion Powder, Coconut Milk Powder, Salt, Sesame Oil, Spices, Turmeric (For Color), Safflower Oil, Sunflower Oil, Gum Acacia, Tricalcium Phosphate, Potassium Chloride, Calcium Carbonate, Maltodextrin, Tapioca Maltodextrin","6,5","ramen1.png","Ramens");
+/*Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ("Paitan chicken ramen")
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
@@ -146,5 +154,4 @@ Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES 
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
-Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()
+Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ()*/
