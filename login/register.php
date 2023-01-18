@@ -10,6 +10,7 @@ $nombre= $name_err="";
 $apellidos=$apellidos_err="";
 $direccion=$direccion_err="";
 $localidad=$localidad_err="";
+$listaProvincias=[];
 
 
  
@@ -97,12 +98,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $direccion = trim($_POST["direccion"]);
     }
 
-    if(empty(trim($_POST["localidad"]))){
-        $localidad_err="porfavor , introduzca su localidad.";
-    }else{
-        $localidad = trim($_POST["localidad"]);
-    }
+    // if(empty(trim($_POST["localidad"]))){
+    //     $localidad_err="porfavor , introduzca su localidad.";
+    // }else{
+    //     $localidad = trim($_POST["localidad"]);
+    // }
     
+
+$listaProvincias = trim($_POST["provincia"]);
+
+
+
     // Check input errors before inserting in database
 
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)&& empty($mail_err) && empty($name_err)&& empty($apellidos_err)&& empty($direccion_err)&& empty($localidad_err)){
@@ -120,7 +126,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_name = $nombre;
             $param_apellidos = $apellidos;
             $param_direccion = $direccion;
-            $param_provincia = $localidad;
+            $param_provincia = $listaProvincias;
             $param_mail =$mail;
             
             // Attempt to execute the prepared statement
@@ -194,12 +200,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="text" name="direccion" class="form-control" value="<?php echo $direccion; ?>">
                 <span class="help-block"><?php echo $direccion_err; ?></span>
             </div>    
-            <div class="form-group <?php echo (!empty($localidad_err)) ? 'has-error' : ''; ?>">
+            <!-- <div class="form-group <?php echo (!empty($localidad_err)) ? 'has-error' : ''; ?>">
                 <label>Localidad</label>
                 <input type="text" name="localidad" class="form-control" value="<?php echo $localidad; ?>">
                 <span class="help-block"><?php echo $localidad_err; ?></span>
-            </div>   
-           
+            </div>    -->
+
+     
+
+            <div class="form-group">
+                <label>Provincia</label>
+                <select name="provincia">
+
+                <?php 
+                $listaProvincias = ['Alava', 'Albacete', 'Alicante', 'Almería', 'Asturias' ,'Avila', 'Badajoz', 'Barcelona', 'Burgos', 'Cáceres', 'Guipúzcoa', 'Huelva', 'Huesca', 'Islas Baleares', 'Jaén', 'León', 'Lérida', 'Lugo', 'Madrid', 'Málaga', 'Murcia', 'Navarra', 'Orense', 'Palencia', 'Las Palmas', 'Pontevedra', 'La Rioja', 'Salamanca', 'Segovia', 'Sevilla', 'Soria', 'Tarragona', 'Santa Cruz de Tenerife', 'Teruel', 'Toledo', 'Valencia', 'Valladolid', 'Vizcaya', 'Zamora', 'Zaragoza'];
+                echo count($listaProvincias);
+                for ($i=0; $i < count($listaProvincias); $i++) { 
+                    echo "<option value=\"".$listaProvincias[$i]."\"";
+
+                    echo ">".$listaProvincias[$i];
+                }
+                ?>
+                </select>
+
+            </div>
+
+
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Ingresar">
                 <input type="reset" class="btn btn-default" value="Borrar">
