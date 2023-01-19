@@ -11,19 +11,18 @@ h1, h2, h3, h4, .masthead-heading, .btn {
   font-weight: bold;
 }
 
-.btn {
-  background-color: #c00003;
-}
-
 header {
   text-align: center;
   padding-top: 10.5rem;
   padding-bottom: 6rem;
-  background-image: url("./img/header-bg.jpg");
+  background-image: url("../img/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+}
+header .btn {
+  background-color: #c00003;
 }
 
 .masthead-heading {
@@ -58,7 +57,7 @@ header {
 }
 
 #aboutus {
-  background-image: url(img/fondo-negro.jpg);
+  background-image: url(../img/fondo-negro.jpg);
 }
 
 #team {
