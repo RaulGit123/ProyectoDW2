@@ -108,4 +108,16 @@ header .btn {
 }
 #mainNav li a {
   color: white;
+}
+
+#carta {
+  background-image: url(../img/fondo-negro.jpg);
+}
+#carta .card {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#carta .card img {
+  width: 10rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=menu.css.map */

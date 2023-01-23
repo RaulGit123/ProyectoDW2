@@ -111,3 +111,15 @@ header {
         color: white;
     }
 }
+
+#carta {
+    background-image: url(../img/fondo-negro.jpg);
+    .card {
+        background-color: rgba(0, 0, 0, 0.3);
+        img {
+            width: 10rem;
+            object-fit: cover;
+        }
+    }
+}
+
