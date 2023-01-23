@@ -1,19 +1,72 @@
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 5px;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .item {
-  background: white;
-  color: black;
+  color: white;
   padding: 1em;
+  font-size: 10pt;
+}
+
+.img {
+  width: 5rem;
+  height: 5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-2, .item-3, .item-4 {
+  align-self: center;
+  padding: 2px;
+}
+
+.item-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 100px;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.cantidad {
+  background-color: white;
+  color: black;
+  border-radius: 20px;
+  width: 80px;
+}
+
+.btoMa {
+  margin: 3px;
+  width: 80px;
+  height: 30px;
+  border-radius: 20px 20px 0 0;
+  background-color: rgb(192, 0, 3);
+}
+
+.btoMe {
+  margin: 3px;
+  width: 80px;
+  height: 30px;
+  border-radius: 0 0 20px 20px;
+  background-color: rgb(192, 0, 3);
 }
 
 body {
   font-family: Roboto Slab;
   color: red;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  padding: 0;
+  margin: 0;
 }
 
 .text-uppercase {
@@ -22,7 +75,7 @@ body {
 
 h1, h2, h3, h4, .masthead-heading, .btn, .masthead-subheading {
   font-weight: bold;
-  font-size: 18pt;
+  font-size: 12pt;
 }
 
 header {

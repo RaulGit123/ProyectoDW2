@@ -153,7 +153,7 @@ Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES 
 · Food Starch Modified
 · Sustainable Palm Oil
 · Wheat
-· Contains less than 2% of the following: Yeast Extract, Soybean Powder, Black Garlic Powder, Garlic Powder, Sea Salt, Natural Flavors, Onion Powder, Coconut Milk Powder, Salt, Sesame Oil, Spices, Turmeric (For Color), Safflower Oil, Sunflower Oil, Gum Acacia, Tricalcium Phosphate, Potassium Chloride, Calcium Carbonate, Maltodextrin, Tapioca Maltodextrin","6,5","black-garlic-chicken-ramen.png","Ramens");
+· Contains less than 2% of the following: Yeast Extract, Soybean Powder, Black Garlic Powder, Garlic Powder, Sea Salt, Natural Flavors, Onion Powder, Coconut Milk Powder, Salt, Sesame Oil, Spices, Turmeric (For Color), Safflower Oil, Sunflower Oil, Gum Acacia, Tricalcium Phosphate, Potassium Chloride, Calcium Carbonate, Maltodextrin, Tapioca Maltodextrin","6,50","black-garlic-chicken-ramen.png","Ramens");
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ("Paitan chicken ramen","Chicken paitan broth is the chicken-based cousin of tonkotsu ramen broth—creamy, rich, and perfect for noodle soups.",
 "· 1kg chicken carcasses, cut into smaller pieces
 · 500g chicken feet
@@ -169,7 +169,7 @@ Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES 
 · Food Starch Modified
 · Sustainable Palm Oil
 · Wheat
-· Contains less than 2% of the following: Yeast Extract, Natural Flavors, Sea Salt, Agave Inulin Powder, Garlic Powder, Spices, Onion Powder, Rice Bran Oil, Potassium Chloride, Calcium Carbonate, Maltodextrin","6,5","spicy-beef-ramen.png","Ramens");
+· Contains less than 2% of the following: Yeast Extract, Natural Flavors, Sea Salt, Agave Inulin Powder, Garlic Powder, Spices, Onion Powder, Rice Bran Oil, Potassium Chloride, Calcium Carbonate, Maltodextrin","6,50","spicy-beef-ramen.png","Ramens");
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ("Ice cream ball","Black Sesame Ice Cream",
 "· 1 x 395g tin sweetened condensed milk
 · 6 tablespoons black sesame paste (purchased from asian supermarkets)
