@@ -97,6 +97,9 @@ header {
                        rgba(0, 0, 0, 0.4)), url("../img/fondo-negro-seamless.jpg");
     // background-size:contain;
     padding: 4rem;
+    @media (min-width: 1044px) {
+        padding: 4rem 9rem;
+    }
     .seccion-carta {
         &:not(:last-child) {
             margin-bottom: 4rem;

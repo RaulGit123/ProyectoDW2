@@ -94,6 +94,11 @@ header .btn {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/fondo-negro-seamless.jpg");
   padding: 4rem;
 }
+@media (min-width: 1044px) {
+  #carta {
+    padding: 4rem 9rem;
+  }
+}
 #carta .seccion-carta:not(:last-child) {
   margin-bottom: 4rem;
 }
