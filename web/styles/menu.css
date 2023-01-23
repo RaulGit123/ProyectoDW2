@@ -56,26 +56,6 @@ header .btn {
   max-width: 650px;
 }
 
-#aboutus {
-  background-image: url(../img/fondo-negro.jpg);
-}
-
-#team {
-  background-color: transparent;
-  background-image: linear-gradient(180deg, #030303 50%, #593002 100%);
-}
-#team .team-member {
-  text-align: center;
-}
-#team .team-member h4 {
-  margin-top: 10px;
-}
-#team .team-member img {
-  width: 14rem;
-  height: 14rem;
-  border: 0.5rem solid rgba(0, 0, 0, 0.1);
-}
-
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -111,14 +91,43 @@ header .btn {
 }
 
 #carta {
-  background-image: url(../img/fondo-negro.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/fondo-negro-seamless.jpg");
+  padding: 4rem;
 }
-#carta .card {
-  background-color: rgba(0, 0, 0, 0.3);
+#carta .seccion-carta:not(:last-child) {
+  margin-bottom: 4rem;
 }
-#carta .card img {
+#carta .seccion-carta h1 {
+  padding-bottom: 2rem;
+}
+#carta .seccion-carta .card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  display: inline-block;
+  margin: 0 2rem 2rem 0;
+}
+#carta .seccion-carta .card img {
+  display: flex;
   width: 10rem;
   height: 10rem;
   -o-object-fit: cover;
      object-fit: cover;
+  margin: auto;
+  border-radius: 25%;
+}
+#carta .seccion-carta .card h3 {
+  text-align: right;
+}
+#carta .seccion-carta .card p {
+  min-height: 150px;
+}
+#carta .seccion-carta .card h5 {
+  min-height: 50px;
+}
+@media (max-width: 768px) {
+  #carta .seccion-carta .card {
+    margin: auto;
+    display: flex;
+    margin-bottom: 2rem;
+  }
 }/*# sourceMappingURL=menu.css.map */

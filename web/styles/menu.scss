@@ -8,6 +8,13 @@
     transition: $s;
 }
 
+@mixin font-size-diff ($sm, $xl, $min-width: 768px) {
+    font-size: $sm;
+    @media (min-width: $min-width) {
+        font-size: $xl;
+    }
+}
+
 body {
     font-family: Roboto Slab;
     color: white;
@@ -36,13 +43,6 @@ header {
     }
 }
 
-@mixin font-size-diff ($sm, $xl, $min-width: 768px) {
-    font-size: $sm;
-    @media (min-width: $min-width) {
-        font-size: $xl;
-    }
-}
-
 .masthead-heading {
     @include font-size-diff(3.25rem, 4.5rem);
     line-height: 4.5rem;
@@ -62,26 +62,6 @@ header {
     font-size: 1rem;
     font-weight: normal;
     max-width: 650px;
-}
-
-#aboutus {
-    background-image: url(../img/fondo-negro.jpg);
-}
-
-#team {
-    background-color: transparent;
-    background-image: linear-gradient(180deg, #030303 50%, #593002 100%);
-    .team-member {
-        text-align: center;
-        h4 {
-            margin-top: 10px;
-        }
-        img {
-        width: 14rem;
-        height: 14rem;
-        border: 0.5rem solid rgba(0, 0, 0, 0.1);
-        }
-    }
 }
 
 #mainNav {
@@ -113,13 +93,44 @@ header {
 }
 
 #carta {
-    background-image: url(../img/fondo-negro.jpg);
-    .card {
-        background-color: rgba(0, 0, 0, 0.3);
-        img {
-            width: 10rem;
-            height: 10rem;
-            object-fit: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),
+                       rgba(0, 0, 0, 0.4)), url("../img/fondo-negro-seamless.jpg");
+    // background-size:contain;
+    padding: 4rem;
+    .seccion-carta {
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+        h1 {
+            padding-bottom: 2rem;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: inline-block;
+            margin: 0 2rem 2rem 0;
+            img {
+                display: flex;
+                width: 10rem;
+                height: 10rem;
+                object-fit: cover;
+                margin: auto;
+                border-radius: 25%;
+            }
+            h3 {
+                text-align: right;
+            }
+            p {
+                min-height: 150px;
+            }
+            h5 {
+                min-height: 50px;
+            }
+            @media (max-width: 768px) {
+                margin: auto;
+                display: flex;
+                margin-bottom: 2rem;
+            }
         }
     }
 }
