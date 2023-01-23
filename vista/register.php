@@ -170,6 +170,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
 <!-- navigator -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="../web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -211,6 +212,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
         <h4 class="card-title mt-3 text-center text-uppercase " style="color:white; max-width: 400px; font-family: Montserrat;" >Datos de usuario</h4>
 
+    <!-- form group -->
             <div class="form-group input-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
 
             <div class="input-group-prepend">
@@ -360,7 +362,7 @@ $listaProvincias = trim($_POST["provincia"]);
                 <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
                 <input type="reset" class="btn btn-warning btn-block" value="Borrar">
             </div>
-            <p class="text-center" style="color:white;">Ya tienes una cuenta? <a href="../hugo.php">Iniciar sesión</a> </p>   
+            <p class="text-center" style="color:white;">Ya tienes una cuenta? <a href="../hugo.php" class="btn btn-danger" >Iniciar sesión</a> </p>   
         </form>
             </article>
         </div>    
