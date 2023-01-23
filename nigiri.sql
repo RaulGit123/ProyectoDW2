@@ -29,7 +29,11 @@ USE `NIGIRI`;
 -- Estructura para la tabla UsuariosRegistrados
 --
 
-
+CREATE TABLE `Roles` (
+  `IdRoles` int NOT NULL AUTO_INCREMENT,
+  `NombreRol` int NOT NULL,
+  CONSTRAINT pkR PRIMARY KEY (`IdRoles`),
+);
 CREATE TABLE `Usuarios` (
   `IdUsuarios` int NOT NULL AUTO_INCREMENT,
   `NombreUsuario` varchar(100) NOT NULL,
@@ -39,7 +43,9 @@ CREATE TABLE `Usuarios` (
   `CorreoElectronico` varchar(100) NOT NULL,
   `Direccion` varchar(100) NOT NULL,
   `Provincia` varchar(100) NOT NULL,
-  CONSTRAINT pkU PRIMARY KEY (`IdUsuarios`)
+  `Rol` int NOT NULL,
+  CONSTRAINT pkU PRIMARY KEY (`IdUsuarios`),
+  FOREIGN KEY (Rol) REFERENCES Roles(IdRoles),
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `Comida` (
@@ -81,13 +87,15 @@ CREATE TABLE `RegistroReservas` (
   FOREIGN KEY (Mesa) REFERENCES Mesa(IdMesa)
 );
 
+
+/*
 CREATE TABLE `Administrador` (
   `IdAdmin` int NOT NULL AUTO_INCREMENT,
   `NombreUsuario` varchar(100) NOT NULL,
   `Contraseña` varchar(100) NOT NULL,
   CONSTRAINT pkA PRIMARY KEY (`IdAdmin`)
-);
-
+);*/
+/*
 CREATE TABLE `Trabajadores` (
   `IdTrabajador` int NOT NULL AUTO_INCREMENT,
   `NombreUsuario` varchar(100) NOT NULL,
@@ -95,10 +103,12 @@ CREATE TABLE `Trabajadores` (
   `Contraseña` varchar(100) NOT NULL,
   `CorreoElectronico` varchar(100) NOT NULL,
   CONSTRAINT pkT PRIMARY KEY (`IdTrabajador`)
-);
+);*/
 
-Insert Into `Administrador` (NombreUsuario,Contraseña) VALUES ("Admin","12345");
+/*Insert Into `Administrador` (NombreUsuario,Contraseña) VALUES ("Admin","12345");*/
 
+Insert Into `Roles` (NombreRol) VALUES ("Trabajador");
+Insert Into `Roles` (NombreRol) VALUES ("Usuario");
 /*Las secciones serán Entrantes, Ramen, Postres y Bebidas*/
 Insert Into Comida (Nombre,Descripción,Ingredientes,Precio,Imagen,tipo) VALUES ("Gyoza","stuffed with pork and vegetables",
 "· 250 gr of minced pork
