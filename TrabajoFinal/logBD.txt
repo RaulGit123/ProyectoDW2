@@ -1,5 +1,0 @@
-SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'usuarios' already exists## Fichero: C:\xampp\htdocs\prueba\ProyectoDW2\TrabajoFinal\BaseDatosNigiri.php## Línea: 27##Código: 42S01##Instante: 0.26069000 1674043352
-SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'usuarios' already exists## Fichero: C:\xampp\htdocs\prueba\ProyectoDW2\TrabajoFinal\BaseDatosNigiri.php## Línea: 27##Código: 42S01##Instante: 0.39212000 1674043424
-SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'usuarios' already exists## Fichero: C:\xampp\htdocs\prueba\ProyectoDW2\TrabajoFinal\BaseDatosNigiri.php## Línea: 27##Código: 42S01##Instante: 0.95070700 1674043446
-SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'usuarios' already exists## Fichero: C:\xampp\htdocs\prueba\ProyectoDW2\TrabajoFinal\BaseDatosNigiri.php## Línea: 27##Código: 42S01##Instante: 0.47161900 1674043459
-SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'usuarios' already exists## Fichero: C:\xampp\htdocs\prueba\ProyectoDW2\TrabajoFinal\BaseDatosNigiri.php## Línea: 27##Código: 42S01##Instante: 0.63139200 1674043465
