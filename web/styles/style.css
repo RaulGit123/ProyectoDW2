@@ -11,19 +11,18 @@ h1, h2, h3, h4, .masthead-heading, .btn {
   font-weight: bold;
 }
 
-.btn {
-  background-color: #c00003;
-}
-
 header {
   text-align: center;
   padding-top: 10.5rem;
   padding-bottom: 6rem;
-  background-image: url("./img/header-bg.jpg");
+  background-image: url("../img/header-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+}
+header .btn {
+  background-color: #c00003;
 }
 
 .masthead-heading {
@@ -58,7 +57,7 @@ header {
 }
 
 #aboutus {
-  background-image: url(img/fondo-negro.jpg);
+  background-image: url(../img/fondo-negro.jpg);
 }
 
 #team {
@@ -75,4 +74,38 @@ header {
   width: 14rem;
   height: 14rem;
   border: 0.5rem solid rgba(0, 0, 0, 0.1);
+}
+
+#mainNav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #212529;
+  transition: 0.4s;
+}
+#mainNav img {
+  height: 6rem;
+  transition: 0.4s;
+}
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border: none;
+    background-color: transparent;
+    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #212529;
+  }
+  #mainNav.navbar-shrink img {
+    height: 4rem;
+  }
+  #mainNav li a {
+    padding-right: 2em;
+  }
+}
+#mainNav li a {
+  color: white;
 }/*# sourceMappingURL=style.css.map */

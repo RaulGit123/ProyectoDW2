@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "../config/config.php";
  
 // Define variables and initialize with empty values
 $NombreUsuario = $Contraseña = $confirm_password = "";
@@ -13,7 +13,7 @@ $localidad=$localidad_err="";
 $listaProvincias=[];
 
 
- 
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
@@ -122,7 +122,7 @@ $listaProvincias = trim($_POST["provincia"]);
             
             // Set parameters
             $param_username = $NombreUsuario;
-            $param_password = password_hash($Contraseña, PASSWORD_DEFAULT); // Creates a Contraseña hash
+            $param_password = md5($Contraseña); // Creates a Contraseña hash
             $param_name = $nombre;
             $param_apellidos = $apellidos;
             $param_direccion = $direccion;
@@ -132,7 +132,7 @@ $listaProvincias = trim($_POST["provincia"]);
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: login.php");
+                header("location: ../hugo.php");
             } else{
                 echo "Algo salió mal, por favor inténtalo de nuevo.";
             }
@@ -230,7 +230,7 @@ $listaProvincias = trim($_POST["provincia"]);
                 <input type="submit" class="btn btn-primary" value="Ingresar">
                 <input type="reset" class="btn btn-default" value="Borrar">
             </div>
-            <p>¿Ya tienes una cuenta? <a href="login.php">Ingresa aquí</a>.</p>
+            <p>¿Ya tienes una cuenta? <a href="../hugo.php">Ingresa aquí</a>.</p>
         </form>
     </div>    
 </body>
