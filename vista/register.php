@@ -152,14 +152,15 @@ $listaProvincias = trim($_POST["provincia"]);
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="../web/styles/login.css">
-    <link rel="stylesheet" href="../web/styles/style.css">
+    
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
+   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../web/styles/style.css">
 
 
 </head>
@@ -169,6 +170,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
 <!-- navigator -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="../web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -210,6 +212,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
         <h4 class="card-title mt-3 text-center text-uppercase " style="color:white; max-width: 400px; font-family: Montserrat;" >Datos de usuario</h4>
 
+    <!-- form group -->
             <div class="form-group input-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
 
             <div class="input-group-prepend">
@@ -359,7 +362,7 @@ $listaProvincias = trim($_POST["provincia"]);
                 <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
                 <input type="reset" class="btn btn-warning btn-block" value="Borrar">
             </div>
-            <p class="text-center" style="color:white;">Ya tienes una cuenta? <a href="../hugo.php">Iniciar sesión</a> </p>   
+            <p class="text-center" style="color:white;">Ya tienes una cuenta? <a href="../hugo.php" class="btn btn-danger" >Iniciar sesión</a> </p>   
         </form>
             </article>
         </div>    

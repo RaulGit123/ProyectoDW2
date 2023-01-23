@@ -18,7 +18,7 @@
                 // Validación de error
                 if ($con == "ERROR") {
                     header("location:CtrlSalir.php");
-                    //posible enlace mal ... mirar controlador/ctrlsalir
+                  
                 }
 
                 // Consulta
@@ -32,7 +32,7 @@
                 if ($cantidad_resultado == 0) {
 
                    header("location:controlador/CtrlSalir.php");
-                    //posible enlace mal ... mirar controlador/ctrlsalir
+                
                 } 
 
                 

@@ -16,7 +16,9 @@
 
         if (isset($_SESSION["error"])) {
         
-            echo "<p>Usuario y/o contraseña incorrecto</p>";
+            echo '<script language="javascript">alert("juas");</script>';
+
+
             unset($_SESSION["error"]);
         }
     
