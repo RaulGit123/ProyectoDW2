@@ -10,7 +10,7 @@
 
 .grid{
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     // gap: 2px;
   }
@@ -40,14 +40,14 @@
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-//Para PC
+//Para PC(Si cambio los botones)
 // .cantidad{
 //     background-color: white;
 //     color:black;
 //     border-radius: 20px;
 //     width:10px;
 // }
-//Para PC
+//
 // .botones{
 //     display: flex;
 //     flex-direction:row;
@@ -70,6 +70,8 @@
      }
 
  .btoMa{
+    color:white;
+    font-size: 10pt;
       margin:3px;
       width:80px;
       height:30px;
@@ -77,6 +79,8 @@
      background-color: rgba(192, 0, 3,100);
  }
  .btoMe{
+    color:white;
+    font-size: 10pt;
     margin:3px;
     width:80px;
     height:30px;
@@ -195,4 +199,41 @@ header {
     li a {
         color: white;
     }
+}
+@media (min-width: 768px) {
+    //Para PC
+    .img{
+        width: 10rem;
+        height: 10rem;
+        object-fit:cover;
+        border-radius: 10px;
+    }
+    .item {
+    color: white;
+    padding: 1em;
+    font-size: 20pt;
+  }
+  //Caja
+  .item-4{
+    width:150px;
+    height:120px;
+}
+//Cantidad
+.cantidad{
+    background-color: white;
+   color:black;
+   border-radius: 20px;
+   width:150px;
+}
+//Boton +
+.btoMa{
+    width:150px;
+    height:70px;
+}
+//Boton -
+.btoMe{
+    width:150px;
+    height:70px;
+}
+
 }

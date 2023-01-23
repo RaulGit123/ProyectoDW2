@@ -1,6 +1,6 @@
 .grid {
   display: grid;
-  grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
 }
 
@@ -42,6 +42,8 @@
 }
 
 .btoMa {
+  color: white;
+  font-size: 10pt;
   margin: 3px;
   width: 80px;
   height: 30px;
@@ -50,6 +52,8 @@
 }
 
 .btoMe {
+  color: white;
+  font-size: 10pt;
   margin: 3px;
   width: 80px;
   height: 30px;
@@ -175,4 +179,37 @@ header .btn {
 }
 #mainNav li a {
   color: white;
+}
+
+@media (min-width: 768px) {
+  .img {
+    width: 10rem;
+    height: 10rem;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 10px;
+  }
+  .item {
+    color: white;
+    padding: 1em;
+    font-size: 20pt;
+  }
+  .item-4 {
+    width: 150px;
+    height: 120px;
+  }
+  .cantidad {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    width: 150px;
+  }
+  .btoMa {
+    width: 150px;
+    height: 70px;
+  }
+  .btoMe {
+    width: 150px;
+    height: 70px;
+  }
 }/*# sourceMappingURL=orders.css.map */
