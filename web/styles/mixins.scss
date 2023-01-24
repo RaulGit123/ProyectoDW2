@@ -1,0 +1,21 @@
+@mixin navfondo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #212529;
+}
+
+@mixin transition($s: 0.4s) {
+    transition: $s;
+}
+
+@mixin font-size-diff ($sm, $xl, $min-width: 768px) {
+    font-size: $sm;
+    @media (min-width: $min-width) {
+        font-size: $xl;
+    }
+}
+
+@mixin oscurecer-img ($trans: 0.4, $url) {
+    background-image: linear-gradient(rgba(0, 0, 0, $trans),
+    rgba(0, 0, 0, $trans)), url($url);
+}
