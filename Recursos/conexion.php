@@ -3,7 +3,7 @@
 //Datos de configuración a la BD. Posteriormente los sacaremos a un fichero de configuración config.php
 
 $db_hostname = "localhost";
-$db_nombre = "usuarios";
+$db_nombre = "nigiri";
 /*
  * El usuario root núnca se puede usar, siempre cambiar por otro usuario
  * Nosotros lo usaremos para que nos funcionen a todos los ejemplos y los ejercicios
