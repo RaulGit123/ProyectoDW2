@@ -24,7 +24,6 @@ CREATE DATABASE IF NOT EXISTS `NIGIRI` DEFAULT CHARACTER SET utf8 COLLATE utf8_g
 USE `NIGIRI`;
 
 -- --------------------------------------------------------
-
 --
 -- Estructura para la tabla UsuariosRegistrados
 --
