@@ -24,7 +24,6 @@ CREATE DATABASE IF NOT EXISTS `NIGIRI` DEFAULT CHARACTER SET utf8 COLLATE utf8_g
 USE `NIGIRI`;
 
 -- --------------------------------------------------------
-
 --
 -- Estructura para la tabla UsuariosRegistrados
 --
@@ -32,7 +31,7 @@ USE `NIGIRI`;
 CREATE TABLE `Roles` (
   `IdRoles` int NOT NULL AUTO_INCREMENT,
   `NombreRol` int NOT NULL,
-  CONSTRAINT pkR PRIMARY KEY (`IdRoles`),
+  CONSTRAINT pkR PRIMARY KEY (`IdRoles`)
 );
 CREATE TABLE `Usuarios` (
   `IdUsuarios` int NOT NULL AUTO_INCREMENT,
@@ -45,8 +44,8 @@ CREATE TABLE `Usuarios` (
   `Provincia` varchar(100) NOT NULL,
   `Rol` int NOT NULL,
   CONSTRAINT pkU PRIMARY KEY (`IdUsuarios`),
-  FOREIGN KEY (Rol) REFERENCES Roles(IdRoles),
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  FOREIGN KEY (Rol) REFERENCES Roles(IdRoles)
+);
 
 CREATE TABLE `Comida` (
   `IdComida` int NOT NULL AUTO_INCREMENT,
