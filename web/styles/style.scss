@@ -1,12 +1,4 @@
-@mixin navfondo {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #212529;
-}
-
-@mixin transition($s: 0.4s) {
-    transition: $s;
-}
+@import 'mixins.scss';
 
 body {
     font-family: Roboto Slab;
@@ -32,13 +24,6 @@ header {
     background-size: cover;
     .btn {
         background-color: #c00003;
-    }
-}
-
-@mixin font-size-diff ($sm, $xl, $min-width: 768px) {
-    font-size: $sm;
-    @media (min-width: $min-width) {
-        font-size: $xl;
     }
 }
 
