@@ -1,0 +1,123 @@
+@import 'mixins.scss';
+
+body {
+    font-family: Roboto Slab;
+    color: white;
+}
+
+.text-uppercase {
+    font-family: Montserrat;
+}
+
+h1, h2, h3, h4, .masthead-heading, .btn {
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    @include oscurecer-img(0.3, "../img/menu-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    .btn {
+        background-color: #c00003;
+    }
+}
+
+.masthead-heading {
+    @include font-size-diff(3.25rem, 4.5rem);
+    line-height: 4.5rem;
+}
+
+.masthead-subheading {
+    @include font-size-diff(1.2rem, 1.75rem);
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.section-subheading {
+    font-size: 1rem;
+    font-weight: normal;
+    max-width: 650px;
+}
+
+#mainNav {
+    @include navfondo;
+    @include transition();
+    img {
+        height: 6rem;
+        @include transition();
+    }
+    @media (min-width: 992px) {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border: none;
+        background-color: transparent;
+        transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+        &.navbar-shrink {
+            @include navfondo;
+            img {
+                height: 4rem;
+            }
+        }
+        li a {
+            padding-right: 2em;
+        }
+    }
+    li a {
+        color: white;
+    }
+}
+
+#carta {
+    @include oscurecer-img(0.4, "../img/fondo-negro-seamless.jpg");
+    // background-size:contain;
+    padding: 4rem;
+    @media (min-width: 1044px) {
+        padding: 4rem 9rem;
+    }
+    .seccion-carta {
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+        h1 {
+            padding-bottom: 2rem;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: inline-block;
+            margin: 0 2rem 2rem 0;
+            img {
+                display: flex;
+                width: 10rem;
+                height: 10rem;
+                object-fit: cover;
+                margin: auto;
+                border-radius: 25%;
+            }
+            h3 {
+                text-align: right;
+            }
+            p {
+                min-height: 150px;
+            }
+            h5 {
+                min-height: 50px;
+            }
+            @media (max-width: 768px) {
+                margin: auto;
+                display: flex;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}
+
