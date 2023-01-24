@@ -186,7 +186,7 @@ Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (
 · Sugar glass 60 g","4.90","Mochis.jpg","Dessert");
 Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Cold Sake","Japanese alcoholic beverage made from fermented rice. Sake is light in colour, is noncarbonated, has a sweet flavour, and contains about 14 to 16 percent alcohol.",
 "6.50","sake.jpg","Beverages");
-Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("KIRIN","The flavor of Kirin Ichiban is dry, medium-light in body, and modestly bitter. It has a soft texture and moderate carbonation. Tasting notes include toast, fresh bread, fresh flowers, and savory hops.",
+Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Kirin","The flavor of Kirin Ichiban is dry, medium-light in body, and modestly bitter. It has a soft texture and moderate carbonation. Tasting notes include toast, fresh bread, fresh flowers, and savory hops.",
 "3.50","kirin.jpg","Beverages");
 -- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
 -- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
