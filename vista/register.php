@@ -352,7 +352,6 @@ $listaProvincias = trim($_POST["provincia"]);
                     echo ">".$listaProvincias[$i];
                 }
                 ?>
-
                 </select>
 
             </div>
