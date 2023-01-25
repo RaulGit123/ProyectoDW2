@@ -19,31 +19,35 @@
 <body id="page-top">
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index.php"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="menu.html">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-                    <li class="nav-item"><a class="nav-link" href="../vista/principal.php">Order Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Book Now</a></li>
+                   
 
                     <?php
-
+                        
                         if (session_status()===PHP_SESSION_NONE){
                             session_start();
                         }
                         if (!empty($_SESSION["NombreUsuario"])){
-                           ?> <li class="nav-item"><a class="nav-link" href="../controlador/CtrlSalir.php">Usuario</a></li> <?php
+                           ?>  
+                            <li class="nav-item"><a class="nav-link" href="menu.html">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                            <li class="nav-item"><a class="nav-link" href="pedidos.html">Order Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">Book Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../controlador/CtrlSalir.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
                         }else {
-                            ?><li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
+                            ?>
+                            <li class="nav-item"><a class="nav-link" href="menu.html">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                            <li class="nav-item"><a class="nav-link" href="../vista/principal.php">Order Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">Book Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
                         }
-                    
-                    ?>
-                    
-           
+                        ?>
+                        <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
                 </ul>
             </div>
         </div>
