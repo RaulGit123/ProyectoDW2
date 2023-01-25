@@ -196,6 +196,8 @@ Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Cold Sake","
 "6.50","sake.jpg","Beverages");
 Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Kirin","The flavor of Kirin Ichiban is dry, medium-light in body, and modestly bitter. It has a soft texture and moderate carbonation. Tasting notes include toast, fresh bread, fresh flowers, and savory hops.",
 "3.50","kirin.jpg","Beverages");
+Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Coca-Cola","The usual, original and delicious, the one that refreshes millions of people around the world.",
+"1.50","CocaCola.jpg","Beverages");
 -- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
 -- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
 -- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
