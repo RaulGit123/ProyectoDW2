@@ -37,9 +37,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="menu.html">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Order Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./web/menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                    <li class="nav-item"><a class="nav-link" href="./vista/principal.php">Order Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./vista/principal.php">Book Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="./vista/register.php">Register</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
                 </ul>
