@@ -109,7 +109,7 @@ CREATE TABLE `Trabajadores` (
 Insert Into `Roles` (NombreRol) VALUES ("Trabajador");
 Insert Into `Roles` (NombreRol) VALUES ("Usuario");
 /*Las secciones serán Entrantes, Ramen, Postres y Bebidas*/
-Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Gyoza","Gyoza is made from a thinly rolled dough filled with ground meat and vegetables, which can then be boiled, steamed or fried, and served hot with a dash of black vinegar and sesame oil or in a soup.",
+Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Gyoza","Gyoza is made from a thinly rolled dough filled with ground meat and vegetables, which can then be boiled and served hot with a dash of black vinegar and sesame oil or in a soup.",
 "· 250 gr of minced pork
 · 100g cabbage
 · 50g of spring onion
@@ -120,7 +120,7 @@ Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (
 · ½ teaspoon of sugar.
 · 1/2 teaspoon cornstarch.
 · Sesame oil", "9.59","gyoza.jpg","Starters");
-Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Edamame","Edamame are young soybeans harvested before they ripen or harden. Available shelled, in the pod, fresh, or frozen, they are a popular, plant-based food that may have various health benefits.",
+Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Edamame","Edamame are young soybeans harvested before they ripen or harden. Available shelled, in the pod, fresh, or frozen, they are a popular food with various health benefits.",
 "· 500g frozen edamame
 · 2 tablespoons of flake salt
 · 1 teaspoon ground hot paprika","3.95","edamame.jpg","Starters");
@@ -186,7 +186,7 @@ Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (
 · Sugar glass 60 g","4.90","Mochis.jpg","Dessert");
 Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Cold Sake","Japanese alcoholic beverage made from fermented rice. Sake is light in colour, is noncarbonated, has a sweet flavour, and contains about 14 to 16 percent alcohol.",
 "6.50","sake.jpg","Beverages");
-Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Kirin","The flavor of Kirin Ichiban is dry, medium-light in body, and modestly bitter. It has a soft texture and moderate carbonation. Tasting notes include toast, fresh bread, fresh flowers, and savory hops.",
+Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Kirin","The flavor of Kirin Ichiban is dry, medium-light in body, and modestly bitter. It has a soft texture and moderate carbonation.",
 "3.50","kirin.jpg","Beverages");
 -- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
 -- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()

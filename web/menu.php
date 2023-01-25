@@ -53,108 +53,7 @@
         </div>
     </header>
     <section id="carta">
-        <div class="seccion-carta"> <!--STARTERS-->
-            <h1 class="text-uppercase">Starters</h1>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/gyoza.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Gyoza</h5>
-                    <p class="card-text">Culpa ea adipisicing veniam duis nostrud nisi fugiat amet laboris consequat irure do non exercitation.</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">9,59€</h3>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/edamame.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Edamame</h5>
-                    <p class="card-text">Commodo reprehenderit cillum et nisi voluptate ut adipisicing exercitation voluptate ullamco.</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">3,95€</h3>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/rollitos.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Vegetable roll</h5>
-                    <p class="card-text">Nostrud reprehenderit ipsum tempor deserunt aute aliqua sint.</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">6,50€</h3>
-                </div>
-            </div>
-        </div>
-        <div class="seccion-carta"> <!--RAMEN-->
-            <h1 class="text-uppercase">Ramen</h1>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/black-garlic-chicken-ramen.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Black garlic chicken ramen</h5>
-                    <p class="card-text">Classic, savory, and comforting. The perfect cozy companion for an evening at home. Overflowing with notes of garlic, scallions, and umami</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">6,50€</h3>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/paitan-chicken-ramen.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Paitan chicken ramen</h5>
-                    <p class="card-text">Chicken paitan broth is the chicken-based cousin of tonkotsu ramen broth—creamy, rich, and perfect for noodle soups.</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">7,99€</h3>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/spicy-beef-ramen.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Spicy beef ramen</h5>
-                    <p class="card-text">Hearty, rich, and spicy. A broth that takes your tastebuds on a trip across the world. Brimming with notes of Sichuan peppercorns, anise, and fennel.</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">6,50€</h3>
-                </div>
-            </div>
-        </div>
-        <div class="seccion-carta"> <!--DESSERTS-->
-            <h1 class="text-uppercase">Desserts</h1>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/helado.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Ice cream ball</h5>
-                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt dicta atque maxime ipsa, consequuntur provident quis, consequatur aliquid totam.</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">2,90€</h3>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/Mochis.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">MOCHIS 3 units</h5>
-                    <p class="card-text">Steamed filled dumplings made with sticky rice, called mochigome, which is particularly sweet.</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">7,99€</h3>
-                </div>
-            </div>
-        </div>
-        <div class="seccion-carta"> <!--BEVERAGES-->
-            <h1 class="text-uppercase">Beverage</h1>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/sake.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Sake frío</h5>
-                    <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus labore tempore asperiores provident, ipsam maxime! Odit aut doloribus eos explicabo consequatur eius.</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">6,50€</h3>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="img/platos/kirin.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title font-weight-bold">Kirin</h5>
-                    <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias ullam quaerat non ea autem molestiae officia. Exercitationem, illum?</p>
-                    <hr style="border-top: 1px solid white;">
-                    <h3 class="text-align-right">3,50€</h3>
-                </div>
-            </div>
-        </div>
+        
     </section>
     <footer class="bg-dark text-center text-white">
         <div class="container p-4">
@@ -172,6 +71,10 @@
                     href="https://goo.gl/maps/x7VUrEzaKU3dV3cV8">C/D'Alberic 18, 46008 València</a>
             </div>
     </footer>
+    <?php 
+    include_once('../config/CreacionJSON.php');
+    ?>
+    <script type="module" src="menu.js"></script>
     <script>
         window.onscroll = function () { scrollFunction() };
         function scrollFunction() {
