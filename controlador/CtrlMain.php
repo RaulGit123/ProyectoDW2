@@ -8,8 +8,8 @@
         $validar->validarDatos();
 
         //include_once("web/index.html");
-      // include_once("vista/principal.php");
-      include_once("vista/principal.php");
+       include_once("vista/principal.php");
+        
        //header("location:./web/index.html");
      
     } else {

@@ -18,7 +18,7 @@ if (empty($_SESSION["NombreUsuario"])) {
 <a href="controlador/CtrlSalir.php">Salir</a>
 <a href="vista/prueba.html">Pedir para llevar</a> 
 <a href="vista/prueba.html">Reserva </a>
-<a href="web/index.php">Volver al menu principal.</a><?php
+<a href="index.php">Volver al menu principal.</a><?php
     
 }?>
 
