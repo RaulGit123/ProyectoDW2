@@ -32,11 +32,11 @@ or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
 
 //Creamos el JSON
 $json_string = json_encode($comida);
-echo $json_string;
+// echo $json_string;
 
 //Si queremos crear un archivo json, sería de esta forma:
 
-$file = 'comida.json';
+$file = '../config/comida.json'; // ../config porque lo pide desde web/pedidos.php
 file_put_contents($file, $json_string);
 
     
