@@ -13,14 +13,14 @@ while($row = mysqli_fetch_array($result))
 { 
     $IdComida=$row['IdComida'];
     $Nombre=$row['Nombre'];
-    $Descripción=$row['Descripción'];
+    $Descripcion=$row['Descripcion'];
     $Ingredientes=$row['Ingredientes'];
     $Precio=$row['Precio'];
     $Imagen=$row['Imagen'];
     $tipo=$row['tipo'];
     
 
-    $comida[] = array('IdComida'=> $IdComida, 'Nombre'=> $Nombre, 'Descripción'=> $Descripción, 'Ingredientes'=> $Ingredientes,
+    $comida[] = array('IdComida'=> $IdComida, 'Nombre'=> $Nombre, 'Descripcion'=> $Descripcion, 'Ingredientes'=> $Ingredientes,
                         'Precio'=> $Precio, 'Imagen'=> $Imagen, 'tipo'=> $tipo);
 
 }
