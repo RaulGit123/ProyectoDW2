@@ -84,7 +84,7 @@
             </div>
             <input type="text"  class="form-control" name="NombreUsuario" id="NombreUsuario" required placeholder="Nombre de Usuario"autofocus >
             <div class="invalid-feedback">
-            Please choose a username.
+            Porfavor elige un nombre de usuario.
             </div>
             </div>
 
