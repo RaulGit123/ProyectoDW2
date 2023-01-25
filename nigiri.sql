@@ -42,7 +42,7 @@ CREATE TABLE `Usuarios` (
   `CorreoElectronico` varchar(100) NOT NULL,
   `Direccion` varchar(100) NOT NULL,
   `Provincia` varchar(100) NOT NULL,
-  `Rol` int NOT NULL,
+  `Rol` int,
   CONSTRAINT pkU PRIMARY KEY (`IdUsuarios`),
   FOREIGN KEY (Rol) REFERENCES Roles(IdRoles)
 );
