@@ -26,8 +26,25 @@
             margin-right: 2em;
         }
     }
+    &.navbar-shrink li a.activo {
+        background-color: white;
+        color: #212529;
+    }
     li a {
         color: white;
+        &.activo {font-weight: bold;
+            &:hover {
+                cursor: pointer;
+            }
+            // &:not([href]):not([tabindex]) {
+            //     color: #c00003;
+            //     text-decoration: underline;
+            //     text-underline-offset: 5px;
+            //     &:hover {
+            //         text-decoration: none;
+            //     }
+            // }
+        }
     }
 }
 
@@ -59,11 +76,4 @@ nav.stroke ul li a:after {
 }
 nav.stroke ul li a:hover:after {
   width: 100%;
-}
-
-.activo {
-    font-weight: bold;
-    &:hover {
-        cursor: pointer;
-    }
 }
