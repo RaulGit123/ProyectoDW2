@@ -79,7 +79,8 @@ CREATE TABLE `RegistroPedidos` (
 
 CREATE TABLE `Mesa` (
   `IdMesa` int NOT NULL AUTO_INCREMENT,
-  `NombreMesa` varchar(100) NOT NULL,
+  -- `NombreMesa` varchar(100) NOT NULL,
+  `Estado` varchar(100) NOT NULL,
   CONSTRAINT pkM PRIMARY KEY (`IdMesa`)
 );
 
@@ -113,8 +114,12 @@ CREATE TABLE `Trabajadores` (
 );*/
 
 /*Insert Into `Administrador` (NombreUsuario,Contraseña) VALUES ("Admin","12345");*/
+Insert Into `Mesa` (Estado) VALUES ("vacia");
+Insert Into `Mesa` (Estado) VALUES ("vacia");
+Insert Into `Mesa` (Estado) VALUES ("vacia");
+Insert Into `Mesa` (Estado) VALUES ("vacia");
 
-Insert Into `Roles` (NombreRol) VALUES ("Trabajador");
+Insert Into `Roles` (NombreRol) VALUES ("Admin");
 Insert Into `Roles` (NombreRol) VALUES ("Usuario");
 /*Las secciones serán Entrantes, Ramen, Postres y Bebidas*/
 Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Gyoza","Gyoza is made from a thinly rolled dough filled with ground meat and vegetables, which can then be boiled, steamed or fried, and served hot with a dash of black vinegar and sesame oil or in a soup.",
