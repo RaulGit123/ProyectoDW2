@@ -1,0 +1,128 @@
+body {
+  font-family: Roboto Slab;
+  color: white;
+}
+
+.text-uppercase {
+  font-family: Montserrat;
+}
+
+h1, h2, h3, h4, .masthead-heading, .btn {
+  font-weight: bold;
+}
+
+header {
+  text-align: center;
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/principal.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+header .btn {
+  background-color: #c00003;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.masthead-heading {
+  font-size: 3.25rem;
+  line-height: 4.5rem;
+}
+
+@media (min-width: 768px) {
+  .masthead-heading {
+    font-size: 4.5rem;
+  }
+}
+.masthead-subheading {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .masthead-subheading {
+    font-size: 2.25rem;
+  }
+}
+#kanji {
+  font-size: 4em;
+  color: red;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.section-subheading {
+  font-size: 1rem;
+  font-weight: normal;
+  max-width: 650px;
+}
+
+#aboutus {
+  background-image: url(../img/fondo-negro.jpg);
+}
+
+#team {
+  background-color: transparent;
+  background-image: linear-gradient(180deg, #030303 50%, #593002 100%);
+}
+
+#team .team-member {
+  text-align: center;
+}
+
+#team .team-member h4 {
+  margin-top: 10px;
+}
+
+#team .team-member img {
+  width: 14rem;
+  height: 14rem;
+  border: 0.5rem solid rgba(0, 0, 0, 0.1);
+}
+
+#mainNav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #212529;
+  transition: 0.4s;
+}
+
+#mainNav img {
+  height: 6rem;
+  transition: 0.4s;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border: none;
+    background-color: transparent;
+    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #212529;
+  }
+  #mainNav.navbar-shrink img {
+    height: 4rem;
+  }
+  #mainNav li a {
+    padding-right: 2em;
+  }
+}
+#mainNav li a {
+  color: white;
+} /*# sourceMappingURL=style.css.map *//*# sourceMappingURL=pag_principal.css.map */
