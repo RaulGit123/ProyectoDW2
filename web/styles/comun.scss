@@ -32,7 +32,8 @@
     }
     li a {
         color: white;
-        &.activo {font-weight: bold;
+        &.activo {
+            font-weight: bold;
             &:hover {
                 cursor: pointer;
             }
