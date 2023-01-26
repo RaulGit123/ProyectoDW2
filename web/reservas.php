@@ -62,7 +62,8 @@
                     <div class=" font-italic text-uppercase">People</div>
 
 </div>
-    <footer class="bg-dark text-center text-white">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer class="bg-dark text-center text-white" id="pie">
         <div class="container p-4">
             <section class="mb-4">
                 <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
