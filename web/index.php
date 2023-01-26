@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="img/logo2.png" alt="logo" /></a>
+            <a class="activo navbar-brand"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 
                 <i class="fas fa-bars ms-1"></i>
@@ -115,15 +115,6 @@
             </div>
         </div>
     </footer>
-    <script>
-        window.onscroll = function () { scrollFunction() };
-        function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.querySelector("nav").classList.add("navbar-shrink");
-            } else {
-                document.querySelector("nav").classList.remove("navbar-shrink");
-            }
-        }
-    </script>
+    <script src="comun.js"></script>
 </body>
 </html>

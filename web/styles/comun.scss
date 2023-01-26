@@ -1,0 +1,69 @@
+// CONSTRUCCIÓN NAV
+
+@import 'mixins.scss';
+
+#mainNav {
+    @include navfondo;
+    @include transition();
+    img {
+        height: 6rem;
+        @include transition();
+    }
+    
+    @media (min-width: 992px) {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border: none;
+        background-color: transparent;
+        transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+        &.navbar-shrink {
+            @include navfondo;
+            img {
+                height: 4rem;
+            }
+        }
+        li a {
+            margin-right: 2em;
+        }
+    }
+    li a {
+        color: white;
+    }
+}
+
+// ANIMACIÓN NAV
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+nav.stroke ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+.activo {
+    font-weight: bold;
+    &:hover {
+        cursor: pointer;
+    }
+}

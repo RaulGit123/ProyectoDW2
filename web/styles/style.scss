@@ -1,4 +1,4 @@
-@import 'mixins.scss';
+@import 'comun.scss';
 
 body {
     font-family: Roboto Slab;
@@ -65,33 +65,5 @@ header {
         height: 14rem;
         border: 0.5rem solid rgba(0, 0, 0, 0.1);
         }
-    }
-}
-
-#mainNav {
-    @include navfondo;
-    @include transition();
-    img {
-        height: 6rem;
-        @include transition();
-    }
-    @media (min-width: 992px) {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-        border: none;
-        background-color: transparent;
-        transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
-        &.navbar-shrink {
-            @include navfondo;
-            img {
-                height: 4rem;
-            }
-        }
-        li a {
-            padding-right: 2em;
-        }
-    }
-    li a {
-        color: white;
     }
 }

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles/menu.css">
 </head>
 <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="index.php"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,13 +29,13 @@
                         }
                         if (!empty($_SESSION["NombreUsuario"])){
                            ?>  
-                            <li class="nav-item"><a class="nav-link" href="#page-top">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                            <li class="nav-item"><a class="nav-link activo">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                             <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../controlador/CtrlSalir.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
                         }else {
                             ?>
-                            <li class="nav-item"><a class="nav-link" href="#page-top">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                            <li class="nav-item"><a class="nav-link">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                             <li class="nav-item"><a class="nav-link" href="../vista/principal.php">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../vista/principal.php">Book Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
@@ -75,15 +75,6 @@
     include_once('../config/CreacionJSON.php');
     ?>
     <script type="module" src="menu.js"></script>
-    <script>
-        window.onscroll = function () { scrollFunction() };
-        function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.querySelector("nav").classList.add("navbar-shrink");
-            } else {
-                document.querySelector("nav").classList.remove("navbar-shrink");
-            }
-        }
-    </script>
+    <script src="comun.js"></script>
 </body>
 </html>

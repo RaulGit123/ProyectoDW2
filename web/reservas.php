@@ -20,7 +20,7 @@
 </head>
 
 <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="index.php"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
@@ -81,16 +81,7 @@
             </div>
     </footer>
 
-    <script>
-        window.onscroll = function () { scrollFunction() };
-        function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.querySelector("nav").classList.add("navbar-shrink");
-            } else {
-                document.querySelector("nav").classList.remove("navbar-shrink");
-            }
-        }
-    </script>
+    <script src="comun.js"></script>
 </body>
 
 </html>

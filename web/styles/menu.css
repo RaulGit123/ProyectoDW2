@@ -1,3 +1,75 @@
+#mainNav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #212529;
+  transition: 0.4s;
+}
+#mainNav img {
+  height: 6rem;
+  transition: 0.4s;
+}
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border: none;
+    background-color: transparent;
+    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #212529;
+  }
+  #mainNav.navbar-shrink img {
+    height: 4rem;
+  }
+  #mainNav li a {
+    margin-right: 2em;
+  }
+}
+#mainNav li a {
+  color: white;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all 0.5s;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+nav.stroke ul li a {
+  position: relative;
+}
+
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+.activo {
+  font-weight: bold;
+}
+.activo:hover {
+  cursor: pointer;
+}
+
 body {
   font-family: Roboto Slab;
   color: white;
@@ -54,40 +126,6 @@ header .btn {
   font-size: 1rem;
   font-weight: normal;
   max-width: 650px;
-}
-
-#mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: #212529;
-  transition: 0.4s;
-}
-#mainNav img {
-  height: 6rem;
-  transition: 0.4s;
-}
-@media (min-width: 992px) {
-  #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    border: none;
-    background-color: transparent;
-    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
-  }
-  #mainNav.navbar-shrink {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #212529;
-  }
-  #mainNav.navbar-shrink img {
-    height: 4rem;
-  }
-  #mainNav li a {
-    padding-right: 2em;
-  }
-}
-#mainNav li a {
-  color: white;
 }
 
 #carta {
