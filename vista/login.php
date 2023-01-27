@@ -17,7 +17,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="web/styles/style.css">
-
+    <link rel="shortcut icon" href="web/img/logo2.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
@@ -30,7 +30,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="web/img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href="../index.php"><img src="web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 
                 <i class="fas fa-bars ms-1"></i>
@@ -128,32 +128,8 @@
 
             <br><br>     <br><br>     <br><br>     <br><br>     <br><br>
 
-    <footer class="bg-dark text-center text-white">
-        <div class="container p-4">
-            <section class="mb-4">
-                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-                        class="fab fa-instagram"></i></a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-linkedin"></i></a>
-            </section>
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                Contact us at: <a class="text-light" href="mailto:nigirijapan@gmail.com">nigirijapan@gmail.com</a> | <a
-                    class="text-light" href="tel:+34963123456">963 12 34 56</a> | <a class="text-light"
-                    href="https://goo.gl/maps/x7VUrEzaKU3dV3cV8">C/D'Alberic 18, 46008 València</a>
-            </div>
-    </footer>
-    <script>
-        window.onscroll = function () { scrollFunction() };
-        function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.querySelector("nav").classList.add("navbar-shrink");
-            } else {
-                document.querySelector("nav").classList.remove("navbar-shrink");
-            }
-        }
-    </script>
+    
+    <script src="web/comun.js"></script>
     <script src="validate-forms.js"></script>
     </body>
 
