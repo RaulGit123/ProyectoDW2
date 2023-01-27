@@ -112,6 +112,7 @@ header .btn {
 
 .masthead-subheading {
   font-size: 1.2rem;
+  padding: 0 5px;
 }
 @media (min-width: 768px) {
   .masthead-subheading {

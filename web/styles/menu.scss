@@ -34,6 +34,7 @@ header {
 
 .masthead-subheading {
     @include font-size-diff(1.2rem, 1.75rem);
+    padding:0 5px;
 }
 
 .section-heading {
