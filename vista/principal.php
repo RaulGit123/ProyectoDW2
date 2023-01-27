@@ -73,5 +73,5 @@
                             header('Location: vista/paginaUsuario.php');
                         }
                         ?>
-                        <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
+                       
      
