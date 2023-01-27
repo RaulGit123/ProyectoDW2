@@ -1,3 +1,8 @@
+.bg-dar {
+  opacity: 1;
+  background-color: rgba(69, 88, 106, 0.2) !important;
+}
+
 .card {
   padding-bottom: 50px;
 }
@@ -16,6 +21,7 @@ h4 {
 .people {
   color: white;
   font-size: 30px;
+  font-family: Roboto Slab;
 }
 
 .peopleselected {
@@ -48,6 +54,7 @@ h4 {
   height: 50px;
   border-radius: 10%;
   font-size: 30px;
+  background-color: rgb(208, 216, 239);
 }
 
 .fecha {
@@ -66,14 +73,16 @@ h4 {
 .item {
   background-color: rgba(255, 255, 255, 0.7);
   margin: 20px;
-  font-size: 50px;
-  width: 200px;
+  font-size: 60px;
+  width: 110px;
+  height: 120px;
+  font-size: 28pt;
 }
 
 body {
   font-family: Roboto Slab;
   color: white;
-  background-image: url("../img/fondo-negro.jpg");
+  background-image: url("../img/fondo-negro-seamless.jpg");
 }
 
 .text-uppercase {
@@ -88,7 +97,7 @@ header {
   text-align: center;
   padding-top: 10.5rem;
   padding-bottom: 6rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/restaurante.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/restaurante.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -181,10 +190,4 @@ header .btn {
 }
 #mainNav li a {
   color: white;
-}
-
-@media (max-width: 767px) {
-  .card {
-    padding-bottom: 100px;
-  }
 }/*# sourceMappingURL=book.css.map */

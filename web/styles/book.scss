@@ -1,4 +1,8 @@
 @import 'mixins.scss';
+.bg-dar{
+    opacity: 1;
+    background-color: #45586a33 !important;
+}
 .card{
 padding-bottom:50px;
 }
@@ -10,10 +14,12 @@ padding-bottom:50px;
 }
 h4{
     font-size: 40px;
+    
 }
 .people{
     color:white;
     font-size: 30px;
+    font-family: Roboto Slab;
 }
 .peopleselected{
     // width: 100px;
@@ -36,7 +42,7 @@ h4{
     width: 100px;
     height: 50px;
     border-radius: 10%;
-    background-color:rgba(208, 216, 239, 100);
+     background-color:rgba(208, 216, 239, 100);
     font-size: 30px;
   }
   .btoMe {
@@ -44,6 +50,7 @@ h4{
     height: 50px;
     border-radius: 10%;
     font-size: 30px;
+    background-color:rgba(208, 216, 239, 100);
   }
 
 .fecha{
@@ -62,15 +69,17 @@ h4{
 .item{
     background-color: rgba(255, 255, 255, 0.7);
     margin:20px;
-    font-size: 50px;
-    width:200px;
+    font-size: 60px;
+    width:110px;
+    height:120px;
+    font-size: 28pt;
 }
 
 
 body {
     font-family: Roboto Slab;
     color: white;
-    background-image: url("../img/fondo-negro.jpg");
+    background-image: url("../img/fondo-negro-seamless.jpg");
 }
 
 .text-uppercase {
@@ -85,7 +94,7 @@ header {
     text-align: center;
     padding-top: 10.5rem;
     padding-bottom: 6rem;
-    @include oscurecer-img(0.6,"../img/restaurante.jpg");
+    @include oscurecer-img(0.5,"../img/restaurante.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -164,8 +173,4 @@ header {
     }
 }
 
-@media (max-width:767px){
-    .card{
-        padding-bottom:100px;
-        }
-    }
+
