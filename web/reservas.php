@@ -39,7 +39,7 @@
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                             <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="#page-top">Book Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../controlador/CtrlSalir.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
+                            <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
                         }else {
                             ?>
                             <li class="nav-item"><a class="nav-link" href="#page-top">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
@@ -62,7 +62,8 @@
                     <div class=" font-italic text-uppercase">People</div>
 
 </div>
-    <footer class="bg-dark text-center text-white">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer class="bg-dark text-center text-white" id="pie">
         <div class="container p-4">
             <section class="mb-4">
                 <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i

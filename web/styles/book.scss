@@ -33,6 +33,11 @@ header {
     // }
 }
 
+#pie{
+    position: absolute;
+    bottom: 0;
+}
+
 .masthead-heading {
     @include font-size-diff(3.25rem, 4.5rem);
     line-height: 4.5rem;
