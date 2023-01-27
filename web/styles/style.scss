@@ -30,6 +30,10 @@ header {
 .masthead-heading {
     @include font-size-diff(3.25rem, 4.5rem);
     line-height: 4.5rem;
+@media (min-width:0px) and (max-width:425px){
+    font-size:2.5rem;
+}
+
 }
 
 .masthead-subheading {

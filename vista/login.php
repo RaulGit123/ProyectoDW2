@@ -9,11 +9,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="web/styles/menu.css">
     <link rel="stylesheet" href="web/styles/pag_principal.css">
     <link rel="stylesheet" href="web/styles/login.css">
+    <link rel="shortcut icon" href="web/img/logo2.png" type="image/x-icon">
+
 </head>
 
 
@@ -121,32 +124,8 @@
 
             <br><br>     <br><br>     <br><br>     <br><br>     <br><br>
 
-    <footer class="bg-dark text-center text-white">
-        <div class="container p-4">
-            <section class="mb-4">
-                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-                        class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-                        class="fab fa-instagram"></i></a>
-                <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i class="fab fa-linkedin"></i></a>
-            </section>
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                Contact us at: <a class="text-light" href="mailto:nigirijapan@gmail.com">nigirijapan@gmail.com</a> | <a
-                    class="text-light" href="tel:+34963123456">963 12 34 56</a> | <a class="text-light"
-                    href="https://goo.gl/maps/x7VUrEzaKU3dV3cV8">C/D'Alberic 18, 46008 València</a>
-            </div>
-    </footer>
-    <script>
-        window.onscroll = function () { scrollFunction() };
-        function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.querySelector("nav").classList.add("navbar-shrink");
-            } else {
-                document.querySelector("nav").classList.remove("navbar-shrink");
-            }
-        }
-    </script>
+    
+    <script src="web/comun.js"></script>
     <script src="validate-forms.js"></script>
     </body>
 
