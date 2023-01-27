@@ -120,7 +120,7 @@ Insert Into `Mesa` (Estado) VALUES ("vacia");
 Insert Into `Mesa` (Estado) VALUES ("vacia");
 
 INSERT INTO `usuarios`(IdUsuarios, NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol) VALUES 
-('1','Admin','Hugo','Duran García','Admin','hugoduran@gmail.com','c/SoyTuJefe','Cádiz','1')
+("1","Admin","Hugo","Duran García","Admin","hugoduran@gmail.com","c/SoyTuJefe","Cádiz","1");
 
 Insert Into `Roles` (NombreRol) VALUES ("Admin");
 Insert Into `Roles` (NombreRol) VALUES ("Usuario");
