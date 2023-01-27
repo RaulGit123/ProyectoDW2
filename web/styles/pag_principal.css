@@ -76,6 +76,7 @@ nav.stroke ul li a:hover:after {
 body {
   font-family: Roboto Slab;
   color: white;
+  background-image: url(../img/fondo-negro.jpg);
 }
 
 .text-uppercase {
