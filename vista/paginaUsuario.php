@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../web/styles/pag_principal.css">
 </head>
 <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="index.php"><img src="../web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
                 <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                 <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
                 <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
-                <li class="nav-item"><a class="nav-link" href="#page-top"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li>
+                <li class="nav-item"><a class="nav-link activo" href="#page-top"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li>
             <?php }?>
                            
            </ul>
@@ -48,7 +48,7 @@
     </nav>
     <header class="masthead">
        
-        <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri ".$_SESSION["NombreUsuario"];?></div>
+        <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
             <div class="masthead-subheading font-italic">Que deseas? Quizá una reserva? o mejor te lo traemos a casa?</div>
             <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/pedidos.php">Realizar pedido</a>
             <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/reservas.php">Reservar mesa</a>

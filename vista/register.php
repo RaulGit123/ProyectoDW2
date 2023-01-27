@@ -123,7 +123,7 @@ $listaProvincias = trim($_POST["provincia"]);
             $param_direccion = $direccion;
             $param_provincia = $listaProvincias;
             $param_mail =$mail;
-            $rol=2;
+            $rol = 2;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -170,7 +170,7 @@ $listaProvincias = trim($_POST["provincia"]);
 <body id="page-top">
 
 <!-- navigator -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="../web/img/logo2.png" alt="logo" /></a>

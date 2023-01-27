@@ -7,7 +7,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="../web/styles/login.css">
+	<!-- <link rel="stylesheet" href="../web/styles/login.css"> -->
     
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="../web/styles/pag_principal.css">
 </head>
 <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="#page-top"><img src="../web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,9 +38,9 @@
                         include_once("../modelo/Login.php");
                         ?>
                            
-                            <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-                            <li class="nav-item"><a class="nav-link" href="#page-top">Order Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#page-top">Book Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li>
+                            <li class="nav-item"><a class="nav-link aqui" href="#page-top">Order Now</a></li> <!--AÑADIR JS FLASH-->
+                            <li class="nav-item"><a class="nav-link aqui" href="#page-top">Book Now</a></li> <!--AÑADIR JS FLASH-->
                             <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li>
                             
                             </ul>
@@ -51,7 +51,7 @@
         <div class="px-0 container">
         <div class="mt-3 masthead-heading text-uppercase">Bienvenido a Nigiri</div>
             <div class="masthead-subheading font-italic">Entra con tu usuario y disfruta de tu pedido en casa.</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../hugo.php">Entrar</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
+            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../hugo.php">Entrar</a>
         </div>
     </header>
 
@@ -81,16 +81,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        window.onscroll = function () { scrollFunction() };
-        function scrollFunction() {
-            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                document.querySelector("nav").classList.add("navbar-shrink");
-            } else {
-                document.querySelector("nav").classList.remove("navbar-shrink");
-            }
-        }
-    </script>
+    <script src="../web/comun.js"></script>
 </body>
 </html>
                             
