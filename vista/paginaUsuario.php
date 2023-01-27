@@ -39,7 +39,7 @@
                 <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                 <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
                 <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
-                <li class="nav-item"><a class="nav-link activo" href="#page-top"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li>
+                <li class="nav-item"><a class="nav-link activo"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li>
             <?php }?>
                            
            </ul>

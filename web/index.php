@@ -57,7 +57,7 @@
         <div class="px-0 container">
             <div class="masthead-subheading font-italic">El mejor restaurante japonés de València</div>
             <div class="mt-3 mx-1 masthead-heading text-uppercase">Bienvenido a Nigiri</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="#aboutus">Ver carta</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
+            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="menu.php">Ver carta</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
         </div>
     </header>
     <section class="p-5 page-section" id="aboutus"> <!--id services-->

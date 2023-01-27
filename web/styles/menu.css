@@ -133,24 +133,45 @@ header .btn {
 
 #carta {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/fondo-negro-seamless.jpg");
-  padding: 4rem;
+  padding: 1rem;
+}
+@media (min-width: 400px) {
+  #carta {
+    padding: 3rem;
+  }
 }
 @media (min-width: 1044px) {
   #carta {
     padding: 4rem 9rem;
   }
 }
+#carta .seccion-carta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 #carta .seccion-carta:not(:last-child) {
   margin-bottom: 4rem;
 }
 #carta .seccion-carta h1 {
   padding-bottom: 2rem;
+  text-align: center;
+}
+@media (min-width: 769px) {
+  #carta .seccion-carta h1 {
+    text-align: left;
+  }
 }
 #carta .seccion-carta .card {
   background-color: rgba(255, 255, 255, 0.1);
   padding-top: 2rem;
   display: inline-block;
-  margin: 0 2rem 2rem 0;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  #carta .seccion-carta .card {
+    margin: 0 2rem 2rem 0;
+  }
 }
 #carta .seccion-carta .card img {
   display: flex;
@@ -172,7 +193,6 @@ header .btn {
 }
 @media (max-width: 768px) {
   #carta .seccion-carta .card {
-    margin: auto;
     display: flex;
     margin-bottom: 2rem;
   }

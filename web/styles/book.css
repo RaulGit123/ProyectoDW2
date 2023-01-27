@@ -75,11 +75,11 @@ nav.stroke ul li a:hover:after {
 
 .bg-dar {
   opacity: 1;
-  background-color: rgba(69, 88, 106, 0.2) !important;
 }
 
 .card {
   padding-bottom: 50px;
+  background-color: transparent;
 }
 
 .card-title {
@@ -109,7 +109,7 @@ h4 {
   background-color: white;
   color: black;
   margin: 10px;
-  width: 100px;
+  width: 80px;
   height: 50px;
   border-radius: 10%;
   font-size: 30px;
@@ -135,7 +135,7 @@ h4 {
 .fecha {
   font-size: 30px;
   padding: 10px;
-  width: 300px;
+  width: 250px;
   height: 50px;
 }
 
@@ -156,7 +156,7 @@ h4 {
 body {
   font-family: Roboto Slab;
   color: white;
-  background-image: url("../img/fondo-negro-seamless.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/fondo-negro-seamless.jpg");
 }
 
 .text-uppercase {
@@ -243,6 +243,13 @@ header .btn {
     flex-wrap: wrap;
     justify-content: center;
   }
+  .item {
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 20px;
+    font-size: 25pt;
+    width: 99px;
+    height: 99px;
+  }
 }
 @media (min-width: 768px) {
   .item {
@@ -257,5 +264,15 @@ header .btn {
     padding: 10px;
     width: 400px;
     height: 50px;
+  }
+  .cantidad {
+    background-color: white;
+    color: black;
+    margin: 10px;
+    width: 140px;
+    height: 50px;
+    border-radius: 10%;
+    font-size: 30px;
+    margin: 0;
   }
 }/*# sourceMappingURL=book.css.map */

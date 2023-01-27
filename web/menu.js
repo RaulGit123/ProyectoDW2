@@ -39,8 +39,8 @@ function quitarExtension(str) {
 
 tipos.forEach(tipo => {
     let div1 = createElementFromHTML('<div class="seccion-carta"></div>');
-    let h1 = createElementFromHTML('<h1 class="text-uppercase">'+tipo+'</h1>');
-    div1.appendChild(h1);
+    let h1 = createElementFromHTML('<h1 class=" text-center text-uppercase">'+tipo+'</h1>');
+    // div1.appendChild(h1);
     lista.forEach(plato => {
         if (plato.tipo == tipo) {
             let div2 = createElementFromHTML('<div class="card" style="width: 18rem;"></div>');
@@ -60,5 +60,6 @@ tipos.forEach(tipo => {
             div1.appendChild(div2);
         }
     });
+    document.querySelector("#carta").appendChild(h1);
     document.querySelector("#carta").appendChild(div1);
 });

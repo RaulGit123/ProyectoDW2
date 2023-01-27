@@ -1,10 +1,13 @@
 @import 'comun.scss';
 .bg-dar{
     opacity: 1;
-    background-color: #45586a33 !important;
+    // background-color: #45586a33 !important;
+    // background-image: "../img/fondo-negro-seamless.jpg";
+    
 }
 .card{
 padding-bottom:50px;
+background-color: transparent;
 }
 .card-title{
     color:white; 
@@ -32,7 +35,7 @@ h4{
     background-color: white;
     color: black;
     margin: 10px;
-    width: 100px;
+    width: 80px;
     height: 50px;
     border-radius: 10%;
     font-size: 30px;
@@ -56,7 +59,7 @@ h4{
 .fecha{
     font-size: 30px;
     padding:10px;
-    width: 300px;
+    width: 250px;
     height: 50px;
 }
 
@@ -78,7 +81,7 @@ h4{
 body {
     font-family: Roboto Slab;
     color: white;
-    background-image: url("../img/fondo-negro-seamless.jpg");
+   @include oscurecer-img(0.4,"../img/fondo-negro-seamless.jpg");
 }
 
 .text-uppercase {
@@ -155,6 +158,13 @@ header {
         flex-wrap: wrap;
         justify-content: center;
       }
+      .item{
+        background-color: rgba(255, 255, 255, 0.7);
+        margin:20px;
+        font-size: 25pt;
+        width:99px;
+        height:99px;
+    }
 }
 //media tablet
 @media(min-width: 768px){
@@ -171,5 +181,14 @@ header {
         width: 400px;
         height: 50px;
     }
-
+    .cantidad {
+        background-color: white;
+        color: black;
+        margin: 10px;
+        width: 140px;
+        height: 50px;
+        border-radius: 10%;
+        font-size: 30px;
+        margin:0;
+      }
 }

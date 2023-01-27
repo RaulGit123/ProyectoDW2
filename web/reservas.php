@@ -43,6 +43,7 @@
                             <li class="nav-item"><a class="nav-link activo">Book Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
                         }else {
+                            header("location:../vista/principal.php");
                             ?>
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                             <li class="nav-item"><a class="nav-link" href="../hugo.php">Order Now</a></li>

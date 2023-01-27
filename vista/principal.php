@@ -18,7 +18,7 @@
 <body id="page-top">
     <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="../web/img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href="../web/index.php"><img src="../web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 
                 <i class="fas fa-bars ms-1"></i>
