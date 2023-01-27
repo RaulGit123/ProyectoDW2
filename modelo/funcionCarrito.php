@@ -12,7 +12,7 @@ function eliminarComida($IdComida)
 function guardarComida($Nombre, $Precio, $Descripcion)
 {
     $con = Conexion::getConection();
-    $sql = $con->prepare("INSERT INTO Comida(Nombre, Precio, Descripción) VALUES(?, ?, ?)");
+    $sql = $con->prepare("INSERT INTO Comida(Nombre, Precio, Descripcion) VALUES(?, ?, ?)");
     return $sql->execute([$Nombre, $Precio, $Descripcion]);
 }
 
@@ -20,7 +20,7 @@ function guardarComida($Nombre, $Precio, $Descripcion)
 //ejemplo seleccion comida
 
 $con = Conexion::getConection();
-$sql = "SELECT IdComida , Nombre , Descripción , Precio FROM Comida";
+$sql = "SELECT IdComida , Nombre , Descripcion , Precio FROM Comida";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
 $results = $query -> fetchAll(PDO::FETCH_OBJ); 
@@ -30,7 +30,7 @@ foreach($results as $result) {
 echo "<tr>
 <td>".$result -> IdComida."</td>
 <td>".$result -> Nombre."</td>
-<td>".$result -> Descripción."</td>
+<td>".$result -> Descripcion."</td>
 <td>".$result -> Precio."</td>
 </tr>";
 
@@ -40,7 +40,7 @@ echo "<tr>
 
  function mostrarComida($IdComida){
     $con = Conexion::getConection(); 
-    $sql = "SELECT IdComida , Nombre , Descripción , Precio FROM Comida WHERE IdComida = :IdComida";
+    $sql = "SELECT IdComida , Nombre , Descripcion , Precio FROM Comida WHERE IdComida = :IdComida";
     $query = $con -> prepare($sql); 
     $_array = array(
         ":IdComida" =>  $IdComida
@@ -55,7 +55,7 @@ echo "<tr>
 function mostraComida(){
     $rows = null;
     $con = Conexion::getConection(); 
-    $sql = "SELECT IdComida , Nombre , Descripción , Precio FROM Comida ";
+    $sql = "SELECT IdComida , Nombre , Descripcion , Precio FROM Comida ";
     $query = $con -> prepare($sql); 
     $query->execute();
     while($result=$query->fetch())
@@ -70,7 +70,7 @@ function mostraComida(){
 
 
 
+eliminarComida(13);
 
-mostraComida();
 
 ?>
