@@ -41,13 +41,8 @@
                         if (!empty($_SESSION["NombreUsuario"])){
                            ?>  
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-<<<<<<< HEAD
                             <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link activo">Book Now</a></li>
-=======
-                            <li class="nav-item"><a class="nav-link activo" href="pedidos.php">Order Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
->>>>>>> registroMod
                             <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
                         }else {
                             ?>
