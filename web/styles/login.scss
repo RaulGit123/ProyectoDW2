@@ -1,0 +1,99 @@
+body{
+    background-image: url("../img/fondo-negro.jpg");
+}
+
+#prueba{
+    opacity: 1;
+ 
+}
+
+.card-title{
+    max-width: 400px;
+}
+
+.bg-dar{
+    opacity: 1;
+    background-color: #45586a33 !important;
+}
+
+
+
+
+
+
+h4{
+    color: white;
+}
+.text-uppercase {
+    font-family: Montserrat;
+  }
+
+@import 'comun.scss';
+
+body {
+    font-family: Roboto Slab;
+    color: white;
+}
+
+.text-uppercase {
+    font-family: Montserrat;
+}
+
+h1, h2, h3, h4, .masthead-heading, .btn {
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    background-image: url("../img/header-bg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    .btn {
+        background-color: #c00003;
+    }
+}
+
+.masthead-heading {
+    @include font-size-diff(3.25rem, 4.5rem);
+    line-height: 4.5rem;
+}
+
+.masthead-subheading {
+    @include font-size-diff(1.5rem, 2.25rem);
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.section-subheading {
+    font-size: 1rem;
+    font-weight: normal;
+    max-width: 650px;
+}
+
+#aboutus {
+    background-image: url(../img/fondo-negro.jpg);
+}
+
+#team {
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #030303 50%, #593002 100%);
+    .team-member {
+        text-align: center;
+        h4 {
+            margin-top: 10px;
+        }
+        img {
+        width: 14rem;
+        height: 14rem;
+        border: 0.5rem solid rgba(0, 0, 0, 0.1);
+        }
+    }
+}

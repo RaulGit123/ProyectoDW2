@@ -1,3 +1,78 @@
+#mainNav {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #212529;
+  transition: 0.4s;
+}
+#mainNav img {
+  height: 6rem;
+  transition: 0.4s;
+}
+@media (min-width: 992px) {
+  #mainNav {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border: none;
+    background-color: transparent;
+    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+  }
+  #mainNav.navbar-shrink {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #212529;
+  }
+  #mainNav.navbar-shrink img {
+    height: 4rem;
+  }
+  #mainNav li a {
+    margin-right: 2em;
+  }
+}
+#mainNav.navbar-shrink li a.activo {
+  background-color: white;
+  color: #212529;
+}
+#mainNav li a {
+  color: white;
+}
+#mainNav li a.activo {
+  font-weight: bold;
+}
+#mainNav li a.activo:hover {
+  cursor: pointer;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all 0.5s;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+nav.stroke ul li a {
+  position: relative;
+}
+
+nav.stroke ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
 .bg-dar {
   opacity: 1;
   background-color: rgba(69, 88, 106, 0.2) !important;
@@ -161,38 +236,4 @@ header .btn {
   width: 14rem;
   height: 14rem;
   border: 0.5rem solid rgba(0, 0, 0, 0.1);
-}
-
-#mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: #212529;
-  transition: 0.4s;
-}
-#mainNav img {
-  height: 6rem;
-  transition: 0.4s;
-}
-@media (min-width: 992px) {
-  #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    border: none;
-    background-color: transparent;
-    transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
-  }
-  #mainNav.navbar-shrink {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #212529;
-  }
-  #mainNav.navbar-shrink img {
-    height: 4rem;
-  }
-  #mainNav li a {
-    padding-right: 2em;
-  }
-}
-#mainNav li a {
-  color: white;
 }/*# sourceMappingURL=book.css.map */
