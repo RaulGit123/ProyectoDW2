@@ -43,13 +43,8 @@
                         }else {
                             ?>
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-<<<<<<< HEAD
-                            <li class="nav-item"><a class="nav-link activo" href="../vista/principal.php">Order Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../vista/principal.php">Book Now</a></li>
-=======
                             <li class="nav-item"><a class="nav-link" href="../hugo.php">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../hugo.php">Book Now</a></li>
->>>>>>> registroMod
                             <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
                         }
                         ?>
