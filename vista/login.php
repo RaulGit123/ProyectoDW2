@@ -43,11 +43,11 @@
         </div>
     </nav>
 
-    <br><br> <br><br>     <br><br>
+    
 <!-- navigator -->
 
 
-<div class="container">
+<div class="container caja1">
 <br>  
 <!-- <p class="text-center" style="color:white;">Logo</p> -->
 <hr>
@@ -122,7 +122,7 @@
         </div>    
         </div>
 
-            <br><br>     <br><br>     <br><br>     <br><br>     <br><br>
+           
 
     
     <script src="web/comun.js"></script>
