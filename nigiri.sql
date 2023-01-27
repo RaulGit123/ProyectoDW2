@@ -119,11 +119,12 @@ Insert Into `Mesa` (Estado) VALUES ("vacia");
 Insert Into `Mesa` (Estado) VALUES ("vacia");
 Insert Into `Mesa` (Estado) VALUES ("vacia");
 
-INSERT INTO `usuarios`(IdUsuarios, NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol) VALUES 
-("1","Admin","Hugo","Duran García","Admin","hugoduran@gmail.com","c/SoyTuJefe","Cádiz","1");
 
-Insert Into `Roles` (NombreRol) VALUES ("Admin");
-Insert Into `Roles` (NombreRol) VALUES ("Usuario");
+Insert Into Roles (NombreRol) VALUES ("Admin");
+Insert Into Roles (NombreRol) VALUES ("Usuario");
+
+ INSERT INTO usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol) VALUES 
+ ("Admin","Hugo","Duran García","Admin","hugoduran@gmail.com","c/SoyTuJefe","Cádiz","1");
 
 /*Las secciones serán Entrantes, Ramen, Postres y Bebidas*/
 Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Gyoza","Gyoza is made from a thinly rolled dough filled with ground meat and vegetables, which can then be boiled and served hot with a dash of black vinegar and sesame oil or in a soup.",
