@@ -113,7 +113,7 @@ $listaProvincias = trim($_POST["provincia"]);
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssssii", $param_username,$param_name,$param_apellidos,$param_password,$param_mail,$param_direccion,$param_provincia,$rol);
+            mysqli_stmt_bind_param($stmt, "sssssssi", $param_username,$param_name,$param_apellidos,$param_password,$param_mail,$param_direccion,$param_provincia,$rol);
             
             // Set parameters
             $param_username = $NombreUsuario;
@@ -123,6 +123,7 @@ $listaProvincias = trim($_POST["provincia"]);
             $param_direccion = $direccion;
             $param_provincia = $listaProvincias;
             $param_mail =$mail;
+            $rol=2;
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
