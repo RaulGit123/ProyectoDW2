@@ -28,8 +28,18 @@
     margin-right: 2em;
   }
 }
+#mainNav.navbar-shrink li a.activo {
+  background-color: white;
+  color: #212529;
+}
 #mainNav li a {
   color: white;
+}
+#mainNav li a.activo {
+  font-weight: bold;
+}
+#mainNav li a.activo:hover {
+  cursor: pointer;
 }
 
 nav ul li a,
@@ -61,14 +71,6 @@ nav.stroke ul li a:after {
 
 nav.stroke ul li a:hover:after {
   width: 100%;
-}
-
-.activo {
-  color: red;
-  font-weight: bold;
-}
-.activo:hover {
-  cursor: pointer;
 }
 
 body {
