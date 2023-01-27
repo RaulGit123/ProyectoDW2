@@ -40,7 +40,7 @@
                            
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                             <li class="nav-item"><a class="nav-link" href="#page-top">Order Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#page-top">Book Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li>
                             
                             </ul>
