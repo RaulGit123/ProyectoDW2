@@ -67,13 +67,14 @@
         <section class="card bg-dar">
         <!-- Cuanta gente va a acudir  -->
         <div class="card-body mx-auto articulo" id="bg-article"> 
-        <h4 class="card-title mt-3 text-center text-uppercase">Booking</h4>
+        <h4 class="card-title mt-3 text-center text-uppercase booking">Booking</h4>
         <p class="text-center text-uppercase people">People</p>
      <div class="peopleselected ">
      <button class="btoMa" name="button">+</button>
      <div class="cantidad text-center">0</div>
      <button class="btoMe" name="button">-</button>
     </div>
+    <div class="mt-2 d-none font-italic mal" id="resp">No puedes hacer una reserva de menos de 2 personas</div>
                 </div>
             <!-- La fecha en la cual van a acudir -->
             <div class="card-body mx-auto articulo" id="bg-article">
@@ -81,14 +82,14 @@
      <div class="dateselected ">
      <input type="date"class="text-center fecha" size="20"/>
     </div>
+    <div class="mt-2 d-none font-italic mal" id="respf">Tienes que seleccionar una fecha correcta</div>
             </div>
             <!-- La hora a la que quieren acudir(y puedan) -->
             <div class="card-body mx-auto articulo" id="bg-article">
             <p class="text-center text-uppercase people">Hours available</p>
      <div class="hourselected grid">
      <button class="item text-center">
-             <div class="horas">13:30</div>
-             <div class="horas">15:00</div>           
+             <div class="horas">13:30 15:00</div>          
                     </button>
      <button class="item text-center">
              <div class="horas">15:00</div>
@@ -111,19 +112,16 @@
              <div class="horas">22:30</div>           
      </button>
     </div>
+    <div class="mt-2 d-none font-italic mal" id="resph">Tienes que seleccionar una hora</div>
             </div>
     </section>
 
     <div class="contenedor" id="contenedor">
-  <button class="centrado masthead-subheading">Acabar Reserva</button>
-  <div class="mt-2 d-none" id="resp">No puedes hacer una reserva de menos de 2 personas</div>
-  <div class="mt-2 d-none" id="respf">Tienes que seleccionar una fecha</div>
-  <div class="mt-2 d-none" id="resph">Tienes que seleccionar una hora</div>
+  <button class="centrado masthead-subheading font-italic btn-danger">Acabar Reserva</button>
 </div>
 
 <div class="respuesta"></div>
     <script src="comun.js"></script>
     <script src="reservas.js"></script>
 </body>
-
 </html>
