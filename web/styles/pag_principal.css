@@ -114,10 +114,16 @@ header .btn {
 }
 
 .masthead-heading {
-  font-size: 3.25rem;
+  font-size: 2.2rem;
   line-height: 4.5rem;
 }
 
+@media (min-width: 375px) {
+  .masthead-heading {
+    font-size: 3.25rem;
+    line-height: 4.5rem;
+  }
+}
 @media (min-width: 768px) {
   .masthead-heading {
     font-size: 4.5rem;
