@@ -244,22 +244,21 @@ $listaProvincias = trim($_POST["provincia"]);
 	<!-- form-group// -->
     
     <!-- form group -->
+
     <div class="form-group input-group <?php echo (!empty($mail_err)) ? 'has-error' : ''; ?>">
 
 <div class="input-group-prepend">
 
 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 
-</div>
+
+
 </div>
 
     <input type="email" name="email" class="form-control is-invalid" placeholder="E-mail" value="<?php echo $mail; ?>">
    
     <span class="invalid-feedback"><?php echo $mail_err; ?></span>
-    <input type="email" name="email" class="form-control is-invalid" placeholder="E-mail" value="<?php echo $mail; ?>">
-   
-    <span class="invalid-feedback"><?php echo $mail_err; ?></span>
+
 
 </div>    
 
