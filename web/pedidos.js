@@ -49,7 +49,7 @@ tipos.forEach(tipo => {
     let div1 = createElementFromHTML('<div class="px-0 container"></div>');
     let txtDiv2 = '<div class="masthead-subheading font-italic text-uppercase">'+tipo+'</div>';
     let div2 = createElementFromHTML(txtDiv2);
-    div1.appendChild(div2);
+    // div1.appendChild(div2);
     lista.forEach(plato => {
         if (plato.tipo == tipo) {
             let div3 = createElementFromHTML('<div class="grid"></div>');
@@ -64,6 +64,7 @@ tipos.forEach(tipo => {
             div1.appendChild(div3);
         }
     });
+    document.querySelector("header").appendChild(div2);
     document.querySelector("header").appendChild(div1);
 });
 

@@ -57,21 +57,23 @@
         </div>
     </nav>
     <section class="p-2 page-section" id="aboutus">
-        <div class="container">
+        <div class="container principal">
             <header class="masthead">
                 
             </header>
-            <div id="carrito">
-                <h1>Resumen de carrito</h1>
-                
-            </div>
-            <div id="total">
-                <h1>TOTAL</h1>
-                <div id="precioFinal">0,00€</div>
-                <button class="btn-info">Finalizar</button>
+            <div></div>
+            <div id="zonaCarrito">
+                <div id="carrito">
+                    <h1>Resumen de carrito</h1>
+                    
+                </div>
+                <div id="total">
+                    <h1>TOTAL</h1>
+                    <div id="precioFinal">0,00€</div>
+                    <button class="btn-info">Finalizar</button>
+                </div>
             </div>
         </div>
-
     </section>
     <?php 
     include_once('../config/CreacionJSON.php');

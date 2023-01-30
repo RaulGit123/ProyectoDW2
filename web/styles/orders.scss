@@ -195,3 +195,15 @@ header {
     margin-bottom: 1em;
 }
 
+//CARRITO A LA DCHA EN PC
+
+@media (min-width: 768px) {
+    .principal {
+        display: grid;
+        grid-template-columns: 8fr 1fr 2fr;
+        #zonaCarrito {
+            padding-top: 10.5rem;
+            padding-bottom: 6rem;
+        }
+    }
+}

@@ -254,4 +254,15 @@ header .btn {
   justify-items: center;
   align-items: center;
   margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .principal {
+    display: grid;
+    grid-template-columns: 8fr 1fr 2fr;
+  }
+  .principal #zonaCarrito {
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+  }
 }/*# sourceMappingURL=orders.css.map */
