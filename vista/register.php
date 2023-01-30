@@ -30,6 +30,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             // Set parameters
             $param_username = trim($_POST["NombreUsuario"]);
+            if( preg_match("/^[A-Za-zÑñ]+[\s]+[A-Za-zÑñ]+/",$param_username)){
+                $username_err = "error nombre.";
+            } else{
+                $NombreUsuario = trim($_POST["NombreUsuario"]);
+            }
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -41,6 +46,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 } else{
                     $NombreUsuario = trim($_POST["NombreUsuario"]);
                 }
+                
+          
+
+
             } else{
                 echo "Al parecer algo salió mal.";
             }
@@ -64,7 +73,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $password_err = "Por favor ingresa una contraseña.";     
     } elseif(strlen(trim($_POST["Contraseña"])) < 6){
         $password_err = "La contraseña al menos debe tener 6 caracteres.";
-    } else{
+    } elseif(!preg_match("/[a-zA-Z0-9\*\_\-\$&\/\\+]/",trim($_POST["Contraseña"]))){
+        $password_err = "Introduzca una contraseña valida.";
+    }else{
         $Contraseña = trim($_POST["Contraseña"]);
     }
     
@@ -82,18 +93,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if(empty(trim($_POST["Nombre"]))){
         $name_err="porfavor , introduzca su nombre.";
+    }elseif(!preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["Nombre"]))&& !strlen(trim($_POST["Nombre"]))<=30){
+        $name_err="porfavor , introduzca nombre valido.";
     }else{
         $nombre = trim($_POST["Nombre"]);
     }
 
     if(empty(trim($_POST["apellidos"]))){
         $apellidos_err="porfavor , introduzca sus apellidos.";
+    }elseif(!preg_match("/^[A-Za-zÑñ]+[\s]+[A-Za-zÑñ]+/",trim($_POST["apellidos"]))&& strlen(trim($_POST["apellidos"]))<=50) {
+        $apellidos_err="porfavor, introduzca apellidos correctos";
     }else{
         $apellidos = trim($_POST["apellidos"]);
     }
 
     if(empty(trim($_POST["direccion"]))){
         $direccion_err="porfavor , introduzca una dirección.";
+    }elseif(!preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["direccion"]))&& strlen(trim($_POST["direccion"]))<=50){
+        $direccion_err="porfavor , escriba la dirección correcta.";
     }else{
         $direccion = trim($_POST["direccion"]);
     }
@@ -225,26 +242,26 @@ $listaProvincias = trim($_POST["provincia"]);
             </div>    
 
 	<!-- form-group// -->
+    
+    <!-- form group -->
+    <div class="form-group input-group <?php echo (!empty($mail_err)) ? 'has-error' : ''; ?>">
 
-            <div class="form-group  input-group<?php echo (!empty($mail_err)) ? 'has-error' : ''; ?>">
-               
-            <div class="input-group-prepend">
+<div class="input-group-prepend">
 
-            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+<span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 
-            </div>
+</div>
 
-                <input type="email" name="email" class="form-control  is-invalid" placeholder="E-mail" value="<?php echo $mail; ?>">
-             
-                <span class="invalid-feedback"><?php echo $mail_err; ?></span>
+    <input type="email" name="email" class="form-control is-invalid" placeholder="E-mail" value="<?php echo $mail; ?>">
+   
+    <span class="invalid-feedback"><?php echo $mail_err; ?></span>
 
-            </div>   
+</div>    
 
-            	<!-- form-group// -->
+<!-- form-group// -->
 
 
-            
-            	
+        
 
 
                 <div class="form-group input-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
