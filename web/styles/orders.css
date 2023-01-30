@@ -247,4 +247,11 @@ header .btn {
     height: 60px;
     border-radius: 50%;
   }
+}
+.elemento, #total {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 1em;
 }/*# sourceMappingURL=orders.css.map */

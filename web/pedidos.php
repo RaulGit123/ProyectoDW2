@@ -61,6 +61,15 @@
             <header class="masthead">
                 
             </header>
+            <div id="carrito">
+                <h1>Resumen de carrito</h1>
+                
+            </div>
+            <div id="total">
+                <h1>TOTAL</h1>
+                <div id="precioFinal">0,00€</div>
+                <button class="btn-info">Finalizar</button>
+            </div>
         </div>
 
     </section>
