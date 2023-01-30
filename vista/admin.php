@@ -1,3 +1,8 @@
+<?php
+      if (session_status()===PHP_SESSION_NONE){
+        session_start();
+    } ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,41 +19,47 @@
     <link rel="stylesheet" href="../web/styles/menu.css">
     <link rel="stylesheet" href="../web/styles/pag_principal.css">
     <link rel="shortcut icon" href="../web/img/logo2.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="../modelo/funcionCarrito.js"></script>
 </head>
 <body id="page-top">
     <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="../web/index.php"><img src="../web/img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index.php"><img src="../web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                
-                <i class="fas fa-bars ms-1"></i>
+                <i class="fas fa-bars my-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
+              
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
                    
 
-                    <?php
-               
-                    
-                        if (empty($_SESSION["NombreUsuario"])){
-                            
-                        include_once("../modelo/Login.php");
-                        ?>
+                   <?php
+              
+               if (!empty($_SESSION["NombreUsuario"])){
+               ?>  
+                <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
+                <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
+                <li class="nav-item"><a class="nav-link activo"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li>
+            <?php }?>
                            
-                            <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li>
-                            <li class="nav-item"><a class="nav-link aqui" href="#page-top">Order Now</a></li> <!--AÑADIR JS FLASH-->
-                            <li class="nav-item"><a class="nav-link aqui" href="#page-top">Book Now</a></li> <!--AÑADIR JS FLASH-->
-                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li>
-                            
-                            </ul>
+           </ul>
+                
             </div>
         </div>
-    </nav> 
+    </nav>
     <header class="masthead">
-        <div class="px-0 container">
-        <div class="mt-3 masthead-heading text-uppercase">Bienvenido a Nigiri</div>
-            <div class="masthead-subheading font-italic">Entra con tu usuario y disfruta de tu pedido en casa.</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../hugo.php">Entrar</a>
+       
+        <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
+            <div class="masthead-subheading font-italic">Administrador de nigiri</div>
+            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" onclick="eliminarComida()">Insertar plato</a>
+            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" onclick="eliminarComida()">eliminar plato</a>
+
+          
+
+            <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
+            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Salir</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
         </div>
     </header>
 
@@ -60,18 +71,7 @@
             </div>
         </div>
     </section>
- 
+    
     <script src="../web/comun.js"></script>
 </body>
 </html>
-                            
-                            
-                        
-                            <?php
-                            exit();
-                        }else {
-                            header('Location: vista/paginaUsuario.php');
-                        }
-                        ?>
-                       
-     
