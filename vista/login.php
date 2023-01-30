@@ -1,3 +1,19 @@
+<?php
+
+
+$NombreUsuario = $Contraseña  = "";
+$username_err = $password_err  = "";
+
+
+if(empty(trim($NombreUsuario))){
+    $username_err = "Por favor ingrese su usuario.";
+}
+if(empty(trim($Contraseña))){
+    $password_err = "Por favor ingrese su contraseña.";
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +79,7 @@
 	<!-- <p class="text-center text-uppercase " style="color:white;">Disfruta de tu pedido en casa.</p> -->
 
 
-    <form action="./controlador/CtrlLogin.php" method="POST" class="needs-validation" novalidate>
+    <form action="./controlador/CtrlLogin.php" method="POST" >
 
         
 
@@ -78,10 +94,11 @@
             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 
             </div>
-            <input type="text"  class="form-control" name="NombreUsuario" id="NombreUsuario" required placeholder="Nombre de Usuario"autofocus >
-            <div class="invalid-feedback">
-            Porfavor elige un nombre de usuario.
-            </div>
+         
+       
+            <input type="text" name="NombreUsuario" class="form-control is-invalid" placeholder="Nombre usuario" value="<?php echo $NombreUsuario; ?>">
+               
+            <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>
 
 
@@ -97,8 +114,9 @@
             </div>
 
 
-            <input type="password" class="form-control" name="Contraseña" id="Contraseña"placeholder="Contraseña">
-</div>
+            <input type="password" class="form-control is-invalid" name="Contraseña" id="Contraseña"placeholder="Contraseña"value="<?php echo $Contraseña; ?>">
+            <span class="invalid-feedback"><?php echo $password_err; ?></span>
+            </div>
 
 
             <!-- form-group// -->
