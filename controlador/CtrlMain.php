@@ -1,16 +1,16 @@
 <?php 
 
     session_start();
-    if (isset($_SESSION["NombreUsuario"]) && isset($_SESSION["Contraseña"])) {
+    if (isset($_SESSION["NombreUsuario"]) && isset($_SESSION["Contraseña"]) ) {
         
         require_once("modelo/Validar.php");
         $validar = new Validar();
         $validar->validarDatos();
 
-        //include_once("web/index.html");
-       include_once("vista/principal.php");
-        
-       //header("location:./web/index.html");
+        if($_SESSION["NombreUsuario"]=="admin"){
+                header('Location: vista/admin.php');}else{
+                include_once("vista/principal.php"); }
+            
      
     } else {
 
