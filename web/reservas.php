@@ -113,8 +113,15 @@
     </div>
             </div>
     </section>
-    
 
+    <div class="contenedor" id="contenedor">
+  <button class="centrado masthead-subheading">Acabar Reserva</button>
+  <div class="mt-2 d-none" id="resp">No puedes hacer una reserva de menos de 2 personas</div>
+  <div class="mt-2 d-none" id="respf">Tienes que seleccionar una fecha</div>
+  <div class="mt-2 d-none" id="resph">Tienes que seleccionar una hora</div>
+</div>
+
+<div class="respuesta"></div>
     <script src="comun.js"></script>
     <script src="reservas.js"></script>
 </body>

@@ -77,6 +77,24 @@ h4{
     height:100px;
 }
 
+// .botonReserva{
+//     display:flex;
+//     align-items: center;
+//     text-align: center;
+// }
+div.contenedor {
+    display: flex;
+    justify-content: center;
+    margin-bottom:50px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .centrado{
+    border-radius: 50%;
+    background-color: rgba(192, 0, 3, 100);
+    width: 300px;
+    height: 100px;
+  }
 
 body {
     font-family: Roboto Slab;
