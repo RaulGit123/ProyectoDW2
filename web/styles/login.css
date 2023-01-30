@@ -15,6 +15,10 @@ body {
   background-color: rgba(69, 88, 106, 0.2) !important;
 }
 
+.cajat {
+  margin-bottom: 2rem;
+}
+
 .caja1 {
   padding-top: 8.5rem;
   padding-bottom: 6rem;
@@ -161,22 +165,6 @@ header .btn {
   max-width: 650px;
 }
 
-#aboutus {
-  background-image: url(../img/fondo-negro.jpg);
-}
-
-#team {
-  background-color: transparent;
-  background-image: linear-gradient(180deg, #030303 50%, #593002 100%);
-}
-#team .team-member {
-  text-align: center;
-}
-#team .team-member h4 {
-  margin-top: 10px;
-}
-#team .team-member img {
-  width: 14rem;
-  height: 14rem;
-  border: 0.5rem solid rgba(0, 0, 0, 0.1);
+.custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid {
+  border-color: gainsboro;
 }/*# sourceMappingURL=login.css.map */
