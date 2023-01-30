@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nigiri -Bienvenido</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -23,7 +23,7 @@
 <body id="page-top">
     <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.php"><img src="../web/img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href="../index.php"><img src="../web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars my-1"></i>
             </button>
@@ -39,8 +39,17 @@
                 <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                 <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
                 <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
-                <li class="nav-item"><a class="nav-link activo"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li>
-            <?php }?>
+                <li class="nav-item"><a class="nav-link activo"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
+             }else{
+                header("location:principal.php");
+                            ?>
+                            <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                            <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
+                            <li class="nav-item"><a class="nav-link activo"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
+                        }
+                        ?>
+             
                            
            </ul>
                 

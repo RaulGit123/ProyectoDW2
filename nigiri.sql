@@ -38,7 +38,7 @@ USE `NIGIRI`;
 
 CREATE TABLE `Roles` (
   `IdRoles` int NOT NULL AUTO_INCREMENT,
-  `NombreRol` int NOT NULL,
+  `NombreRol` varchar(100) NOT NULL,
   CONSTRAINT pkR PRIMARY KEY (`IdRoles`)
 );
 CREATE TABLE `Usuarios` (
@@ -119,8 +119,13 @@ Insert Into `Mesa` (Estado) VALUES ("vacia");
 Insert Into `Mesa` (Estado) VALUES ("vacia");
 Insert Into `Mesa` (Estado) VALUES ("vacia");
 
-Insert Into `Roles` (NombreRol) VALUES ("Admin");
-Insert Into `Roles` (NombreRol) VALUES ("Usuario");
+
+Insert Into Roles (NombreRol) VALUES ("Admin");
+Insert Into Roles (NombreRol) VALUES ("Usuario");
+
+ INSERT INTO usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol) VALUES 
+ ("admin","Hugo","Duran García",MD5("admins"),"hugoduran@gmail.com","c/SoyTuJefe","Cádiz","1");
+
 /*Las secciones serán Entrantes, Ramen, Postres y Bebidas*/
 Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Gyoza","Gyoza is made from a thinly rolled dough filled with ground meat and vegetables, which can then be boiled and served hot with a dash of black vinegar and sesame oil or in a soup.",
 "· 250 gr of minced pork
