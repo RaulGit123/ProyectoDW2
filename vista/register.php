@@ -149,7 +149,7 @@ $listaProvincias = trim($_POST["provincia"]);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nigiri -Register</title>
+    <title>Register | Nigiri</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
@@ -198,7 +198,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
 
 
-<div class="card bg-dar bg-dark" >
+<div class="card bg-dar bg-dark cajat" >
 
 <article class="card-body mx-auto articulo" id="bg-article">
 	<h4 class="card-title mt-3 text-center text-uppercase" style="color:white; max-width: 400px; font-family: Montserrat;" >Crear cuenta</h4>
@@ -207,7 +207,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-        <h4 class="card-title mt-3 text-center text-uppercase " style="color:white; max-width: 400px; font-family: Montserrat;" >Datos de usuario</h4>
+        <h5 class="card-title mt-3 text-center text-uppercase " style="color:white; max-width: 400px; font-family: Montserrat;" >Datos de usuario</h5>
 
     <!-- form group -->
             <div class="form-group input-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
@@ -284,7 +284,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
             	<!-- form-group// -->
 
-                <h4 class="card-title mt-3 text-center text-uppercase titulo" style="color:white; max-width: 400px; font-family: Montserrat;" >Datos personales</h4>
+                <h5 class="card-title mt-3 text-center text-uppercase titulo" style="color:white; max-width: 400px; font-family: Montserrat;" >Datos personales</h5>
 
             <div class="form-group input-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                 
