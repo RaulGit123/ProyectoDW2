@@ -66,16 +66,25 @@ CREATE TABLE `Comida` (
   CONSTRAINT pkC PRIMARY KEY (`IdComida`)
 );
 
-CREATE TABLE `RegistroPedidos` (
+CREATE TABLE `Pedidos` (
   `IdPedidos` int NOT NULL AUTO_INCREMENT,
   `IdUsuarios` int NOT NULL,
-  `IdComida` int NOT NULL,
   `PrecioFinal` int NOT NULL,
   `FechaPedido` varchar(100) NOT NULL,
   CONSTRAINT pkP PRIMARY KEY (IdPedidos),
-  FOREIGN KEY (IdComida) REFERENCES Comida(IdComida),
-  FOREIGN KEY (IdUsuarios) REFERENCES Usuarios(IdUsuarios)
+  FOREIGN KEY (IdUsuarios) REFERENCES Usuarios(IdUsuarios),
 );
+
+CREATE TABLE `RegistroPedidos` (
+  `IdRegistroPedidos` int NOT NULL AUTO_INCREMENT,
+  `IdComida` int NOT NULL,
+  `cantidad` int not NULL,
+  `IdPedidos` int NOT NULL,
+  CONSTRAINT pkRP PRIMARY KEY (IdRegistroPedidos),
+  FOREIGN KEY (IdComida) REFERENCES Comida(IdComida),
+  FOREIGN KEY (IdPedidos) REFERENCES Pedidos(IdPedidos)
+);
+
 
 CREATE TABLE `Mesa` (
   `IdMesa` int NOT NULL AUTO_INCREMENT,
