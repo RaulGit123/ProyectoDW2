@@ -72,7 +72,7 @@ CREATE TABLE `Pedidos` (
   `PrecioFinal` int NOT NULL,
   `FechaPedido` varchar(100) NOT NULL,
   CONSTRAINT pkP PRIMARY KEY (IdPedidos),
-  FOREIGN KEY (IdUsuarios) REFERENCES Usuarios(IdUsuarios),
+  FOREIGN KEY (IdUsuarios) REFERENCES Usuarios(IdUsuarios)
 );
 
 CREATE TABLE `RegistroPedidos` (
