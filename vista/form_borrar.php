@@ -33,6 +33,7 @@ $borrar=""
             <div class="form-group">
                 <input type="submit" class="btn btn-primary btn-block" value="Enviar id">
                 <input type="reset" class="btn btn-warning btn-block" value="Borrar">
+                <a class="admin" href="admin.php">Volver al panel de administrador</a>
             </div>
               
         </form>
