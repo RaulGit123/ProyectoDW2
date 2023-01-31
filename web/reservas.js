@@ -115,6 +115,16 @@ ReservaPersonas.forEach(Com =>{
     console.log(NumeroPersonas);
     console.log(Fecha);
     console.log(Hora);
+    // $.ajax({
+    //   url: 'GuardaReserva.php',
+    //   method: 'post',
+    //   data: { NumeroPersonas: NumeroPersonas },
+    //   dataType: 'html'
+    //   }).done(function(respuesta) {
+    //   console.log('hecho');
+    //   })
+      
+    //   ;
     }
       
     });
@@ -129,3 +139,32 @@ function createElementFromHTML(htmlString) {
     div.innerHTML = htmlString.trim();
     return div.firstChild;
 }
+// $(document).ready(function () {
+//   $("#desdeFormulario").bind("submit",function(e){            
+//         // Capturamnos el boton de envío
+//         $.ajax({
+//           type: $(this).attr("method"),
+//           url: $(this).attr("action"),
+//           data:$(this).serialize(),
+
+//           beforeSend: function(){
+//                 /* ejecuta durante el envió de la petición al servidor. */
+//               },
+//               complete:function(data){
+//                 /* Se ejecuta al termino de la petición */
+
+//               },
+//               success: function(data){
+//                 /* Se ejecuta cuando termina la petición y esta ha sido correcta */
+//                 $('#respuesta').html(data); 
+
+//               },
+//               error: function(data){
+//                 /* Se ejecuta si la peticón ha sido erronea */
+
+//               }
+//             });
+//         // Nos permite cancelar el envio del formulario
+//         e.preventDefault();
+//       });
+// });

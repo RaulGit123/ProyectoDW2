@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
     <!-- <link rel="stylesheet" href="styles/orders.css"> -->
     <link rel="stylesheet" href="styles/book.css">
      <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
@@ -115,11 +116,13 @@
     <div class="mt-2 d-none font-italic mal" id="resph">Tienes que seleccionar una hora</div>
             </div>
     </section>
-
+    <!-- <form id="desdeFormulario" action="functions.php" method="POST" role="form">
+    <label for="">Tu nombre</label> 
+<input type="text" class="form-control" name="nombre" placeholder="Input field"> -->
     <div class="contenedor" id="contenedor">
   <button class="centrado masthead-subheading font-italic btn-danger">Acabar Reserva</button>
 </div>
-
+<!-- </form> -->
 <div class="respuesta"></div>
     <script src="comun.js"></script>
     <script src="reservas.js"></script>
