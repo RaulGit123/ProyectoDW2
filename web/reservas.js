@@ -91,6 +91,7 @@ ReservaPersonas.forEach(Com =>{
       if(horaseleccionada == "hola"){
       for (let i=0; i<listaHoras.length; i++){ 
         if(listaHoras[i].style.backgroundColor==="rgb(75, 75, 75)"){
+          HoraBaseDatos[i].setAttribute("id","horita");
           horaguardada=HoraBaseDatos[i];
             d_nested3.classList.add("d-none");
             horaseleccionada = "adios";
@@ -124,7 +125,7 @@ ReservaPersonas.forEach(Com =>{
       url: "GuardaReserva.php",
       data: {text: $("div.cantidad").text(),
              text2: $("#fechita").val(),
-             text3: $("").val()
+             text3: $("#horita").text()
     }
     })
     });

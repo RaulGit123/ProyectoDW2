@@ -1,5 +1,8 @@
 <?php
 require_once("../modelo/Conexion.php");
+if (session_status()===PHP_SESSION_NONE){
+    session_start();
+} 
 $text = $_POST['text'];
 $text2 = $_POST['text2'];
 $text3 = $_POST['text3'];
@@ -7,7 +10,8 @@ $text3 = $_POST['text3'];
 $output = wordwrap($text, 60);
 $output2 = wordwrap($text2, 60);
 $output3 = wordwrap($text3, 60);
-
+$nombre = $_SESSION["NombreUsuario"];
+echo $nombre;
 // echo $output;
 // echo $output2;
 
