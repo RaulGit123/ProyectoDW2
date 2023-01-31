@@ -65,13 +65,7 @@ listaHoras.forEach(boton =>{
 //Soltará mensajes de error si hace mal la reserva
 ReservaPersonas.forEach(Com =>{
     Com.addEventListener("click",function(){
-      $.ajax({
-        method: "POST",
-        url: "GuardaReserva.php",
-        data: {text: $("div.cantidad").text(),
-               text2: $("").text()
-      }
-      })
+      
 
 
       if(listaCant[0].innerHTML<2){
@@ -124,18 +118,15 @@ ReservaPersonas.forEach(Com =>{
     console.log(NumeroPersonas);
     console.log(Fecha);
     console.log(Hora);
-    // $.ajax({
-    //   url: 'GuardaReserva.php',
-    //   method: 'post',
-    //   data: { NumeroPersonas: NumeroPersonas },
-    //   dataType: 'html'
-    //   }).done(function(respuesta) {
-    //   console.log('hecho');
-    //   })
-      
-    //   ;
     }
-      
+    $.ajax({
+      method: "POST",
+      url: "GuardaReserva.php",
+      data: {text: $("div.cantidad").text(),
+             text2: $("#fechita").val(),
+             text3: $("").val()
+    }
+    })
     });
 });
 

@@ -99,6 +99,7 @@ CREATE TABLE `RegistroReservas` (
   `Mesa` int NOT NULL,
   `FechaReserva` varchar(100) NOT NULL,
   `NumeroPersonas` int NOT NULL,
+  `HoraReserva` varchar(100) NOT NULL,
   CONSTRAINT pkR PRIMARY KEY (`IdReservas`),
   FOREIGN KEY (IdUsuarios) REFERENCES Usuarios(IdUsuarios),
   FOREIGN KEY (Mesa) REFERENCES Mesa(IdMesa)

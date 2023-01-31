@@ -81,7 +81,7 @@
             <div class="card-body mx-auto articulo" id="bg-article">
             <p class="text-center text-uppercase people">Date</p>
      <div class="dateselected ">
-     <input type="date"class="text-center fecha" size="20"/>
+     <input type="date"class="text-center fecha" id="fechita" size="20"/>
     </div>
     <div class="mt-2 d-none font-italic mal" id="respf">Tienes que seleccionar una fecha correcta</div>
             </div>
@@ -93,24 +93,19 @@
              <div class="horas">13:30 15:00</div>          
                     </button>
      <button class="item text-center">
-             <div class="horas">15:00</div>
-             <div class="horas">16:30</div>           
+             <div class="horas">15:00 16:30</div>        
      </button>
      <button class="item text-center">
-             <div class="horas">16:30</div>
-             <div class="horas">18:00</div>           
+             <div class="horas">16:30 18:00</div>       
      </button>
      <button class="item text-center">
-             <div class="horas">18:00</div>
-             <div class="horas">19:30</div>           
+             <div class="horas">18:00 19:30</div>         
      </button>
      <button class="item text-center">
-             <div class="horas">19:30</div>
-             <div class="horas">21:00</div>           
+             <div class="horas">19:30 21:00</div>          
      </button>
      <button class="item text-center">
-             <div class="horas">21:00</div>
-             <div class="horas">22:30</div>           
+             <div class="horas">21:00 22:30</div>          
      </button>
     </div>
     <div class="mt-2 d-none font-italic mal" id="resph">Tienes que seleccionar una hora</div>
