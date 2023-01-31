@@ -118,7 +118,7 @@
   <button class="centrado masthead-subheading font-italic btn-danger">Acabar Reserva</button>
 </div>
 <!-- </form> -->
-<div class="respuesta"></div>
+<!-- <div class="respuesta mal d-none mb-4" id="respt">Ya hay una reserva a ese dia y hora. Porfavor seleccione otra hora o dia</div> -->
     <script src="comun.js"></script>
     <script src="reservas.js"></script>
 </body>

@@ -112,7 +112,7 @@ ReservaPersonas.forEach(Com =>{
       // console.log(mesActual);
       
     if(listaCant[0].innerHTML>=2 && listaFecha[0].value!="" && listaFecha[0].value>fechaguardada && horaseleccionada == "adios"){
-          //  window.location.href = "../vista/paginaUsuario.php";
+            window.location.href = "../vista/paginaUsuario.php";
     var NumeroPersonas = listaCant[0].innerHTML;
     var Fecha = listaFecha[0].value;
     var Hora = horaguardada.innerHTML;
@@ -135,11 +135,11 @@ ReservaPersonas.forEach(Com =>{
 
 
 
-function createElementFromHTML(htmlString) {
-    var div = document.createElement('div');
-    div.innerHTML = htmlString.trim();
-    return div.firstChild;
-}
+// function createElementFromHTML(htmlString) {
+//     var div = document.createElement('div');
+//     div.innerHTML = htmlString.trim();
+//     return div.firstChild;
+// }
 // $(document).ready(function () {
 //   $("#desdeFormulario").bind("submit",function(e){            
 //         // Capturamnos el boton de envío
