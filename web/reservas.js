@@ -65,6 +65,15 @@ listaHoras.forEach(boton =>{
 //Soltará mensajes de error si hace mal la reserva
 ReservaPersonas.forEach(Com =>{
     Com.addEventListener("click",function(){
+      $.ajax({
+        method: "POST",
+        url: "GuardaReserva.php",
+        data: {text: $("div.cantidad").text(),
+               text2: $("").text()
+      }
+      })
+
+
       if(listaCant[0].innerHTML<2){
         d_nested.classList.remove("d-none");
       }else{
