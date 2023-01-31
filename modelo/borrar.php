@@ -24,7 +24,9 @@ function eliminarComida($codigo)
 }
 
 eliminarComida($codigo);
-
-
-
 ?>
+
+<a class="admin" href="../vista/admin.php">Volver al panel de administrador</a>
+
+
+

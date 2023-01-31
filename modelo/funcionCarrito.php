@@ -70,7 +70,5 @@ function mostraComida(){
 
 
 
-eliminarComida(13);
-
 
 ?>

@@ -1,3 +1,4 @@
+
 <?php
       if (session_status()===PHP_SESSION_NONE){
         session_start();
@@ -50,11 +51,22 @@
     <header class="masthead">
        
         <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
-            <div class="masthead-subheading font-italic">Administrador de nigiri</div>
-            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="form_insertar.php">Insertar plato</a>
-            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="form_borrar.php">eliminar plato</a>
-            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="mostrar.php">Mostrar platos</a>
-          
+            <div class="masthead-subheading font-italic">Registro de productos.</div>
+
+
+            
+        <form action="../modelo/insertar.php" method="post">
+
+
+        Nombre <input type="text" name = "Nombre" placeholder="Nombre" ><br/>
+        Descripcion <input type="text" name = "Descripcion" placeholder="Descripcion" ><br/>
+        Ingredientes <input type="text" name = "Ingredientes" placeholder="Ingredientes"><br/>
+        Precio <input type="text" name = "Precio" placeholder="Precio"><br/>
+        Imagen <input type="text" name = "Imagen" placeholder="Imagen"><br/>
+        Tipo <input type="text" name = "tipo" placeholder="tipo"><br/>
+        <input type="submit" class="mt-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" value="Insertar datos en la tabla.">
+        <a class="mt-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Volver a administración</a>
+        </form>
 
             <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
             <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Salir</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
