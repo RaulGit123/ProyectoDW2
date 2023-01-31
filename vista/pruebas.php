@@ -7,7 +7,7 @@ $borrar=""
 ?>
 
 
-<form action="../vista/borrar.php" method="get" >
+<form action="../modelo/borrar.php" method="get" >
 
         
 

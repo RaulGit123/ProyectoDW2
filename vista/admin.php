@@ -52,8 +52,8 @@
         <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
             <div class="masthead-subheading font-italic">Administrador de nigiri</div>
             <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" onclick="eliminarComida()">Insertar plato</a>
-            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" onclick="eliminarComida()">eliminar plato</a>
-            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="">eliminar plato</a>
+            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="pruebas.php">eliminar plato</a>
+            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="">Mostrar platos</a>
           
 
             <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>

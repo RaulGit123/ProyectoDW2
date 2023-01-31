@@ -3,7 +3,7 @@
 <html>
 
 <head>
-  <title>Hello!</title>
+  <title>borrar</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 
   } 
 $codigo = $_GET["IdComida"];
-require_once("../modelo/Conexion.php");
+require_once("Conexion.php");
 
 
 function eliminarComida($codigo)
