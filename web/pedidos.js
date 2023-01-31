@@ -131,8 +131,9 @@ function eliminarCant(id) {
     actualizarTotal();
 }
 
+let total = 0;
+
 function actualizarTotal() {
-    let total = 0;
     totalCarrito.forEach(precio => {
         if (precio !== null) {
             total+=precio;
@@ -141,3 +142,25 @@ function actualizarTotal() {
     console.log(total);
     document.querySelector("#precioFinal").innerHTML = numeroAEuros(total);
 }
+
+//idUsuario, PrecioFinal, fechaPedido
+let pedido = {
+    idUsuario: 0,
+    precioFinal: 0,
+    fechaPedido: "0"
+};
+//idComida, cantidad
+let registroPedido = [];
+
+document.querySelector("#fin").addEventListener("click",function(){
+    pedido.idUsuario = document.querySelector("#nomUsu").innerHTML.trim();
+    pedido.precioFinal = total;
+    pedido.fechaPedido = new Date().toUTCString();
+    // let fecha = new Date().toISOString().substring(0,10);
+    console.log(pedido.idUsuario);
+
+    //recorrer cada uno de los platos seleccionados
+    document.querySelectorAll(".elemento:not(.d-none)").forEach(ele => {
+        // console.log(parseInt(ele.children[0].children[0].innerHTML.slice(0,-1)));
+    });
+});

@@ -70,11 +70,23 @@
                 <div id="total">
                     <h1>TOTAL</h1>
                     <div id="precioFinal">0,00€</div>
-                    <button class="btn-info">Finalizar</button>
+                    <button id="fin" class="btn-info">Finalizar</button>
                 </div>
             </div>
         </div>
     </section>
+    <div id="nomUsu" style="display: none;">
+        <?php 
+        echo htmlspecialchars($_SESSION["NombreUsuario"]);
+        ?>
+    </div>
+    <div id="idUsu" style="display: none;">
+        <?php 
+        require_once('../modelo/Conexion.php');
+        
+        ?>
+    </div>
+
     <?php 
     include_once('../config/CreacionJSON.php');
     ?>
