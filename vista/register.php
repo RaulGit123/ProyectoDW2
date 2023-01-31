@@ -98,7 +98,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         $nombre = trim($_POST["Nombre"]);
     }
-
+    //validamos apellidos
     if(empty(trim($_POST["apellidos"]))){
         $apellidos_err="porfavor , introduzca sus apellidos.";
     }elseif(!preg_match("/^[A-Za-zÑñ]+[\s]+[A-Za-zÑñ]+/",trim($_POST["apellidos"]))&& strlen(trim($_POST["apellidos"]))<=50) {
@@ -106,7 +106,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }else{
         $apellidos = trim($_POST["apellidos"]);
     }
-
+    //validamos direccion
     if(empty(trim($_POST["direccion"]))){
         $direccion_err="porfavor , introduzca una dirección.";
     }elseif(!preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["direccion"]))&& strlen(trim($_POST["direccion"]))<=50){
