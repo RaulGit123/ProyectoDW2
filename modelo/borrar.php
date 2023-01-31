@@ -11,8 +11,6 @@
 <?php 
   if (session_status()===PHP_SESSION_NONE){
     session_start();
-   
-
   } 
 $codigo = $_GET["IdComida"];
 require_once("Conexion.php");
