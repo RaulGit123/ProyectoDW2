@@ -1,3 +1,7 @@
+.contenido {
+  height: 100vh;
+}
+
 body {
   background-image: url("../img/fondo-negro.jpg");
 }
