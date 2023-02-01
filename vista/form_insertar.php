@@ -72,6 +72,7 @@
     <input type="text" name="Nombre" class="form-control" placeholder="Nombre">
    
     </div>
+
     <!--form-groud-->   
      <!--form-groud-->
           
@@ -79,7 +80,7 @@
 
     <div class="input-group-prepend">
 
-    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+    <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
 
     </div>
 
@@ -94,7 +95,7 @@
 
     <div class="input-group-prepend">
 
-    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+    <span class="input-group-text"> <i class="fa-solid fa-fish"></i> </span>
 
     </div>
 
@@ -109,7 +110,7 @@
 
     <div class="input-group-prepend">
 
-    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+    <span class="input-group-text"> <i class="fa-solid fa-sack-dollar"></i> </span>
 
     </div>
 
@@ -124,7 +125,7 @@
 
     <div class="input-group-prepend">
 
-    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+    <span class="input-group-text"> <i class="fa-solid fa-images"></i> </span>
 
     </div>
 
@@ -139,7 +140,7 @@
 
     <div class="input-group-prepend">
 
-    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+    <span class="input-group-text"> <i class="fa-solid fa-bars-staggered"></i> </span>
 
     </div>
 
@@ -149,17 +150,19 @@
     </div>
 <!--form-groud-->                            
 
-       
-        <input type="submit" class="mt-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" value="Insertar datos en la tabla">
+       <div class="form-group ">
+        <input type="submit" class="btn btn-primary btn-block btn-lg text-uppercase" value="Insertar datos en la tabla">
+        <input type="reset" class="btn btn-primary btn-block btn-lg text-uppercase" value="Borrar datos en la tabla">
+        </div>
         <a class="mt-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Volver a administración</a>
         </form>
-        </article>
-    </div>
+  
  <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
  <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Salir</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
         </div>
     </header>
-
+    </article>
+    </div>
 
 
     <section class="p-5 page-section" id="aboutus"> <!--id services-->
