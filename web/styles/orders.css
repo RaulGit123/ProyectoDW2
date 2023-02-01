@@ -264,5 +264,17 @@ header .btn {
   .principal #zonaCarrito {
     padding-top: 10.5rem;
     padding-bottom: 6rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  .principal #zonaCarrito #total h1 {
+    margin-bottom: 0;
+  }
+  .principal #zonaCarrito span {
+    font-weight: bold;
+    display: inline-block;
   }
 }/*# sourceMappingURL=orders.css.map */

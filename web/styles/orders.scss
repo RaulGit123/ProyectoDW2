@@ -204,6 +204,17 @@ header {
         #zonaCarrito {
             padding-top: 10.5rem;
             padding-bottom: 6rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            box-sizing: border-box;
+            #total h1 {
+                margin-bottom: 0;
+            }
+            span {
+                font-weight: bold;
+                display: inline-block;
+            }
         }
     }
 }

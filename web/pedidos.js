@@ -154,18 +154,31 @@ let pedido = {
 let registroPedido = [];
 
 document.querySelector("#fin").addEventListener("click",function(){
-    pedido.idUsuario = document.querySelector("#nomUsu").innerHTML.trim(); //Esto da nombre de usuario, no id.
+    pedido.idUsuario = parseInt(document.querySelector("#idUsu").innerHTML);
     pedido.precioFinal = total;
     pedido.fechaPedido = new Date().toLocaleString('es-ES');
 
     //recorrer cada uno de los platos seleccionados
     document.querySelectorAll(".elemento:not(.d-none)").forEach(ele => {
         let registro = {
-            idComida: ele.id.substring(1),
+            idComida: parseInt(ele.id.substring(1)),
             cantidad: parseInt(ele.children[0].children[0].innerHTML.slice(0,-1))
         }
         registroPedido.push(registro);
     });
+    document.querySelector("#precioReal").innerHTML = pedido.precioFinal;
     console.log(pedido);
     console.log(registroPedido);
+
+    let regPedJSON = JSON.stringify(registroPedido);
+    $.ajax({
+        method: "POST",
+        url: "GuardaPedido.php",
+        data: {precioFinal: pedido.precioFinal,
+            fechaPedido: pedido.fechaPedido,
+            regPedJSON: regPedJSON
+      }
+      })
 });
+
+
