@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="styles/orders.css"> -->
     <link rel="stylesheet" href="styles/book.css">
      <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
@@ -67,56 +68,58 @@
         <section class="card bg-dar">
         <!-- Cuanta gente va a acudir  -->
         <div class="card-body mx-auto articulo" id="bg-article"> 
-        <h4 class="card-title mt-3 text-center text-uppercase">Booking</h4>
+        <h4 class="card-title mt-3 text-center text-uppercase booking">Booking</h4>
         <p class="text-center text-uppercase people">People</p>
      <div class="peopleselected ">
      <button class="btoMa" name="button">+</button>
      <div class="cantidad text-center">0</div>
      <button class="btoMe" name="button">-</button>
     </div>
+    <div class="mt-2 d-none font-italic mal" id="resp">No puedes hacer una reserva de menos de 2 personas</div>
                 </div>
             <!-- La fecha en la cual van a acudir -->
             <div class="card-body mx-auto articulo" id="bg-article">
             <p class="text-center text-uppercase people">Date</p>
      <div class="dateselected ">
-     <input type="date"class="text-center fecha" size="20"/>
+     <input type="date"class="text-center fecha" id="fechita" size="20"/>
     </div>
+    <div class="mt-2 d-none font-italic mal" id="respf">Tienes que seleccionar una fecha correcta</div>
             </div>
             <!-- La hora a la que quieren acudir(y puedan) -->
             <div class="card-body mx-auto articulo" id="bg-article">
             <p class="text-center text-uppercase people">Hours available</p>
      <div class="hourselected grid">
      <button class="item text-center">
-             <div class="horas">13:30</div>
-             <div class="horas">15:00</div>           
+             <div class="horas">13:30 15:00</div>          
                     </button>
      <button class="item text-center">
-             <div class="horas">15:00</div>
-             <div class="horas">16:30</div>           
+             <div class="horas">15:00 16:30</div>        
      </button>
      <button class="item text-center">
-             <div class="horas">16:30</div>
-             <div class="horas">18:00</div>           
+             <div class="horas">16:30 18:00</div>       
      </button>
      <button class="item text-center">
-             <div class="horas">18:00</div>
-             <div class="horas">19:30</div>           
+             <div class="horas">18:00 19:30</div>         
      </button>
      <button class="item text-center">
-             <div class="horas">19:30</div>
-             <div class="horas">21:00</div>           
+             <div class="horas">19:30 21:00</div>          
      </button>
      <button class="item text-center">
-             <div class="horas">21:00</div>
-             <div class="horas">22:30</div>           
+             <div class="horas">21:00 22:30</div>          
      </button>
     </div>
+    <div class="mt-2 d-none font-italic mal" id="resph">Tienes que seleccionar una hora</div>
             </div>
     </section>
-    
-
+    <!-- <form id="desdeFormulario" action="functions.php" method="POST" role="form">
+    <label for="">Tu nombre</label> 
+<input type="text" class="form-control" name="nombre" placeholder="Input field"> -->
+    <div class="contenedor" id="contenedor">
+  <button class="centrado masthead-subheading font-italic btn-danger">Acabar Reserva</button>
+</div>
+<!-- </form> -->
+<!-- <p class="respuesta mal d-none mb-4" id="respt">Ya hay una reserva a ese dia y hora. Porfavor seleccione otra hora o dia</p>  -->
     <script src="comun.js"></script>
     <script src="reservas.js"></script>
 </body>
-
 </html>

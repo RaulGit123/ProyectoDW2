@@ -82,9 +82,9 @@ nav.stroke ul li a:hover:after {
   background-color: transparent;
 }
 
-.card-title {
+.booking {
   color: white;
-  max-width: 400px;
+  text-align: center;
   font-family: Montserrat;
   text-decoration: underline;
 }
@@ -102,7 +102,7 @@ h4 {
 .peopleselected {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: center;
 }
 
 .cantidad {
@@ -153,10 +153,31 @@ h4 {
   height: 100px;
 }
 
+.mal {
+  color: #c00003;
+  text-align: center;
+  font-size: 16pt;
+}
+
+div.contenedor {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.centrado {
+  background-color: rgb(192, 0, 3);
+  width: 300px;
+  height: 100px;
+  color: white;
+}
+
 body {
   font-family: Roboto Slab;
   color: white;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../img/fondo-negro-seamless.jpg");
+  background-image: url(../img/fondo-negro-seamless.jpg);
 }
 
 .text-uppercase {
