@@ -247,4 +247,34 @@ header .btn {
     height: 60px;
     border-radius: 50%;
   }
+}
+.elemento, #total {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 768px) {
+  .principal {
+    display: grid;
+    grid-template-columns: 8fr 1fr 2fr;
+  }
+  .principal #zonaCarrito {
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  .principal #zonaCarrito #total h1 {
+    margin-bottom: 0;
+  }
+  .principal #zonaCarrito span {
+    font-weight: bold;
+    display: inline-block;
+  }
 }/*# sourceMappingURL=orders.css.map */

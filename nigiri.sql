@@ -60,22 +60,31 @@ CREATE TABLE `Comida` (
   `Nombre` varchar(100) NOT NULL,
   `Descripcion` varchar(300) NOT NULL,
   `Ingredientes` varchar(100) NOT NULL,
-  `Precio` varchar(100) NOT NULL,
+  `Precio` decimal(10,2) NOT NULL,
   `Imagen` varchar(100) NOT NULL,
    `tipo` varchar(100) NOT NULL,
   CONSTRAINT pkC PRIMARY KEY (`IdComida`)
 );
 
-CREATE TABLE `RegistroPedidos` (
+CREATE TABLE `Pedidos` (
   `IdPedidos` int NOT NULL AUTO_INCREMENT,
   `IdUsuarios` int NOT NULL,
-  `IdComida` int NOT NULL,
-  `PrecioFinal` int NOT NULL,
+  `PrecioFinal` decimal(10,2),
   `FechaPedido` varchar(100) NOT NULL,
   CONSTRAINT pkP PRIMARY KEY (IdPedidos),
-  FOREIGN KEY (IdComida) REFERENCES Comida(IdComida),
   FOREIGN KEY (IdUsuarios) REFERENCES Usuarios(IdUsuarios)
 );
+
+CREATE TABLE `RegistroPedidos` (
+  `IdRegistroPedidos` int NOT NULL AUTO_INCREMENT,
+  `IdComida` int NOT NULL,
+  `cantidad` int not NULL,
+  `IdPedidos` int NOT NULL,
+  CONSTRAINT pkRP PRIMARY KEY (IdRegistroPedidos),
+  FOREIGN KEY (IdComida) REFERENCES Comida(IdComida),
+  FOREIGN KEY (IdPedidos) REFERENCES Pedidos(IdPedidos)
+);
+
 
 CREATE TABLE `Mesa` (
   `IdMesa` int NOT NULL AUTO_INCREMENT,
@@ -90,6 +99,7 @@ CREATE TABLE `RegistroReservas` (
   `Mesa` int NOT NULL,
   `FechaReserva` varchar(100) NOT NULL,
   `NumeroPersonas` int NOT NULL,
+  `HoraReserva` varchar(100) NOT NULL,
   CONSTRAINT pkR PRIMARY KEY (`IdReservas`),
   FOREIGN KEY (IdUsuarios) REFERENCES Usuarios(IdUsuarios),
   FOREIGN KEY (Mesa) REFERENCES Mesa(IdMesa)

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Now | Nigiri</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -68,15 +69,28 @@
         </div>
     </nav>
     <section class="p-2 page-section" id="aboutus">
-        <div class="container">
+        <div class="container principal">
             <header class="masthead">
                 
             </header>
+            <div></div>
+            <div id="zonaCarrito">
+                <div id="carrito">
+                    <h1>Basket summary</h1>
+                    
+                </div>
+                <div id="total">
+                    <h1>TOTAL</h1>
+                    <div id="precioFinal">0,00€</div>
+                    <button id="fin" class="btn-info">Order</button>
+                </div>
+            </div>
         </div>
-
     </section>
+    <div class="d-none" id="precioReal"></div>
     <?php 
-    include_once('../config/CreacionJSON.php');
+        require_once('../vista/idusuario.php');
+        include_once('../config/CreacionJSON.php');
     ?>
     <script type="module" src="pedidos.js"></script>
     <script src="comun.js"></script>
