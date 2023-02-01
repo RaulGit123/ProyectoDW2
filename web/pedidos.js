@@ -134,6 +134,7 @@ function eliminarCant(id) {
 let total = 0;
 
 function actualizarTotal() {
+    total = 0;
     totalCarrito.forEach(precio => {
         if (precio !== null) {
             total+=precio;
@@ -153,14 +154,18 @@ let pedido = {
 let registroPedido = [];
 
 document.querySelector("#fin").addEventListener("click",function(){
-    pedido.idUsuario = document.querySelector("#nomUsu").innerHTML.trim();
+    pedido.idUsuario = document.querySelector("#nomUsu").innerHTML.trim(); //Esto da nombre de usuario, no id.
     pedido.precioFinal = total;
-    pedido.fechaPedido = new Date().toUTCString();
-    // let fecha = new Date().toISOString().substring(0,10);
-    console.log(pedido.idUsuario);
+    pedido.fechaPedido = new Date().toLocaleString('es-ES');
 
     //recorrer cada uno de los platos seleccionados
     document.querySelectorAll(".elemento:not(.d-none)").forEach(ele => {
-        // console.log(parseInt(ele.children[0].children[0].innerHTML.slice(0,-1)));
+        let registro = {
+            idComida: ele.id.substring(1),
+            cantidad: parseInt(ele.children[0].children[0].innerHTML.slice(0,-1))
+        }
+        registroPedido.push(registro);
     });
+    console.log(pedido);
+    console.log(registroPedido);
 });
