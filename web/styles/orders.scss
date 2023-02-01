@@ -186,3 +186,35 @@ header {
     }
 
 }
+
+.elemento, #total {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+//CARRITO A LA DCHA EN PC
+
+@media (min-width: 768px) {
+    .principal {
+        display: grid;
+        grid-template-columns: 8fr 1fr 2fr;
+        #zonaCarrito {
+            padding-top: 10.5rem;
+            padding-bottom: 6rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            box-sizing: border-box;
+            #total h1 {
+                margin-bottom: 0;
+            }
+            span {
+                font-weight: bold;
+                display: inline-block;
+            }
+        }
+    }
+}
