@@ -73,13 +73,16 @@ ReservaPersonas.forEach(Com =>{
       }else{
         d_nested.classList.add("d-none");
       }
-
-      if(hoy<10){
-        fechaguardada = añoActual+"-"+mesActual+"-"+hoy;
-        // console.log(fechaguardada);
-     }else{
+      if(hoy<10 && mesActual>=10){
+        fechaguardada = añoActual+"-"+mesActual+"-0"+hoy;
+     }
+     if(mesActual<10 && hoy>=10){
       fechaguardada = añoActual+"-0"+mesActual+"-"+hoy;
-      //  console.log(fechaguardada);
+    }
+    if(hoy<10 && mesActual<10){
+      fechaguardada = añoActual+"-0"+mesActual+"-0"+hoy;
+    }if(hoy>=10 && mesActual>=10){
+      fechaguardada = añoActual+"-"+mesActual+"-"+hoy;
      }
 
       if(listaFecha[0].value=="" || listaFecha[0].value<fechaguardada){

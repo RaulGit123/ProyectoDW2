@@ -60,7 +60,7 @@ CREATE TABLE `Comida` (
   `Nombre` varchar(100) NOT NULL,
   `Descripcion` varchar(300) NOT NULL,
   `Ingredientes` varchar(100) NOT NULL,
-  `Precio` varchar(100) NOT NULL,
+  `Precio` decimal(10,2) NOT NULL,
   `Imagen` varchar(100) NOT NULL,
    `tipo` varchar(100) NOT NULL,
   CONSTRAINT pkC PRIMARY KEY (`IdComida`)
@@ -69,7 +69,7 @@ CREATE TABLE `Comida` (
 CREATE TABLE `Pedidos` (
   `IdPedidos` int NOT NULL AUTO_INCREMENT,
   `IdUsuarios` int NOT NULL,
-  `PrecioFinal` int ,
+  `PrecioFinal` decimal(10,2),
   `FechaPedido` varchar(100) NOT NULL,
   CONSTRAINT pkP PRIMARY KEY (IdPedidos),
   FOREIGN KEY (IdUsuarios) REFERENCES Usuarios(IdUsuarios)

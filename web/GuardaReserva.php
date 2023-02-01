@@ -10,8 +10,8 @@ $text3 = $_POST['text3'];
 $output = wordwrap($text, 60);
 $output2 = wordwrap($text2, 60);
 $output3 = wordwrap($text3, 60);
-// $doc = new DOMDocument();
-// $mesa = [1,2,3,4];
+// $dom = new DOMDocument('1.0', 'utf-8');
+//   $mesa = [1,2,3,4];
 
 
 
@@ -32,20 +32,28 @@ $id= $result -> IdUsuarios;
 
    }
  }
- 
 
-function AñadirRegistro($id,$output,$output2,$output3)
+
+function AñadirRegistro($id, $output, $output2, $output3)
 {
-    $con = Conexion::getConection();
-    $sql = $con->prepare("INSERT INTO RegistroReservas (IdUsuarios,Mesa,FechaReserva,NumeroPersonas,HoraReserva) VALUES (?,?,?,?,?)");
-    return $sql->execute([$id,1,$output2,$output,$output3
-    ]);
-}
-
+    // $reserva = AsignarMesa($mesa, $output2, $output3);
+    // echo $reserva;
+    // if ($reserva != 0) {
+        $con = Conexion::getConection();
+        $sql = $con->prepare("INSERT INTO RegistroReservas (IdUsuarios,Mesa,FechaReserva,NumeroPersonas,HoraReserva) VALUES (?,?,?,?,?)");
+        return $sql->execute([
+            $id,
+            1,
+            $output2,
+            $output,
+            $output3
+        ]);
+    } 
+// }
 AñadirRegistro($id,$output,$output2,$output3);
 
 
-// function AsignarMesa($mesa,$output2,$output3,$doc)
+// function AsignarMesa($mesa,$output2,$output3)
 // {
 //     $disponible = 0;
 //     $con = Conexion::getConection();
@@ -56,7 +64,7 @@ AñadirRegistro($id,$output,$output2,$output3);
 //         HoraReserva = $output3" ;
 //         $query = $con -> prepare($sql); 
 //         $query -> execute(); 
-//         if($query -> rowCount() = 0)   {
+//         if($query -> rowCount() < 1)   {
 //             $disponible = $mesa[$i];
 //             break;
 //              }else{
@@ -66,9 +74,31 @@ AñadirRegistro($id,$output,$output2,$output3);
 //     if($disponible !=0){
 //         return $disponible;
 //     }else{
-//         $d_nested = document.getElementById("respt");
-//         $MuestraError = $doc->d_nested.classList.remove("d-none");
+//         // $d_nested = document.getElementById("respt");
+//         // $MuestraError = $doc->d_nested.classList.remove("d-none");
+//         echo "hola";
+//         header("location: reservas.php");
+//         echo '<script type="text/javascript">
+//         let d_nested4 = document.getElementById("respt");
+//         d_nested.classList.remove("d-none");
+//         </script>';
 //     }
     
 // }
+
+// function format_post_content($content = '') {
+//     $document = new DOMDocument();
+//     $document->loadHTML($content);
+    
+//     $tags = $document->getElementsByTagName('p');
+//     foreach ($tags as $tag) {
+//       $tag->classList.remove('src', 
+//         str_replace('http://programacion.net', 
+//                     'https://programacion.net', 
+//                     $tag->getAttribute('src')
+//         )
+//       );
+//     }
+//     return $document->saveHTML();
+//   }
 ?>  
