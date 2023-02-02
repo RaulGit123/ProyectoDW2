@@ -37,7 +37,7 @@ try {
 //Remitente
     $mail->setFrom('nigiriValencia@gmail.com', 'Nigiri staff');
 //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
-    $mail->addAddress('meimeisps@gmail.com', 'mei');     //Add a recipient
+    $mail->addAddress('nigiriValencia@gmail.com', 'Yakuza');     //Add a recipient
     //$mail->addAddress('ejemplo@example.com'); 
 
     //Copia
