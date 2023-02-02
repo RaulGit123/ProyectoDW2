@@ -17,8 +17,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="../web/styles/menu.css">
-    <link rel="stylesheet" href="../web/styles/login.css">
     <link rel="stylesheet" href="../web/styles/pag_principal.css">
     <link rel="shortcut icon" href="../web/img/logo2.png" type="image/x-icon">
 </head>
@@ -49,6 +47,7 @@
             </div>
         </div>
     </nav>
+    <div id="griddy">
     <header class="masthead">
        
         <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
@@ -162,7 +161,6 @@
         </div>
     </header>
     </article>
-    </div>
 
 
     <section class="p-5 page-section" id="aboutus"> <!--id services-->
@@ -173,7 +171,7 @@
             </div>
         </div>
     </section>
-    
+    </div>
     <script src="../web/comun.js"></script>
 </body>
 </html>

@@ -68,6 +68,7 @@
             </div>
         </div>
     </nav>
+    <div id="griddy">
    
         <header class="masthead">
         <div class="px-0 container">
@@ -128,6 +129,7 @@
     <div class="contenedor" id="contenedor">
   <button class="centrado masthead-subheading font-italic btn-danger">Acabar Reserva</button>
 </div>
+</div>                    
 <!-- </form> -->
 <!-- <p class="respuesta mal d-none mb-4" id="respt">Ya hay una reserva a ese dia y hora. Porfavor seleccione otra hora o dia</p>  -->
     <script src="comun.js"></script>

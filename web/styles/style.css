@@ -73,6 +73,11 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
+#griddy {
+  display: grid;
+  height: 100vh;
+}
+
 body {
   font-family: Roboto Slab;
   color: white;

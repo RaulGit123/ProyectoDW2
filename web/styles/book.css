@@ -73,6 +73,14 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
+#griddy {
+  display: grid;
+  height: 100vh;
+}
+#griddy footer {
+  align-self: end;
+}
+
 .bg-dar {
   opacity: 1;
 }
