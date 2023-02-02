@@ -10,10 +10,6 @@ body {
   opacity: 1;
 }
 
-.card-title {
-  max-width: 400px;
-}
-
 .bg-dar {
   opacity: 1;
   background-color: rgba(69, 88, 106, 0.2) !important;
