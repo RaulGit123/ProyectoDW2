@@ -93,7 +93,14 @@
         include_once('../config/CreacionJSON.php');
     ?>
     <div id="pago">
-        <p>HOLA</p>
+        <div id="recuadro">
+            <h1 class="text-uppercase">MÉTODOS DE PAGO</h1>
+            <div id="metodos">
+                <img src="img/pago/paypal.png" alt="paypal">
+                <img src="img/pago/visa.png" alt="visa">
+                <img src="img/pago/master.png" alt="master">
+            </div>
+        </div>
     </div>
     <script type="module" src="pedidos.js"></script>
     <script src="comun.js"></script>
