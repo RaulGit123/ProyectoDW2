@@ -6,8 +6,34 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-//Crear una instancia. Con true permitimos excepciones
+require_once("../modelo/Conexion.php");
+
+
+    session_start();
+ 
+// $con = Conexion::getConection();
+// $sql = "SELECT CorreoElectronico FROM usuarios";
+// $resultado = $con->prepare($sql);
+// $resultado->execute();
+// $resultados = $resultado -> fetchAll(PDO::FETCH_OBJ); 
+
+// if($resultado -> rowCount() > 0)   { 
+//     foreach($resultados as $mailes) { 
+//     echo " <tr> 
+//     <td>".$mailes -> CorreoElectronico."</td>
+   
+    
+//     </tr>";
+    
+    
+    
+//        }
+//      }
 $mail = new PHPMailer(true);
+
+echo $_POST["NombreUsuario"]."hola";
+$mailUsuario = $_POST["email"];
+echo $mailUsuario;
 
 try {
     //Valores dependientes del servidor que utilizamos
@@ -37,7 +63,7 @@ try {
 //Remitente
     $mail->setFrom('nigiriValencia@gmail.com', 'Nigiri staff');
 //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
-    $mail->addAddress('nigiriValencia@gmail.com', 'Yakuza');     //Add a recipient
+    $mail->addAddress('meimeisps@gmail.com','yakuza');     //Add a recipient
     //$mail->addAddress('ejemplo@example.com'); 
 
     //Copia
