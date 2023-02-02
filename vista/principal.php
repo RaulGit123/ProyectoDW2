@@ -44,6 +44,7 @@
             </div>
         </div>
     </nav> 
+    <div class="contenido">
     <header class="masthead">
         <div class="px-0 container">
         <div class="mt-3 masthead-heading text-uppercase">Bienvenido a Nigiri</div>
@@ -59,6 +60,7 @@
                 <h3 class="section-subheading mx-auto">Para efectuar una reserva o un pedido necesita registrarse en la web para asegurarnos de que no eres un robot.</h3>
             </div>
         </div>
+                        </div>
     </section>
  
     <script src="../web/comun.js"></script>

@@ -73,6 +73,10 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
+.contenido {
+  height: 100vh;
+}
+
 body {
   font-family: Roboto Slab;
   color: white;
@@ -157,6 +161,7 @@ header .btn {
 
 #aboutus {
   background-image: url(../img/fondo-negro.jpg);
+  align-items: center;
 }
 
 .blink_me {

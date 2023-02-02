@@ -1,13 +1,13 @@
+.contenido {
+  height: 100vh;
+}
+
 body {
   background-image: url("../img/fondo-negro.jpg");
 }
 
 #prueba {
   opacity: 1;
-}
-
-.card-title {
-  max-width: 400px;
 }
 
 .bg-dar {

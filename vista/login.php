@@ -62,7 +62,7 @@ if(empty(trim($Contraseña))){
     
 <!-- navigator -->
 
-
+<div class="contenido">
 <div class="container caja1">
 <br>  
 <!-- <p class="text-center" style="color:white;">Logo</p> -->
@@ -72,10 +72,10 @@ if(empty(trim($Contraseña))){
 
 
 
-<div class="card bg-dar" >
+<div class="card bg-dar p-5 mt-5 mb-5" >
 
 <article class="card-body mx-auto articulo" id="bg-article">
-	<h4 class="card-title mt-3 text-center text-uppercase" style="color:white; max-width: 400px; font-family: Montserrat;" >Iniciar sesión</h4>
+	<h4 class="card-title mt-3 text-center text-uppercase">Iniciar sesión</h4>
 	<!-- <p class="text-center text-uppercase " style="color:white;">Disfruta de tu pedido en casa.</p> -->
 
 
@@ -139,7 +139,7 @@ if(empty(trim($Contraseña))){
         </article>
         </div>    
         </div>
-
+</div>
            
 
     
