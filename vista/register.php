@@ -11,6 +11,7 @@ $apellidos=$apellidos_err="";
 $direccion=$direccion_err="";
 $localidad=$localidad_err="";
 $listaProvincias=[];
+$codigo= md5( rand(0,1000) );;
 
 
 
