@@ -1,4 +1,6 @@
 <?php
+include ("../modelo/ClaseModelo.php");
+include ("../modelo/ClaseNigiri.php");
 require_once("../modelo/Conexion.php");
 if (session_status()===PHP_SESSION_NONE){
     session_start();
@@ -11,7 +13,7 @@ $output = wordwrap($text, 60);
 $output2 = wordwrap($text2, 60);
 $output3 = wordwrap($text3, 60);
 // $dom = new DOMDocument('1.0', 'utf-8');
-//   $mesa = [1,2,3,4];
+$mesa = rand(1,4);
 
 
 
@@ -34,24 +36,27 @@ $id= $result -> IdUsuarios;
  }
 
 
-function AñadirRegistro($id, $output, $output2, $output3)
-{
-    // $reserva = AsignarMesa($mesa, $output2, $output3);
-    // echo $reserva;
-    // if ($reserva != 0) {
-        $con = Conexion::getConection();
-        $sql = $con->prepare("INSERT INTO RegistroReservas (IdUsuarios,Mesa,FechaReserva,NumeroPersonas,HoraReserva) VALUES (?,?,?,?,?)");
-        return $sql->execute([
-            $id,
-            1,
-            $output2,
-            $output,
-            $output3
-        ]);
-    } 
-// }
-AñadirRegistro($id,$output,$output2,$output3);
+// function AñadirRegistro($id, $output, $output2, $output3,$mesa)
+// {
+//     // $reserva = AsignarMesa($mesa, $output2, $output3);
+//     // echo $reserva;
+//     // if ($reserva != 0) {
+//         $con = Conexion::getConection();
+//         $sql = $con->prepare("INSERT INTO RegistroReservas (IdUsuarios,Mesa,FechaReserva,NumeroPersonas,HoraReserva) VALUES (?,?,?,?,?)");
+//         return $sql->execute([
+//             $id,
+//             1,
+//             $output2,
+//             $output,
+//             $output3
+//         ]);
+//     } 
 
+    
+// }
+//AñadirRegistro($id,$output,$output2,$output3);
+$hola = new Nigiri();
+$hola->AñadirRegPed($id,$mesa,$output2,$output,$output3);
 
 // function AsignarMesa($mesa,$output2,$output3)
 // {

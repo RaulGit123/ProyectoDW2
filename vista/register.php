@@ -11,7 +11,8 @@ $apellidos=$apellidos_err="";
 $direccion=$direccion_err="";
 $localidad=$localidad_err="";
 $listaProvincias=[];
-$hash = rand(1000,9999);
+$codigo= md5( rand(0,1000) );;
+
 
 
 // Processing form data when form is submitted
@@ -109,7 +110,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //validamos direccion
     if(empty(trim($_POST["direccion"]))){
         $direccion_err="porfavor , introduzca una dirección.";
-    }elseif(!preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["direccion"]))&& strlen(trim($_POST["direccion"]))<=50){
+    }elseif(preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["direccion"]))&& strlen(trim($_POST["direccion"]))<=50){
         $direccion_err="porfavor , escriba la dirección correcta.";
     }else{
         $direccion = trim($_POST["direccion"]);
@@ -142,12 +143,13 @@ $listaProvincias = trim($_POST["provincia"]);
             $param_mail =$mail;
             $rol = 2;
             $Activado = "no";
-            $Codigo = md5($hash);;
+            $Codigo = md5( rand(1000,9999) );
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: ../hugo.php");
+                // header("location: ../hugo.php");
+                include_once("../Recursos/mailer.php");
             } else{
                 echo "Algo salió mal, por favor inténtalo de nuevo.";
             }
