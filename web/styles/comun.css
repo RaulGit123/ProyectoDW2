@@ -71,4 +71,12 @@ nav.stroke ul li a:after {
 
 nav.stroke ul li a:hover:after {
   width: 100%;
+}
+
+#griddy {
+  display: grid;
+  height: 100vh;
+}
+#griddy footer {
+  align-self: end;
 }/*# sourceMappingURL=comun.css.map */

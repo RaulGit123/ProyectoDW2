@@ -44,6 +44,7 @@
             </div>
         </div>
     </nav> 
+    <div id="griddy">
     <div class="contenido">
     <header class="masthead">
         <div class="px-0 container">
@@ -62,7 +63,7 @@
         </div>
                         </div>
     </section>
- 
+    </div>
     <script src="../web/comun.js"></script>
 </body>
 </html>

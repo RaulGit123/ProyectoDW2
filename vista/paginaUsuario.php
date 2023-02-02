@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="../web/styles/menu.css">
     <link rel="stylesheet" href="../web/styles/pag_principal.css">
     <link rel="shortcut icon" href="../web/img/logo2.png" type="image/x-icon">
 </head>
@@ -56,27 +55,29 @@
             </div>
         </div>
     </nav>
-    <header class="masthead">
-       
-        <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
-            <div class="masthead-subheading font-italic">Que deseas? Quizá una reserva? o mejor te lo traemos a casa?</div>
-            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/pedidos.php">Realizar pedido</a>
-            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/reservas.php">Reservar mesa</a>
-            <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="carrito.php">Ver carrito</a>
+    <div id="griddy">
+        <header class="masthead">
+        
+            <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
+                <div class="masthead-subheading font-italic">Que deseas? Quizá una reserva? o mejor te lo traemos a casa?</div>
+                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/pedidos.php">Realizar pedido</a>
+                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/reservas.php">Reservar mesa</a>
+                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="carrito.php">Ver carrito</a>
 
-            <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Salir</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
-        </div>
-    </header>
+                <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
+                <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Salir</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
+            
+        </header>
 
-    <section class="p-5 page-section" id="aboutus"> <!--id services-->
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Reservas y pedidos</h2>
-                <h3 class="section-subheading mx-auto">Para efectuar una reserva o un pedido necesita registrarse en la web para asegurarnos de que no eres un robot.</h3>
+        <section class="p-5 page-section" id="aboutus"> <!--id services-->
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Reservas y pedidos</h2>
+                    <h3 class="section-subheading mx-auto">Para efectuar una reserva o un pedido necesita registrarse en la web para asegurarnos de que no eres un robot.</h3>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
     
     <script src="../web/comun.js"></script>
 </body>

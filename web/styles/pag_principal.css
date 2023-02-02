@@ -73,14 +73,18 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
-.contenido {
+#griddy {
+  display: grid;
   height: 100vh;
+}
+#griddy footer {
+  align-self: end;
 }
 
 body {
   font-family: Roboto Slab;
   color: white;
-  background-image: url(../img/fondo-negro.jpg);
+  background-image: url(../img/fondo-negro-seamless.jpg);
 }
 
 .text-uppercase {
@@ -160,8 +164,7 @@ header .btn {
 }
 
 #aboutus {
-  background-image: url(../img/fondo-negro.jpg);
-  align-items: center;
+  align-self: center;
 }
 
 .blink_me {
@@ -179,4 +182,8 @@ header .btn {
   50% {
     opacity: 0;
   }
+}
+.bg-dar {
+  opacity: 1;
+  background-color: rgba(69, 88, 106, 0.2) !important;
 }/*# sourceMappingURL=pag_principal.css.map */

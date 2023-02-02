@@ -28,8 +28,6 @@ if(empty(trim($Contraseña))){
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="web/styles/menu.css">
-    <link rel="stylesheet" href="web/styles/pag_principal.css">
     <link rel="stylesheet" href="web/styles/login.css">
     <link rel="shortcut icon" href="web/img/logo2.png" type="image/x-icon">
 
@@ -62,7 +60,7 @@ if(empty(trim($Contraseña))){
     
 <!-- navigator -->
 
-<div class="contenido">
+<div id="griddy">
 <div class="container caja1">
 <br>  
 <!-- <p class="text-center" style="color:white;">Logo</p> -->
@@ -72,7 +70,7 @@ if(empty(trim($Contraseña))){
 
 
 
-<div class="card bg-dar p-5 mt-5 mb-5" >
+<div class="card bg-dar p-5">
 
 <article class="card-body mx-auto articulo" id="bg-article">
 	<h4 class="card-title mt-3 text-center text-uppercase">Iniciar sesión</h4>

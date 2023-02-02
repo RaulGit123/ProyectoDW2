@@ -55,4 +55,7 @@ let div1 = createElementFromHTML(`<footer class="bg-dark text-center text-white"
     </div>
 </footer>`);
 
-document.querySelector("body").appendChild(div1);
+if (document.querySelector("#griddy") !== null) {
+    console.log("in");
+    document.querySelector("#griddy").appendChild(div1);
+} else document.querySelector("body").appendChild(div1);

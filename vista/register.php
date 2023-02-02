@@ -205,7 +205,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
     <br><br> <br><br>
 <!-- navigator -->
-
+<div id="griddy">
 <div class="container">
 <br>  
 <!-- <p class="text-center" style="color:white;">Logo</p> -->
@@ -387,7 +387,7 @@ $listaProvincias = trim($_POST["provincia"]);
             </div>
 
             
-
+            </div>
             <script src="../web/comun.js"></script>
 
     </body>
