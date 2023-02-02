@@ -92,6 +92,9 @@
         require_once('../vista/idusuario.php');
         include_once('../config/CreacionJSON.php');
     ?>
+    <div id="pago">
+        <p>HOLA</p>
+    </div>
     <script type="module" src="pedidos.js"></script>
     <script src="comun.js"></script>
 </body>

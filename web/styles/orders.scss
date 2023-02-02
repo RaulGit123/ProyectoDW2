@@ -218,3 +218,15 @@ header {
         }
     }
 }
+
+#pago {
+    position:fixed;
+    // margin: 10vw 10vh;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    border: 5vh rgba(0, 0, 0, 0.877) ;
+    background: rgba(0, 0, 0, 0.63);
+}
