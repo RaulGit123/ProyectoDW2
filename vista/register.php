@@ -109,7 +109,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //validamos direccion
     if(empty(trim($_POST["direccion"]))){
         $direccion_err="porfavor , introduzca una dirección.";
-    }elseif(!preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["direccion"]))&& strlen(trim($_POST["direccion"]))<=50){
+    }elseif(preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["direccion"]))&& strlen(trim($_POST["direccion"]))<=50){
         $direccion_err="porfavor , escriba la dirección correcta.";
     }else{
         $direccion = trim($_POST["direccion"]);
