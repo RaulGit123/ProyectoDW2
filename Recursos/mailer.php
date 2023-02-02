@@ -88,8 +88,11 @@ try {
     //Enviar correo
     $mail->send();
     echo 'El mensaje se ha enviado con exito';
+    header("location: ../hugo.php");
+    
 } catch (Exception $e) {
     echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";
+    
     
 }
 ?>
