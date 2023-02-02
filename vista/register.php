@@ -146,7 +146,8 @@ $listaProvincias = trim($_POST["provincia"]);
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: ../hugo.php");
+                // header("location: ../hugo.php");
+                include_once("../Recursos/mailer.php");
             } else{
                 echo "Algo salió mal, por favor inténtalo de nuevo.";
             }
