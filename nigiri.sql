@@ -51,6 +51,8 @@ CREATE TABLE `Usuarios` (
   `Direccion` varchar(100) NOT NULL,
   `Provincia` varchar(100) NOT NULL,
   `Rol` int,
+  `Activado` varchar(100),
+  `Codigo` varchar(100),
   CONSTRAINT pkU PRIMARY KEY (`IdUsuarios`),
   FOREIGN KEY (Rol) REFERENCES Roles(IdRoles)
 );
