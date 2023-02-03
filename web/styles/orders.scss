@@ -337,3 +337,20 @@ header {
         }
     }
 }
+
+.close-btn {
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    color: darken($color: red, $amount: 10%);
+    cursor: pointer;
+    transition: all 0.3s linear;
+  }
+  .close-btn:hover {
+    color: lighten($color: red, $amount: 10%);
+    transform: scale(1.3);
+  }
+  #botonX{
+    margin: 0 !important;
+    text-align: right;
+  }

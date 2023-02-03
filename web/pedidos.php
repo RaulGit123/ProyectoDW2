@@ -108,7 +108,7 @@
                 <div id="total">
                     <h1>TOTAL</h1>
                     <div id="precioFinal">0,00€</div>
-                    <button id="fin" class="btn btn-info">Order</button>
+                    <button id="fafin" class="btn btn-info">Order</button>
                 </div>
             </div>
         </div>
@@ -119,8 +119,11 @@
         require_once('../vista/idusuario.php');
         include_once('../config/CreacionJSON.php');
     ?>
-    <div id="pago">
+    <div id="pago" class="d-none">
         <div id="recuadro">
+            <div id="botonX">
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
             <h1 class="text-uppercase">Introduce tu dirección</h1>
             <input id="dire" name="dire" type="text" value="<?php echo $dire;?>">
             <h1 class="text-uppercase">Elige un método de pago</h1>
@@ -149,7 +152,7 @@
                     <input name="ppPass" type="password" placeholder="Password">
                 </div>
             </div>
-            <button class="btn btn-info">Finalizar</button>
+            <button id="fin" class="btn btn-info">Finalizar</button>
         </div>
     </div>
     <script type="module" src="pedidos.js"></script>

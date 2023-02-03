@@ -208,3 +208,11 @@ function mostrarMetodo() {
         cc.classList.add("d-none");
     }
 }
+
+document.querySelector("#fafin").addEventListener("click", function(){
+    document.querySelector("#pago").classList.remove("d-none");
+});
+
+document.querySelector(".close-btn").addEventListener("click", function(){
+    document.querySelector("#pago").classList.add("d-none");
+});

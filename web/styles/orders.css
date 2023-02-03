@@ -400,4 +400,23 @@ header .btn {
     max-width: none;
     display: block;
   }
+}
+
+.close-btn {
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: #cc0000;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.close-btn:hover {
+  color: #ff3333;
+  transform: scale(1.3);
+}
+
+#botonX {
+  margin: 0 !important;
+  text-align: right;
 }/*# sourceMappingURL=orders.css.map */
