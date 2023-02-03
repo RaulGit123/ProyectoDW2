@@ -181,4 +181,30 @@ document.querySelector("#fin").addEventListener("click",function(){
       })
 });
 
+let metodos = document.querySelector("#metodos").children;
+console.log(metodos);
 
+Array.prototype.forEach.call(metodos, img => {
+    img.addEventListener("click",function(){
+        let seleccionado = document.querySelector(".seleccion");
+        if (seleccionado !== null) {
+            seleccionado.classList.remove("seleccion");
+        }
+        img.classList.toggle("seleccion");
+        mostrarMetodo();
+    });
+});
+
+function mostrarMetodo() {
+    let cc = document.getElementById("cc");
+    let pp = document.getElementById("pp");
+
+    // MÉTODO Credit Card
+    if (document.querySelector(".seleccion").classList.contains("cc")){
+        cc.classList.remove("d-none");
+        pp.classList.add("d-none");
+    } else { //MÉTODO PayPal
+        pp.classList.remove("d-none");
+        cc.classList.add("d-none");
+    }
+}

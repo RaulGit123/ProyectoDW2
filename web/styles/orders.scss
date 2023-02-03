@@ -233,6 +233,10 @@ header {
         width: 90vw;
         height: 90vh;
         margin: 5vh 5vw;
+        @media (min-width: 1200px) {
+            padding-left: 20%;
+            padding-right: 20%;
+        }
         padding: 2%;
         background: rgba(119, 119, 119, 0.63);
         text-align: center;
@@ -247,9 +251,88 @@ header {
                 }
             }
             .seleccion {
-                border: 2px solid black;
-                background: black;
-                border-radius: 10%;
+                // border: 2px solid black;
+                // background: black;
+                // border-radius: 10%;
+                box-shadow: 3px 3px 14px 1px #333;
+                filter: drop-shadow(1px 1px 0 black)
+                    drop-shadow(-1px -1px 0 black);
+            }
+        }
+        & > *{
+            margin-top: 20px;
+        }
+        input, label {
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+             //se aplica también en dir!! no debe //ya no
+            // display: block;
+        }
+        #pp {
+            #datosp {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 1em;
+                & > * {
+                    grid-column: span 2;
+                    @media (min-width: 768px) {
+                        grid-column: span 1;
+                    }
+                }
+                input, label {
+                    @media (min-width: 768px) {
+                        margin: 0 0 10px 0;
+                    }
+                }
+                label {
+                    justify-self: flex-end !important;
+                }
+                input {
+                    justify-self: flex-start !important;
+                }
+            }
+        }
+        #cc {
+            #datosb{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                label:first-of-type, input:first-of-type {
+                    grid-column: span 2;
+                    justify-self: center;
+                }
+                div {
+                    input, label {
+                        max-width: 40vw;
+                        display: block;
+                    }
+                }
+                @media (min-width: 768px) {
+                    column-gap: 1em;
+                    input, label {
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                    label {
+                        justify-self: flex-end !important;
+                    }
+                    input {
+                        justify-self: flex-start !important;
+                    }
+                    label:first-of-type, input:first-of-type {
+                        grid-column: span 1;
+                    }
+                    div {
+                        grid-column: span 2;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        column-gap: 1em;
+                        input, label {
+                            max-width: none;
+                            display: block;
+                        }
+                    }
+                }
             }
         }
     }
