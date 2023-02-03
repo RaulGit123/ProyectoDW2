@@ -14,6 +14,7 @@
                 $sql = null;
                 $resultado = null;
                 $cantidad_resultado = null;
+                $activado = '';
 
                 // Recuperamos la conexión
                 $con = Conexion::getConection();
@@ -36,6 +37,8 @@
                 if ($cantidad_resultado == 1) {
                     $_SESSION["NombreUsuario"] = $usu;
                     $_SESSION["Contraseña"] = $pass;  
+                 
+
 
                 } else {
                     $_SESSION["error"] = "ERROR";

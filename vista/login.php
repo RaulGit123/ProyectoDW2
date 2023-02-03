@@ -132,7 +132,10 @@ if(empty(trim($Contraseña))){
                 <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
                 <input type="reset" class="btn btn-warning btn-block" value="Borrar">
             </div>
-            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="./vista/register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>   
+            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="./vista/register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>
+            <p class="text-center" style="color:white;">¿Olvidaste la contraseña? <a href="./vista/recuperarPass.php" class="btn btn-danger" >RECUPERAR</a> </p>
+            <p class="text-center" style="color:white;">¿No validaste la cuenta? <a href="./vista/verificar.php" class="btn btn-danger" >VERIFICAR</a> </p>
+                
         </form>
         </article>
         </div>    

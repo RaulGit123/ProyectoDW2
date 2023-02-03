@@ -49,7 +49,7 @@
 	<!-- <p class="text-center text-uppercase " style="color:white;">Disfruta de tu pedido en casa.</p> -->
 
 
-    <form action="verificado.php" method="post">
+    <form action="../Recursos/mailRecup.php" method="post">
 
         
 
@@ -66,7 +66,7 @@
             </div>
          
        
-            <input type="text" name="codigo" id="codigo" class="form-control " placeholder="Introduzca su código" >
+            <input type="text" name="email" id="email" class="form-control " placeholder="Introduzca su correo electrónico" >
                
             </div>
 
@@ -81,10 +81,10 @@
 
 
             <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-block" value="Ingresar código">
-                <input type="reset" class="btn btn-warning btn-block" value="Borrar código">
+                <input type="submit" class="btn btn-primary btn-block" value="Ingresar email">
+                <input type="reset" class="btn btn-warning btn-block" value="Borrar email">
             </div>
-            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="./vista/register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>   
+            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="./register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>   
         </form>
         </article>
         </div>    
