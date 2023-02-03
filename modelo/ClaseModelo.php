@@ -11,7 +11,6 @@ class Modelo extends PDO {
     }
 }
 ?>
-?>
 <?php
 
 class Config {

@@ -5,7 +5,8 @@ use PHPMailer\PHPMailer\Exception;
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
-
+include ("../modelo/ClaseModelo.php");
+include ("../modelo/ClaseNigiri.php");
 require_once("../modelo/Conexion.php");
 
 
@@ -34,18 +35,22 @@ $mail = new PHPMailer(true);
 
 $mailUsuario = $_POST["email"];
 
-$con = Conexion::getConection();
-$sql = "SELECT NombreUsuario,Codigo FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
-$query = $con -> prepare($sql); 
-$query -> execute(); 
-$results = $query -> fetchAll(PDO::FETCH_OBJ);
+// $con = Conexion::getConection();
+// $sql = "SELECT NombreUsuario,Codigo FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
+// $query = $con -> prepare($sql); 
+// $query -> execute(); 
+// $results = $query -> fetchAll(PDO::FETCH_OBJ);
 
-if($query -> rowCount() > 0)   { 
+$f1 = new Nigiri();
+$results = $f1->ObtenerNombreCodigo($mailUsuario);
+
+
+// if($query -> rowCount() > 0)   { 
   foreach($results as $result) { 
     $codigo= $result -> Codigo.'</div>';
     $nombre= $result -> NombreUsuario;
   }
-}
+// }
 
 
 

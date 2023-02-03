@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "../config/config.php";
+include("../config/config.php");
  
 // Define variables and initialize with empty values
 $NombreUsuario = $Contraseña = $confirm_password = "";

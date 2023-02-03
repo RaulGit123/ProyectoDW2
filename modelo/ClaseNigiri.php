@@ -19,20 +19,32 @@
 
 class Nigiri extends Modelo
 {
+    //No funciona(Hay que implementarlo en CreacionJSON.php y mostrar.php)
     public function ListadoComida(){
-        $consulta = "SELECT * FROM nigiri.comida";
-        $result = $this->conexion->prepare($consulta);
-        $result->execute();
-        return $result->fetch(PDO::FETCH_ASSOC);
+        $con = Conexion::getConection();
+        $consulta = $con->prepare("SELECT * FROM nigiri.comida");
+        if ($consulta->execute()) {
+            return true;
+        } else
+            return false;
     }
-
+//Funciona
     public function EliminarComida($IdComida){
-        $consulta = "DELETE FROM nigiri.comida WHERE IdComida = :IdComida";
-        $result = $this->conexion->prepare($consulta);
-        $result->bindParam(':IdComida', $IdComida);
-        $result->execute();
-        return $result;
+        $con = Conexion::getConection();
+        $consulta = $con->prepare("DELETE FROM nigiri.comida WHERE IdComida = :IdComida");
+        $consulta->bindParam(':IdComida', $IdComida);
+        $consulta->execute();
+        return $consulta;
     }
+    //Funciona
+    public function EliminarRegistroPedido($IdComida){
+        $con = Conexion::getConection();
+        $consulta = $con->prepare("DELETE FROM nigiri.registropedidos WHERE IdComida = :IdComida");
+        $consulta->bindParam(':IdComida', $IdComida);
+        $consulta->execute();
+        return $consulta;
+    }
+    //Funciona
     public function InsertarComida($Nombre, $Descripcion, $Ingredientes, $Precio, $Imagen, $Tipo){
         $consulta = "INSERT INTO nigiri.comida ( Nombre, Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (:nombre,:descripcion,:ingredientes,:precio,:imagen,:tipo)";
         $result = $this->conexion->prepare($consulta);
@@ -45,52 +57,61 @@ class Nigiri extends Modelo
         $result->execute();
         return $result;
     }
+    //Funciona
     public function Login($Usuario, $Contraseña){
         $consulta = "SELECT * FROM nigiri.usuarios WHERE NombreUsuario = :USU AND Contraseña = :PASS";
         $result = $this->conexion->prepare($consulta);
-        $result->bindParam(':USU', $Usuario);
-        $result->bindParam(':PASS', $Contraseña);
-        $result->execute();
-        return $result->fetch(PDO::FETCH_ASSOC);
-    }
-    public function MuestraId($nombre){
-        $consulta = "SELECT IdUsuarios FROM nigiri.usuarios WHERE NombreUsuario = :USU";
-        $result = $this->conexion->prepare($consulta);
-        $result->bindParam(':USU', $nombre);
-        $result->execute();
+        $result->execute(array(":USU"=>$Usuario, ":PASS"=>$Contraseña));
         return $result;
+    }
+    //No funciona(en idusuario.php desaparece el contenido al poner los includes, hay que implementarlo en register.php y en GuardaPedido.php y GuardaReserva.php)
+    public function MuestraId($nombre){
+        $con = Conexion::getConection();
+        $consulta = $con->prepare("SELECT IdUsuarios FROM nigiri.usuarios WHERE NombreUsuario = :USU");
+        $consulta->bindParam(':USU', $nombre);
+        $consulta -> execute(); 
+        $results = $consulta -> fetchAll(PDO::FETCH_OBJ);
+        return $results;
 
     }
-    public function InsertarUsuario($NombreUsuario, $Nombre, $Apellidos, $Contraseña, $CorreoElectronico, $Direccion, $Provincia, $Codigo){
-        $consulta = "INSERT INTO nigiri.usuarios (NombreUsuario,Nombre,Apellidos,Contraseña,CorreoElectronico,Direccion,Provincia,Rol,Activado,Codigo) VALUES (:nombreusuario,:nombre,:apellidos,:contraseña,:correoelectronico,:direccion,:provincia,2,'no',:codigo)";
-        $result = $this->conexion->prepare($consulta);
-        $result->bindParam(':nombreusuario', $NombreUsuario);
-        $result->bindParam(':nombre', $Nombre);
-        $result->bindParam(':apellidos', $Apellidos);
-        $result->bindParam(':contraseña', $Contraseña);
-        $result->bindParam(':correoelectronico', $CorreoElectronico);
-        $result->bindParam(':direccion', $Direccion);
-        $result->bindParam(':provincia', $Provincia);
-        $result->bindParam(':codigo', $Codigo);
-        $result->execute();
-        return $result;
-    }
+ 
+    
+    // public function InsertarUsuario($NombreUsuario, $Nombre, $Apellidos, $Contraseña, $CorreoElectronico, $Direccion, $Provincia, $Codigo){
+    //     $consulta = "INSERT INTO nigiri.usuarios (NombreUsuario,Nombre,Apellidos,Contraseña,CorreoElectronico,Direccion,Provincia,Rol,Activado,Codigo) VALUES (:nombreusuario,:nombre,:apellidos,:contraseña,:correoelectronico,:direccion,:provincia,2,'no',:codigo)";
+    //     $result = $this->conexion->prepare($consulta);
+    //     $result->bindParam(':nombreusuario', $NombreUsuario);
+    //     $result->bindParam(':nombre', $Nombre);
+    //     $result->bindParam(':apellidos', $Apellidos);
+    //     $result->bindParam(':contraseña', $Contraseña);
+    //     $result->bindParam(':correoelectronico', $CorreoElectronico);
+    //     $result->bindParam(':direccion', $Direccion);
+    //     $result->bindParam(':provincia', $Provincia);
+    //     $result->bindParam(':codigo', $Codigo);
+    //     $result->execute();
+    //     return $result;
+    // }
+    //Funciona
     public function GuardaPedidos($IdUsuarios, $PrecioFinal, $FechaPedido){
-        $consulta = "INSERT INTO nigiri.pedidos (IdUsuarios,PrecioFinal,FechaPedido) VALUES (:idusuarios,:preciofinal,:fechapedido)";
-        $result = $this->conexion->prepare($consulta);
-        $result->bindParam(':idusuarios', $IdUsuarios);
-        $result->bindParam(':preciofinal', $PrecioFinal);
-        $result->bindParam(':fechapedido', $FechaPedido);
-        $result->execute();
-        return $result;
+        $con = Conexion::getConection();
+        $consulta = $con->prepare("INSERT INTO nigiri.pedidos (IdUsuarios,PrecioFinal,FechaPedido) VALUES (:idusuarios,:preciofinal,:fechapedido)");
+        $consulta->bindParam(':idusuarios', $IdUsuarios);
+        $consulta->bindParam(':preciofinal', $PrecioFinal);
+        $consulta->bindParam(':fechapedido', $FechaPedido);
+        if ($consulta->execute()) {
+            return true;
+        } else
+            return false;
     }
+    //Funciona
     public function UltimoPedido(){
-        $consulta = "SELECT IdPedidos FROM nigiri.pedidos ORDER BY IdPedidos DESC LIMIT 1";
-        $result = $this->conexion->prepare($consulta);
-        $result->execute();
-        return $result->fetch(PDO::FETCH_ASSOC);
+        $con = Conexion::getConection();
+        $consulta = $con->prepare("SELECT IdPedidos FROM nigiri.pedidos ORDER BY IdPedidos DESC LIMIT 1");
+        $consulta -> execute(); 
+        $results = $consulta -> fetchAll(PDO::FETCH_OBJ);
+        return $results;
     }
-    public function AñadirRegPed($id,$mesa,$output2, $output,$output3){
+    //Funciona
+    public function AñadirRegRes($id,$mesa,$output2, $output,$output3){
         $con = Conexion::getConection();
         $consulta = $con->prepare("INSERT INTO nigiri.RegistroReservas (IdUsuarios,Mesa,FechaReserva,NumeroPersonas,HoraReserva) VALUES (:idUsuarios,:mesa,:fechaReserva,:numeroPersonas,:horareserva)");
         $consulta->bindParam(':idUsuarios', $id);
@@ -100,18 +121,16 @@ class Nigiri extends Modelo
         $consulta->bindParam(':horareserva', $output3);
     return $consulta->execute();
     }
-    public function AñadirRegRes($IdUsuarios,$Mesa,$FechaReserva,$NumeroPersonas,$HoraReserva){
-        $consulta = $this->prepare("INSERT INTO nigiri.RegistroReservas (IdUsuarios,Mesa,FechaReserva,NumeroPersonas,HoraReserva) VALUES (:idUsuarios,:mesa,:fechaReserva,:numeroPersonas,:horareserva)");
-        $consulta->bindParam(':idUsuarios', $IdUsuarios);
-        $consulta->bindParam(':mesa', $Mesa);
-        $consulta->bindParam(':fechaReserva', $FechaReserva);
-        $consulta->bindParam(':numeroPersonas', $NumeroPersonas);
-        $consulta->bindParam(':horareserva', $HoraReserva);
-        if ($consulta->execute()) {
-            return true;
-        } else
-            return false;
+    //Funciona
+    public function AñadirRegPed($idCom,$cant,$idPed){
+        $con = Conexion::getConection();
+        $consulta = $con->prepare("INSERT INTO registropedidos (IdComida,cantidad,IdPedidos) VALUES (:idcom,:cant,:idped)");
+        $consulta->bindParam(':idcom', $idCom);
+        $consulta->bindParam(':cant', $cant);
+        $consulta->bindParam(':idped', $idPed);
+        return $consulta->execute();
     }
+    //No implementado
     public function ComprobarReservas($mesa,$fecha,$hora){
         $consulta = "SELECT Mesa FROM nigiri.RegistroReservas WHERE Mesa = :mesa and FechaReserva = :fecha and HoraReserva = :hora" ;
         $result = $this->conexion->prepare($consulta);
@@ -120,6 +139,24 @@ class Nigiri extends Modelo
         $result->bindParam(':hora', $hora);
         $result->execute();
         return $result->fetch(PDO::FETCH_ASSOC);
+    }
+    //No Funciona
+    public function ActivarCuenta($Codigo){
+        $consulta = $this->prepare("UPDATE nigiri.usuarios SET Activado = 'si' WHERE Codigo = :codigo ");
+        $consulta->bindParam(':codigo', $Codigo);
+        $consulta->execute();
+        if ($consulta->execute()) {
+            return true;
+        } else
+            return false;
+    }
+    //No he podido comprobar si funciona
+    public function ObtenerNombreCodigo($MailUsuario){
+        $con = Conexion::getConection();
+        $consulta = $con->prepare("SELECT NombreUsuario,Codigo FROM usuarios WHERE CorreoElectronico = :mailusuario");
+        $consulta->bindParam(':mailusuario', $MailUsuario);
+        $results = $consulta -> fetchAll(PDO::FETCH_OBJ);
+        return $results;
     }
 }
 ?>

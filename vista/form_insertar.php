@@ -158,7 +158,6 @@
         </form>
   
  <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
- <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Salir</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
         </div>
     </header>
     </article>

@@ -56,7 +56,7 @@ $id= $result -> IdUsuarios;
 // }
 //AñadirRegistro($id,$output,$output2,$output3);
 $hola = new Nigiri();
-$hola->AñadirRegPed($id,$mesa,$output2,$output,$output3);
+$hola->AñadirRegRes($id,$mesa,$output2,$output,$output3);
 
 // function AsignarMesa($mesa,$output2,$output3)
 // {
