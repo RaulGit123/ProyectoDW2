@@ -1,5 +1,6 @@
 <?php
-
+include ("../modelo/ClaseModelo.php");
+include ("../modelo/ClaseNigiri.php");
 if (session_status()===PHP_SESSION_NONE){
   session_start();
 }
@@ -20,10 +21,11 @@ $Precio = ($_POST['Precio']);
 $Imagen = ($_POST['Imagen']);
 $Tipo = ($_POST['tipo']);
 
-$sql =$con->prepare( "INSERT INTO Comida ( Nombre, Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (?,?,?,?,?,?)") ;
+$f1 = new Nigiri();
+$f1->InsertarComida($Nombre, $Descripcion, $Ingredientes, $Precio, $Imagen, $Tipo);
+header("Location:../vista/admin.php");
+// $sql =$con->prepare( "INSERT INTO Comida ( Nombre, Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (?,?,?,?,?,?)") ;
+// return $sql->execute([$Nombre,$Descripcion,$Ingredientes,$Precio,$Imagen,$Tipo]);
 
-return $sql->execute([$Nombre,$Descripcion,$Ingredientes,$Precio,$Imagen,$Tipo]);
-
-echo"Datos introducidos correctamente";
+ 
 ?>
-   <a class="insertar" href="../vista/form_insertar.php">Quieres insertar un nuevo producto?</a>

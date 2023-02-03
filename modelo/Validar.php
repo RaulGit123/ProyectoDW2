@@ -1,5 +1,6 @@
 <?php 
-
+include ("ClaseModelo.php");
+include ("ClaseNigiri.php");
     require_once("Conexion.php");
 
     class Validar {
@@ -21,11 +22,17 @@
                     //posible enlace mal ... mirar controlador/ctrlsalir
                 }
 
-                // Consulta
-                $sql = "SELECT * FROM usuarios WHERE NombreUsuario = :USU AND Contraseña = :PASS";
+            $usu = $_SESSION["NombreUsuario"];
+            $pass = $_SESSION["Contraseña"];
 
-                $resultado = $con->prepare($sql);
-                $resultado->execute(array(":USU"=>$_SESSION["NombreUsuario"], ":PASS"=>$_SESSION["Contraseña"]));
+                // Consulta
+                // $sql = "SELECT * FROM usuarios WHERE NombreUsuario = :USU AND Contraseña = :PASS";
+
+                // $resultado = $con->prepare($sql);
+                // $resultado->execute(array(":USU"=>$_SESSION["NombreUsuario"], ":PASS"=>$_SESSION["Contraseña"]));
+
+                $f1 = new Nigiri();
+            $resultado = $f1->Login($usu,$pass);
 
                 $cantidad_resultado = $resultado->rowCount();
 
