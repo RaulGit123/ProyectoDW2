@@ -29,6 +29,7 @@
             <div class="form-group">
                 <input type="submit" class="btn btn-primary btn-lg btn-block text-uppercase" value="Ingresar código">
                 <input type="reset" class="btn btn-primary btn-lg btn-block text-uppercase" value="Reiniciar">
+                <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="./vista/register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>  
                 
             </div>
       
