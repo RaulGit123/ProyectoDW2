@@ -33,8 +33,34 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
                 <?php
+                        require_once("../modelo/Conexion.php");
                         if (session_status()===PHP_SESSION_NONE){
                             session_start();
+                        }
+                        $nombre = $_SESSION["NombreUsuario"];
+                        $con = Conexion::getConection();
+                        $sql = "SELECT IdUsuarios FROM usuarios WHERE NombreUsuario = '$nombre'";
+                        $query = $con -> prepare($sql); 
+                        $query -> execute(); 
+                        $results = $query -> fetchAll(PDO::FETCH_OBJ);
+
+                        if($query -> rowCount() > 0)   { 
+                            foreach($results as $result) { 
+                                $id = $result -> IdUsuarios;
+                            }
+                        }
+                        
+
+                        // $con = Conexion::getConection();
+                        $sql = "SELECT Direccion FROM `usuarios` WHERE IdUsuarios = $id;";
+                        $query = $con -> prepare($sql); 
+                        $query -> execute(); 
+                        $results = $query -> fetchAll(PDO::FETCH_OBJ);
+
+                        if($query -> rowCount() > 0)   { 
+                            foreach($results as $result) { 
+                                $dire = $result -> Direccion;
+                            }
                         }
                         if (!empty($_SESSION["NombreUsuario"])){
                     
@@ -82,16 +108,53 @@
                 <div id="total">
                     <h1>TOTAL</h1>
                     <div id="precioFinal">0,00€</div>
-                    <button id="fin" class="btn-info">Order</button>
+                    <button id="fafin" class="btn btn-info">Order</button>
                 </div>
             </div>
         </div>
     </section>
     <div class="d-none" id="precioReal"></div>
+    <div class="d-none" id="dirBase"></div>
     <?php 
         require_once('../vista/idusuario.php');
         include_once('../config/CreacionJSON.php');
     ?>
+    <div id="pago" class="d-none">
+        <div id="recuadro">
+            <div id="botonX">
+                <button class="close-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <h1 class="text-uppercase">Introduce tu dirección</h1>
+            <input id="dire" name="dire" type="text" value="<?php echo $dire;?>">
+            <h1 class="text-uppercase">Elige un método de pago</h1>
+            <div id="metodos">
+                <img class="pp" src="img/pago/paypal.png" alt="paypal">
+                <img class="cc" src="img/pago/visa.png" alt="visa">
+                <img class="cc" src="img/pago/master.png" alt="master">
+            </div>
+            <div id="cc" class="d-none">
+                <h1>Datos bancarios</h1>
+                <div id="datosb">
+                    <label for="numTar">Card Number</label>
+                    <input name="numTar" type="text" placeholder="0000 0000 0000 0000">
+                    <div><label for="expi">Expires</label>
+                    <input name="expi" type="text" placeholder="MM / YY"></div>
+                    <div><label for="cvc">CVC</label>
+                    <input name="cvc" type="text" placeholder="***"></div>
+                </div>
+            </div>
+            <div id="pp" class="d-none">
+            <h1>Pago con PayPal</h1>
+                <div id="datosp">
+                    <label for="ppMail">PayPal account email</label>
+                    <input name="ppMail" type="text" placeholder="example@mail.com">
+                    <label for="ppPass">Password</label>
+                    <input name="ppPass" type="password" placeholder="Password">
+                </div>
+            </div>
+            <button id="fin" class="btn btn-info">Finalizar</button>
+        </div>
+    </div>
     <script type="module" src="pedidos.js"></script>
     <script src="comun.js"></script>
 </body>
