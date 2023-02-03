@@ -1,15 +1,36 @@
 <?php 
 
     session_start();
+   
     if (isset($_SESSION["NombreUsuario"]) && isset($_SESSION["Contraseña"]) ) {
         
         require_once("modelo/Validar.php");
         $validar = new Validar();
         $validar->validarDatos();
+      
+        $nombre = $_SESSION["NombreUsuario"];
+        $con = Conexion::getConection();
 
-        if($_SESSION["NombreUsuario"]=="admin"){
-                header('Location: vista/admin.php');}else{
-                include_once("vista/principal.php"); }
+        $sql = "SELECT Activado FROM usuarios WHERE NombreUsuario = '$nombre'";
+        $query = $con -> prepare($sql); 
+        $query -> execute(); 
+        $results = $query -> fetchAll(PDO::FETCH_OBJ);
+
+        if($query -> rowCount() > 0)   { 
+        foreach($results as $result) { 
+            echo '<div id="idUsu" style="display: none;">'.$result -> Activado.'</div>';
+        }
+        }
+        $activado = $result->Activado;
+
+        if($_SESSION["NombreUsuario"]=="admin" ){
+                header('Location: vista/admin.php');}
+                
+        if($_SESSION["NombreUsuario"]!="admin" && $activado=='si'){
+                include_once("vista/principal.php");}   
+        else{
+            include_once("vista/login.php"); }
+            
             
      
     } else {
