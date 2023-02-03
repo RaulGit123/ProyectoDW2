@@ -10,21 +10,21 @@ $results = $query -> fetchAll(PDO::FETCH_OBJ);
 
 if($query -> rowCount() > 0)   { 
   foreach($results as $result) { 
-    $codigo= $result -> Codigo.'</div>';
+    $codigo= $result -> Codigo;
 
   }
   
 if($_POST["codigo"]=  $codigo){
 
+    // $pdetail = trim( preg_replace("/[^0-9a-zA-Z ]/", "", $codigo) );
+
     $con = Conexion::getConection();
-    $sql = "UPDATE usuarios SET Activado = 'pi' WHERE Codigo ='' ";
+    $sql = "UPDATE usuarios SET Activado = 'no' WHERE Codigo ='$codigo' ";
     $query = $con -> prepare($sql); 
     $query -> execute(); 
-    echo"1f74a54f39b3123ad272ca0a06e7463f </br>";
-    echo $codigo;
-    
+    header("location: ../vista/login.php");
 
-}else{ echo "incorrecto";}
+}else{ echo "codigo incorrecto incorrecto";}
 }
 
 ?>
