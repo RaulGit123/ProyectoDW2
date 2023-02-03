@@ -61,7 +61,7 @@
 
             <div class="input-group-prepend">
 
-            <span class="input-group-text"> <i class="fa-solid fa-apple-whole"></i> </span>
+            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 
             </div>
          
