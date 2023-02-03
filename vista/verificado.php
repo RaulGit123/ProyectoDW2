@@ -17,14 +17,14 @@ if($query -> rowCount() > 0)   {
 if($_POST["codigo"]==  $codigo){
 
     $con = Conexion::getConection();
-    $sql = "UPDATE usuarios SET Activado = 'pi' WHERE Codigo ='' ";
+    $sql = "UPDATE usuarios SET Activado = 'si' WHERE Codigo ='$codigo' ";
     $query = $con -> prepare($sql); 
     $query -> execute(); 
-    echo $_POST["codigo"];
-    echo $codigo;
-    
+   
+      header("location: ../hugo.php");
 
-}else{ echo "incorrecto";}
+}else{ header("location: verificar.php");}
 }
 
 ?>
+
