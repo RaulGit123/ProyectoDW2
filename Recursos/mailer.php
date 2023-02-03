@@ -6,8 +6,48 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-//Crear una instancia. Con true permitimos excepciones
+require_once("../modelo/Conexion.php");
+
+
+    session_start();
+ 
+// $con = Conexion::getConection();
+// $sql = "SELECT CorreoElectronico FROM usuarios";
+// $resultado = $con->prepare($sql);
+// $resultado->execute();
+// $resultados = $resultado -> fetchAll(PDO::FETCH_OBJ); 
+
+// if($resultado -> rowCount() > 0)   { 
+//     foreach($resultados as $mailes) { 
+//     echo " <tr> 
+//     <td>".$mailes -> CorreoElectronico."</td>
+   
+    
+//     </tr>";
+    
+    
+    
+//        }
+//      }
 $mail = new PHPMailer(true);
+
+
+$mailUsuario = $_POST["email"];
+
+$con = Conexion::getConection();
+$sql = "SELECT NombreUsuario,Codigo FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
+$query = $con -> prepare($sql); 
+$query -> execute(); 
+$results = $query -> fetchAll(PDO::FETCH_OBJ);
+
+if($query -> rowCount() > 0)   { 
+  foreach($results as $result) { 
+    $codigo= $result -> Codigo.'</div>';
+    $nombre= $result -> NombreUsuario;
+  }
+}
+
+
 
 try {
     //Valores dependientes del servidor que utilizamos
@@ -37,7 +77,7 @@ try {
 //Remitente
     $mail->setFrom('nigiriValencia@gmail.com', 'Nigiri staff');
 //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
-    $mail->addAddress('nigiriValencia@gmail.com', 'Yakuza');     //Add a recipient
+    $mail->addAddress($mailUsuario);     //Add a recipient
     //$mail->addAddress('ejemplo@example.com'); 
 
     //Copia
@@ -48,22 +88,27 @@ try {
     //Archivos adjuntos
     //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
+$body = 'Si quieres disfrutar de tus pedidos y reservas, verifíca tu cuenta en el siguiente enlace con tu código: </br>'.$codigo.'</br>
+        <a href="http://localhost/ProyectoDW2/vista/verificar.php">aqui</a>';
     //Contenido
     //Si enviamos HTML
     $mail->isHTML(true);    
     $mail->CharSet = "UTF8";    
     //Asunto
-    $mail->Subject = 'Bienvenido a onigiri';
+    $mail->Subject = 'Bienvenido a onigiri: '.$nombre;
     //Conteido HTML
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Body    = $body;
     //Contenido alternativo en texto simple
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->AltBody = 'mensaje alternativo.';
     //Enviar correo
     $mail->send();
     echo 'El mensaje se ha enviado con exito';
+
+     header("location: ../vista/verificar.php");
+    
 } catch (Exception $e) {
     echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";
+    
     
 }
 ?>

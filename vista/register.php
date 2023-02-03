@@ -11,6 +11,7 @@ $apellidos=$apellidos_err="";
 $direccion=$direccion_err="";
 $localidad=$localidad_err="";
 $listaProvincias=[];
+$codigo= md5( rand(0,1000) );;
 
 
 
@@ -126,11 +127,11 @@ $listaProvincias = trim($_POST["provincia"]);
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)&& empty($mail_err) && empty($name_err)&& empty($apellidos_err)&& empty($direccion_err)&& empty($localidad_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO Usuarios (NombreUsuario,Nombre,Apellidos,Contraseña,CorreoElectronico,Direccion,Provincia,Rol) VALUES (?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO Usuarios (NombreUsuario,Nombre,Apellidos,Contraseña,CorreoElectronico,Direccion,Provincia,Rol,Activado,Codigo) VALUES (?,?,?,?,?,?,?,?,?,?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "sssssssi", $param_username,$param_name,$param_apellidos,$param_password,$param_mail,$param_direccion,$param_provincia,$rol);
+            mysqli_stmt_bind_param($stmt, "sssssssiss", $param_username,$param_name,$param_apellidos,$param_password,$param_mail,$param_direccion,$param_provincia,$rol,$Activado,$Codigo);
             
             // Set parameters
             $param_username = $NombreUsuario;
@@ -141,11 +142,14 @@ $listaProvincias = trim($_POST["provincia"]);
             $param_provincia = $listaProvincias;
             $param_mail =$mail;
             $rol = 2;
+            $Activado = "no";
+            $Codigo = md5( rand(1000,9999) );
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: ../hugo.php");
+                // header("location: ../hugo.php");
+                include_once("../Recursos/mailer.php");
             } else{
                 echo "Algo salió mal, por favor inténtalo de nuevo.";
             }
