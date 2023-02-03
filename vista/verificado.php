@@ -14,17 +14,17 @@ if($query -> rowCount() > 0)   {
 
   }
   
-if($_POST["codigo"]=  $codigo){
-
-    // $pdetail = trim( preg_replace("/[^0-9a-zA-Z ]/", "", $codigo) );
+if($_POST["codigo"]==  $codigo){
 
     $con = Conexion::getConection();
-    $sql = "UPDATE usuarios SET Activado = 'no' WHERE Codigo ='$codigo' ";
+    $sql = "UPDATE usuarios SET Activado = 'pi' WHERE Codigo ='' ";
     $query = $con -> prepare($sql); 
     $query -> execute(); 
-    header("location: ../vista/login.php");
+    echo $_POST["codigo"];
+    echo $codigo;
+    
 
-}else{ echo "codigo incorrecto incorrecto";}
+}else{ echo "incorrecto";}
 }
 
 ?>
