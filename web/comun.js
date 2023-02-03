@@ -49,7 +49,7 @@ let div1 = createElementFromHTML(`<footer class="bg-dark text-center text-white"
                 class="fab fa-linkedin"></i></a>
     </section>
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        Contact us at: <a class="text-light" href="mailto:nigirijapan@gmail.com">nigirijapan@gmail.com</a> | <a
+        Contact us at: <a class="text-light" href="mailto:nigirijapan@gmail.com">nigirivalencia@gmail.com</a> | <a
             class="text-light" href="tel:+34963123456">963 12 34 56</a> | <a class="text-light"
             href="https://goo.gl/maps/x7VUrEzaKU3dV3cV8">C/D'Alberic 18, 46008 València</a>
     </div>
