@@ -29,7 +29,8 @@
         if($_SESSION["NombreUsuario"]!="admin" && $activado=='si'){
                 include_once("vista/principal.php");}   
         else{
-            include_once("vista/login.php"); }
+            include_once("vista/login.php");
+            echo '<script language="javascript">alert("Error de verificación");</script>'; }
             
             
      
