@@ -42,7 +42,7 @@ $results = $query -> fetchAll(PDO::FETCH_OBJ);
 
 if($query -> rowCount() > 0)   { 
   foreach($results as $result) { 
-    $codigo= $result -> Codigo.'</div>';
+    $codigo= $result -> Codigo;
     $nombre= $result -> NombreUsuario;
   }
 }

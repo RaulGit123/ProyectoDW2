@@ -84,7 +84,7 @@
                 <input type="submit" class="btn btn-primary btn-block" value="Ingresar código">
                 <input type="reset" class="btn btn-warning btn-block" value="Borrar código">
             </div>
-            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="./vista/register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>   
+            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="./register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>   
         </form>
         </article>
         </div>    
