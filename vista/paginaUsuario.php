@@ -38,14 +38,14 @@
                 <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                 <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
                 <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
-                <li class="nav-item"><a class="nav-link activo"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
+                <li class="nav-item"><a class="nav-link activo"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
              }else{
                 header("location:principal.php");
                             ?>
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                             <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
-                            <li class="nav-item"><a class="nav-link activo"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
+                            <li class="nav-item"><a class="nav-link activo"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
                         }
                         ?>
              
@@ -58,22 +58,22 @@
     <div id="griddy">
         <header class="masthead">
         
-            <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
-                <div class="masthead-subheading font-italic">Que deseas? Quizá una reserva? o mejor te lo traemos a casa?</div>
-                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/pedidos.php">Realizar pedido</a>
-                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/reservas.php">Reservar mesa</a>
-                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/PedidosYReserva.php">Tus pedidos y reservas</a>
+            <div class="mt-3 masthead-heading text-uppercase"><?php echo"Welcome to nigiri, ".$_SESSION["NombreUsuario"];?></div>
+                <div class="masthead-subheading font-italic">What do you want? Maybe a reservation? or better we bring it home?</div>
+                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/pedidos.php">Make an order</a>
+                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/reservas.php">Book a table</a>
+                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/PedidosYReserva.php">Your orders and reservations</a>
 
                 <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
-                <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Salir</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
+                <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Exit</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
             
         </header>
 
         <section class="p-5 page-section" id="aboutus"> <!--id services-->
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Reservas y pedidos</h2>
-                    <h3 class="section-subheading mx-auto">Para efectuar una reserva o un pedido necesita registrarse en la web para asegurarnos de que no eres un robot.</h3>
+                    <h2 class="section-heading text-uppercase">Booking and orders</h2>
+                    <h3 class="section-subheading mx-auto">To make a booking or an order you need to register on the web to make sure that you are not a robot.</h3>
                 </div>
             </div>
         </section>
