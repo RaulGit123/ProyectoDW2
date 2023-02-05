@@ -58,8 +58,8 @@ try {
     /* 
     * SMTP username y password Poned los vuestros. La contraseña es la que nos generó GMAIL
     */
-    $mail->Username   = 'nigirival@gmail.com';             
-    $mail->Password   = 'wawl fclk nqbj hytj';    
+    $mail->Username   = 'nigirivalencia@gmail.com';             
+    $mail->Password   = 'udia avnm qedy ycqd';    
     /*
     * Encriptación a usar ssl o tls, dependiendo cual usemos hay que utilizar uno u otro puerto
     */            
@@ -108,6 +108,7 @@ $body = 'Si quieres disfrutar de tus pedidos y reservas, verifíca tu cuenta en 
     
 } catch (Exception $e) {
     echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";
+    echo $mailUsuario;
     
     
     
