@@ -62,7 +62,7 @@
                 <div class="masthead-subheading font-italic">Que deseas? Quizá una reserva? o mejor te lo traemos a casa?</div>
                 <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/pedidos.php">Realizar pedido</a>
                 <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/reservas.php">Reservar mesa</a>
-                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="carrito.php">Ver carrito</a>
+                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="../web/PedidosYReserva.php">Tus pedidos y reservas</a>
 
                 <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
                 <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Salir</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->

@@ -64,6 +64,15 @@
         </div>
     </nav>
     <div id="griddy">
+    <!-- <div id="griddy">
+        <div class="slider">
+        <header class="masthead">
+            <div class="px-0 container imagen">
+                <img class="images" src="img/header-bg.jpg"/>
+                <img class="images" src="img/restaurante.jpg"/>
+                <img class="images" src="img/menu-bg.jpg"/>
+            </div>
+        </header> -->
         <header class="masthead">
             <div class="px-0 container">
                 <div class="masthead-subheading font-italic">El mejor restaurante japonés de València</div>
@@ -112,5 +121,6 @@
         </section>
     </div>
     <script src="comun.js"></script>
+    <!-- <script src="prueba.js"></script> -->
 </body>
 </html>
