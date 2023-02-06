@@ -13,8 +13,7 @@ $output = wordwrap($text, 60);
 $output2 = wordwrap($text2, 60);
 $output3 = wordwrap($text3, 60);
 // $dom = new DOMDocument('1.0', 'utf-8');
-$mesa = rand(1,4);
-
+$mesa = [1,2,3,4];
 
 
 $nombre = $_SESSION["NombreUsuario"];
@@ -56,41 +55,51 @@ $id= $result -> IdUsuarios;
 // }
 //AñadirRegistro($id,$output,$output2,$output3);
 $hola = new Nigiri();
-$hola->AñadirRegRes($id,$mesa,$output2,$output,$output3);
-
-// function AsignarMesa($mesa,$output2,$output3)
-// {
-//     $disponible = 0;
-//     $con = Conexion::getConection();
-//     for ($i = 0; $i < count($mesa);$i++) {
-//         $sql = "SELECT Mesa,FechaReserva,HoraReserva FROM RegistroReservas
-//         WHERE Mesa = $mesa[$i] and 
-//         FechaReserva = $output2 and
-//         HoraReserva = $output3" ;
-//         $query = $con -> prepare($sql); 
-//         $query -> execute(); 
-//         if($query -> rowCount() < 1)   {
-//             $disponible = $mesa[$i];
-//             break;
-//              }else{
-//             $disponible = 0;
-//              }
-//     }
-//     if($disponible !=0){
-//         return $disponible;
-//     }else{
-//         // $d_nested = document.getElementById("respt");
-//         // $MuestraError = $doc->d_nested.classList.remove("d-none");
-//         echo "hola";
-//         header("location: reservas.php");
-//         echo '<script type="text/javascript">
-//         let d_nested4 = document.getElementById("respt");
-//         d_nested.classList.remove("d-none");
-//         </script>';
-//     }
+if(AsignarMesa($mesa,$output2,$output3)>0){
+  $mesita = AsignarMesa($mesa, $output2, $output3);
+$hola->AñadirRegRes($id,$mesita,$output2,$output,$output3);
+}
+function AsignarMesa($mesa,$output2,$output3)
+{
+    $disponible = 0;
+    for ($i = 0; $i < count($mesa);$i++) {
+      $con = Conexion::getConection();
+        $sql = $con -> prepare("SELECT Mesa,FechaReserva,HoraReserva FROM RegistroReservas
+        WHERE Mesa = '$mesa[$i]' and 
+        FechaReserva = '$output2' and
+        HoraReserva = '$output3'" );
+        $sql -> execute();
+        $sql -> fetchAll(PDO::FETCH_OBJ);
+        // print_r($sql -> fetchAll(PDO::FETCH_OBJ));
+        if($sql -> rowCount() >0)   {
+          $disponible = 0;
+             }else{
+            $disponible = $mesa[$i];
+            break;
+             }
+    }
+    if($disponible !=0){
+        return $disponible;
+    }else{
+      echo $disponible;
+      return $disponible;
+        // $d_nested = document.getElementById("respt");
+        // $MuestraError = $doc->d_nested.classList.remove("d-none");
+        // header("location: reservas.php");
+        // echo '<script type="text/javascript">
+        // let d_nested4 = document.getElementById("respt");
+        // d_nested.classList.remove("d-none");
+        // </script>';
+    }
     
-// }
+}
+// function debug_to_console($data) {
+//   $output = $data;
+//   if (is_array($output))
+//       $output = implode(',', $output);
 
+//   echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+// }
 // function format_post_content($content = '') {
 //     $document = new DOMDocument();
 //     $document->loadHTML($content);

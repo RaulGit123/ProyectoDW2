@@ -129,9 +129,10 @@
     <div class="contenedor" id="contenedor">
   <button class="centrado masthead-subheading font-italic btn-danger">Finalize Booking</button>
 </div>
+<p class="respuesta mal d-none mb-4" id="respt">Todas las mesas en ese dia y hora estan ocupadas</p> 
 </div>                    
 <!-- </form> -->
-<!-- <p class="respuesta mal d-none mb-4" id="respt">Ya hay una reserva a ese dia y hora. Porfavor seleccione otra hora o dia</p>  -->
+
     <script src="comun.js"></script>
     <script src="reservas.js"></script>
 </body>
