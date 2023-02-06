@@ -125,7 +125,7 @@
                 <button class="close-btn"><i class="fas fa-times"></i></button>
             </div>
             <h1 class="text-uppercase">Enter your address</h1>
-            <input id="dire" name="dire" type="text" value="<?php echo $dire;?>">
+            <input id="dire" name="dire" type="text" value="<?php echo $dire;?>" required>
             <h1 class="text-uppercase">Choose a payment method</h1>
             <div id="metodos">
                 <img class="pp" src="img/pago/paypal.png" alt="paypal">
@@ -136,20 +136,20 @@
                 <h1>Bank data</h1>
                 <div id="datosb">
                     <label for="numTar">Card Number</label>
-                    <input name="numTar" type="text" placeholder="0000 0000 0000 0000">
+                    <input name="numTar" type="text" placeholder="0000 0000 0000 0000" pattern="(\b\d{4}\s?\d{4}\s?\d{4}\s?\d{4}\b)" required>
                     <div><label for="expi">Expires</label>
-                    <input name="expi" type="text" placeholder="MM / YY"></div>
+                    <input name="expi" type="text" placeholder="MM/YY" pattern="(\b\d{2}\/\d{2}\b)" required></div>
                     <div><label for="cvc">CVC</label>
-                    <input name="cvc" type="text" placeholder="***"></div>
+                    <input name="cvc" type="text" placeholder="***" pattern="(\b\d{3}\b)" required></div>
                 </div>
             </div>
             <div id="pp" class="d-none">
-            <h1>Payment with paypal</h1>
+            <h1>Payment with PayPal</h1>
                 <div id="datosp">
                     <label for="ppMail">PayPal account email</label>
-                    <input name="ppMail" type="text" placeholder="example@mail.com">
+                    <input name="ppMail" type="email" placeholder="example@mail.com" required>
                     <label for="ppPass">Password</label>
-                    <input name="ppPass" type="password" placeholder="Password">
+                    <input name="ppPass" type="password" placeholder="Password" minlength="6" required>
                 </div>
             </div>
             <button id="fin" class="btn btn-info">Finish</button>

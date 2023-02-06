@@ -162,36 +162,53 @@ let pedido = {
 let registroPedido = [];
 
 document.querySelector("#fin").addEventListener("click",function(){
-    pedido.idUsuario = parseInt(document.querySelector("#idUsu").innerHTML);
-    pedido.precioFinal = total;
-    pedido.fechaPedido = new Date().toLocaleString('es-ES');
-    pedido.direccion = document.getElementById("dire").value;
-    if (document.querySelector(".seleccion").classList.contains("pp")) {
-        pedido.metodoPago = "PayPal";
-    } else pedido.metodoPago = "Credit Card";
+    let ready = true;
+    if (metodoEscogido == "cc") {
+        document.querySelectorAll("#datosb input").forEach(ele => {
+            if (!ele.checkValidity()) {
+                ready = false;
+            }
+        });
+    } else if (metodoEscogido == "pp" && ready) {
+        document.querySelectorAll("#datosp input").forEach(ele => {
+            if (!ele.checkValidity()) {
+                ready = false;
+            }
+        });
+    } else ready = false;
 
-    //recorrer cada uno de los platos seleccionados
-    document.querySelectorAll(".elemento:not(.d-none)").forEach(ele => {
-        let registro = {
-            idComida: parseInt(ele.id.substring(1)),
-            cantidad: parseInt(ele.children[0].children[0].innerHTML.slice(0,-1))
-        }
-        registroPedido.push(registro);
-    });
-    document.querySelector("#precioReal").innerHTML = pedido.precioFinal;
+    if (ready && document.getElementById("dire").checkValidity()) {
+        pedido.idUsuario = parseInt(document.querySelector("#idUsu").innerHTML);
+        pedido.precioFinal = total;
+        pedido.fechaPedido = new Date().toLocaleString('es-ES');
+        pedido.direccion = document.getElementById("dire").value;
+        if (document.querySelector(".seleccion").classList.contains("pp")) {
+            pedido.metodoPago = "PayPal";
+        } else pedido.metodoPago = "Credit Card";
 
-    let regPedJSON = JSON.stringify(registroPedido);
-    $.ajax({
-        method: "POST",
-        url: "GuardaPedido.php",
-        data: {precioFinal: pedido.precioFinal,
-            fechaPedido: pedido.fechaPedido,
-            regPedJSON: regPedJSON,
-            direccion: pedido.direccion,
-            metodoPago: pedido.metodoPago
-      }
-      });
-      window.location.href = "PedidosYReserva.php";
+        //recorrer cada uno de los platos seleccionados
+        document.querySelectorAll(".elemento:not(.d-none)").forEach(ele => {
+            let registro = {
+                idComida: parseInt(ele.id.substring(1)),
+                cantidad: parseInt(ele.children[0].children[0].innerHTML.slice(0,-1))
+            }
+            registroPedido.push(registro);
+        });
+        document.querySelector("#precioReal").innerHTML = pedido.precioFinal;
+
+        let regPedJSON = JSON.stringify(registroPedido);
+        $.ajax({
+            method: "POST",
+            url: "GuardaPedido.php",
+            data: {precioFinal: pedido.precioFinal,
+                fechaPedido: pedido.fechaPedido,
+                regPedJSON: regPedJSON,
+                direccion: pedido.direccion,
+                metodoPago: pedido.metodoPago
+            }
+        });
+        window.location.href = "PedidosYReserva.php";
+    }
 });
 
 let metodos = document.querySelector("#metodos").children;
@@ -207,22 +224,27 @@ Array.prototype.forEach.call(metodos, img => {
     });
 });
 
+let metodoEscogido = "";
 function mostrarMetodo() {
     let cc = document.getElementById("cc");
     let pp = document.getElementById("pp");
 
     // MÉTODO Credit Card
     if (document.querySelector(".seleccion").classList.contains("cc")){
+        metodoEscogido = "cc";
         cc.classList.remove("d-none");
         pp.classList.add("d-none");
     } else { //MÉTODO PayPal
+        metodoEscogido = "pp";
         pp.classList.remove("d-none");
         cc.classList.add("d-none");
     }
 }
 
 document.querySelector("#fafin").addEventListener("click", function(){
-    document.querySelector("#pago").classList.remove("d-none");
+    if (total!=0) {
+        document.querySelector("#pago").classList.remove("d-none");
+    }
 });
 
 document.querySelector(".close-btn").addEventListener("click", function(){
