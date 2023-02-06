@@ -209,7 +209,7 @@ Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (
 · 6 tablespoons black sesame paste (purchased from asian supermarkets)
 · 1/2 cup black sesame seeds, toasted
 · 2 cups thickened cream","2.90","helado.jpg","Dessert");
-Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("MOCHIS 3 units","Steamed filled dumplings made with sticky rice, called mochigome, which is particularly sweet.",
+Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Mochis 3 units","Steamed filled dumplings made with sticky rice, called mochigome, which is particularly sweet.",
 "· Rice flour 200 g
 · 240ml water
 · Sugar 250 g
@@ -219,6 +219,14 @@ Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (
 · Honey 2 tablespoons
 · Sugar 120 g
 · Sugar glass 60 g","4.90","Mochis.jpg","Dessert");
+Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Taiyaki 2 units","This Japanese sweet is actually a sea bream-shaped waffle (symbolizes good luck), traditionally filled with a bean paste mixed with sugar or azuki.",
+"· 150 g harina de trigo de reposteria
+· 180 mL leche entera
+· 1 sobre levadura
+· 1 huevo
+· 30 g azucar
+· aceite de oliva
+· Relleno chocolate","5.99","taiyaki.jpg","Dessert");
 Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Cold Sake","Japanese alcoholic beverage made from fermented rice. Sake is light in colour, is noncarbonated, has a sweet flavour, and contains about 14 to 16 percent alcohol.",
 "6.50","sake.jpg","Beverages");
 Insert Into Comida (Nombre,Descripcion,Precio,Imagen,tipo) VALUES ("Kirin","The flavor of Kirin Ichiban is dry, medium-light in body, and modestly bitter. It has a soft texture and moderate carbonation.",
