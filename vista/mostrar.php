@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../web/styles/menu.css">
     <link rel="stylesheet" href="../web/styles/login.css">
     <link rel="stylesheet" href="../web/styles/pag_principal.css">
+    <link rel="stylesheet" href="../web/styles/mostrar.css">
     <link rel="shortcut icon" href="../web/img/logo2.png" type="image/x-icon">
 </head>
 <body id="page-top">

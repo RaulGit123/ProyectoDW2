@@ -93,9 +93,9 @@ if(empty(trim($Contraseña))){
             </div>
          
        
-            <input type="text" name="NombreUsuario" class="form-control is-invalid" placeholder="Enter Username" value="<?php echo $NombreUsuario; ?>">
+            <input type="text" name="NombreUsuario" class="form-control" placeholder="Enter Username" value="<?php echo $NombreUsuario; ?>">
                
-            <span class="invalid-feedback"><?php echo $username_err; ?></span>
+            <!-- <span class="invalid-feedback"><?php echo $username_err; ?></span> -->
             </div>
 
 
@@ -111,8 +111,8 @@ if(empty(trim($Contraseña))){
             </div>
 
 
-            <input type="password" class="form-control is-invalid" name="Contraseña" id="Contraseña"placeholder="Enter Password"value="<?php echo $Contraseña; ?>">
-            <span class="invalid-feedback"><?php echo $password_err; ?></span>
+            <input type="password" class="form-control" name="Contraseña" id="Contraseña"placeholder="Enter Password"value="<?php echo $Contraseña; ?>">
+            <!-- <span class="invalid-feedback"><?php echo $password_err; ?></span> -->
             </div>
 
 
@@ -131,13 +131,17 @@ if(empty(trim($Contraseña))){
                 <input type="submit" class="btn btn-primary btn-block" value="Log in">
                 <input type="reset" class="btn btn-warning btn-block" value="Clear">
             </div>
-            <div class="form-group input-group">
+            <div class="form-group ">
             <p class="text-center " style="color:white;">Do not you have an account yet? <a href="./vista/register.php" class="btn btn-danger" >REGISTER</a> </p>
+            
+             
+           
             <p class="text-center " style="color:white;">Didn't you validate the account? <a href="./vista/verificar.php" class="btn btn-danger" >VERIFY</a> </p>
-            </div>    
-            <div class="form-group input-group">
+         
+          
             <p class="text-center " style="color:white;">Forgot password? <a href="./vista/recuperarPass.php" class="btn btn-danger" >RECOVER</a> </p>
-</div>
+            </div>     
+            
         </form>
         </article>
         </div>    
