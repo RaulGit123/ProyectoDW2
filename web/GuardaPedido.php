@@ -21,6 +21,8 @@ if($query -> rowCount() > 0)   {
 
 $precioFinal = $_POST['precioFinal'];
 $fechaPedido = $_POST['fechaPedido'];
+$direccion = $_POST['direccion'];
+$metodoPago = $_POST['metodoPago'];
 $regPedJSON = json_decode(stripslashes($_POST['regPedJSON']));
 
 // function AñadirPedido($output1,$output2,$output3)
@@ -31,7 +33,7 @@ $regPedJSON = json_decode(stripslashes($_POST['regPedJSON']));
 //     ]);
 // }
 $hola = new Nigiri();
-$hola->GuardaPedidos($id, $precioFinal, $fechaPedido);
+$hola->GuardaPedidos($id, $precioFinal, $fechaPedido, $direccion, $metodoPago);
 // AñadirPedido($id,$precioFinal,$fechaPedido);
 
 
@@ -66,6 +68,5 @@ foreach ($regPedJSON as $ele) {
     // AñadirRegPed($idCom,$cant,$idPed);
     $hola3->AñadirRegPed($idCom,$cant,$idPed);
 }
-
 
 ?>
