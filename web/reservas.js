@@ -115,7 +115,6 @@ ReservaPersonas.forEach(Com =>{
       // console.log(mesActual);
       
     if(listaCant[0].innerHTML>=2 && listaFecha[0].value!="" && listaFecha[0].value>fechaguardada && horaseleccionada == "adios"){
-            window.location.href = "../vista/paginaUsuario.php";
     var NumeroPersonas = listaCant[0].innerHTML;
     var Fecha = listaFecha[0].value;
     var Hora = horaguardada.innerHTML;
@@ -130,7 +129,7 @@ ReservaPersonas.forEach(Com =>{
              text2: $("#fechita").val(),
              text3: $("#horita").text()
     }
-    })
+    }); window.location.href = "PedidosYReserva.php";
     });
 });
 

@@ -72,13 +72,23 @@ tipos.forEach(tipo => {
 
 let listaMa = document.querySelectorAll(".btoMa");
 let listaMe = document.querySelectorAll(".btoMe");
-let listaCant = document.querySelectorAll(".cantidad");
+let listaCantBase = document.querySelectorAll(".cantidad");
+let listaCant = [];
+listaCantBase.forEach(ele => {
+    let id = ele.parentElement.id;
+    listaCant[id] = ele;
+});
+
+// listaCant.forEach(element => {
+//     console.log(element.parentElement.id);
+// });
 
 listaMa.forEach(ele => {
     let id = ele.parentElement.id;
+    // console.log(id);
     ele.addEventListener("click", function(){
-        let cant = parseInt(listaCant[id-1].innerHTML);
-        listaCant[id-1].innerHTML = cant+1;
+        let cant = parseInt(listaCant[id].innerHTML);
+        listaCant[id].innerHTML = cant+1;
         if (cant == 0) {
             document.querySelector("#c"+id).classList.remove("d-none");
         }
@@ -89,9 +99,9 @@ listaMa.forEach(ele => {
 listaMe.forEach(ele => {
     let id = ele.parentElement.id;
     ele.addEventListener("click", function(){
-        let cant = parseInt(listaCant[id-1].innerHTML);
+        let cant = parseInt(listaCant[id].innerHTML);
         if (cant>0) {
-            listaCant[id-1].innerHTML = cant-1;
+            listaCant[id].innerHTML = cant-1;
             actualizarCant(id, cant-1);
             if (cant-1 == 0) {
                 document.querySelector("#c"+id).classList.add("d-none");
@@ -113,7 +123,7 @@ lista.forEach(ele => {
     divEle.appendChild(btnX);
     document.querySelector("#carrito").appendChild(divEle);
 
-    console.log(ele);
+    // console.log(ele);
 });
 
 function actualizarCant(id,x) { //x = cant
@@ -140,15 +150,13 @@ function actualizarTotal() {
             total+=precio;
         }
     });
-    console.log(total);
+    // console.log(total);
     document.querySelector("#precioFinal").innerHTML = numeroAEuros(total);
 }
 
 //idUsuario, PrecioFinal, fechaPedido
 let pedido = {
-    idUsuario: 0,
-    precioFinal: 0,
-    fechaPedido: "0"
+    idUsuario: 0, precioFinal: 0, fechaPedido: "0", direccion: "", metodoPago: ""
 };
 //idComida, cantidad
 let registroPedido = [];
@@ -157,6 +165,10 @@ document.querySelector("#fin").addEventListener("click",function(){
     pedido.idUsuario = parseInt(document.querySelector("#idUsu").innerHTML);
     pedido.precioFinal = total;
     pedido.fechaPedido = new Date().toLocaleString('es-ES');
+    pedido.direccion = document.getElementById("dire").value;
+    if (document.querySelector(".seleccion").classList.contains("pp")) {
+        pedido.metodoPago = "PayPal";
+    } else pedido.metodoPago = "Credit Card";
 
     //recorrer cada uno de los platos seleccionados
     document.querySelectorAll(".elemento:not(.d-none)").forEach(ele => {
@@ -167,8 +179,6 @@ document.querySelector("#fin").addEventListener("click",function(){
         registroPedido.push(registro);
     });
     document.querySelector("#precioReal").innerHTML = pedido.precioFinal;
-    console.log(pedido);
-    console.log(registroPedido);
 
     let regPedJSON = JSON.stringify(registroPedido);
     $.ajax({
@@ -176,13 +186,15 @@ document.querySelector("#fin").addEventListener("click",function(){
         url: "GuardaPedido.php",
         data: {precioFinal: pedido.precioFinal,
             fechaPedido: pedido.fechaPedido,
-            regPedJSON: regPedJSON
+            regPedJSON: regPedJSON,
+            direccion: pedido.direccion,
+            metodoPago: pedido.metodoPago
       }
-      })
+      });
+      window.location.href = "PedidosYReserva.php";
 });
 
 let metodos = document.querySelector("#metodos").children;
-console.log(metodos);
 
 Array.prototype.forEach.call(metodos, img => {
     img.addEventListener("click",function(){
