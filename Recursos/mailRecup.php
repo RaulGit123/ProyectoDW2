@@ -35,7 +35,7 @@ $mail = new PHPMailer(true);
 $mailUsuario = $_POST["email"];
 
 $con = Conexion::getConection();
-$sql = "SELECT Contraseña FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
+$sql = "SELECT Contraseña, NombreUsuario FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
 $results = $query -> fetchAll(PDO::FETCH_OBJ);
@@ -58,8 +58,8 @@ try {
     /* 
     * SMTP username y password Poned los vuestros. La contraseña es la que nos generó GMAIL
     */
-    $mail->Username   = 'nigiriValencia@gmail.com';             
-    $mail->Password   = 'dkhn xcep wuts pnpc';    
+    $mail->Username   = 'nigiriVal@gmail.com';             
+    $mail->Password   = 'wawl fclk nqbj hytj';    
     /*
     * Encriptación a usar ssl o tls, dependiendo cual usemos hay que utilizar uno u otro puerto
     */            
@@ -75,7 +75,7 @@ try {
     Receptores y remitente
     */
 //Remitente
-    $mail->setFrom('nigiriValencia@gmail.com', 'Nigiri staff');
+    $mail->setFrom('nigiriVal@gmail.com', 'Nigiri staff');
 //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
     $mail->addAddress($mailUsuario);     //Add a recipient
     //$mail->addAddress('ejemplo@example.com'); 

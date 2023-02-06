@@ -48,7 +48,7 @@ $results = $f1->ObtenerNombreCodigo($mailUsuario);
 
 // if($query -> rowCount() > 0)   { 
   foreach($results as $result) { 
-    $codigo= $result -> Codigo.'</div>';
+    $codigo= $result -> Codigo;
     $nombre= $result -> NombreUsuario;
   }
 // }
@@ -64,8 +64,8 @@ try {
     /* 
     * SMTP username y password Poned los vuestros. La contraseña es la que nos generó GMAIL
     */
-    $mail->Username   = 'nigiriValencia@gmail.com';             
-    $mail->Password   = 'dkhn xcep wuts pnpc';    
+    $mail->Username   = 'nigirivalencia@gmail.com';             
+    $mail->Password   = 'udia avnm qedy ycqd';    
     /*
     * Encriptación a usar ssl o tls, dependiendo cual usemos hay que utilizar uno u otro puerto
     */            
@@ -81,7 +81,7 @@ try {
     Receptores y remitente
     */
 //Remitente
-    $mail->setFrom('nigiriValencia@gmail.com', 'Nigiri staff');
+    $mail->setFrom('nigirival@gmail.com', 'Nigiri staff');
 //Receptores. Podemos añadir más de uno. El segundo argumento es opcional, es el nombre
     $mail->addAddress($mailUsuario);     //Add a recipient
     //$mail->addAddress('ejemplo@example.com'); 
@@ -114,6 +114,8 @@ $body = 'Si quieres disfrutar de tus pedidos y reservas, verifíca tu cuenta en 
     
 } catch (Exception $e) {
     echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";
+    echo $mailUsuario;
+    
     
     
 }
