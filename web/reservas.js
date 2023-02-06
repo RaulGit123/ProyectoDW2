@@ -121,7 +121,6 @@ ReservaPersonas.forEach(Com =>{
     console.log(NumeroPersonas);
     console.log(Fecha);
     console.log(Hora);
-    }
     $.ajax({
       method: "POST",
       url: "GuardaReserva.php",
@@ -129,7 +128,10 @@ ReservaPersonas.forEach(Com =>{
              text2: $("#fechita").val(),
              text3: $("#horita").text()
     }
-    }); window.location.href = "PedidosYReserva.php";
+    });
+    window.location.href = "PedidosYReserva.php";
+    }
+    
     });
 });
 
