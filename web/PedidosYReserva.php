@@ -38,6 +38,78 @@ require_once("../modelo/Conexion.php");
 
 
 <body id="page-top">
+<nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.php"><img src="img/logo2.png" alt="logo" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
+                <?php
+                        require_once("../modelo/Conexion.php");
+                        if (session_status()===PHP_SESSION_NONE){
+                            session_start();
+                        }
+                        $nombre = $_SESSION["NombreUsuario"];
+                        $con = Conexion::getConection();
+                        $sql = "SELECT IdUsuarios FROM usuarios WHERE NombreUsuario = '$nombre'";
+                        $query = $con -> prepare($sql); 
+                        $query -> execute(); 
+                        $results = $query -> fetchAll(PDO::FETCH_OBJ);
+
+                        if($query -> rowCount() > 0)   { 
+                            foreach($results as $result) { 
+                                $id = $result -> IdUsuarios;
+                            }
+                        }
+                        
+
+                        // $con = Conexion::getConection();
+                        $sql = "SELECT Direccion FROM `usuarios` WHERE IdUsuarios = $id;";
+                        $query = $con -> prepare($sql); 
+                        $query -> execute(); 
+                        $results = $query -> fetchAll(PDO::FETCH_OBJ);
+
+                        if($query -> rowCount() > 0)   { 
+                            foreach($results as $result) { 
+                                $dire = $result -> Direccion;
+                            }
+                        }
+                        if (!empty($_SESSION["NombreUsuario"])){
+                    
+                           ?>  
+                            <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                            <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
+                            <?php
+
+                            if($_SESSION["NombreUsuario"]=="admin"){
+                                ?><li class="nav-item"><a class="nav-link" href="../vista/admin.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php      
+                            } 
+                            ?>
+                            <?php
+                            if($_SESSION["NombreUsuario"]!="admin"){
+                               ?> <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
+                            }
+                            
+                            
+                        }else {
+                            header("location:../vista/principal.php");
+                            ?>
+                            <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Order Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Book Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
+                        }
+                        ?>
+                        <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="grid">
         <!-- <section class="card bg-dar"> -->
         <!-- Los Pedidos del usuario  -->
@@ -50,7 +122,6 @@ require_once("../modelo/Conexion.php");
     
 <table border="0" cellspacing="1" cellpadding="1" class="table table-dark table-hover bg-transparent centrar"> 
 <tr> 
-<td> <font face="Arial">IdPedidos</font> </td> 
 <td> <font face="Arial">PrecioFinal</font> </td> 
 <td> <font face="Arial">FechaPedido</font> </td> 
 <td> <font face="Arial">Direccion</font> </td>
@@ -59,7 +130,7 @@ require_once("../modelo/Conexion.php");
 <?php
 
 $con = Conexion::getConection();
-$sql = "SELECT p.IdPedidos , p.PrecioFinal , p.FechaPedido ,p.Direccion, p.MetodoPago FROM pedidos p, usuarios u WHERE p.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
+$sql = "SELECT p.PrecioFinal , p.FechaPedido ,p.Direccion, p.MetodoPago FROM pedidos p, usuarios u WHERE p.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
 $results = $query -> fetchAll(PDO::FETCH_OBJ); 
@@ -68,7 +139,6 @@ $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query -> rowCount() > 0)   { 
 foreach($results as $result) { 
 echo " <tr> 
-<td>".$result -> IdPedidos."</td>
 <td>".$result -> PrecioFinal."</td>
 <td>".$result -> FechaPedido."</td>
 <td>".$result -> Direccion."</td>
@@ -96,8 +166,7 @@ echo " <tr>
 <div class="form-group your">
 
     
-<table border="0" cellspacing="1" cellpadding="1" class="table table-dark table-hover bg-transparent centrar"> 
-<td> <font face="Arial">IdReservas</font> </td> 
+<table border="0" cellspacing="1" cellpadding="1" class="table table-dark table-hover bg-transparent centrar">  
 <td> <font face="Arial">Mesa</font> </td> 
 <td> <font face="Arial">FechaReserva</font> </td> 
 <td> <font face="Arial">HoraReserva</font> </td>
@@ -106,7 +175,7 @@ echo " <tr>
 
 <?php
 $con = Conexion::getConection();
-$sql = "SELECT r.IdReservas , r.Mesa , r.FechaReserva,r.NumeroPersonas,r.HoraReserva FROM registroreservas r, usuarios u WHERE r.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
+$sql = "SELECT  r.Mesa , r.FechaReserva,r.NumeroPersonas,r.HoraReserva FROM registroreservas r, usuarios u WHERE r.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
 $results = $query -> fetchAll(PDO::FETCH_OBJ); 
@@ -115,7 +184,6 @@ $results = $query -> fetchAll(PDO::FETCH_OBJ);
 if($query -> rowCount() > 0)   { 
 foreach($results as $result) { 
 echo " <tr> 
-<td>".$result -> IdReservas."</td>
 <td>".$result -> Mesa."</td>
 <td>".$result -> FechaReserva."</td>
 <td>".$result -> HoraReserva."</td>

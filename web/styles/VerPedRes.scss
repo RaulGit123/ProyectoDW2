@@ -1,13 +1,13 @@
 @import 'comun.scss';
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: 2fr 2fr;
     height: 100vh;
   }
-//   .your{
-//     font-size: 5pt;
-//   }
+
+
+
 
 #kanji{
     font-size: 4em;
@@ -46,69 +46,7 @@ h4{
     font-size: 40px;
     
 }
-.people{
-    color:white;
-    font-size: 30px;
-    font-family: Roboto Slab;
-}
-.peopleselected{
-    // width: 100px;
-    // height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .cantidad {
-    background-color: white;
-    color: black;
-    margin: 10px;
-    width: 80px;
-    height: 50px;
-    border-radius: 10%;
-    font-size: 30px;
-    margin:0;
-  }
-  .btoMa {
-    width: 100px;
-    height: 50px;
-    border-radius: 10%;
-     background-color:rgba(208, 216, 239, 100);
-    font-size: 30px;
-  }
-  .btoMe {
-    width: 100px;
-    height: 50px;
-    border-radius: 10%;
-    font-size: 30px;
-    background-color:rgba(208, 216, 239, 100);
-  }
 
-.fecha{
-    font-size: 30px;
-    padding:10px;
-    width: 250px;
-    height: 50px;
-}
-
-
-
-.item{
-    background-color: rgba(255, 255, 255, 0.7);
-    margin:20px;
-    font-size: 25pt;
-    width:100px;
-    height:100px;
-}
-.mal{
-    color:#c00003;
-    text-align: center;
-    font-size: 16pt;
-}
-// .botonReserva{
-//     display:flex;
-//     align-items: center;
-//     text-align: center;
-// }
 div.contenedor {
     display: flex;
     justify-content: center;

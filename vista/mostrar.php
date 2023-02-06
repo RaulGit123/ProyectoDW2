@@ -46,7 +46,7 @@
                 <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                 <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
                 <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
-                <li class="nav-item"><a class="nav-link activo"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li>
+                <li class="nav-item"><a class="nav-link activo"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li>
             <?php }?>
                            
            </ul>
@@ -56,8 +56,8 @@
     </nav>
     <header class="masthead">
        
-        <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
-            <div class="masthead-subheading font-italic">Registro de productos.</div>
+        <div class="mt-3 masthead-heading text-uppercase"><?php echo"Welcome to Nigiri, ".$_SESSION["NombreUsuario"];?></div>
+            <div class="masthead-subheading font-italic">View all dish</div>
 
             <div class="card bg-dar" >
 
@@ -70,12 +70,12 @@
                 
           <table border="0" cellspacing="2" cellpadding="2" class="table table-dark table-hover bg-transparent"> 
           <tr> 
-          <td> <font face="Arial">IdComida</font> </td> 
-          <td> <font face="Arial">Nombre</font> </td> 
-          <td> <font face="Arial">Descripcion</font> </td> 
-          <td> <font face="Arial">Ingredientes</font> </td>
-          <td> <font face="Arial">Precio</font> </td> 
-          <td> <font face="Arial">Tipo</font> </td> 
+          <td> <font face="Arial">Id</font> </td> 
+          <td> <font face="Arial">Name</font> </td> 
+          <td> <font face="Arial">Description</font> </td> 
+          <td> <font face="Arial">Ingredients</font> </td>
+          <td> <font face="Arial">Price</font> </td> 
+          <td> <font face="Arial">Kind</font> </td> 
           </tr>
 
          <?php require_once("../modelo/Conexion.php");
@@ -112,7 +112,7 @@ echo " <tr>
 
     </header>
                
-    <a class="mt-5 mb-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Volver a administración</a>
+    <a class="mt-5 mb-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Back to admin</a>
     <script src="../web/comun.js"></script>
 </body>
 </html>

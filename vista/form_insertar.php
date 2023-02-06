@@ -39,7 +39,7 @@
                 <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                 <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
                 <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
-                <li class="nav-item"><a class="nav-link activo"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li>
+                <li class="nav-item"><a class="nav-link activo"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li>
             <?php }?>
                            
            </ul>
@@ -50,8 +50,8 @@
     <div id="griddy">
     <header class="masthead">
        
-        <div class="mt-3 masthead-heading text-uppercase"><?php echo"Bienvenido a nigiri, ".$_SESSION["NombreUsuario"];?></div>
-            <div class="masthead-subheading font-italic">Registro de productos.</div>
+        <div class="mt-3 masthead-heading text-uppercase"><?php echo"Welcome to Nigiri, ".$_SESSION["NombreUsuario"];?></div>
+            <div class="masthead-subheading font-italic">Register a new dish.</div>
 
             <div class="card bg-dar" >
     <article class="card-body mx-auto articulo" id="bg-article">   
@@ -68,7 +68,7 @@
     </div>
 
 
-    <input type="text" name="Nombre" class="form-control" placeholder="Nombre">
+    <input type="text" name="Nombre" class="form-control" placeholder="Name">
    
     </div>
 
@@ -84,7 +84,7 @@
     </div>
 
 
-    <input type="text" name="Descripcion" class="form-control" placeholder="Descripcion">
+    <input type="text" name="Descripcion" class="form-control" placeholder="Description">
 
     </div>
      <!--form-groud--> 
@@ -99,7 +99,7 @@
     </div>
 
 
-    <input type="text" name="Ingredientes" class="form-control" placeholder="Ingredientes">
+    <input type="text" name="Ingredientes" class="form-control" placeholder="Ingredients">
 
     </div>
  <!--form-groud-->    
@@ -114,7 +114,7 @@
     </div>
 
 
-    <input type="text" name="Precio" class="form-control" placeholder="Precio">
+    <input type="text" name="Precio" class="form-control" placeholder="Price">
 
     </div>
  <!--form-groud-->     
@@ -129,7 +129,7 @@
     </div>
 
 
-    <input type="text" name="Imagen" class="form-control" placeholder="Imagen">
+    <input type="text" name="Imagen" class="form-control" placeholder="Image">
 
     </div>
 <!--form-groud-->
@@ -144,16 +144,16 @@
     </div>
 
 
-    <input type="text" name="tipo" class="form-control" placeholder="Tipo">
+    <input type="text" name="tipo" class="form-control" placeholder="Kind of food">
 
     </div>
 <!--form-groud-->                            
 
        <div class="form-group ">
-        <input type="submit" class="btn btn-primary btn-block btn-lg text-uppercase" value="Insertar datos en la tabla">
-        <input type="reset" class="btn btn-primary btn-block btn-lg text-uppercase" value="Borrar datos en la tabla">
+        <input type="submit" class="btn btn-primary btn-block btn-lg text-uppercase" value="Insert a new dish">
+        <input type="reset" class="btn btn-primary btn-block btn-lg text-uppercase" value="Clear form">
         </div>
-        <a class="mt-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Volver a administración</a>
+        <a class="mt-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Back to admin</a>
         </form>
   
  <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
@@ -165,8 +165,8 @@
     <section class="p-5 page-section" id="aboutus"> <!--id services-->
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Reservas y pedidos</h2>
-                <h3 class="section-subheading mx-auto">Para efectuar una reserva o un pedido necesita registrarse en la web para asegurarnos de que no eres un robot.</h3>
+                <h2 class="section-heading text-uppercase">Admin control</h2>
+                <h3 class="section-subheading mx-auto">Administrator control panel, the elements will be modified in real time, handle with care.</h3>
             </div>
         </div>
     </section>

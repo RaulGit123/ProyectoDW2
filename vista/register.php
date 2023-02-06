@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
  
     // Validate NombreUsuario
     if(empty(trim($_POST["NombreUsuario"]))){
-        $username_err = "Por favor ingrese un usuario.";
+        $username_err = "Please enter your Username.";
     } else{
         // Prepare a select statement
         $sql = "SELECT IdUsuarios FROM Usuarios WHERE NombreUsuario = ?";
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Set parameters
             $param_username = trim($_POST["NombreUsuario"]);
             if( preg_match("/^[A-Za-zÑñ]+[\s]+[A-Za-zÑñ]+/",$param_username)){
-                $username_err = "error nombre.";
+                $username_err = "Username error.";
             } else{
                 $NombreUsuario = trim($_POST["NombreUsuario"]);
             }
@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
                 
                 if(mysqli_stmt_num_rows($stmt) == 1){
-                    $username_err = "Este usuario ya existe.";
+                    $username_err = "this user already exists.";
                 } else{
                     $NombreUsuario = trim($_POST["NombreUsuario"]);
                 }
@@ -52,7 +52,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
             } else{
-                echo "Al parecer algo salió mal.";
+                echo "oops. It seems something went wrong.";
             }
         }
          
@@ -64,54 +64,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //validamos correo
 
     if(empty(trim($_POST["email"]))){
-        $mail_err ="Por favor introduzca un correo.";
+        $mail_err ="Please , enter your valid e-mail.";
 } else{
     $mail = trim($_POST["email"]);
 }
     
     // Validate Contraseña
     if(empty(trim($_POST["Contraseña"]))){
-        $password_err = "Por favor ingresa una contraseña.";     
+        $password_err = "Please , enter your password.";     
     } elseif(strlen(trim($_POST["Contraseña"])) < 6){
-        $password_err = "La contraseña al menos debe tener 6 caracteres.";
+        $password_err = "The password must have at least 6 characters.";
     } elseif(!preg_match("/[a-zA-Z0-9\*\_\-\$&\/\\+]/",trim($_POST["Contraseña"]))){
-        $password_err = "Introduzca una contraseña valida.";
+        $password_err = "Please, enter a valid password.";
     }else{
         $Contraseña = trim($_POST["Contraseña"]);
     }
     
     // Validate confirm Contraseña
     if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Confirma tu contraseña.";     
+        $confirm_password_err = "Confirm your password.";     
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($password_err) && ($Contraseña != $confirm_password)){
-            $confirm_password_err = "No coincide la contraseña.";
+            $confirm_password_err = "Password does not match.";
         }
     }
 
     //recogemos datos personales
 
     if(empty(trim($_POST["Nombre"]))){
-        $name_err="porfavor , introduzca su nombre.";
+        $name_err="Please, enter your name.";
     }elseif(!preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["Nombre"]))&& !strlen(trim($_POST["Nombre"]))<=30){
-        $name_err="porfavor , introduzca nombre valido.";
+        $name_err="Please, enter a valid name.";
     }else{
         $nombre = trim($_POST["Nombre"]);
     }
     //validamos apellidos
     if(empty(trim($_POST["apellidos"]))){
-        $apellidos_err="porfavor , introduzca sus apellidos.";
+        $apellidos_err="Please , enter your last names.";
     }elseif(!preg_match("/^[A-Za-zÑñ]+[\s]+[A-Za-zÑñ]+/",trim($_POST["apellidos"]))&& strlen(trim($_POST["apellidos"]))<=50) {
-        $apellidos_err="porfavor, introduzca apellidos correctos";
+        $apellidos_err="Please, enter a valid last name.";
     }else{
         $apellidos = trim($_POST["apellidos"]);
     }
     //validamos direccion
     if(empty(trim($_POST["direccion"]))){
-        $direccion_err="porfavor , introduzca una dirección.";
+        $direccion_err="Please, enter your address.";
     }elseif(preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["direccion"]))&& strlen(trim($_POST["direccion"]))<=50){
-        $direccion_err="porfavor , escriba la dirección correcta.";
+        $direccion_err="Please, enter a valid address.";
     }else{
         $direccion = trim($_POST["direccion"]);
     }
@@ -151,7 +151,7 @@ $listaProvincias = trim($_POST["provincia"]);
                 // header("location: ../hugo.php");
                 include_once("../Recursos/mailer.php");
             } else{
-                echo "Algo salió mal, por favor inténtalo de nuevo.";
+                echo "oops. It seems something went wrong.";
             }
         }
          
@@ -222,13 +222,13 @@ $listaProvincias = trim($_POST["provincia"]);
 <div class="card bg-dar bg-dark cajat" >
 
 <article class="card-body mx-auto articulo" id="bg-article">
-	<h4 class="card-title mt-3 text-center text-uppercase" style="color:white; max-width: 400px; font-family: Montserrat;" >Crear cuenta</h4>
+	<h4 class="card-title mt-3 text-center text-uppercase" style="color:white; max-width: 400px; font-family: Montserrat;" >Create Account</h4>
 	<!-- <p class="text-center text-uppercase " style="color:white;">Disfruta de tu pedido en casa.</p> -->
 
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-        <h5 class="card-title mt-3 text-center text-uppercase " style="color:white; max-width: 400px; font-family: Montserrat;" >Datos de usuario</h5>
+        <h5 class="card-title mt-3 text-center text-uppercase " style="color:white; max-width: 400px; font-family: Montserrat;" >User Info</h5>
 
     <!-- form group -->
             <div class="form-group input-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
@@ -239,7 +239,7 @@ $listaProvincias = trim($_POST["provincia"]);
 			
             </div>
 
-                <input type="text" name="NombreUsuario" class="form-control is-invalid" placeholder="Nombre usuario" value="<?php echo $NombreUsuario; ?>">
+                <input type="text" name="NombreUsuario" class="form-control is-invalid" placeholder="Username" value="<?php echo $NombreUsuario; ?>">
                
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
 
@@ -281,7 +281,7 @@ $listaProvincias = trim($_POST["provincia"]);
                 </div>
 
 
-             <input type="password" name="Contraseña" class="form-control  is-invalid" placeholder="contraseña" value="<?php echo $Contraseña; ?>">
+             <input type="password" name="Contraseña" class="form-control  is-invalid" placeholder="Password" value="<?php echo $Contraseña; ?>">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
 
@@ -299,7 +299,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
             </div>
 
-                <input type="password" name="confirm_password" class="form-control  is-invalid" placeholder="Repetir contraseña" value="<?php echo $confirm_password; ?>">
+                <input type="password" name="confirm_password" class="form-control  is-invalid" placeholder="Repeat  pasword" value="<?php echo $confirm_password; ?>">
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
 
@@ -307,7 +307,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
             	<!-- form-group// -->
 
-                <h5 class="card-title mt-3 text-center text-uppercase titulo" style="color:white; max-width: 400px; font-family: Montserrat;" >Datos personales</h5>
+                <h5 class="card-title mt-3 text-center text-uppercase titulo" style="color:white; max-width: 400px; font-family: Montserrat;" >Personal Details</h5>
 
             <div class="form-group input-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                 
@@ -317,7 +317,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
             </div>
 
-                <input type="text" name="Nombre" class="form-control  is-invalid"  placeholder="Nombre" value="<?php echo $nombre; ?>">
+                <input type="text" name="Nombre" class="form-control  is-invalid"  placeholder="Name" value="<?php echo $nombre; ?>">
                 <span class="invalid-feedback"><?php echo $name_err; ?></span>
             </div>    
 
@@ -331,7 +331,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
             </div>
 
-                <input type="text" name="apellidos" class="form-control  is-invalid" placeholder="Apellidos" value="<?php echo $apellidos; ?>">
+                <input type="text" name="apellidos" class="form-control  is-invalid" placeholder="Last name" value="<?php echo $apellidos; ?>">
                 <span class="invalid-feedback"><?php echo $apellidos_err; ?></span>
             </div>   
 
@@ -345,7 +345,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
             </div>
 
-                <input type="text" name="direccion" class="form-control  is-invalid"  placeholder="Dirección" value="<?php echo $direccion; ?>">
+                <input type="text" name="direccion" class="form-control  is-invalid"  placeholder="Address" value="<?php echo $direccion; ?>">
                 <span class="invalid-feedback"><?php echo $direccion_err; ?></span>
             </div>    
 
@@ -362,7 +362,7 @@ $listaProvincias = trim($_POST["provincia"]);
             </div>
 
                 <select  class="form-control" name="provincia">
-                <option selected="">Provincia</option>
+                <option selected="">Province</option>
 
                 <?php 
                 $listaProvincias = ['Alava', 'Albacete', 'Alicante', 'Almería', 'Asturias' ,'Avila', 'Badajoz', 'Barcelona', 'Burgos', 'Cáceres', 'Guipúzcoa', 'Huelva', 'Huesca', 'Islas Baleares', 'Jaén', 'León', 'Lérida', 'Lugo', 'Madrid', 'Málaga', 'Murcia', 'Navarra', 'Orense', 'Palencia', 'Las Palmas', 'Pontevedra', 'La Rioja', 'Salamanca', 'Segovia', 'Sevilla', 'Soria', 'Tarragona', 'Santa Cruz de Tenerife', 'Teruel', 'Toledo', 'Valencia', 'Valladolid', 'Vizcaya', 'Zamora', 'Zaragoza'];
@@ -381,10 +381,10 @@ $listaProvincias = trim($_POST["provincia"]);
 
 
             <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
-                <input type="reset" class="btn btn-warning btn-block" value="Borrar">
+                <input type="submit" class="btn btn-primary btn-block" value="Send">
+                <input type="reset" class="btn btn-warning btn-block" value="Clear">
             </div>
-            <p class="text-center" style="color:white;">Ya tienes una cuenta? <a href="../hugo.php" class="btn btn-danger" >Iniciar sesión</a> </p>   
+            <p class="text-center" style="color:white;">do you already have an account? <a href="../hugo.php" class="btn btn-danger" >Log in</a> </p>   
         </form>
             </article>
         </div>    

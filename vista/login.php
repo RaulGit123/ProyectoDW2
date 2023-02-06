@@ -6,10 +6,10 @@ $username_err = $password_err  = "";
 
 
 if(empty(trim($NombreUsuario))){
-    $username_err = "Por favor ingrese su usuario.";
+    $username_err = "Please, enter your username.";
 }
 if(empty(trim($Contraseña))){
-    $password_err = "Por favor ingrese su contraseña.";
+    $password_err = "Please, enter your password.";
 }
 ?>
 
@@ -47,11 +47,11 @@ if(empty(trim($Contraseña))){
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="./web/menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                    <li class="nav-item"><a class="nav-link" href="./web/menu.php">Our Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./vista/principal.php">Order Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="./vista/principal.php">Book Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="./vista/register.php">Register</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
+                 
                 </ul>
             </div>
         </div>
@@ -63,7 +63,6 @@ if(empty(trim($Contraseña))){
 <div id="griddy">
 <div class="container caja1">
 <br>  
-<!-- <p class="text-center" style="color:white;">Logo</p> -->
 <hr>
 
 
@@ -73,8 +72,8 @@ if(empty(trim($Contraseña))){
 <div class="card bg-dar p-5">
 
 <article class="card-body mx-auto articulo" id="bg-article">
-	<h4 class="card-title mt-3 text-center text-uppercase">Iniciar sesión</h4>
-	<!-- <p class="text-center text-uppercase " style="color:white;">Disfruta de tu pedido en casa.</p> -->
+	<h4 class="card-title mt-3 text-center text-uppercase">Login</h4>
+
 
 
     <form action="./controlador/CtrlLogin.php" method="POST" >
@@ -94,7 +93,7 @@ if(empty(trim($Contraseña))){
             </div>
          
        
-            <input type="text" name="NombreUsuario" class="form-control is-invalid" placeholder="Nombre usuario" value="<?php echo $NombreUsuario; ?>">
+            <input type="text" name="NombreUsuario" class="form-control is-invalid" placeholder="Enter Username" value="<?php echo $NombreUsuario; ?>">
                
             <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>
@@ -112,7 +111,7 @@ if(empty(trim($Contraseña))){
             </div>
 
 
-            <input type="password" class="form-control is-invalid" name="Contraseña" id="Contraseña"placeholder="Contraseña"value="<?php echo $Contraseña; ?>">
+            <input type="password" class="form-control is-invalid" name="Contraseña" id="Contraseña"placeholder="Enter Password"value="<?php echo $Contraseña; ?>">
             <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
 
@@ -129,13 +128,16 @@ if(empty(trim($Contraseña))){
 
 
             <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-block" value="Ingresar">
-                <input type="reset" class="btn btn-warning btn-block" value="Borrar">
+                <input type="submit" class="btn btn-primary btn-block" value="Log in">
+                <input type="reset" class="btn btn-warning btn-block" value="Clear">
             </div>
-            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="./vista/register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>
-            <p class="text-center" style="color:white;">¿Olvidaste la contraseña? <a href="./vista/recuperarPass.php" class="btn btn-danger" >RECUPERAR</a> </p>
-            <p class="text-center" style="color:white;">¿No validaste la cuenta? <a href="./vista/verificar.php" class="btn btn-danger" >VERIFICAR</a> </p>
-                
+            <div class="form-group input-group">
+            <p class="text-center " style="color:white;">Do not you have an account yet? <a href="./vista/register.php" class="btn btn-danger" >REGISTER</a> </p>
+            <p class="text-center " style="color:white;">Didn't you validate the account? <a href="./vista/verificar.php" class="btn btn-danger" >VERIFY</a> </p>
+            </div>    
+            <div class="form-group input-group">
+            <p class="text-center " style="color:white;">Forgot password? <a href="./vista/recuperarPass.php" class="btn btn-danger" >RECOVER</a> </p>
+</div>
         </form>
         </article>
         </div>    
