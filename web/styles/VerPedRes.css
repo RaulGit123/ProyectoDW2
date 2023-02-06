@@ -88,6 +88,22 @@ nav.stroke ul li a:hover:after {
   height: 100vh;
 }
 
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  article {
+    font-size: 0.6em;
+  }
+}
+@media (min-width: 405px) and (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  article {
+    font-size: 1em;
+  }
+}
 #kanji {
   font-size: 4em;
   color: red;
