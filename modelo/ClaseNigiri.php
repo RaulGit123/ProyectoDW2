@@ -1,21 +1,5 @@
 <?php
 
-// include("conexion.php");
-// function ListadoCoomida(){
-//     $con = Conexion::getConection();
-//     $sql = "SELECT Nombre FROM comida";
-//     $query = $con->prepare($sql);
-//     $query->execute();
-//     $results = $query -> fetchAll(PDO::FETCH_OBJ);
-
-// if($query -> rowCount() > 0)   { 
-//   foreach($results as $result) { 
-//     echo '<div id="idUsu" style="display: none;">'.$result -> Nombre.'</div>';
-//   }
-// }
-    
-   
-// }
 
 class Nigiri extends Modelo
 {
@@ -76,20 +60,20 @@ class Nigiri extends Modelo
     }
  
     
-    // public function InsertarUsuario($NombreUsuario, $Nombre, $Apellidos, $Contraseña, $CorreoElectronico, $Direccion, $Provincia, $Codigo){
-    //     $consulta = "INSERT INTO nigiri.usuarios (NombreUsuario,Nombre,Apellidos,Contraseña,CorreoElectronico,Direccion,Provincia,Rol,Activado,Codigo) VALUES (:nombreusuario,:nombre,:apellidos,:contraseña,:correoelectronico,:direccion,:provincia,2,'no',:codigo)";
-    //     $result = $this->conexion->prepare($consulta);
-    //     $result->bindParam(':nombreusuario', $NombreUsuario);
-    //     $result->bindParam(':nombre', $Nombre);
-    //     $result->bindParam(':apellidos', $Apellidos);
-    //     $result->bindParam(':contraseña', $Contraseña);
-    //     $result->bindParam(':correoelectronico', $CorreoElectronico);
-    //     $result->bindParam(':direccion', $Direccion);
-    //     $result->bindParam(':provincia', $Provincia);
-    //     $result->bindParam(':codigo', $Codigo);
-    //     $result->execute();
-    //     return $result;
-    // }
+    public function InsertarUsuario($NombreUsuario, $Nombre, $Apellidos, $Contraseña, $CorreoElectronico, $Direccion, $Provincia, $Codigo){
+        $consulta = "INSERT INTO nigiri.usuarios (NombreUsuario,Nombre,Apellidos,Contraseña,CorreoElectronico,Direccion,Provincia,Rol,Activado,Codigo) VALUES (:nombreusuario,:nombre,:apellidos,:contraseña,:correoelectronico,:direccion,:provincia,2,'no',:codigo)";
+        $result = $this->conexion->prepare($consulta);
+        $result->bindParam(':nombreusuario', $NombreUsuario);
+        $result->bindParam(':nombre', $Nombre);
+        $result->bindParam(':apellidos', $Apellidos);
+        $result->bindParam(':contraseña', $Contraseña);
+        $result->bindParam(':correoelectronico', $CorreoElectronico);
+        $result->bindParam(':direccion', $Direccion);
+        $result->bindParam(':provincia', $Provincia);
+        $result->bindParam(':codigo', $Codigo);
+        $result->execute();
+        return $result;
+    }
     //Funciona
     public function GuardaPedidos($IdUsuarios, $PrecioFinal, $FechaPedido){
         $con = Conexion::getConection();
@@ -155,6 +139,16 @@ class Nigiri extends Modelo
         $con = Conexion::getConection();
         $consulta = $con->prepare("SELECT NombreUsuario,Codigo FROM usuarios WHERE CorreoElectronico = :mailusuario");
         $consulta->bindParam(':mailusuario', $MailUsuario);
+        $consulta -> execute(); 
+        $results = $consulta -> fetchAll(PDO::FETCH_OBJ);
+        return $results;
+    }
+    //Salta un error por una redeclaracion? Aunque si inicia la sesion
+    public function ComprobarActivacion($Nombre){
+        $con = Conexion::getConection();
+        $consulta = $con->prepare("SELECT Activado FROM usuarios WHERE NombreUsuario = :nombre");
+        $consulta->bindParam(':nombre', $Nombre);
+        $consulta -> execute(); 
         $results = $consulta -> fetchAll(PDO::FETCH_OBJ);
         return $results;
     }

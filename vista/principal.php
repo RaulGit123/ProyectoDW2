@@ -48,17 +48,17 @@
     <div class="contenido">
     <header class="masthead">
         <div class="px-0 container">
-        <div class="mt-3 masthead-heading text-uppercase">Bienvenido a Nigiri</div>
-            <div class="masthead-subheading font-italic">Entra con tu usuario y disfruta de tu pedido en casa.</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../hugo.php">Entrar</a>
+        <div class="mt-3 masthead-heading text-uppercase">Welcome to Nigiri</div>
+            <div class="masthead-subheading font-italic">Enter with your user and enjoy your order at home.</div>
+            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../hugo.php">Enter</a>
         </div>
     </header>
 
     <section class="p-5 page-section" id="aboutus"> <!--id services-->
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Reservas y pedidos</h2>
-                <h3 class="section-subheading mx-auto">Para efectuar una reserva o un pedido necesita registrarse en la web para asegurarnos de que no eres un robot.</h3>
+                <h2 class="section-heading text-uppercase">Booking and orders</h2>
+                <h3 class="section-subheading mx-auto">To make a reservation or an order you need to register on the web to make sure that you are not a robot.</h3>
             </div>
         </div>
                         </div>

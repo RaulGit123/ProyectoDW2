@@ -71,12 +71,12 @@
                             <?php
 
                             if($_SESSION["NombreUsuario"]=="admin"){
-                                ?><li class="nav-item"><a class="nav-link" href="../vista/admin.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php      
+                                ?><li class="nav-item"><a class="nav-link" href="../vista/admin.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php      
                             } 
                             ?>
                             <?php
                             if($_SESSION["NombreUsuario"]!="admin"){
-                               ?> <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
+                               ?> <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
                             }
                             
                             
@@ -124,16 +124,16 @@
             <div id="botonX">
                 <button class="close-btn"><i class="fas fa-times"></i></button>
             </div>
-            <h1 class="text-uppercase">Introduce tu dirección</h1>
+            <h1 class="text-uppercase">Enter your address</h1>
             <input id="dire" name="dire" type="text" value="<?php echo $dire;?>">
-            <h1 class="text-uppercase">Elige un método de pago</h1>
+            <h1 class="text-uppercase">Choose a payment method</h1>
             <div id="metodos">
                 <img class="pp" src="img/pago/paypal.png" alt="paypal">
                 <img class="cc" src="img/pago/visa.png" alt="visa">
                 <img class="cc" src="img/pago/master.png" alt="master">
             </div>
             <div id="cc" class="d-none">
-                <h1>Datos bancarios</h1>
+                <h1>Bank data</h1>
                 <div id="datosb">
                     <label for="numTar">Card Number</label>
                     <input name="numTar" type="text" placeholder="0000 0000 0000 0000">
@@ -144,7 +144,7 @@
                 </div>
             </div>
             <div id="pp" class="d-none">
-            <h1>Pago con PayPal</h1>
+            <h1>Payment with paypal</h1>
                 <div id="datosp">
                     <label for="ppMail">PayPal account email</label>
                     <input name="ppMail" type="text" placeholder="example@mail.com">
@@ -152,7 +152,7 @@
                     <input name="ppPass" type="password" placeholder="Password">
                 </div>
             </div>
-            <button id="fin" class="btn btn-info">Finalizar</button>
+            <button id="fin" class="btn btn-info">Finish</button>
         </div>
     </div>
     <script type="module" src="pedidos.js"></script>

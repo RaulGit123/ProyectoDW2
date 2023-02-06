@@ -1,4 +1,30 @@
 @import 'comun.scss';
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 2fr 2fr;
+    height: 100vh;
+  }
+//   .your{
+//     font-size: 5pt;
+//   }
+
+#kanji{
+    font-size: 4em;
+    color: red;
+  }
+.centrar{
+    // font-size: 2pt;
+    text-align: center;
+    // border-collapse: collapse;
+    // margin:0;
+}
+
+
+// .articulo{
+
+// }
+
 .bg-dar{
     opacity: 1;
     // background-color: #45586a33 !important;
@@ -64,11 +90,7 @@ h4{
     height: 50px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
+
 
 .item{
     background-color: rgba(255, 255, 255, 0.7);
@@ -98,7 +120,7 @@ div.contenedor {
     // border-radius: 50%;
     background-color: rgba(192, 0, 3, 100);
     width: 300px;
-    height: 120px;
+    height: 100px;
     color:white;
   }
 
@@ -121,7 +143,7 @@ header {
     text-align: center;
     padding-top: 10.5rem;
     padding-bottom: 6rem;
-    @include oscurecer-img(0.5,"../img/restaurante.jpg");
+    @include oscurecer-img(0.5,"../img/principal.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-position: center center;
@@ -157,63 +179,3 @@ header {
     max-width: 650px;
 }
 
-#aboutus {
-    background-image: url(../img/fondo-negro.jpg);
-}
-
-#team {
-    background-color: transparent;
-    background-image: linear-gradient(180deg, #030303 50%, #593002 100%);
-    .team-member {
-        text-align: center;
-        h4 {
-            margin-top: 10px;
-        }
-        img {
-        width: 14rem;
-        height: 14rem;
-        border: 0.5rem solid rgba(0, 0, 0, 0.1);
-        }
-    }
-}
-
-@media(max-width: 450px){
-    .grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .item{
-        background-color: rgba(255, 255, 255, 0.7);
-        margin:20px;
-        font-size: 25pt;
-        width:99px;
-        height:99px;
-    }
-}
-//media tablet
-@media(min-width: 768px){
-    .item{
-        background-color: rgba(255, 255, 255, 0.7);
-        margin:20px;
-        font-size: 35pt;
-        width:170px;
-        height:170px;
-    }
-    .fecha{
-        font-size: 30px;
-        padding:10px;
-        width: 400px;
-        height: 50px;
-    }
-    .cantidad {
-        background-color: white;
-        color: black;
-        margin: 10px;
-        width: 140px;
-        height: 50px;
-        border-radius: 10%;
-        font-size: 30px;
-        margin:0;
-      }
-}
