@@ -17,6 +17,8 @@ let d_nested3 = document.getElementById("resph");
 let listaHoras = document.querySelectorAll(".item");
 //Para guardar las horas en la base de datos
 let HoraBaseDatos = document.querySelectorAll(".horas");
+//Para indicar el error si hay una misma reserva con la misma hora, fecha y mesa
+let MismoTodo = document.getElementById("respt");
 
 let horaseleccionada = "hola";
 let fechaguardada;
@@ -24,11 +26,8 @@ let horaguardada;
 //Sacar el dia que es en ese momento
 let fecha = new Date();
 let añoActual = fecha.getFullYear();
-// console.log(añoActual);
 let hoy = fecha.getDate();
-// console.log(hoy);
 let mesActual = fecha.getMonth() + 1; 
-// console.log(mesActual);
 
 
 listaMa.forEach(ele => {
@@ -70,6 +69,7 @@ ReservaPersonas.forEach(Com =>{
 
       if(listaCant[0].innerHTML<2){
         d_nested.classList.remove("d-none");
+        MismoTodo.classList.add("d-none");
       }else{
         d_nested.classList.add("d-none");
       }
@@ -87,6 +87,7 @@ ReservaPersonas.forEach(Com =>{
 
       if(listaFecha[0].value=="" || listaFecha[0].value<fechaguardada){
         d_nested2.classList.remove("d-none");
+        MismoTodo.classList.add("d-none");
       }else{
         d_nested2.classList.add("d-none");
       }
@@ -94,6 +95,10 @@ ReservaPersonas.forEach(Com =>{
       if(horaseleccionada == "hola"){
       for (let i=0; i<listaHoras.length; i++){ 
         if(listaHoras[i].style.backgroundColor==="rgb(75, 75, 75)"){
+          let BorrarHorita = document.querySelector("#horita");
+          if(BorrarHorita != null){
+            BorrarHorita.removeAttribute("id");
+          }
           HoraBaseDatos[i].setAttribute("id","horita");
           horaguardada=HoraBaseDatos[i];
             d_nested3.classList.add("d-none");
@@ -104,6 +109,7 @@ ReservaPersonas.forEach(Com =>{
       }
       if(horaseleccionada == "hola"){
         d_nested3.classList.remove("d-none");
+        MismoTodo.classList.add("d-none");
     }
 
       // console.log(listaCant[0].innerHTML);
@@ -115,6 +121,7 @@ ReservaPersonas.forEach(Com =>{
       // console.log(mesActual);
       
     if(listaCant[0].innerHTML>=2 && listaFecha[0].value!="" && listaFecha[0].value>fechaguardada && horaseleccionada == "adios"){
+      horaseleccionada = "hola";
     var NumeroPersonas = listaCant[0].innerHTML;
     var Fecha = listaFecha[0].value;
     var Hora = horaguardada.innerHTML;
@@ -127,9 +134,15 @@ ReservaPersonas.forEach(Com =>{
       data: {text: $("div.cantidad").text(),
              text2: $("#fechita").val(),
              text3: $("#horita").text()
-    }
+    },
+    success:(data)=>{
+      if(parseInt(data.trim())!=0){
+      window.location.href = "PedidosYReserva.php";
+    }else{
+      MismoTodo.classList.remove("d-none");
+    }}
     });
-    window.location.href = "PedidosYReserva.php";
+    // window.location.href = "PedidosYReserva.php";
     }
     
     });

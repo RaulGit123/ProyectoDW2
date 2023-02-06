@@ -83,7 +83,7 @@ nav.stroke ul li a:hover:after {
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 2fr 2fr;
   height: 100vh;
 }
