@@ -130,7 +130,7 @@ require_once("../modelo/Conexion.php");
 <?php
 
 $con = Conexion::getConection();
-$sql = "SELECT p.PrecioFinal , p.FechaPedido ,p.Direccion, p.MetodoPago FROM pedidos p, usuarios u WHERE p.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
+$sql = "SELECT p.IdUsuarios,p.PrecioFinal , p.FechaPedido ,p.Direccion, p.MetodoPago FROM pedidos p, usuarios u WHERE p.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
 $results = $query -> fetchAll(PDO::FETCH_OBJ); 
@@ -175,7 +175,7 @@ echo " <tr>
 
 <?php
 $con = Conexion::getConection();
-$sql = "SELECT  r.Mesa , r.FechaReserva,r.NumeroPersonas,r.HoraReserva FROM registroreservas r, usuarios u WHERE r.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
+$sql = "SELECT r.IdUsuarios,  r.Mesa , r.FechaReserva,r.NumeroPersonas,r.HoraReserva FROM registroreservas r, usuarios u WHERE r.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
 $results = $query -> fetchAll(PDO::FETCH_OBJ); 
