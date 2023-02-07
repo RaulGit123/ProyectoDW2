@@ -66,7 +66,42 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["email"]))){
         $mail_err ="Please , enter your valid e-mail.";
 } else{
-    $mail = trim($_POST["email"]);
+    // Prepare a select statement
+    $sql = "SELECT IdUsuarios FROM Usuarios WHERE CorreoElectronico = ?";
+    
+    if($stmt = mysqli_prepare($link, $sql)){
+        // Bind variables to the prepared statement as parameters
+        mysqli_stmt_bind_param($stmt, "s", $mail);
+        
+        // Set parameters
+        $mail = trim($_POST["email"]);
+        if( preg_match("/^[A-Za-zÑñ]+[\s]+[A-Za-zÑñ]+/",$mail)){
+            $mail_err = "email error.";
+        } else{
+            $mail = trim($_POST["email"]);
+        }
+        
+        // Attempt to execute the prepared statement
+        if(mysqli_stmt_execute($stmt)){
+            /* store result */
+            mysqli_stmt_store_result($stmt);
+            
+            if(mysqli_stmt_num_rows($stmt) == 1){
+                $mail_err = "Mail exist.";
+            } else{
+                $mail = trim($_POST["email"]);
+            }
+            
+      
+
+
+        } else{
+            echo "oops. It seems something went wrong.";
+        }
+    }
+     
+    // Close statement
+    mysqli_stmt_close($stmt);
 }
     
     // Validate Contraseña
