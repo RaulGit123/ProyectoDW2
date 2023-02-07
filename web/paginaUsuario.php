@@ -63,6 +63,7 @@
                 <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="pedidos.php">Make an order</a>
                 <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="reservas.php">Book a table</a>
                 <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="PedidosYReserva.php">Your orders and reservations</a>
+                <a class="mt-5 mr-2 p-4 px-3 btn btn-danger btn-lg text-uppercase" href="form_cambiaPass.php">Change password</a>
 
                 <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
                 <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../controlador/CtrlSalir.php">Exit</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->

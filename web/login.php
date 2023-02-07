@@ -139,7 +139,7 @@ if(empty(trim($Contraseña))){
             <p class="text-center " style="color:white;">Didn't you validate the account? <a href="../web/verificar.php" class="btn btn-danger" >VERIFY</a> </p>
          
           
-            <p class="text-center " style="color:white;">Forgot password? <a href="../web/recuperarPass.php" class="btn btn-danger" >RECOVER</a> </p>
+            <p class="text-center " style="color:white;">Forgot password? <a href="form_veripass.php" class="btn btn-danger" >RECOVER</a> </p>
             </div>     
             
         </form>
@@ -150,7 +150,7 @@ if(empty(trim($Contraseña))){
            
 
     
-    <script src="../web/scripts/comun.js"></script>
+    <script src="scripts/comun.js"></script>
     </body>
 
     
