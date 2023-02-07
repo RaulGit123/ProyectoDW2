@@ -27,14 +27,6 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
 </head>
 
-<header class="masthead">
-
-    <div class="mt-3 masthead-subheading text-uppercase">Your orders and booking</div>
-    <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
-    <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../vista/PaginaUsuario.php">Back</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
-
-</header>
-
 
 <body id="page-top">
     <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -107,34 +99,30 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
     </nav>
     <div id="griddy">
-        <div class="grid ">
+        <header class="masthead">
+            <div class="mt-3 mx-2 masthead-heading text-uppercase">Your orders and booking</div>
+            <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
+            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../vista/PaginaUsuario.php">Back</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
+        </header>
             <!-- Los Pedidos del usuario  -->
             <div class="card-body mx-auto articulo" id="bg-article">
                 <h4 class="card-title mt-3 text-center text-uppercase your">Your orders</h4>
-
-
-
                 <div class="form-group your">
                     <article class="card-body mx-auto articulo" id="bg-article">
-
-
-
-
-
-                        <table border="0" cellspacing="1" cellpadding="1" class="table table-dark table-hover bg-transparent centrar">
+                        <table class="table table-dark table-hover bg-transparent centrar">
                             <tr>
-                                <td>
-                                    <font face="Arial">Total price</font>
-                                </td>
-                                <td>
-                                    <font face="Arial">Order date</font>
-                                </td>
-                                <td>
-                                    <font face="Arial">Address</font>
-                                </td>
-                                <td>
-                                    <font face="Arial">Payment Method</font>
-                                </td>
+                                <th>
+                                    Total price
+                                </th>
+                                <th>
+                                    Order date
+                                </th>
+                                <th>
+                                    Address
+                                </th>
+                                <th>
+                                    Payment Method
+                                </th>
                             </tr>
                             <?php
 
@@ -178,19 +166,19 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
 
-                        <table border="0" cellspacing="1" cellpadding="1" class="table table-dark table-hover bg-transparent centrar">
-                            <td>
-                                <font face="Arial">Table</font>
-                            </td>
-                            <td>
-                                <font face="Arial">Book date</font>
-                            </td>
-                            <td>
-                                <font face="Arial">Book hour</font>
-                            </td>
-                            <td>
-                                <font face="Arial">nº diners</font>
-                            </td>
+                        <table class="table table-dark table-hover bg-transparent centrar">
+                            <th>
+                                Table
+                            </th>
+                            <th>
+                                Book date
+                            </th>
+                            <th>
+                                Book hour
+                            </th>
+                            <th>
+                                nº diners
+                            </th>
                             </tr>
 
                             <?php
@@ -217,7 +205,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
             </div>
         </div>
-    </div>
+    
     </div>
 
     <script src="comun.js"></script>
