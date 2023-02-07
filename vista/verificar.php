@@ -49,7 +49,7 @@
 	<!-- <p class="text-center text-uppercase " style="color:white;">Disfruta de tu pedido en casa.</p> -->
 
 
-    <form action="verificado.php" method="post">
+    <form action="../modelo/verificado.php" method="post">
 
         
 

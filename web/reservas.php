@@ -123,15 +123,11 @@
     <div class="mt-2 d-none font-italic mal" id="resph">You have to select a time</div>
             </div>
     </section>
-    <!-- <form id="desdeFormulario" action="functions.php" method="POST" role="form">
-    <label for="">Tu nombre</label> 
-<input type="text" class="form-control" name="nombre" placeholder="Input field"> -->
     <div class="contenedor" id="contenedor">
   <button class="centrado masthead-subheading font-italic btn-danger">Finalize Booking</button>
 </div>
 <p class="respuesta mal d-none mb-4" id="respt">Todas las mesas en ese dia y hora estan ocupadas</p> 
-</div>                    
-<!-- </form> -->
+</div>
 
     <script src="comun.js"></script>
     <script src="reservas.js"></script>

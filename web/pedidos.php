@@ -116,7 +116,7 @@
     <div class="d-none" id="precioReal"></div>
     <div class="d-none" id="dirBase"></div>
     <?php 
-        require_once('../vista/idusuario.php');
+        require_once('../modelo/idusuario.php');
         include_once('../config/CreacionJSON.php');
     ?>
     <div id="pago" class="d-none">

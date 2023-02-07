@@ -130,7 +130,7 @@ ReservaPersonas.forEach(Com =>{
     console.log(Hora);
     $.ajax({
       method: "POST",
-      url: "GuardaReserva.php",
+      url: "../modelo/GuardaReserva.php",
       data: {text: $("div.cantidad").text(),
              text2: $("#fechita").val(),
              text3: $("#horita").text()

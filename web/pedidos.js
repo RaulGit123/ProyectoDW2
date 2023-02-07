@@ -199,7 +199,7 @@ document.querySelector("#fin").addEventListener("click",function(){
         let regPedJSON = JSON.stringify(registroPedido);
         $.ajax({
             method: "POST",
-            url: "GuardaPedido.php",
+            url: "../modelo/GuardaPedido.php",
             data: {precioFinal: pedido.precioFinal,
                 fechaPedido: pedido.fechaPedido,
                 regPedJSON: regPedJSON,

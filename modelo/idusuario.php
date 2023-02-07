@@ -1,7 +1,7 @@
 <?php 
 // include ("../modelo/ClaseModelo.php");
 // include ("../modelo/ClaseNigiri.php");
-require_once("../modelo/Conexion.php");
+require_once("Conexion.php");
 
 if (session_status()===PHP_SESSION_NONE){
 	session_start();
