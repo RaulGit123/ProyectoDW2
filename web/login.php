@@ -28,8 +28,8 @@ if(empty(trim($Contraseña))){
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="web/styles/login.css">
-    <link rel="shortcut icon" href="web/img/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../web/styles/login.css">
+    <link rel="shortcut icon" href="../web/img/logo2.png" type="image/x-icon">
 
 </head>
 
@@ -40,17 +40,17 @@ if(empty(trim($Contraseña))){
 <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
         <div class="container">
-            <a class="navbar-brand" href="."><!-- href . lleva a web/index.php --><img src="web/img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href=".."><!-- href . lleva a web/index.php --><img src="../web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="./web/menu.php">Our Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./web/principal.php">Order Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./web/principal.php">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./web/register.php">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../web/principal.php">Order Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../web/principal.php">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../web/register.php">Register</a></li>
                  
                 </ul>
             </div>
@@ -76,7 +76,7 @@ if(empty(trim($Contraseña))){
 
 
 
-    <form action="./controlador/CtrlLogin.php" method="POST" >
+    <form action="../controlador/CtrlLogin.php" method="POST" >
 
         
 
@@ -132,14 +132,14 @@ if(empty(trim($Contraseña))){
                 <input type="reset" class="btn btn-warning btn-block" value="Clear">
             </div>
             <div class="form-group ">
-            <p class="text-center " style="color:white;">Do not you have an account yet? <a href="./web/register.php" class="btn btn-danger" >REGISTER</a> </p>
+            <p class="text-center " style="color:white;">Do not you have an account yet? <a href="../web/register.php" class="btn btn-danger" >REGISTER</a> </p>
             
              
            
-            <p class="text-center " style="color:white;">Didn't you validate the account? <a href="./web/verificar.php" class="btn btn-danger" >VERIFY</a> </p>
+            <p class="text-center " style="color:white;">Didn't you validate the account? <a href="../web/verificar.php" class="btn btn-danger" >VERIFY</a> </p>
          
           
-            <p class="text-center " style="color:white;">Forgot password? <a href="./web/recuperarPass.php" class="btn btn-danger" >RECOVER</a> </p>
+            <p class="text-center " style="color:white;">Forgot password? <a href="../web/recuperarPass.php" class="btn btn-danger" >RECOVER</a> </p>
             </div>     
             
         </form>
@@ -150,7 +150,7 @@ if(empty(trim($Contraseña))){
            
 
     
-    <script src="web/scripts/comun.js"></script>
+    <script src="../web/scripts/comun.js"></script>
     </body>
 
     

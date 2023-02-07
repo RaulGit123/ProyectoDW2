@@ -19,7 +19,7 @@ if($query -> rowCount() > 0)   {
       $query = $con -> prepare($sql); 
       $query -> execute(); 
      
-      header("location: ../hugo.php");
+      header("location:sesion.php");
     }
   }
 }

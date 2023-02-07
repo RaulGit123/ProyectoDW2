@@ -4,7 +4,7 @@
    
     if (isset($_SESSION["NombreUsuario"]) && isset($_SESSION["Contraseña"]) ) {
         
-        require_once("modelo/Validar.php");
+        require_once("Validar.php");
         $validar = new Validar();
         $validar->validarDatos();
       
@@ -24,12 +24,12 @@
         $activado = $result->Activado;
 
         if($_SESSION["NombreUsuario"]=="admin" ){
-                header('Location: web/admin.php');}
+                header('Location: ../web/admin.php');}
                 
         if($_SESSION["NombreUsuario"]!="admin" && $activado=='si'){
-                include_once("web/principal.php");}   
+                include_once("../web/principal.php");}   
         else{
-            include_once("web/login.php");
+            include_once("../web/login.php");
             echo '<script language="javascript">alert("Error de verificación");</script>'; }
             
             
@@ -42,7 +42,7 @@
             unset($_SESSION["error"]);
         }
     
-        include_once("web/login.php");
+        include_once("../web/login.php");
 
         //aqui luego desviariamos a vista registro de usuario.
     }

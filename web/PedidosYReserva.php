@@ -88,9 +88,9 @@ if (session_status() === PHP_SESSION_NONE) {
                                                                     header("location:principal.php");
                                                                         ?>
                         <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-                        <li class="nav-item"><a class="nav-link" href="../hugo.php">Order Now</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../hugo.php">Book Now</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
+                        <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Order Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Book Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li><?php
                                                                 }
                                                                 ?>
                     <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->

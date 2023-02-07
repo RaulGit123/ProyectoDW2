@@ -104,7 +104,7 @@ $body = 'Aquí tienes tu contraseña, no la olvides: </br>'.$contraseña.'</br>
     $mail->send();
     echo 'El mensaje se ha enviado con exito';
 
-     header("location: ../hugo.php");
+     header("location: ../modelo/sesion.php");
     
 } catch (Exception $e) {
     echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";

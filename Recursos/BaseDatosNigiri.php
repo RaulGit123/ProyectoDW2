@@ -22,7 +22,7 @@ try {
     // Accionamos el uso de excepciones
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //Leemos el fichero que contiene el sql
-    $sqlBD = file_get_contents("../nigiri.sql");
+    $sqlBD = file_get_contents("nigiri.sql");
     //Ejecutamos la consulta
     $pdo->exec($sqlBD);
     echo ("La BD ha sido creada");

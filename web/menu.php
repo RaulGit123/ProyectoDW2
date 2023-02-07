@@ -33,13 +33,13 @@
                             <li class="nav-item"><a class="nav-link activo">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                             <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../hugo.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
+                            <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
                         }else {
                             ?>
                             <li class="nav-item"><a class="nav-link activo">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                             <li class="nav-item"><a class="nav-link" href="principal.php">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="principal.php">Book Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
+                            <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li><?php
                         }
                         ?>
                         <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->

@@ -1,6 +1,6 @@
 <?php 
-include ("../modelo/ClaseModelo.php");
-include ("../modelo/ClaseNigiri.php");
+include ("ClaseModelo.php");
+include ("ClaseNigiri.php");
     require_once("Conexion.php");
 
     class Login {
@@ -61,7 +61,7 @@ include ("../modelo/ClaseNigiri.php");
                 $resultado = null;
                 $cantidad_resultado = null;
                 
-                header("location:../hugo.php");
+                header("location:../modelo/sesion.php");
 
             }
 

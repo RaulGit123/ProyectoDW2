@@ -32,13 +32,13 @@
                     
                         if (empty($_SESSION["NombreUsuario"])){
                             
-                        include_once("../modelo/Login.php");
+                        include_once("../modelo/modeloLogin.php");
                         ?>
                            
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li>
                             <li class="nav-item"><a class="nav-link aqui" href="#page-top">Order Now</a></li> <!--AÑADIR JS FLASH-->
                             <li class="nav-item"><a class="nav-link aqui" href="#page-top">Book Now</a></li> <!--AÑADIR JS FLASH-->
-                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li>
                             
                             </ul>
             </div>
@@ -50,7 +50,7 @@
         <div class="px-0 container">
         <div class="mt-3 masthead-heading text-uppercase">Welcome to Nigiri</div>
             <div class="masthead-subheading font-italic">Enter with your user and enjoy your order at home.</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../hugo.php">Enter</a>
+            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../modelo/sesion.php">Enter</a>
         </div>
     </header>
 
@@ -73,7 +73,7 @@
                             <?php
                             exit();
                         }else {
-                            header('Location: web/paginaUsuario.php');
+                            header('Location: ../web/paginaUsuario.php');
                         }
                         ?>
                        

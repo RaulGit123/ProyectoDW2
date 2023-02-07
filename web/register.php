@@ -148,7 +148,6 @@ $listaProvincias = trim($_POST["provincia"]);
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                // header("location: ../hugo.php");
                 include_once("../Recursos/mailer.php");
             } else{
                 echo "oops. It seems something went wrong.";
@@ -200,7 +199,7 @@ $listaProvincias = trim($_POST["provincia"]);
                     <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                     <li class="nav-item"><a class="nav-link" href="principal.php">Order Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="principal.php">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li>
                     <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
                 </ul>
             </div>
@@ -384,7 +383,7 @@ $listaProvincias = trim($_POST["provincia"]);
                 <input type="submit" class="btn btn-primary btn-block" value="Send">
                 <input type="reset" class="btn btn-warning btn-block" value="Clear">
             </div>
-            <p class="text-center" style="color:white;">do you already have an account? <a href="../hugo.php" class="btn btn-danger" >Log in</a> </p>   
+            <p class="text-center" style="color:white;">do you already have an account? <a href="../modelo/sesion.php" class="btn btn-danger" >Log in</a> </p>   
         </form>
             </article>
         </div>    
