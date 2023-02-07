@@ -81,29 +81,29 @@ nav.stroke ul li a:hover:after {
   align-self: end;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 2fr 2fr;
-  height: 100vh;
+#griddy {
+  grid-template-columns: 1fr;
 }
-
-@media (max-width: 400px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  article {
-    font-size: 0.6em;
-  }
+#griddy article {
+  font-size: 0.6em;
 }
-@media (min-width: 405px) and (max-width: 800px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-  article {
+@media (min-width: 405px) {
+  #griddy article {
     font-size: 1em;
   }
 }
+@media (min-width: 835px) {
+  #griddy {
+    grid-template-columns: 1fr 1fr;
+  }
+  #griddy header {
+    grid-column: span 2;
+  }
+  #griddy footer {
+    grid-column: span 2;
+  }
+}
+
 #kanji {
   font-size: 4em;
   color: red;
@@ -182,7 +182,7 @@ header .btn {
 }
 
 .masthead-heading {
-  font-size: 3.25rem;
+  font-size: 2.5rem;
   line-height: 4.5rem;
 }
 @media (min-width: 768px) {
@@ -210,4 +210,8 @@ header .btn {
   font-size: 1rem;
   font-weight: normal;
   max-width: 650px;
+}
+
+th {
+  font-family: Montserrat;
 }/*# sourceMappingURL=VerPedRes.css.map */
