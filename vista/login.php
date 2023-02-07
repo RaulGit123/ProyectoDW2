@@ -139,7 +139,7 @@ if(empty(trim($Contraseña))){
             <p class="text-center " style="color:white;">Didn't you validate the account? <a href="./vista/verificar.php" class="btn btn-danger" >VERIFY</a> </p>
          
           
-            <p class="text-center " style="color:white;">Forgot password? <a href="./vista/form_cambiaPass.php" class="btn btn-danger" >RECOVER</a> </p>
+            <p class="text-center " style="color:white;">Forgot password? <a href="./vista/form_veripass.php" class="btn btn-danger" >RECOVER</a> </p>
             </div>     
             
         </form>

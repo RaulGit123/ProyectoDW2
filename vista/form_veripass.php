@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +23,12 @@
 </head>
 
 <body id="page-top">
-    <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+<nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
         <div class="container">
             <a class="navbar-brand" href="../index.php"><!-- href . lleva a web/index.php --><img src="../web/img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-
+                
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -33,7 +37,7 @@
                     <li class="nav-item"><a class="nav-link" href="./principal.php">Order Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="./principal.php">Book Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="./register.php">Register</a></li>
-
+                 
                 </ul>
             </div>
         </div>
@@ -46,42 +50,33 @@
             <div class="card bg-dar p-5">
 
                 <article class="card-body mx-auto articulo" id="bg-article">
-                    <h4 class="card-title mt-3 text-center text-uppercase">CHANGE YOUR PASSWORD</h4>
+                    <h4 class="card-title mt-3 text-center text-uppercase">GET NEW PASSWORD</h4>
 
-                    <form action="../modelo/nuevoPass.php" method="post">
+                    <form action="../recursos/mailRecup.php" method="post">
 
 
 
 
                         <!-- form-group// -->
+
+
                         <div class="form-group input-group ">
 
                             <div class="input-group-prepend">
 
-                                <span class="input-group-text"> <i class="fa fa fa-lock"></i> </span>
+                                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
 
                             </div>
 
-                            <input type="password" name="passActual" id="passActual" class="form-control " placeholder="Current Password">
+
+                            <input type="text" name="email" id="email" class="form-control " placeholder="User email">
 
                         </div>
-                        <!-- form group -->
                         <!-- form-group// -->
-                        <div class="form-group input-group ">
-
-                            <div class="input-group-prepend">
-
-                                <span class="input-group-text"> <i class="fa fa fa-lock"></i> </span>
-
-                            </div>
-
-                            <input type="password" name="cambiaPass" id="cambiaPass" class="form-control " placeholder="New Password">
-
-                        </div>
-                        <!-- form group -->
+                     
 
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary btn-block" value="Update Password">
+                            <input type="submit" class="btn btn-primary btn-block" value="Get Password">
                             <input type="reset" class="btn btn-warning btn-block" value="Clear">
                         </div>
                         <p class="text-center" style="color:white;">Do not you have an account yet? <a href="./register.php" class="btn btn-danger">REGISTER</a> </p>

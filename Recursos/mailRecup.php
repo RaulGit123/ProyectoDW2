@@ -31,11 +31,14 @@ require_once("../modelo/Conexion.php");
 //      }
 $mail = new PHPMailer(true);
 
-
+// $contraseñaGenerada = rand(1000,9999);
+$contraseñaGenerada = "a";
+$contraseñaMD5 = md5($contraseñaGenerada);
 $mailUsuario = $_POST["email"];
 
 $con = Conexion::getConection();
-$sql = "SELECT Contraseña, NombreUsuario FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
+//$sql = "SELECT Contraseña, NombreUsuario FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
+$sql="UPDATE usuarios  SET contraseña ='$contraseñaMD5' WHERE CorreoElectronico = '$mailUsuario'";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
 $results = $query -> fetchAll(PDO::FETCH_OBJ);
@@ -46,6 +49,7 @@ if($query -> rowCount() > 0)   {
     $nombre= $result -> NombreUsuario;
   }
 }
+
 
 
 
@@ -88,7 +92,7 @@ try {
     //Archivos adjuntos
     //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-$body = 'Aquí tienes tu contraseña, no la olvides: </br>'.$contraseña.'</br>
+$body = 'Aquí tienes tu contraseña, no la olvides: </br>'.$contraseñaGenerada.'</br>
         <a href="http://localhost/ProyectoDW2/">aqui</a>';
     //Contenido
     //Si enviamos HTML
