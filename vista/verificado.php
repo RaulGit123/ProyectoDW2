@@ -21,19 +21,5 @@ if($query -> rowCount() > 0)   {
         header("location: ../hugo.php");
   }
   }
-}
-  
-// if($_POST["codigo"]==  $codigo){
-
-//     $con = Conexion::getConection();
-//     $sql = "UPDATE usuarios SET Activado = 'si' WHERE Codigo ='$codigo' ";
-//     $query = $con -> prepare($sql); 
-//     $query -> execute(); 
-   
-//       header("location: ../hugo.php");
-
-// }else{ header("location: verificar.php");}
-// }
-
-?>
+}?>
 
