@@ -31,8 +31,7 @@ require_once("../modelo/Conexion.php");
 //      }
 $mail = new PHPMailer(true);
 
-// $contraseñaGenerada = rand(1000,9999);
-$contraseñaGenerada = "a";
+$contraseñaGenerada = rand(1000,9999);
 $contraseñaMD5 = md5($contraseñaGenerada);
 $mailUsuario = $_POST["email"];
 

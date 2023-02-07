@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | Nigiri</title>
+    <title>Change password | Nigiri</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -19,21 +19,71 @@
 </head>
 
 <body id="page-top">
-    <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-
+<nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="index.php"><!-- href . lleva a web/index.php --><img src="img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href="index.php"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="principal.php">Order Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="principal.php">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>
+                    <?php
+                    require_once("../modelo/Conexion.php");
+                    if (session_status() === PHP_SESSION_NONE) {
+                        session_start();
+                    }
+                    $nombre = $_SESSION["NombreUsuario"];
+                    $con = Conexion::getConection();
+                    $sql = "SELECT IdUsuarios FROM usuarios WHERE NombreUsuario = '$nombre'";
+                    $query = $con->prepare($sql);
+                    $query->execute();
+                    $results = $query->fetchAll(PDO::FETCH_OBJ);
 
+                    if ($query->rowCount() > 0) {
+                        foreach ($results as $result) {
+                            $id = $result->IdUsuarios;
+                        }
+                    }
+
+
+                    // $con = Conexion::getConection();
+                    $sql = "SELECT Direccion FROM `usuarios` WHERE IdUsuarios = $id;";
+                    $query = $con->prepare($sql);
+                    $query->execute();
+                    $results = $query->fetchAll(PDO::FETCH_OBJ);
+
+                    if ($query->rowCount() > 0) {
+                        foreach ($results as $result) {
+                            $dire = $result->Direccion;
+                        }
+                    }
+                    if (!empty($_SESSION["NombreUsuario"])) {
+
+                    ?>
+                        <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                        <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
+                        <?php
+
+                        if ($_SESSION["NombreUsuario"] == "admin") {
+                        ?><li class="nav-item"><a class="nav-link" href="admin.php"><?php echo "Welcome " . $_SESSION["NombreUsuario"]; ?></a></li><?php
+                                                            }
+                                                                ?>
+                        <?php
+                        if ($_SESSION["NombreUsuario"] != "admin") {
+                        ?> <li class="nav-item"><a class="nav-link" href="paginaUsuario.php"><?php echo "Welcome " . $_SESSION["NombreUsuario"]; ?></a></li><?php
+                                                                    }
+                                                                } else {
+                                                                    header("location:principal.php");
+                                                                        ?>
+                        <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                        <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Order Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Book Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li><?php
+                                                                }
+                                                                ?>
+                    <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
                 </ul>
             </div>
         </div>
@@ -84,7 +134,7 @@
                             <input type="submit" class="btn btn-primary btn-block" value="Update Password">
                             <input type="reset" class="btn btn-warning btn-block" value="Clear">
                         </div>
-                        <p class="text-center" style="color:white;">Do not you have an account yet? <a href="register.php" class="btn btn-danger">REGISTER</a> </p>
+                       
                     </form>
                 </article>
             </div>

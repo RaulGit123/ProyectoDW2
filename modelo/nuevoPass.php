@@ -23,5 +23,5 @@ if(isset($_POST["passActual"]) && isset($_POST["cambiaPass"])){
     $query = $con -> prepare($sql); 
     $query -> execute(); 
     $results = $query -> fetchAll(PDO::FETCH_OBJ);
-    header("location:../hugo.php");} //if($_POST["email"] ){echo '<script language="javascript">alert("Mail incorrecto");</script>'; header("location:../vista/form_cambiaPass.php");}
+    header("location:sesion.php");} //if($_POST["email"] ){echo '<script language="javascript">alert("Mail incorrecto");</script>'; header("location:../vista/form_cambiaPass.php");}
      ?>
