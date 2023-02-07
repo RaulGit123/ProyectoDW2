@@ -55,7 +55,8 @@
 
             <div class="card bg-dar" >
     <article class="card-body mx-auto articulo" id="bg-article">   
-        <form action="../modelo/insertar.php" method="post">
+
+        <form action="../modelo/insertar.php" method="post" enctype="multipart/form-data">
 
     <!--form-groud-->
           
@@ -118,8 +119,8 @@
 
     </div>
  <!--form-groud-->     
- <!--form-groud-->
-          
+
+ <!--image-->         
     <div class="form-group input-group ">
 
     <div class="input-group-prepend">
@@ -129,10 +130,11 @@
     </div>
 
 
-    <input type="text" name="Imagen" class="form-control" placeholder="Image">
+    <input type="file" name="imagen" id = "imagen" class="form-control" placeholder="Image">
 
     </div>
-<!--form-groud-->
+<!--image-->
+
  <!--form-groud-->
           
     <div class="form-group input-group ">
@@ -150,7 +152,7 @@
 <!--form-groud-->                            
 
        <div class="form-group ">
-        <input type="submit" class="btn btn-primary btn-block btn-lg text-uppercase" value="Insert a new dish">
+        <input type="submit" class="btn btn-primary btn-block btn-lg text-uppercase" name="insert" value="Insert a new dish">
         <input type="reset" class="btn btn-primary btn-block btn-lg text-uppercase" value="Clear form">
         </div>
         <a class="mt-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Back to admin</a>
