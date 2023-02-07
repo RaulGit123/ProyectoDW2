@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="../web/styles/login.css">
-    <link rel="shortcut icon" href="../web/img/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
 
 </head>
 
@@ -84,7 +84,7 @@
                 <input type="submit" class="btn btn-primary btn-block" value="Ingresar email">
                 <input type="reset" class="btn btn-warning btn-block" value="Borrar email">
             </div>
-            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="./register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>   
+            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>   
         </form>
         </article>
         </div>    
@@ -93,8 +93,7 @@
            
 
     
-    <script src="../web/comun.js"></script>
-    <script src="validate-forms.js"></script>
+    <script src="comun.js"></script>
     </body>
 
     

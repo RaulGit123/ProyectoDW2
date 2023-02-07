@@ -24,12 +24,12 @@
         $activado = $result->Activado;
 
         if($_SESSION["NombreUsuario"]=="admin" ){
-                header('Location: vista/admin.php');}
+                header('Location: web/admin.php');}
                 
         if($_SESSION["NombreUsuario"]!="admin" && $activado=='si'){
-                include_once("vista/principal.php");}   
+                include_once("web/principal.php");}   
         else{
-            include_once("vista/login.php");
+            include_once("web/login.php");
             echo '<script language="javascript">alert("Error de verificación");</script>'; }
             
             
@@ -42,7 +42,7 @@
             unset($_SESSION["error"]);
         }
     
-        include_once("vista/login.php");
+        include_once("web/login.php");
 
         //aqui luego desviariamos a vista registro de usuario.
     }

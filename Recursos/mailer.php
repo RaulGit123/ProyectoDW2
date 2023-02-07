@@ -95,7 +95,7 @@ try {
     //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
 $body = 'Si quieres disfrutar de tus pedidos y reservas, verifíca tu cuenta en el siguiente enlace con tu código: </br>'.$codigo.'</br>
-        <a href="http://localhost/ProyectoDW2/vista/verificar.php">aqui</a>';
+        <a href="http://localhost/ProyectoDW2/web/verificar.php">aqui</a>';
     //Contenido
     //Si enviamos HTML
     $mail->isHTML(true);    
@@ -110,7 +110,7 @@ $body = 'Si quieres disfrutar de tus pedidos y reservas, verifíca tu cuenta en 
     $mail->send();
     echo 'El mensaje se ha enviado con exito';
 
-     header("location: ../vista/verificar.php");
+     header("location: ../web/verificar.php");
     
 } catch (Exception $e) {
     echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";

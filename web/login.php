@@ -48,9 +48,9 @@ if(empty(trim($Contraseña))){
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="./web/menu.php">Our Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./vista/principal.php">Order Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./vista/principal.php">Book Now</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./vista/register.php">Register</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./web/principal.php">Order Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./web/principal.php">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./web/register.php">Register</a></li>
                  
                 </ul>
             </div>
@@ -132,14 +132,14 @@ if(empty(trim($Contraseña))){
                 <input type="reset" class="btn btn-warning btn-block" value="Clear">
             </div>
             <div class="form-group ">
-            <p class="text-center " style="color:white;">Do not you have an account yet? <a href="./vista/register.php" class="btn btn-danger" >REGISTER</a> </p>
+            <p class="text-center " style="color:white;">Do not you have an account yet? <a href="./web/register.php" class="btn btn-danger" >REGISTER</a> </p>
             
              
            
-            <p class="text-center " style="color:white;">Didn't you validate the account? <a href="./vista/verificar.php" class="btn btn-danger" >VERIFY</a> </p>
+            <p class="text-center " style="color:white;">Didn't you validate the account? <a href="./web/verificar.php" class="btn btn-danger" >VERIFY</a> </p>
          
           
-            <p class="text-center " style="color:white;">Forgot password? <a href="./vista/recuperarPass.php" class="btn btn-danger" >RECOVER</a> </p>
+            <p class="text-center " style="color:white;">Forgot password? <a href="./web/recuperarPass.php" class="btn btn-danger" >RECOVER</a> </p>
             </div>     
             
         </form>
@@ -151,7 +151,6 @@ if(empty(trim($Contraseña))){
 
     
     <script src="web/comun.js"></script>
-    <script src="validate-forms.js"></script>
     </body>
 
     

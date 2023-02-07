@@ -36,8 +36,6 @@ $f2 = new Nigiri();
 $f2->EliminarRegistroPedido($codigo);
 $f1->EliminarComida($codigo);
 
-header("Location:../vista/admin.php");
+header("Location:../web/admin.php");
 ?>
-
-<!-- <a class="admin" href="../vista/admin.php">Volver al panel de administrador</a> -->
 

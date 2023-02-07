@@ -23,7 +23,7 @@ $Tipo = ($_POST['tipo']);
 
 $f1 = new Nigiri();
 $f1->InsertarComida($Nombre, $Descripcion, $Ingredientes, $Precio, $Imagen, $Tipo);
-header("Location:../vista/admin.php");
+header("Location:../web/admin.php");
 // $sql =$con->prepare( "INSERT INTO Comida ( Nombre, Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (?,?,?,?,?,?)") ;
 // return $sql->execute([$Nombre,$Descripcion,$Ingredientes,$Precio,$Imagen,$Tipo]);
 

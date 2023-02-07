@@ -20,15 +20,15 @@ if (session_status() === PHP_SESSION_NONE) {
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- <link rel="stylesheet" href="../web/styles/menu.css">
     <link rel="stylesheet" href="../web/styles/login.css"> -->
-    <link rel="stylesheet" href="../web/styles/pag_principal.css">
-    <link rel="stylesheet" href="../web/styles/mostrar.css">
-    <link rel="shortcut icon" href="../web/img/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/pag_principal.css">
+    <link rel="stylesheet" href="styles/mostrar.css">
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
 </head>
 
 <body id="page-top">
     <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="../index.php"><img src="../web/img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href="../index.php"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars my-1"></i>
             </button>
@@ -37,9 +37,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
                     if (!empty($_SESSION["NombreUsuario"])) {
                     ?>
-                        <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../web/pedidos.php">Order Now</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../web/reservas.php">Book Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
                         <li class="nav-item"><a class="nav-link activo"><?php echo "Welcome " . $_SESSION["NombreUsuario"]; ?></a></li>
                     <?php } ?>
                 </ul>
@@ -94,7 +94,7 @@ if (session_status() === PHP_SESSION_NONE) {
     </header>
 
     <a class="mt-5 mb-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Back to admin</a>
-    <script src="../web/comun.js"></script>
+    <script src="comun.js"></script>
 </body>
 
 </html>

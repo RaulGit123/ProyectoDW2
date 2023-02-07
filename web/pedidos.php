@@ -71,17 +71,17 @@
                             <?php
 
                             if($_SESSION["NombreUsuario"]=="admin"){
-                                ?><li class="nav-item"><a class="nav-link" href="../vista/admin.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php      
+                                ?><li class="nav-item"><a class="nav-link" href="admin.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php      
                             } 
                             ?>
                             <?php
                             if($_SESSION["NombreUsuario"]!="admin"){
-                               ?> <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
+                               ?> <li class="nav-item"><a class="nav-link" href="paginaUsuario.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
                             }
                             
                             
                         }else {
-                            header("location:../vista/principal.php");
+                            header("location:principal.php");
                             ?>
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                             <li class="nav-item"><a class="nav-link" href="../hugo.php">Order Now</a></li>

@@ -77,22 +77,22 @@ if (session_status() === PHP_SESSION_NONE) {
                         <?php
 
                         if ($_SESSION["NombreUsuario"] == "admin") {
-                        ?><li class="nav-item"><a class="nav-link" href="../vista/admin.php"><?php echo "Welcome " . $_SESSION["NombreUsuario"]; ?></a></li><?php
-                                                                                                                                                            }
-                                                                                                                                                                ?>
+                        ?><li class="nav-item"><a class="nav-link" href="admin.php"><?php echo "Welcome " . $_SESSION["NombreUsuario"]; ?></a></li><?php
+                                                            }
+                                                                ?>
                         <?php
                         if ($_SESSION["NombreUsuario"] != "admin") {
-                        ?> <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo "Welcome " . $_SESSION["NombreUsuario"]; ?></a></li><?php
-                                                                                                                                                                    }
-                                                                                                                                                                } else {
-                                                                                                                                                                    header("location:../vista/principal.php");
-                                                                                                                                                                        ?>
+                        ?> <li class="nav-item"><a class="nav-link" href="paginaUsuario.php"><?php echo "Welcome " . $_SESSION["NombreUsuario"]; ?></a></li><?php
+                                                                    }
+                                                                } else {
+                                                                    header("location:principal.php");
+                                                                        ?>
                         <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                         <li class="nav-item"><a class="nav-link" href="../hugo.php">Order Now</a></li>
                         <li class="nav-item"><a class="nav-link" href="../hugo.php">Book Now</a></li>
                         <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
-                                                                                                                                                                }
-                                                                                                    ?>
+                                                                }
+                                                                ?>
                     <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
                 </ul>
             </div>
@@ -102,7 +102,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <header class="masthead">
             <div class="mt-3 mx-2 masthead-heading text-uppercase">Your orders and booking</div>
             <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="../vista/PaginaUsuario.php">Back</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
+            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="PaginaUsuario.php">Back</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
         </header>
             <!-- Los Pedidos del usuario  -->
             <div class="card-body mx-auto articulo" id="bg-article">

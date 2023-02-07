@@ -178,8 +178,8 @@ $listaProvincias = trim($_POST["provincia"]);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="../web/styles/login.css">
-    <link rel="shortcut icon" href="../web/img/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/login.css">
+    <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
 
 </head>
 
@@ -190,14 +190,14 @@ $listaProvincias = trim($_POST["provincia"]);
 <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
         <div class="container">
-            <a class="navbar-brand" href="../index.php"><img src="../web/img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href="../index.php"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="../web/menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                    <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
                     <li class="nav-item"><a class="nav-link" href="principal.php">Order Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="principal.php">Book Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li>
@@ -392,7 +392,7 @@ $listaProvincias = trim($_POST["provincia"]);
 
             
             </div>
-            <script src="../web/comun.js"></script>
+            <script src="comun.js"></script>
 
     </body>
 
