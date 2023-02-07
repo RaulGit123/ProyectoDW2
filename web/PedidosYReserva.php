@@ -207,7 +207,7 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
     
 
-    <script src="comun.js"></script>
+    <script src="scripts/comun.js"></script>
 
 </body>
 

@@ -111,14 +111,6 @@ ReservaPersonas.forEach(Com =>{
         d_nested3.classList.remove("d-none");
         MismoTodo.classList.add("d-none");
     }
-
-      // console.log(listaCant[0].innerHTML);
-      // console.log(listaFecha[0].value);
-      // console.log(fechaguardada);
-      // console.log(horaseleccionada);
-      // console.log(añoActual);
-      // console.log(hoy);
-      // console.log(mesActual);
       
     if(listaCant[0].innerHTML>=2 && listaFecha[0].value!="" && listaFecha[0].value>=fechaguardada && horaseleccionada == "adios"){
       horaseleccionada = "hola";
@@ -142,47 +134,7 @@ ReservaPersonas.forEach(Com =>{
       MismoTodo.classList.remove("d-none");
     }}
     });
-    // window.location.href = "PedidosYReserva.php";
     }
     
     });
 });
-
-
-
-
-
-// function createElementFromHTML(htmlString) {
-//     var div = document.createElement('div');
-//     div.innerHTML = htmlString.trim();
-//     return div.firstChild;
-// }
-// $(document).ready(function () {
-//   $("#desdeFormulario").bind("submit",function(e){            
-//         // Capturamnos el boton de envío
-//         $.ajax({
-//           type: $(this).attr("method"),
-//           url: $(this).attr("action"),
-//           data:$(this).serialize(),
-
-//           beforeSend: function(){
-//                 /* ejecuta durante el envió de la petición al servidor. */
-//               },
-//               complete:function(data){
-//                 /* Se ejecuta al termino de la petición */
-
-//               },
-//               success: function(data){
-//                 /* Se ejecuta cuando termina la petición y esta ha sido correcta */
-//                 $('#respuesta').html(data); 
-
-//               },
-//               error: function(data){
-//                 /* Se ejecuta si la peticón ha sido erronea */
-
-//               }
-//             });
-//         // Nos permite cancelar el envio del formulario
-//         e.preventDefault();
-//       });
-// });

@@ -150,7 +150,7 @@ if(empty(trim($Contraseña))){
            
 
     
-    <script src="web/comun.js"></script>
+    <script src="web/scripts/comun.js"></script>
     </body>
 
     

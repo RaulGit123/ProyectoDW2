@@ -94,7 +94,7 @@ if (session_status() === PHP_SESSION_NONE) {
     </header>
 
     <a class="mt-5 mb-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Back to admin</a>
-    <script src="comun.js"></script>
+    <script src="scripts/comun.js"></script>
 </body>
 
 </html>

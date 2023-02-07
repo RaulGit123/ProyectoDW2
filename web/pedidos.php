@@ -155,8 +155,8 @@
             <button id="fin" class="btn btn-info">Finish</button>
         </div>
     </div>
-    <script type="module" src="pedidos.js"></script>
-    <script src="comun.js"></script>
+    <script type="module" src="scripts/pedidos.js"></script>
+    <script src="scripts/comun.js"></script>
 </body>
 
 </html>

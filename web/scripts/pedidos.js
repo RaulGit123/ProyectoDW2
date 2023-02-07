@@ -1,8 +1,3 @@
- /*Para limpiar cookies?*/
- //document.cookie.split(";").forEach(function(c) {
-  //  document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
-   //});
-
 //LISTA DE PLATOS
 let lista = [];
 let totalCarrito = [];
@@ -78,10 +73,6 @@ listaCantBase.forEach(ele => {
     let id = ele.parentElement.id;
     listaCant[id] = ele;
 });
-
-// listaCant.forEach(element => {
-//     console.log(element.parentElement.id);
-// });
 
 listaMa.forEach(ele => {
     let id = ele.parentElement.id;

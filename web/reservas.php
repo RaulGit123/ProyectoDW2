@@ -129,7 +129,7 @@
 <p class="respuesta mal d-none mb-4" id="respt">Todas las mesas en ese dia y hora estan ocupadas</p> 
 </div>
 
-    <script src="comun.js"></script>
-    <script src="reservas.js"></script>
+    <script src="scripts/comun.js"></script>
+    <script src="scripts/reservas.js"></script>
 </body>
 </html>

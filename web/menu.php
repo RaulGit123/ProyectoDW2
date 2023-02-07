@@ -59,7 +59,7 @@
     <?php 
     include_once('../config/CreacionJSON.php');
     ?>
-    <script type="module" src="menu.js"></script>
-    <script src="comun.js"></script>
+    <script type="module" src="scripts/menu.js"></script>
+    <script src="scripts/comun.js"></script>
 </body>
 </html>

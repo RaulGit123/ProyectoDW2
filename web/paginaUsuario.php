@@ -79,6 +79,6 @@
         </section>
     </div>
     
-    <script src="comun.js"></script>
+    <script src="scripts/comun.js"></script>
 </body>
 </html>
