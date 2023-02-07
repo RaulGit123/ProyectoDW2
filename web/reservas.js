@@ -120,7 +120,7 @@ ReservaPersonas.forEach(Com =>{
       // console.log(hoy);
       // console.log(mesActual);
       
-    if(listaCant[0].innerHTML>=2 && listaFecha[0].value!="" && listaFecha[0].value>fechaguardada && horaseleccionada == "adios"){
+    if(listaCant[0].innerHTML>=2 && listaFecha[0].value!="" && listaFecha[0].value>=fechaguardada && horaseleccionada == "adios"){
       horaseleccionada = "hola";
     var NumeroPersonas = listaCant[0].innerHTML;
     var Fecha = listaFecha[0].value;
