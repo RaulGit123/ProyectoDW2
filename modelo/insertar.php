@@ -14,25 +14,33 @@ if (isset($_POST['insert'])) {
   //Si el archivo contiene algo y es diferente de vacio
   if (isset($archivo) && $archivo != "") {
      //Obtenemos algunos datos necesarios sobre el archivo
-     $tipo = $_FILES['archivo']['type'];
-     $tamano = $_FILES['archivo']['size'];
-     $temp = $_FILES['archivo']['tmp_name'];
+     $patch = "../web/img/platos";   //ruta a la que queremos enviar.
+     $patchInsert  = str_replace('\\', '/', $patch).'/'. $archivo;  //ruta con insercion
+     $tipo = $_FILES['imagen']['type'];
+     $tamano = $_FILES['imagen']['size'];
+     $temp = $_FILES['imagen']['tmp_name'];  //ruta relativa
+
+     //Si la carpeta no existe, la creamos
+
+if (!file_exists($patch)) {
+  mkdir($patch, 0777, true);
+};
+     
      //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
     if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 20000000))) {
        echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
        - Se permiten archivos .gif, .jpg, .png. y de 2000 kb como máximo.</b></div>';
     }
     else {
-      echo"hola";
+     
        //Si la imagen es correcta en tamaño y tipo
        //Se intenta subir al servidor
-       if (move_uploaded_file($temp, './web/img/'.$archivo)) {
+       if (move_uploaded_file($temp, $patchInsert)) {
            //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-           chmod('web/img/'.$archivo, 0777);
+           chmod($patchInsert, 0777);
            //Mostramos el mensaje de que se ha subido co éxito
            echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
-           //Mostramos la imagen subida
-           echo '<p><img src="./web/img/'.$archivo.'"></p>';
+         
        }
        else {
           //Si no se ha podido subir la imagen, mostramos un mensaje de error
@@ -58,7 +66,7 @@ $Tipo = ($_POST['tipo']);
 
  $f1 = new Nigiri();
  $f1->InsertarComida($Nombre, $Descripcion, $Ingredientes, $Precio, $Imagen, $Tipo);
-header("Location:../vista/admin.php");
+ header("Location:../vista/admin.php");
 //  $sql =$con->prepare( "INSERT INTO Comida ( Nombre, Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (?,?,?,?,?,?)") ;
 //  return $sql->execute([$Nombre,$Descripcion,$Ingredientes,$Precio,$Imagen,$Tipo]);
 

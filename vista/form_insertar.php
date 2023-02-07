@@ -130,7 +130,7 @@
     </div>
 
 
-    <input type="file" name="imagen" id = "imagen" class="form-control" placeholder="Image">
+    <input type="file" name="imagen" id = "imagen" class="form-control Hiden" placeholder="Image">
 
     </div>
 <!--image-->
