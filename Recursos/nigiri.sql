@@ -18,18 +18,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `NIGIRI`
+-- Base de datos: `nigiri`
 --
 
 /*
 Borra la base de datos si ya existe, con el objetivo de hacer pruebas más rapido
 */
-Drop Schema if exists `Nigiri`;
+Drop Schema if exists `nigiri`;
 
 
 
-CREATE DATABASE IF NOT EXISTS `NIGIRI` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `NIGIRI`;
+CREATE DATABASE IF NOT EXISTS `nigiri` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `nigiri`;
 
 -- --------------------------------------------------------
 --
@@ -137,8 +137,7 @@ Insert Into `Mesa` (Estado) VALUES ("vacia");
 Insert Into Roles (NombreRol) VALUES ("Admin");
 Insert Into Roles (NombreRol) VALUES ("Usuario");
 
- INSERT INTO usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol) VALUES 
- ("admin","Hugo","Duran García",MD5("admins"),"hugoduran@gmail.com","c/SoyTuJefe","Cádiz","1");
+ INSERT INTO usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol) VALUES ("admin","Hugo","Duran García",MD5("admins"),"hugoduran@gmail.com","c/SoyTuJefe","Cádiz","1");
 
  INSERT INTO usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol,Activado) VALUES 
  ("Pepe123","Pepe","Martinez Martinez",MD5("123123"),"pepe123@gmail.com","c/SoyUsuario","Valencia","2","si");

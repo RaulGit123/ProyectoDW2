@@ -48,7 +48,7 @@ if (session_status() === PHP_SESSION_NONE) {
     </nav>
     <header class="masthead">
         <div class="mt-3 masthead-heading text-uppercase"><?php echo "Welcome to Nigiri, " . $_SESSION["NombreUsuario"]; ?></div>
-        <div class="masthead-subheading font-italic">View all dish</div>
+        <div class="masthead-subheading font-italic">View all dishes</div>
         <div class="card bg-dar">
             <article class="card-body mx-auto articulo" id="bg-article">
                 <div class="form-group  ">
