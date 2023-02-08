@@ -1,4 +1,3 @@
-let activoExiste = document.querySelector('.activo') !== null;
 
 window.onscroll = function () { scrollFunction() };
 function scrollFunction() {
@@ -9,12 +8,13 @@ function scrollFunction() {
     }
 }
 
+let activoExiste = document.querySelector('.activo') !== null;
+
 if (activoExiste) {
     document.querySelector('.activo').addEventListener("click", function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
-
 
 let aquiExiste = document.querySelector(".aqui") !== null;
 if (aquiExiste) {
