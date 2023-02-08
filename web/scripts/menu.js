@@ -16,8 +16,8 @@ async function recorrer(data) {
 let tipos = [];
 
 lista.forEach(ele => {
-    if (!tipos.includes(ele.tipo)) {
-        tipos.push(ele.tipo);
+    if (!tipos.includes(ele.Tipo)) {
+        tipos.push(ele.Tipo);
     }
 });
 
@@ -42,7 +42,7 @@ tipos.forEach(tipo => {
     let h1 = createElementFromHTML('<h1 class=" text-center text-uppercase">'+tipo+'</h1>');
     // div1.appendChild(h1);
     lista.forEach(plato => {
-        if (plato.tipo == tipo) {
+        if (plato.Tipo == tipo) {
             let div2 = createElementFromHTML('<div class="card" style="width: 18rem;"></div>');
             let img = createElementFromHTML('<img class="card-img-top" src="img/platos/'+plato.Imagen+'" alt="'+quitarExtension(plato.Imagen)+'">');
             let div3 = createElementFromHTML('<div class="card-body"></div>');
