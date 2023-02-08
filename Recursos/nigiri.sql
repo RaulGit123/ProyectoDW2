@@ -18,18 +18,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `NIGIRI`
+-- Base de datos: `nigiri`
 --
 
 /*
 Borra la base de datos si ya existe, con el objetivo de hacer pruebas más rapido
 */
-Drop Schema if exists `Nigiri`;
+Drop Schema if exists `nigiri`;
 
 
 
-CREATE DATABASE IF NOT EXISTS `NIGIRI` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `NIGIRI`;
+CREATE DATABASE IF NOT EXISTS `nigiri` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `nigiri`;
 
 -- --------------------------------------------------------
 --
