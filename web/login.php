@@ -132,14 +132,26 @@ if(empty(trim($Contraseña))){
                 <input type="reset" class="btn btn-warning btn-block" value="Clear">
             </div>
             <div class="form-group ">
-            <p class="text-center " style="color:white;">Do not you have an account yet? <a href="../web/register.php" class="btn btn-danger" >REGISTER</a> </p>
+            <p class="text-center " style="color:white;">Do not you have an account yet? 
+            <div>
+            <a href="../web/register.php" class="btn  btn-block btn-danger" >REGISTER</a> 
+            </div>
+            </p>
             
              
            
-            <p class="text-center " style="color:white;">Didn't you validate the account? <a href="../web/verificar.php" class="btn btn-danger" >VERIFY</a> </p>
+            <p class="text-center " style="color:white;">Didn't you validate the account? 
+            <div>
+            <a href="../web/verificar.php" class="btn  btn-block btn-danger" >VERIFY</a> 
+            </div>
+            </p>
          
           
-            <p class="text-center " style="color:white;">Forgot password? <a href="../web/form_veripass.php" class="btn btn-danger" >RECOVER</a> </p>
+            <p class="text-center " style="color:white;">Forgot password, click here ? 
+            <div>
+            <a href="../web/form_veripass.php" class="btn btn-block btn-danger" >RECOVER</a> 
+            </div>
+            </p>
             </div>     
             
         </form>
@@ -150,7 +162,7 @@ if(empty(trim($Contraseña))){
            
 
     
-    <script src="scripts/comun.js"></script>
+    <script src="../web/scripts/comun.js"></script>
     </body>
 
     
