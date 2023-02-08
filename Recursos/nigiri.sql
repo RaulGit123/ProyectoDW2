@@ -64,7 +64,7 @@ CREATE TABLE `Comida` (
   `Ingredientes` varchar(100) NOT NULL,
   `Precio` decimal(10,2) NOT NULL,
   `Imagen` varchar(100) NOT NULL,
-   `tipo` varchar(100) NOT NULL,
+   `Tipo` varchar(100) NOT NULL,
   CONSTRAINT pkC PRIMARY KEY (`IdComida`)
 );
 
@@ -137,13 +137,13 @@ Insert Into `Mesa` (Estado) VALUES ("vacia");
 Insert Into Roles (NombreRol) VALUES ("Admin");
 Insert Into Roles (NombreRol) VALUES ("Usuario");
 
- INSERT INTO usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol) VALUES ("admin","Hugo","Duran García",MD5("admins"),"hugoduran@gmail.com","c/SoyTuJefe","Cádiz","1");
+ INSERT INTO Usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol) VALUES ("admin","Hugo","Duran García",MD5("admins"),"hugoduran@gmail.com","c/SoyTuJefe","Cádiz","1");
 
- INSERT INTO usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol,Activado) VALUES 
+ INSERT INTO Usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol,Activado) VALUES 
  ("Pepe123","Pepe","Martinez Martinez",MD5("123123"),"pepe123@gmail.com","c/SoyUsuario","Valencia","2","si");
 
 /*Las secciones serán Entrantes, Ramen, Postres y Bebidas*/
-Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ("Gyoza","Gyoza is made from a thinly rolled dough filled with ground meat and vegetables, which can then be boiled and served hot with a dash of black vinegar and sesame oil or in a soup.",
+Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,Tipo) VALUES ("Gyoza","Gyoza is made from a thinly rolled dough filled with ground meat and vegetables, which can then be boiled and served hot with a dash of black vinegar and sesame oil or in a soup.",
 "· 250 gr of minced pork
 · 100g cabbage
 · 50g of spring onion
