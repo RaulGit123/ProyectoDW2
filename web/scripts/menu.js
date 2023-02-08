@@ -1,5 +1,6 @@
 //LISTA DE PLATOS
 let lista = [];
+console.log("a");
 
 //Recogemos y recorremos comida.json
 const response = await fetch('../config/comida.json')
