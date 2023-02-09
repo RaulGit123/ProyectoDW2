@@ -1,7 +1,8 @@
 <?php
 echo " estamos aqui";
     session_start();
-   
+   echo $_SESSION["NombreUsuario"];
+   echo $_SESSION["Contraseña"];
     if (isset($_SESSION["NombreUsuario"]) && isset($_SESSION["Contraseña"]) ) {
         echo " aaaaaaaaaaaaaaa";
         require_once("Validar.php");

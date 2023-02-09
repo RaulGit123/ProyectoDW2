@@ -1,4 +1,5 @@
-<?php 
+<?php
+echo $_POST["NombreUsuario"];
     if (isset($_POST["NombreUsuario"]) && isset($_POST["Contraseña"])) {
          require_once("../modelo/modeloLogin.php");
         $validar = new Login();
