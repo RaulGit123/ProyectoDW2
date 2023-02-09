@@ -2,7 +2,7 @@
 require_once("config.php");
 
 //generamos la consulta
-$sql = "SELECT * FROM comida";
+$sql = "SELECT * FROM Comida";
 mysqli_set_charset($link, "utf8"); //formato de datos utf8
 
 if(!$result = mysqli_query($link, $sql)) die();
@@ -17,11 +17,11 @@ while($row = mysqli_fetch_array($result))
     $Ingredientes=$row['Ingredientes'];
     $Precio=$row['Precio'];
     $Imagen=$row['Imagen'];
-    $tipo=$row['tipo'];
+    $tipo=$row['Tipo'];
     
 
     $comida[] = array('IdComida'=> $IdComida, 'Nombre'=> $Nombre, 'Descripcion'=> $Descripcion, 'Ingredientes'=> $Ingredientes,
-                        'Precio'=> $Precio, 'Imagen'=> $Imagen, 'tipo'=> $tipo);
+                        'Precio'=> $Precio, 'Imagen'=> $Imagen, 'Tipo'=> $tipo);
 
 }
     
