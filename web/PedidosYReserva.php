@@ -102,7 +102,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <header class="masthead">
             <div class="mt-3 mx-2 masthead-heading text-uppercase">Your orders and booking</div>
             <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="PaginaUsuario.php">Back</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
+            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="paginaUsuario.php">Back</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
         </header>
             <!-- Los Pedidos del usuario  -->
             <div class="card-body mx-auto articulo" id="bg-article">
