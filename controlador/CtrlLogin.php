@@ -7,7 +7,7 @@ echo $_POST["NombreUsuario"];
         
     } else {
     echo "pues no setea post";
-        //header("location:../modelo/sesion.php");
+        header("location:../web/index.php");
         echo "pues no setea post";
     }
 ?>

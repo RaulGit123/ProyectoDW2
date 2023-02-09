@@ -76,7 +76,7 @@ if(empty(trim($Contraseña))){
 
 
 
-    <form action="../web/index.php" method="POST" >
+    <form action="../controlador/CtrlLogin.php" method="POST" >
 
         
 
