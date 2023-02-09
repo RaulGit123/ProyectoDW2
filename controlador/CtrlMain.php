@@ -3,7 +3,7 @@ echo " estamos aqui";
     session_start();
    
     if (isset($_SESSION["NombreUsuario"]) && isset($_SESSION["Contraseña"]) ) {
-        
+        echo " aaaaaaaaaaaaaaa";
         require_once("Validar.php");
         $validar = new Validar();
         $validar->validarDatos();
@@ -11,7 +11,7 @@ echo " estamos aqui";
         $nombre = $_SESSION["NombreUsuario"];
         $con = Conexion::getConection();
 
-        $sql = "SELECT Activado FROM usuarios WHERE NombreUsuario = '$nombre'";
+        $sql = "SELECT Activado FROM Usuarios WHERE NombreUsuario = '$nombre'";
         $query = $con -> prepare($sql); 
         $query -> execute(); 
         $results = $query -> fetchAll(PDO::FETCH_OBJ);
