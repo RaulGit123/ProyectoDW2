@@ -18,8 +18,8 @@ async function recorrer(data) {
 let tipos = [];
 
 lista.forEach(ele => {
-    if (!tipos.includes(ele.tipo)) {
-        tipos.push(ele.tipo);
+    if (!tipos.includes(ele.Tipo)) {
+        tipos.push(ele.Tipo);
     }
 });
 
@@ -46,7 +46,7 @@ tipos.forEach(tipo => {
     let div2 = createElementFromHTML(txtDiv2);
     // div1.appendChild(div2);
     lista.forEach(plato => {
-        if (plato.tipo == tipo) {
+        if (plato.Tipo == tipo) {
             let div3 = createElementFromHTML('<div class="grid"></div>');
             let item1 = createElementFromHTML('<div class="item item-1"><img class="img" src="img/platos/'+plato.Imagen+'" alt="'+quitarExtension(plato.Imagen)+'"/></div>');
             let item2 = createElementFromHTML('<div class="item item-2">'+plato.Nombre+'</div>');
