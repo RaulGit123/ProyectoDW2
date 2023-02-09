@@ -26,13 +26,13 @@ include ("ClaseNigiri.php");
                 }
 
                 // Consulta
-                $sql = "SELECT * FROM usuarios WHERE NombreUsuario = :USU AND Contraseña = :PASS";
+                // $sql = "SELECT * FROM usuarios WHERE NombreUsuario = :USU AND Contraseña = :PASS";
 
-                $resultado = $con->prepare($sql);
-                $resultado->execute(array(":USU"=>$usu, ":PASS"=>$pass));
+                // $resultado = $con->prepare($sql);
+                // $resultado->execute(array(":USU"=>$usu, ":PASS"=>$pass));
 
-            //     $f1 = new Nigiri();
-            // $resultado = $f1->Login($usu,$pass);
+                $f1 = new Nigiri();
+            $resultado = $f1->Login($usu,$pass);
 
 
                 $cantidad_resultado = $resultado->rowCount();
@@ -60,8 +60,8 @@ include ("ClaseNigiri.php");
                 $sql = null;
                 $resultado = null;
                 $cantidad_resultado = null;
-                
-                header("location:../modelo/sesion.php");
+            echo "holita";
+                // header("location:../modelo/sesion.php");
 
             }
 
