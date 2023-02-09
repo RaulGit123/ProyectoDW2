@@ -35,7 +35,8 @@ if (!file_exists($patch)) {
      
        //Si la imagen es correcta en tamaño y tipo
        //Se intenta subir al servidor
-       if (move_uploaded_file($temp, $patchInsert)) {
+      //  if (move_uploaded_file($temp, $patchInsert)) {
+        if (move_uploaded_file($temp, "../web/img/platos")) {
            //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
            chmod($patchInsert, 0777);
            //Mostramos el mensaje de que se ha subido co éxito
