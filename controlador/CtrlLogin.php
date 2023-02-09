@@ -5,6 +5,7 @@
         $validar->validarDatos($_POST["NombreUsuario"], $_POST["Contraseña"]);
         
     } else {
+    echo "pues no setea post";
         header("location:../modelo/sesion.php");
     }
 ?>
