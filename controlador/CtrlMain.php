@@ -1,5 +1,5 @@
-<?php 
-
+<?php
+echo " estamos aqui";
     session_start();
    
     if (isset($_SESSION["NombreUsuario"]) && isset($_SESSION["Contraseña"]) ) {
@@ -15,7 +15,7 @@
         $query = $con -> prepare($sql); 
         $query -> execute(); 
         $results = $query -> fetchAll(PDO::FETCH_OBJ);
-
+    echo "estamos antes del fetch";
         if($query -> rowCount() > 0)   { 
         foreach($results as $result) { 
             echo '<div id="idUsu" style="display: none;">'.$result -> Activado.'</div>';
