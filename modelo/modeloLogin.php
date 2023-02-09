@@ -63,7 +63,7 @@ include ("ClaseNigiri.php");
             //     echo $_POST["NombreUsuario"];
             //     echo $_POST["Contraseña"];
             // echo "holita";
-                // header("location:../modelo/sesion.php");
+                 header("location:../modelo/sesion.php");
 
             }
 
