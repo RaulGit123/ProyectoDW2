@@ -60,6 +60,8 @@ include ("ClaseNigiri.php");
                 $sql = null;
                 $resultado = null;
                 $cantidad_resultado = null;
+                echo $_POST["NombreUsuario"];
+                echo $_POST["Contraseña"];
             echo "holita";
                 // header("location:../modelo/sesion.php");
 
