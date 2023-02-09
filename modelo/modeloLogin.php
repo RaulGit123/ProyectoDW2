@@ -41,10 +41,11 @@ include ("ClaseNigiri.php");
 
                 if ($cantidad_resultado == 1) {
                     $_SESSION["NombreUsuario"] = $usu;
-                    $_SESSION["Contraseña"] = $pass;  
-                 
-
-
+                    $_SESSION["Contraseña"] = $pass;
+                echo $_SESSION["Contraseña"];
+                echo $_SESSION["NombreUsuario"];
+                echo $usu;
+                echo $pass;
                 } else {
                     $_SESSION["error"] = "ERROR";
 
@@ -60,9 +61,9 @@ include ("ClaseNigiri.php");
                 $sql = null;
                 $resultado = null;
                 $cantidad_resultado = null;
-                echo $_POST["NombreUsuario"];
-                echo $_POST["Contraseña"];
-            echo "holita";
+            //     echo $_POST["NombreUsuario"];
+            //     echo $_POST["Contraseña"];
+            // echo "holita";
                 // header("location:../modelo/sesion.php");
 
             }
