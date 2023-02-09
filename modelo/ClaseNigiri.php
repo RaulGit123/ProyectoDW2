@@ -28,9 +28,9 @@ class Nigiri extends Modelo
         $consulta->execute();
         return $consulta;
     }
-    //Funciona
+    //FuncionaF
     public function InsertarComida($Nombre, $Descripcion, $Ingredientes, $Precio, $Imagen, $Tipo){
-        $consulta = "INSERT INTO nigiri.Comida ( Nombre, Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (:nombre,:descripcion,:ingredientes,:precio,:imagen,:tipo)";
+        $consulta = "INSERT INTO nigiri.Comida ( Nombre, Descripcion,Ingredientes,Precio,Imagen,Tipo) VALUES (:nombre,:descripcion,:ingredientes,:precio,:imagen,:tipo)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':nombre', $Nombre);
         $result->bindParam(':descripcion', $Descripcion);
