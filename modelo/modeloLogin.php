@@ -61,7 +61,7 @@ include ("ClaseNigiri.php");
                 $resultado = null;
                 $cantidad_resultado = null;
                 
-                header("location:../modelo/sesion.php");
+                header("location:../web/index.php");
 
             }
 
