@@ -27,7 +27,7 @@ while($row = mysqli_fetch_array($result))
     
 //desconectamos la base de datos
 $close = mysqli_close($link) 
-or die("Ha sucedido un error inexperado en la desconexion de la base de datos");
+or die("Ha sucedido un error inesperado en la desconexion de la base de datos");
   
 
 //Creamos el JSON
