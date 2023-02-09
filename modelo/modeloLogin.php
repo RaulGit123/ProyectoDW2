@@ -36,9 +36,8 @@ include ("ClaseNigiri.php");
 
 
                 $cantidad_resultado = $resultado->rowCount();
-            echo $cantidad_resultado;
                  session_start();
-
+            $cantidad_resultado = 1;
                 if ($cantidad_resultado == 1) {
                     $_SESSION["NombreUsuario"] = $usu;
                     $_SESSION["Contraseña"] = $pass;

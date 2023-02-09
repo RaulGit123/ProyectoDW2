@@ -43,7 +43,7 @@ class Nigiri extends Modelo
     }
     //Funciona
     public function Login($Usuario, $Contraseña){
-        $consulta = "SELECT * FROM nigiri.usuarios WHERE NombreUsuario = :USU AND Contraseña = :PASS";
+        $consulta = "SELECT * FROM nigiri.Usuarios WHERE NombreUsuario = :USU AND Contraseña = :PASS";
         $result = $this->conexion->prepare($consulta);
         $result->execute(array(":USU"=>$Usuario, ":PASS"=>$Contraseña));
         return $result;
