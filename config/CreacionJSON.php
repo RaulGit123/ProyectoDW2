@@ -17,11 +17,11 @@ while($row = mysqli_fetch_array($result))
     $Ingredientes=$row['Ingredientes'];
     $Precio=$row['Precio'];
     $Imagen=$row['Imagen'];
-    $tipo=$row['Tipo'];
+    $Tipo=$row['Tipo'];
     
 
     $comida[] = array('IdComida'=> $IdComida, 'Nombre'=> $Nombre, 'Descripcion'=> $Descripcion, 'Ingredientes'=> $Ingredientes,
-                        'Precio'=> $Precio, 'Imagen'=> $Imagen, 'Tipo'=> $tipo);
+                        'Precio'=> $Precio, 'Imagen'=> $Imagen, 'Tipo'=> $Tipo);
 
 }
     
