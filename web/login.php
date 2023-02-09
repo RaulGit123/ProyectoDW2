@@ -76,7 +76,7 @@ if(empty(trim($Contraseña))){
 
 
 
-    <form action="" method="POST" >
+    <form action="../web/index.php" method="POST" >
 
         
 
