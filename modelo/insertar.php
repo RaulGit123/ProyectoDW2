@@ -14,8 +14,8 @@ if (isset($_POST['insert'])) {
   //Si el archivo contiene algo y es diferente de vacio
   if (isset($archivo) && $archivo != "") {
      //Obtenemos algunos datos necesarios sobre el archivo
-     $patch = "../web/img/platos";   //ruta a la que queremos enviar.
-     $patchInsert  = str_replace('\\', '/', $patch).'/'. $archivo;  //ruta con insercion
+     $patch = "../web/img/platos/";   //ruta a la que queremos enviar.
+    //  $patchInsert  = str_replace('\\', '/', $patch).'/'. $archivo;  //ruta con insercion
      $Tipo = $_FILES['imagen']['type'];
      $tamano = $_FILES['imagen']['size'];
      $temp = $_FILES['imagen']['tmp_name'];  //ruta relativa
@@ -36,9 +36,9 @@ if (!file_exists($patch)) {
        //Si la imagen es correcta en tamaño y tipo
        //Se intenta subir al servidor
       //  if (move_uploaded_file($temp, $patchInsert)) {
-        if (move_uploaded_file($temp, "../web/img/platos/".$archivo)) {
+        if (move_uploaded_file($temp, $patch.$archivo)) {
            //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-           chmod($patchInsert, 0777);
+           chmod($patch.$archivo, 0777);
            //Mostramos el mensaje de que se ha subido co éxito
            echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
          
