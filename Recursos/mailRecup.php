@@ -91,8 +91,8 @@ try {
     //Archivos adjuntos
     //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-$body = 'Aquí tienes tu contraseña, no la olvides: </br>'.$contraseñaGenerada.'</br>
-        <a href="http://localhost/ProyectoDW2/">aqui</a>';
+    $body = 'Aquí tienes tu nueva contraseña, no la olvides: </br>' . $contraseñaGenerada . '</br>
+        ';
     //Contenido
     //Si enviamos HTML
     $mail->isHTML(true);    

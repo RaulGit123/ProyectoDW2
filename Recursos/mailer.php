@@ -94,8 +94,8 @@ try {
     //Archivos adjuntos
     //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-$body = 'Si quieres disfrutar de tus pedidos y reservas, verifíca tu cuenta en el siguiente enlace con tu código: </br>'.$codigo.'</br>
-        <a href="http://localhost/ProyectoDW2/web/verificar.php">aqui</a>';
+    $body = 'Si quieres disfrutar de tus pedidos y reservas, verifíca tu cuenta en el siguiente enlace con tu código: </br>' . $codigo . '</br>
+        ';
     //Contenido
     //Si enviamos HTML
     $mail->isHTML(true);    
