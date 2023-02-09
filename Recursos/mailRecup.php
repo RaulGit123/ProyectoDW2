@@ -37,7 +37,7 @@ $mailUsuario = $_POST["email"];
 
 $con = Conexion::getConection();
 //$sql = "SELECT Contraseña, NombreUsuario FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
-$sql="UPDATE usuarios  SET contraseña ='$contraseñaMD5' WHERE CorreoElectronico = '$mailUsuario'";
+$sql="UPDATE Usuarios  SET Contraseña ='$contraseñaMD5' WHERE CorreoElectronico = '$mailUsuario'";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
 $results = $query -> fetchAll(PDO::FETCH_OBJ);

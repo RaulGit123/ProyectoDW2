@@ -17,7 +17,7 @@ $mesa = [1,2,3,4];
 
 $nombre = $_SESSION["NombreUsuario"];
 $con = Conexion::getConection();
-$sql = "SELECT IdUsuarios FROM usuarios WHERE NombreUsuario = '$nombre'";
+$sql = "SELECT IdUsuarios FROM Usuarios WHERE NombreUsuario = '$nombre'";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
 $results = $query -> fetchAll(PDO::FETCH_OBJ); 

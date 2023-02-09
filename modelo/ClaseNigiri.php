@@ -110,7 +110,7 @@ class Nigiri extends Modelo
     //Funciona
     public function AñadirRegPed($idCom,$cant,$idPed){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("INSERT INTO RegistroPedidos (IdComida,cantidad,IdPedidos) VALUES (:idcom,:cant,:idped)");
+        $consulta = $con->prepare("INSERT INTO nigiri.RegistroPedidos (IdComida,cantidad,IdPedidos) VALUES (:idcom,:cant,:idped)");
         $consulta->bindParam(':idcom', $idCom);
         $consulta->bindParam(':cant', $cant);
         $consulta->bindParam(':idped', $idPed);

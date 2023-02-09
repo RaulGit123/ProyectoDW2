@@ -45,7 +45,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     }
                     $nombre = $_SESSION["NombreUsuario"];
                     $con = Conexion::getConection();
-                    $sql = "SELECT IdUsuarios FROM usuarios WHERE NombreUsuario = '$nombre'";
+                    $sql = "SELECT IdUsuarios FROM Usuarios WHERE NombreUsuario = '$nombre'";
                     $query = $con->prepare($sql);
                     $query->execute();
                     $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -58,7 +58,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
                     // $con = Conexion::getConection();
-                    $sql = "SELECT Direccion FROM `usuarios` WHERE IdUsuarios = $id;";
+                    $sql = "SELECT Direccion FROM `Usuarios` WHERE IdUsuarios = $id;";
                     $query = $con->prepare($sql);
                     $query->execute();
                     $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -127,7 +127,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             <?php
 
                             $con = Conexion::getConection();
-                            $sql = "SELECT p.IdUsuarios,p.PrecioFinal , p.FechaPedido ,p.Direccion, p.MetodoPago FROM pedidos p, usuarios u WHERE p.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
+                            $sql = "SELECT p.IdUsuarios,p.PrecioFinal , p.FechaPedido ,p.Direccion, p.MetodoPago FROM Pedidos p, Usuarios u WHERE p.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
                             $query = $con->prepare($sql);
                             $query->execute();
                             $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -183,7 +183,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                             <?php
                             $con = Conexion::getConection();
-                            $sql = "SELECT r.IdUsuarios,  r.Mesa , r.FechaReserva,r.NumeroPersonas,r.HoraReserva FROM registroreservas r, usuarios u WHERE r.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
+                            $sql = "SELECT r.IdUsuarios,  r.Mesa , r.FechaReserva,r.NumeroPersonas,r.HoraReserva FROM RegistroReservas r, Usuarios u WHERE r.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
                             $query = $con->prepare($sql);
                             $query->execute();
                             $results = $query->fetchAll(PDO::FETCH_OBJ);

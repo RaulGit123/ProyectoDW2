@@ -1,10 +1,6 @@
 <?php
-echo " estamos aqui";
     session_start();
-//    $_SESSION["NombreUsuario"];
-//    echo $_SESSION["Contraseña"];
     if (isset($_SESSION["NombreUsuario"]) && isset($_SESSION["Contraseña"]) ) {
-        echo " aaaaaaaaaaaaaaa";
         require_once("Validar.php");
         $validar = new Validar();
         $validar->validarDatos();
@@ -16,7 +12,6 @@ echo " estamos aqui";
         $query = $con -> prepare($sql); 
         $query -> execute(); 
         $results = $query -> fetchAll(PDO::FETCH_OBJ);
-    echo "estamos antes del fetch";
         if($query -> rowCount() > 0)   { 
         foreach($results as $result) { 
             echo '<div id="idUsu" style="display: none;">'.$result -> Activado.'</div>';
@@ -36,9 +31,7 @@ echo " estamos aqui";
             
      
     } else {
-        echo " eeeeeeeeeeeeeeeeeeeee";
         if (isset($_SESSION["error"])) {
-            echo " kkkkkkkkkkkkkkkkkkkk";
             echo '<script language="javascript">alert("Error de login");</script>';
             unset($_SESSION["error"]);
         }

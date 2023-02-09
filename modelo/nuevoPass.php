@@ -19,7 +19,7 @@ if(isset($_POST["passActual"]) && isset($_POST["cambiaPass"])){
 
     $con = Conexion::getConection();
     // $sql = "INSERT INTO usuarios (Contraseña) VALUES '$nuevaPass' WHERE  CorreoElectronico = '$mailUsuario'";
-    $sql = "UPDATE usuarios SET Contraseña = '$nuevaContraseña' WHERE NombreUsuario = '$nombre'";
+    $sql = "UPDATE Usuarios SET Contraseña = '$nuevaContraseña' WHERE NombreUsuario = '$nombre'";
     $query = $con -> prepare($sql); 
     $query -> execute(); 
     $results = $query -> fetchAll(PDO::FETCH_OBJ);

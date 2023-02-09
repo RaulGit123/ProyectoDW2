@@ -35,7 +35,7 @@
                     }
                     $nombre = $_SESSION["NombreUsuario"];
                     $con = Conexion::getConection();
-                    $sql = "SELECT IdUsuarios FROM usuarios WHERE NombreUsuario = '$nombre'";
+                    $sql = "SELECT IdUsuarios FROM Usuarios WHERE NombreUsuario = '$nombre'";
                     $query = $con->prepare($sql);
                     $query->execute();
                     $results = $query->fetchAll(PDO::FETCH_OBJ);
@@ -48,7 +48,7 @@
 
 
                     // $con = Conexion::getConection();
-                    $sql = "SELECT Direccion FROM `usuarios` WHERE IdUsuarios = $id;";
+                    $sql = "SELECT Direccion FROM `Usuarios` WHERE IdUsuarios = $id;";
                     $query = $con->prepare($sql);
                     $query->execute();
                     $results = $query->fetchAll(PDO::FETCH_OBJ);
