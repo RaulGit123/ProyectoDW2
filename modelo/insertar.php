@@ -63,7 +63,7 @@ $Ingredientes = ($_POST['Ingredientes']);
 $Precio = ($_POST['Precio']) ;
 $Imagen = strtolower($archivo);
 $Tipo = ($_POST['Tipo']);
-if(!isset($_POST['Precio'])){
+if($Precio ==""){
   $Precio = 0.00;
 }
 $f1 = new Nigiri();
