@@ -36,7 +36,7 @@ include ("ClaseNigiri.php");
 
 
                 $cantidad_resultado = $resultado->rowCount();
-
+            echo $cantidad_resultado;
                  session_start();
 
                 if ($cantidad_resultado == 1) {
