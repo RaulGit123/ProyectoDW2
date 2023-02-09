@@ -35,9 +35,9 @@ echo " estamos aqui";
             
      
     } else {
-
+        echo " eeeeeeeeeeeeeeeeeeeee";
         if (isset($_SESSION["error"])) {
-        
+            echo " kkkkkkkkkkkkkkkkkkkk";
             echo '<script language="javascript">alert("Error de login");</script>';
             unset($_SESSION["error"]);
         }
