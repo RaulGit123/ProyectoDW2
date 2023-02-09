@@ -146,7 +146,7 @@
     </div>
 
 
-    <input type="text" name="tipo" class="form-control" placeholder="Kind of food">
+    <input type="text" name="Tipo" class="form-control" placeholder="Kind of food">
 
     </div>
 <!--form-groud-->                            

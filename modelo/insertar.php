@@ -16,7 +16,7 @@ if (isset($_POST['insert'])) {
      //Obtenemos algunos datos necesarios sobre el archivo
      $patch = "../web/img/platos";   //ruta a la que queremos enviar.
      $patchInsert  = str_replace('\\', '/', $patch).'/'. $archivo;  //ruta con insercion
-     $tipo = $_FILES['imagen']['type'];
+     $Tipo = $_FILES['imagen']['type'];
      $tamano = $_FILES['imagen']['size'];
      $temp = $_FILES['imagen']['tmp_name'];  //ruta relativa
 
@@ -27,7 +27,7 @@ if (!file_exists($patch)) {
 };
      
      //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
-    if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 20000000))) {
+    if (!((strpos($Tipo, "gif") || strpos($Tipo, "jpeg") || strpos($Tipo, "jpg") || strpos($Tipo, "png")) && ($tamano < 20000000))) {
        echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
        - Se permiten archivos .gif, .jpg, .png. y de 2000 kb como máximo.</b></div>';
     }
@@ -62,7 +62,7 @@ $Descripcion = ($_POST['Descripcion']);
 $Ingredientes = ($_POST['Ingredientes']);
 $Precio = ($_POST['Precio']);
 $Imagen = strtolower($archivo);
-$Tipo = ($_POST['tipo']);
+$Tipo = ($_POST['Tipo']);
 
 $f1 = new Nigiri();
 $f1->InsertarComida($Nombre, $Descripcion, $Ingredientes, $Precio, $Imagen, $Tipo);
