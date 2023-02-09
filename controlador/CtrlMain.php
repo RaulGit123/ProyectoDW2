@@ -32,7 +32,7 @@
      
     } else {
         if (isset($_SESSION["error"])) {
-            echo '<script language="javascript">alert("Error de login");</script>';
+            echo '<script language="javascript">alert("Error log in");</script>';
             unset($_SESSION["error"]);
         }
     

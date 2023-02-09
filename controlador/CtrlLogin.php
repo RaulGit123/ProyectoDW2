@@ -6,8 +6,6 @@ echo $_POST["NombreUsuario"];
         $validar->validarDatos($_POST["NombreUsuario"], $_POST["Contraseña"]);
         
     } else {
-    echo "pues no setea post";
         header("location:../web/index.php");
-        echo "pues no setea post";
     }
 ?>
