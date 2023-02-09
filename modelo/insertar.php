@@ -60,10 +60,12 @@ $con = Conexion::getConection();
 $Nombre = ($_POST['Nombre']);
 $Descripcion = ($_POST['Descripcion']);
 $Ingredientes = ($_POST['Ingredientes']);
-$Precio = ($_POST['Precio']);
+$Precio = ($_POST['Precio']) ;
 $Imagen = strtolower($archivo);
 $Tipo = ($_POST['Tipo']);
-
+if(!isset($_POST['Precio'])){
+  $Precio = 0.00;
+}
 $f1 = new Nigiri();
 $f1->InsertarComida($Nombre, $Descripcion, $Ingredientes, $Precio, $Imagen, $Tipo);
 header("Location:../web/admin.php");
