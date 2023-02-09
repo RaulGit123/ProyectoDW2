@@ -6,7 +6,7 @@ class Nigiri extends Modelo
     //No funciona(Hay que implementarlo en CreacionJSON.php y mostrar.php)
     public function ListadoComida(){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("SELECT * FROM nigiri.comida");
+        $consulta = $con->prepare("SELECT * FROM nigiri.Comida");
         if ($consulta->execute()) {
             return true;
         } else
@@ -15,7 +15,7 @@ class Nigiri extends Modelo
 //Funciona
     public function EliminarComida($IdComida){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("DELETE FROM nigiri.comida WHERE IdComida = :IdComida");
+        $consulta = $con->prepare("DELETE FROM nigiri.Comida WHERE IdComida = :IdComida");
         $consulta->bindParam(':IdComida', $IdComida);
         $consulta->execute();
         return $consulta;
@@ -23,14 +23,14 @@ class Nigiri extends Modelo
     //Funciona
     public function EliminarRegistroPedido($IdComida){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("DELETE FROM nigiri.registropedidos WHERE IdComida = :IdComida");
+        $consulta = $con->prepare("DELETE FROM nigiri.RegistroPedidos WHERE IdComida = :IdComida");
         $consulta->bindParam(':IdComida', $IdComida);
         $consulta->execute();
         return $consulta;
     }
     //Funciona
     public function InsertarComida($Nombre, $Descripcion, $Ingredientes, $Precio, $Imagen, $Tipo){
-        $consulta = "INSERT INTO nigiri.comida ( Nombre, Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (:nombre,:descripcion,:ingredientes,:precio,:imagen,:tipo)";
+        $consulta = "INSERT INTO nigiri.Comida ( Nombre, Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES (:nombre,:descripcion,:ingredientes,:precio,:imagen,:tipo)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':nombre', $Nombre);
         $result->bindParam(':descripcion', $Descripcion);
@@ -51,7 +51,7 @@ class Nigiri extends Modelo
     //No funciona(en idusuario.php desaparece el contenido al poner los includes, hay que implementarlo en register.php y en GuardaPedido.php y GuardaReserva.php)
     public function MuestraId($nombre){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("SELECT IdUsuarios FROM nigiri.usuarios WHERE NombreUsuario = :USU");
+        $consulta = $con->prepare("SELECT IdUsuarios FROM nigiri.Usuarios WHERE NombreUsuario = :USU");
         $consulta->bindParam(':USU', $nombre);
         $consulta -> execute(); 
         $results = $consulta -> fetchAll(PDO::FETCH_OBJ);
@@ -61,7 +61,7 @@ class Nigiri extends Modelo
  
     
     public function InsertarUsuario($NombreUsuario, $Nombre, $Apellidos, $Contraseña, $CorreoElectronico, $Direccion, $Provincia, $Codigo){
-        $consulta = "INSERT INTO nigiri.usuarios (NombreUsuario,Nombre,Apellidos,Contraseña,CorreoElectronico,Direccion,Provincia,Rol,Activado,Codigo) VALUES (:nombreusuario,:nombre,:apellidos,:contraseña,:correoelectronico,:direccion,:provincia,2,'no',:codigo)";
+        $consulta = "INSERT INTO nigiri.Usuarios (NombreUsuario,Nombre,Apellidos,Contraseña,CorreoElectronico,Direccion,Provincia,Rol,Activado,Codigo) VALUES (:nombreusuario,:nombre,:apellidos,:contraseña,:correoelectronico,:direccion,:provincia,2,'no',:codigo)";
         $result = $this->conexion->prepare($consulta);
         $result->bindParam(':nombreusuario', $NombreUsuario);
         $result->bindParam(':nombre', $Nombre);
@@ -77,7 +77,7 @@ class Nigiri extends Modelo
     //Funciona
     public function GuardaPedidos($IdUsuarios, $PrecioFinal, $FechaPedido, $direccion, $metodoPago){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("INSERT INTO nigiri.pedidos (IdUsuarios,PrecioFinal,FechaPedido,Direccion,MetodoPago) VALUES (:idusuarios,:preciofinal,:fechapedido,:direccion,:metodopago)");
+        $consulta = $con->prepare("INSERT INTO nigiri.Pedidos (IdUsuarios,PrecioFinal,FechaPedido,Direccion,MetodoPago) VALUES (:idusuarios,:preciofinal,:fechapedido,:direccion,:metodopago)");
         $consulta->bindParam(':idusuarios', $IdUsuarios);
         $consulta->bindParam(':preciofinal', $PrecioFinal);
         $consulta->bindParam(':fechapedido', $FechaPedido);
@@ -91,7 +91,7 @@ class Nigiri extends Modelo
     //Funciona
     public function UltimoPedido(){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("SELECT IdPedidos FROM nigiri.pedidos ORDER BY IdPedidos DESC LIMIT 1");
+        $consulta = $con->prepare("SELECT IdPedidos FROM nigiri.Pedidos ORDER BY IdPedidos DESC LIMIT 1");
         $consulta -> execute(); 
         $results = $consulta -> fetchAll(PDO::FETCH_OBJ);
         return $results;
@@ -110,7 +110,7 @@ class Nigiri extends Modelo
     //Funciona
     public function AñadirRegPed($idCom,$cant,$idPed){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("INSERT INTO registropedidos (IdComida,cantidad,IdPedidos) VALUES (:idcom,:cant,:idped)");
+        $consulta = $con->prepare("INSERT INTO RegistroPedidos (IdComida,cantidad,IdPedidos) VALUES (:idcom,:cant,:idped)");
         $consulta->bindParam(':idcom', $idCom);
         $consulta->bindParam(':cant', $cant);
         $consulta->bindParam(':idped', $idPed);
@@ -128,7 +128,7 @@ class Nigiri extends Modelo
     }
     //No Funciona
     public function ActivarCuenta($Codigo){
-        $consulta = $this->prepare("UPDATE nigiri.usuarios SET Activado = 'si' WHERE Codigo = :codigo ");
+        $consulta = $this->prepare("UPDATE nigiri.Usuarios SET Activado = 'si' WHERE Codigo = :codigo ");
         $consulta->bindParam(':codigo', $Codigo);
         $consulta->execute();
         if ($consulta->execute()) {
@@ -139,7 +139,7 @@ class Nigiri extends Modelo
     //No he podido comprobar si funciona
     public function ObtenerNombreCodigo($MailUsuario){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("SELECT NombreUsuario,Codigo FROM usuarios WHERE CorreoElectronico = :mailusuario");
+        $consulta = $con->prepare("SELECT NombreUsuario,Codigo FROM Usuarios WHERE CorreoElectronico = :mailusuario");
         $consulta->bindParam(':mailusuario', $MailUsuario);
         $consulta -> execute(); 
         $results = $consulta -> fetchAll(PDO::FETCH_OBJ);
@@ -148,7 +148,7 @@ class Nigiri extends Modelo
     //Salta un error por una redeclaracion? Aunque si inicia la sesion
     public function ComprobarActivacion($Nombre){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("SELECT Activado FROM usuarios WHERE NombreUsuario = :nombre");
+        $consulta = $con->prepare("SELECT Activado FROM Usuarios WHERE NombreUsuario = :nombre");
         $consulta->bindParam(':nombre', $Nombre);
         $consulta -> execute(); 
         $results = $consulta -> fetchAll(PDO::FETCH_OBJ);
