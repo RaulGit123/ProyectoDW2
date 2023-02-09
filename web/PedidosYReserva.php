@@ -23,7 +23,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <!-- <link rel="stylesheet" href="styles/orders.css"> -->
-    <link rel="stylesheet" href="styles/verPedRes.css">
+    <link rel="stylesheet" href="styles/VerPedRes.css">
     <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
 </head>
 
