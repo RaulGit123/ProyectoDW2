@@ -52,7 +52,7 @@
                 <article class="card-body mx-auto articulo" id="bg-article">
                     <h4 class="card-title mt-3 text-center text-uppercase">GET NEW PASSWORD</h4>
 
-                    <form action="../recursos/mailRecup.php" method="post">
+                    <form action="../Recursos/mailRecup.php" method="post">
 
 
 
