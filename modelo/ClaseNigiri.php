@@ -75,13 +75,14 @@ class Nigiri extends Modelo
         return $result;
     }
     //Funciona
-    public function GuardaPedidos($IdUsuarios, $PrecioFinal, $FechaPedido, $direccion, $metodoPago){
+    public function GuardaPedidos($IdUsuarios, $PrecioFinal, $FechaPedido, $direccion, $telefono, $metodoPago){
         $con = Conexion::getConection();
-        $consulta = $con->prepare("INSERT INTO nigiri.Pedidos (IdUsuarios,PrecioFinal,FechaPedido,Direccion,MetodoPago) VALUES (:idusuarios,:preciofinal,:fechapedido,:direccion,:metodopago)");
+        $consulta = $con->prepare("INSERT INTO nigiri.Pedidos (IdUsuarios,PrecioFinal,FechaPedido,Direccion,Telefono,MetodoPago) VALUES (:idusuarios,:preciofinal,:fechapedido,:direccion,:telefono,:metodopago)");
         $consulta->bindParam(':idusuarios', $IdUsuarios);
         $consulta->bindParam(':preciofinal', $PrecioFinal);
         $consulta->bindParam(':fechapedido', $FechaPedido);
         $consulta->bindParam(':direccion', $direccion);
+        $consulta->bindParam(':telefono', $telefono);
         $consulta->bindParam(':metodopago', $metodoPago);
         if ($consulta->execute()) {
             return true;

@@ -147,7 +147,7 @@ function actualizarTotal() {
 
 //idUsuario, PrecioFinal, fechaPedido
 let pedido = {
-    idUsuario: 0, precioFinal: 0, fechaPedido: "0", direccion: "", metodoPago: ""
+    idUsuario: 0, precioFinal: 0, fechaPedido: "0", direccion: "", telefono: "", metodoPago: ""
 };
 //idComida, cantidad
 let registroPedido = [];
@@ -168,11 +168,12 @@ document.querySelector("#fin").addEventListener("click",function(){
         });
     } else ready = false;
 
-    if (ready && document.getElementById("dire").checkValidity()) {
+    if (ready && document.getElementById("dire").checkValidity() && document.getElementById("phone").checkValidity()) {
         pedido.idUsuario = parseInt(document.querySelector("#idUsu").innerHTML);
         pedido.precioFinal = total;
         pedido.fechaPedido = new Date().toLocaleString('es-ES');
         pedido.direccion = document.getElementById("dire").value;
+        pedido.telefono = document.getElementById("phone").value;
         if (document.querySelector(".seleccion").classList.contains("pp")) {
             pedido.metodoPago = "PayPal";
         } else pedido.metodoPago = "Credit Card";
@@ -195,6 +196,7 @@ document.querySelector("#fin").addEventListener("click",function(){
                 fechaPedido: pedido.fechaPedido,
                 regPedJSON: regPedJSON,
                 direccion: pedido.direccion,
+                telefono: pedido.telefono,
                 metodoPago: pedido.metodoPago
             }
         });

@@ -127,7 +127,7 @@
             <h1 class="text-uppercase">Enter your address</h1>
             <input id="dire" name="dire" type="text" value="<?php echo $dire;?>" required>
             <h1 class="text-uppercase">Enter your phone number</h1>
-            <input id="phone" name="phone" type="tel" value="<?php #echo $dire;?>" placeholder="Phone number" required>
+            <input id="phone" name="phone" type="text" value="<?php #echo $dire;?>" placeholder="Phone number" pattern="(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}" required>
             <h1 class="text-uppercase">Choose a payment method</h1>
             <div id="metodos">
                 <img class="pp" src="img/pago/paypal.png" alt="paypal">
@@ -138,7 +138,7 @@
                 <h1>Bank data</h1>
                 <div id="datosb">
                     <label for="numTar">Card Number</label>
-                    <input name="numTar" type="text" placeholder="0000 0000 0000 0000" pattern="(\b\d{4}\s?\d{4}\s?\d{4}\s?\d{4}\b)" required>
+                    <input name="numTar" type="text" placeholder="0000 0000 0000 0000" pattern="^(\b\d{4}\s?\d{4}\s?\d{4}\s?\d{4}\b)$" required>
                     <div><label for="expi">Expires</label>
                     <input name="expi" type="text" placeholder="MM/YY" pattern="(\b\d{2}\/\d{2}\b)" required></div>
                     <div><label for="cvc">CVC</label>

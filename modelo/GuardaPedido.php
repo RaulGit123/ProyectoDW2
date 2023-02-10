@@ -22,11 +22,12 @@ if($query -> rowCount() > 0)   {
 $precioFinal = $_POST['precioFinal'];
 $fechaPedido = $_POST['fechaPedido'];
 $direccion = $_POST['direccion'];
+$telefono = $_POST['telefono'];
 $metodoPago = $_POST['metodoPago'];
 $regPedJSON = json_decode(stripslashes($_POST['regPedJSON']));
 
 $hola = new Nigiri();
-$hola->GuardaPedidos($id, $precioFinal, $fechaPedido, $direccion, $metodoPago);
+$hola->GuardaPedidos($id, $precioFinal, $fechaPedido, $direccion, $telefono, $metodoPago);
 
 
 $hola2 = new Nigiri();
