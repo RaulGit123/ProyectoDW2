@@ -261,6 +261,9 @@ header {
         }
         & > *{
             margin-top: 20px;
+            &:nth-child(-n+5) {
+                margin-top: 5px;
+            }
         }
         input, label {
             margin-bottom: 10px;

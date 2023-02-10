@@ -74,6 +74,7 @@ CREATE TABLE `Pedidos` (
   `PrecioFinal` decimal(10,2),
   `FechaPedido` varchar(100) NOT NULL,
   `Direccion` varchar(100) NOT NULL,
+  `Telefono` varchar(20) NOT NULL,
   `MetodoPago` varchar(20) NOT NULL,
   CONSTRAINT pkP PRIMARY KEY (IdPedidos),
   FOREIGN KEY (IdUsuarios) REFERENCES Usuarios(IdUsuarios)

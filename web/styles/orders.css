@@ -328,6 +328,9 @@ header .btn {
 #pago #recuadro > * {
   margin-top: 20px;
 }
+#pago #recuadro > *:nth-child(-n+5) {
+  margin-top: 5px;
+}
 #pago #recuadro input, #pago #recuadro label {
   margin-bottom: 10px;
   margin-left: auto;
