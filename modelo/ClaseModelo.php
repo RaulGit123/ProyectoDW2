@@ -1,5 +1,7 @@
 <?php
+// clase que extiende de PDO, aqui crearemos el objeto conexión para solicitarlo mas tarde.
 
+//misma implementación que modelo/conexion.php
 class Modelo extends PDO {
 
     protected $conexion;
@@ -10,16 +12,12 @@ class Modelo extends PDO {
         $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 }
-?>
-<?php
 
+//Datos de configuración de  la base de datos.
 class Config {
     public static $db_hostname = "localhost";
     public static $db_nombre = "nigiri";
     public static $db_usuario = "root";
     public static $db_clave = "";
-    // public static $mvc_vis_css = "style.css";
-    // public static $vista = __DIR__ . '/../templates/inicio.php';
-    // public static $menu = __DIR__ . '/../templates/menuInvitado.php';
+
 }
-?>
