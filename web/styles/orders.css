@@ -222,7 +222,7 @@ header .btn {
     width: 120px;
   }
   .btoMa,
-.btoMe {
+  .btoMe {
     font-size: 14pt;
     width: 120px;
     height: 40px;
@@ -250,7 +250,7 @@ header .btn {
     font-size: 30px;
   }
   .btoMa,
-.btoMe {
+  .btoMe {
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -272,7 +272,6 @@ header .btn {
   .principal #zonaCarrito {
     padding-top: 10.5rem;
     padding-bottom: 6rem;
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     height: 100vh;

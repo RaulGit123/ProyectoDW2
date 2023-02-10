@@ -175,14 +175,7 @@ header .btn {
 }
 
 .blink_me {
-  -webkit-animation: blinker 0.5s linear infinite;
-          animation: blinker 0.5s linear infinite;
-}
-
-@-webkit-keyframes blinker {
-  50% {
-    opacity: 0;
-  }
+  animation: blinker 0.5s linear infinite;
 }
 
 @keyframes blinker {

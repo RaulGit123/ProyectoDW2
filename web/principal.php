@@ -36,8 +36,8 @@
                         ?>
                            
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li>
-                            <li class="nav-item"><a class="nav-link aqui" href="#page-top">Order Now</a></li> <!--AÑADIR JS FLASH-->
-                            <li class="nav-item"><a class="nav-link aqui" href="#page-top">Book Now</a></li> <!--AÑADIR JS FLASH-->
+                            <li class="nav-item"><a class="nav-link aqui activo">Order Now</a></li>
+                            <li class="nav-item"><a class="nav-link aqui activo">Book Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li>
                             
                             </ul>
