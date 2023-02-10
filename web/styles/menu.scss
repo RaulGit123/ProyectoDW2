@@ -51,7 +51,6 @@ header {
 
 #carta {
     @include oscurecer-img(0.4, "../img/fondo-negro-seamless.jpg");
-    // background-size:contain;
     padding: 1rem;
     @media (min-width:400px){
         padding: 3rem; 
@@ -100,7 +99,6 @@ header {
                 min-height: 50px;
             }
             @media (max-width: 768px) {
-                // margin: auto;
                 display: flex;
                 margin: 0 2rem 2rem 0;
             }
