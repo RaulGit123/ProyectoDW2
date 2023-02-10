@@ -19,7 +19,7 @@ if($query -> rowCount() > 0)   {
       $query = $con -> prepare($sql); 
       $query -> execute(); 
      
-      header("location:sesion.php");
+      header("location:../web/paginaUsuario.php");
     }else{
       header("location:../web/verificar.php");
 

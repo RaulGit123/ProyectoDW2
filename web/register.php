@@ -137,7 +137,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //validamos apellidos
     if(empty(trim($_POST["apellidos"]))){
         $apellidos_err="Please , enter your last names.";
-    }elseif(!preg_match("/^[A-Za-zÑñ]+$/",trim($_POST["apellidos"]))&& strlen(trim($_POST["apellidos"]))<=50) {
+    }elseif(!preg_match("/^[A-Za-zÑñ ]+$/",trim($_POST["apellidos"]))&& strlen(trim($_POST["apellidos"]))<=50) {
         $apellidos_err="Please, enter a valid last name.";
     }else{
         $apellidos = trim($_POST["apellidos"]);
