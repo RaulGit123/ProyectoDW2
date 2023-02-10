@@ -38,7 +38,3 @@ $json_string = json_encode($comida);
 
 $file = '../config/comida.json'; // ../config porque lo pide desde web/pedidos.php
 file_put_contents($file, $json_string);
-
-    
-
-?>
