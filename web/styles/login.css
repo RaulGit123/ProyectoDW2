@@ -1,17 +1,9 @@
-.contenido {
-  height: 100vh;
-}
-
 body {
   background-image: url("../img/fondo-negro.jpg");
 }
 
 #prueba {
   opacity: 1;
-}
-
-.card-title {
-  max-width: 400px;
 }
 
 .bg-dar {
@@ -26,6 +18,8 @@ body {
 .caja1 {
   padding-top: 8.5rem;
   padding-bottom: 6rem;
+  display: grid;
+  align-items: center;
 }
 
 h4 {
@@ -111,6 +105,14 @@ nav.stroke ul li a:hover:after {
   width: 100%;
 }
 
+#griddy {
+  display: grid;
+  height: 100vh;
+}
+#griddy footer {
+  align-self: end;
+}
+
 body {
   font-family: Roboto Slab;
   color: white;
@@ -171,4 +173,8 @@ header .btn {
 
 .custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid {
   border-color: gainsboro;
+}
+
+.container {
+  display: grid;
 }/*# sourceMappingURL=login.css.map */

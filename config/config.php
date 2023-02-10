@@ -26,3 +26,15 @@ if($link === false){
 
 
 ?>
+<?php
+
+// class Config {
+//     public static $db_hostname = "localhost";
+//     public static $db_nombre = "nigiri";
+//     public static $db_usuario = "root";
+//     public static $db_clave = "";
+//     // public static $mvc_vis_css = "style.css";
+//     // public static $vista = __DIR__ . '/../templates/inicio.php';
+//     // public static $menu = __DIR__ . '/../templates/menuInvitado.php';
+// }
+?>

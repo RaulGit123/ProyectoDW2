@@ -42,73 +42,84 @@
                             <?php
 
                             if($_SESSION["NombreUsuario"]=="admin"){
-                                ?><li class="nav-item"><a class="nav-link" href="../vista/admin.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php      
+                                ?><li class="nav-item"><a class="nav-link" href="admin.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php      
                             } 
                             ?>
                             <?php
                             if($_SESSION["NombreUsuario"]!="admin"){
-                               ?> <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
+                               ?> <li class="nav-item"><a class="nav-link" href="paginaUsuario.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
                             }
                             
                         }else {
                             ?>
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-                            <li class="nav-item"><a class="nav-link" href="../vista/principal.php">Order Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../vista/principal.php">Book Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
+                            <li class="nav-item"><a class="nav-link" href="principal.php">Order Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="principal.php">Book Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li><?php
                         }
                         ?>
                         <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
                 </ul>
             </div>
         </div>
-    </nav> 
-    <header class="masthead">
-        <div class="px-0 container">
-            <div class="masthead-subheading font-italic">El mejor restaurante japonés de València</div>
-            <div class="mt-3 mx-1 masthead-heading text-uppercase">Bienvenido a Nigiri</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="menu.php">Ver carta</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
-        </div>
-    </header>
-    <section class="p-5 page-section" id="aboutus"> <!--id services-->
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">SOBRE NOSOTROS</h2>
-                <h3 class="section-subheading mx-auto">Nigiri nace por el amor a la comida japonesa y a su diversidad. Nuestra filosofía mantiene la esencia de la cocina tradicional aportando un toque de creatividad y de innovación, con un firme compromiso con la calidad del producto. Sabores y texturas japonesas cuidadosamente fusionadas para satisfacer los paladares más exigentes.</h3>
+    </nav>
+    <div id="griddy">
+    <!-- <div id="griddy">
+        <div class="slider">
+        <header class="masthead">
+            <div class="px-0 container imagen">
+                <img class="images" src="img/header-bg.jpg"/>
+                <img class="images" src="img/restaurante.jpg"/>
+                <img class="images" src="img/menu-bg.jpg"/>
             </div>
-        </div>
-    </section>
-    <section class="p-5 page-section bg-dark" id="team">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Nuestro ramen</h2>
-                <h3 class="section-subheading mx-auto pb-4">El Ramen es un plato japonés tradicional de sopa de fideos, y nuestra especialidad. El secreto del ramen Nigiri es nuestro caldo.</h3>
+        </header> -->
+        <header class="masthead">
+            <div class="px-0 container">
+                <div class="masthead-subheading font-italic">The best Japanese restaurant in Valencia</div>
+                <div class="mt-3 mx-1 masthead-heading text-uppercase">Welcome to Nigiri</div>
+                <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="menu.php">Menu</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="img/platos/black-garlic-chicken-ramen.png" alt="..." />
-                        <h4>Black Garlic "Chicken" Ramen</h4>
-                        <p class="text-muted">Classic, savory, and comforting. The perfect cozy companion for an evening at home. Overflowing with notes of garlic, scallions, and umami.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="img/platos/paitan-chicken-ramen.png" alt="..." />
-                        <h4>Paitan Chicken Ramen</h4>
-                        <p class="text-muted px-3">The taste that started it all, the Paitan Chicken Ramen is topped with your choice of char-grilled chicken or pork chashu, bamboo shoots (menma), molten lava egg (ajitsuke tamago), green vegetables and spring onions.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="img/platos/spicy-beef-ramen.png" alt="..." />
-                        <h4>Spicy "Beef" Ramen</h4>
-                        <p class="text-muted">Hearty, rich, and spicy. A broth that takes your tastebuds on a trip across the world. Brimming with notes of Sichuan peppercorns, anise, and fennel.</p>
-                    </div>
+        </header>
+        <section class="p-5 page-section" id="aboutus"> <!--id services-->
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">ABOUT US</h2>
+                    <h3 class="section-subheading mx-auto">Nigiri was born out of love for Japanese food and its diversity. Our philosophy maintains the essence of traditional cuisine, providing a touch of creativity and innovation, with a firm commitment to product quality. Japanese flavors and textures carefully fused to satisfy the most demanding palates.</h3>
                 </div>
             </div>
-        </div>
-    </section>
-    <script src="comun.js"></script>
+        </section>
+        <section class="p-5 page-section bg-dark" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Our ramen</h2>
+                    <h3 class="section-subheading mx-auto pb-4">Ramen is a traditional Japanese noodle soup dish, and our specialty. The secret of Nigiri ramen is our broth.</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="img/platos/black-garlic-chicken-ramen.png" alt="..." />
+                            <h4>Black Garlic "Chicken" Ramen</h4>
+                            <p class="text-muted">Classic, savory, and comforting. The perfect cozy companion for an evening at home. Overflowing with notes of garlic, scallions, and umami.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="img/platos/paitan-chicken-ramen.png" alt="..." />
+                            <h4>Paitan Chicken Ramen</h4>
+                            <p class="text-muted px-3">The taste that started it all, the Paitan Chicken Ramen is topped with your choice of char-grilled chicken or pork chashu, bamboo shoots (menma), molten lava egg (ajitsuke tamago), green vegetables and spring onions.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="img/platos/spicy-beef-ramen.png" alt="..." />
+                            <h4>Spicy "Beef" Ramen</h4>
+                            <p class="text-muted">Hearty, rich, and spicy. A broth that takes your tastebuds on a trip across the world. Brimming with notes of Sichuan peppercorns, anise, and fennel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="scripts/comun.js"></script>
 </body>
 </html>

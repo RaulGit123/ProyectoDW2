@@ -1,0 +1,133 @@
+@import 'comun.scss';
+
+#griddy {
+    grid-template-columns: 1fr;
+    article{
+        font-size: 0.6em;
+        @media (min-width:405px) {
+            font-size: 1em;
+        }
+    }
+    @media (min-width:835px) {
+        grid-template-columns: 1fr 1fr;
+        header {
+            grid-column: span 2;
+        }
+        footer {
+            grid-column: span 2;
+        }
+    }
+}
+
+
+#kanji{
+    font-size: 4em;
+    color: red;
+  }
+.centrar{
+    // font-size: 2pt;
+    text-align: center;
+    // border-collapse: collapse;
+    // margin:0;
+}
+
+
+// .articulo{
+
+// }
+
+.bg-dar{
+    opacity: 1;
+    // background-color: #45586a33 !important;
+    // background-image: "../img/fondo-negro-seamless.jpg";
+    
+}
+.card{
+padding-bottom:50px;
+background-color: transparent;
+}
+.booking{
+    color:white; 
+    text-align: center;
+     font-family: Montserrat;
+     text-decoration: underline;
+}
+
+h4{
+    font-size: 40px;
+    
+}
+
+div.contenedor {
+    display: flex;
+    justify-content: center;
+    margin-bottom:50px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .centrado{
+    // border-radius: 50%;
+    background-color: rgba(192, 0, 3, 100);
+    width: 300px;
+    height: 100px;
+    color:white;
+  }
+
+body {
+    font-family: Roboto Slab;
+    color: white;
+//    @include oscurecer-img(0.4,"../img/fondo-negro-seamless.jpg");
+   background-image: url(../img/fondo-negro-seamless.jpg);
+}
+
+.text-uppercase {
+    font-family: Montserrat;
+}
+
+h1, h2, h3, h4, .masthead-heading, .btn {
+    font-weight: bold;
+}
+
+header {
+    text-align: center;
+    padding-top: 10.5rem;
+    padding-bottom: 6rem;
+    @include oscurecer-img(0.5,"../img/principal.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    .btn {
+        background-color: #c00003;
+    }
+}
+
+#pie{
+    position: absolute;
+    bottom: 0;
+}
+
+.masthead-heading {
+    @include font-size-diff(2.5rem, 4.5rem);
+    line-height: 4.5rem;
+}
+
+.masthead-subheading {
+    @include font-size-diff(1.5rem, 2.25rem);
+}
+
+.section-heading {
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.section-subheading {
+    font-size: 1rem;
+    font-weight: normal;
+    max-width: 650px;
+}
+
+th {
+    font-family: Montserrat;
+}

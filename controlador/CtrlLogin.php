@@ -1,10 +1,11 @@
-<?php 
+<?php
+echo $_POST["NombreUsuario"];
     if (isset($_POST["NombreUsuario"]) && isset($_POST["Contraseña"])) {
-         require_once("../modelo/Login.php");
+         require_once("../modelo/modeloLogin.php");
         $validar = new Login();
         $validar->validarDatos($_POST["NombreUsuario"], $_POST["Contraseña"]);
         
     } else {
-        header("location:../hugo.php");
+        header("location:../web/index.php");
     }
 ?>

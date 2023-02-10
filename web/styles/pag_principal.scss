@@ -1,11 +1,9 @@
 @import "comun.scss";
-.contenido{
-  height: 100vh;
-}
+
 body {
     font-family: Roboto Slab;
     color: white;
-    background-image: url(../img/fondo-negro.jpg);
+    background-image: url(../img/fondo-negro-seamless.jpg);
   }
   
   .text-uppercase {
@@ -68,6 +66,15 @@ body {
     }
   }
 
+  .file-custom{
+    margin: 0;
+    padding: 2rem 1.5rem;
+    font: 1rem/1.5 "PT Sans", Arial, sans-serif;
+    color: #5a5a5a;
+  }
+
+  
+
 
   #kanji{
     font-size: 4em;
@@ -87,8 +94,8 @@ body {
   }
   
   #aboutus {
-    background-image: url(../img/fondo-negro.jpg);
-    align-items: center;
+    // background-image: url(../img/fondo-negro.jpg);
+    align-self: center;
   }
 
   .blink_me {
@@ -100,3 +107,8 @@ body {
       opacity: 0;
     }
   }
+
+  .bg-dar {
+    opacity: 1;
+    background-color: rgba(69, 88, 106, 0.2) !important;
+}

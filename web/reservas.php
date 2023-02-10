@@ -45,22 +45,22 @@
                             <?php
 
                             if($_SESSION["NombreUsuario"]=="admin"){
-                                ?><li class="nav-item"><a class="nav-link" href="../vista/admin.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php      
+                                ?><li class="nav-item"><a class="nav-link" href="admin.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php      
                             } 
                             ?>
                             <?php
                             if($_SESSION["NombreUsuario"]!="admin"){
-                            ?> <li class="nav-item"><a class="nav-link" href="../vista/paginaUsuario.php"><?php echo"Bienvenido ".$_SESSION["NombreUsuario"];?></a></li><?php
+                            ?> <li class="nav-item"><a class="nav-link" href="paginaUsuario.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
                             }
 
 
                         }else {
-                            header("location:../vista/principal.php");
+                            header("location:principal.php");
                             ?>
                             <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Order Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Book Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../hugo.php">Log in</a></li><?php
+                            <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Order Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Book Now</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li><?php
                         }
                         ?>
                         <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
@@ -68,6 +68,7 @@
             </div>
         </div>
     </nav>
+    <div id="griddy">
    
         <header class="masthead">
         <div class="px-0 container">
@@ -86,7 +87,7 @@
      <div class="cantidad text-center">0</div>
      <button class="btoMe" name="button">-</button>
     </div>
-    <div class="mt-2 d-none font-italic mal" id="resp">No puedes hacer una reserva de menos de 2 personas</div>
+    <div class="mt-2 d-none font-italic mal" id="resp">You cannot make a reservation for less than 2 people</div>
                 </div>
             <!-- La fecha en la cual van a acudir -->
             <div class="card-body mx-auto articulo" id="bg-article">
@@ -94,7 +95,7 @@
      <div class="dateselected ">
      <input type="date"class="text-center fecha" id="fechita" size="20"/>
     </div>
-    <div class="mt-2 d-none font-italic mal" id="respf">Tienes que seleccionar una fecha correcta</div>
+    <div class="mt-2 d-none font-italic mal" id="respf">You have to select a correct date</div>
             </div>
             <!-- La hora a la que quieren acudir(y puedan) -->
             <div class="card-body mx-auto articulo" id="bg-article">
@@ -119,18 +120,16 @@
              <div class="horas">21:00 22:30</div>          
      </button>
     </div>
-    <div class="mt-2 d-none font-italic mal" id="resph">Tienes que seleccionar una hora</div>
+    <div class="mt-2 d-none font-italic mal" id="resph">You have to select a time</div>
             </div>
     </section>
-    <!-- <form id="desdeFormulario" action="functions.php" method="POST" role="form">
-    <label for="">Tu nombre</label> 
-<input type="text" class="form-control" name="nombre" placeholder="Input field"> -->
     <div class="contenedor" id="contenedor">
-  <button class="centrado masthead-subheading font-italic btn-danger">Acabar Reserva</button>
+  <button class="centrado masthead-subheading font-italic btn-danger">Finalize Booking</button>
 </div>
-<!-- </form> -->
-<!-- <p class="respuesta mal d-none mb-4" id="respt">Ya hay una reserva a ese dia y hora. Porfavor seleccione otra hora o dia</p>  -->
-    <script src="comun.js"></script>
-    <script src="reservas.js"></script>
+<p class="respuesta mal d-none mb-4" id="respt">Todas las mesas en ese dia y hora estan ocupadas</p> 
+</div>
+
+    <script src="scripts/comun.js"></script>
+    <script src="scripts/reservas.js"></script>
 </body>
 </html>
