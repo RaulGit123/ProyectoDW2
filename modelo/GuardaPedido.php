@@ -1,21 +1,21 @@
-<?php 
-include ("ClaseModelo.php");
-include ("ClaseNigiri.php");
+<?php
+include("ClaseModelo.php");
+include("ClaseNigiri.php");
 require_once("Conexion.php");
-if (session_status()===PHP_SESSION_NONE){
-    session_start();
-} 
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 
 $nombre = $_SESSION["NombreUsuario"];
 $con = Conexion::getConection();
 $sql = "SELECT IdUsuarios FROM Usuarios WHERE NombreUsuario = '$nombre'";
-$query = $con -> prepare($sql); 
-$query -> execute(); 
-$results = $query -> fetchAll(PDO::FETCH_OBJ);
+$query = $con->prepare($sql);
+$query->execute();
+$results = $query->fetchAll(PDO::FETCH_OBJ);
 
-if($query -> rowCount() > 0)   { 
-  foreach($results as $result) { 
-    $id = $result -> IdUsuarios;
+if ($query->rowCount() > 0) {
+  foreach ($results as $result) {
+    $id = $result->IdUsuarios;
   }
 }
 
@@ -33,18 +33,16 @@ $hola->GuardaPedidos($id, $precioFinal, $fechaPedido, $direccion, $telefono, $me
 $hola2 = new Nigiri();
 
 
- $results=$hola2->UltimoPedido();
+$results = $hola2->UltimoPedido();
 
-  foreach($results as $result) { 
-    $idPed = $result -> IdPedidos;
-  }
+foreach ($results as $result) {
+  $idPed = $result->IdPedidos;
+}
 
 $hola3 = new Nigiri();
 
 foreach ($regPedJSON as $ele) {
-    $idCom = $ele->idComida;
-    $cant = $ele->cantidad;
-    $hola3->AñadirRegPed($idCom,$cant,$idPed);
+  $idCom = $ele->idComida;
+  $cant = $ele->cantidad;
+  $hola3->AñadirRegPed($idCom, $cant, $idPed);
 }
-
-?>

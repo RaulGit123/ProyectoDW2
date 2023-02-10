@@ -1,4 +1,6 @@
 <?php 
+
+//crea clase conexion con funcion que probará la conexión . Misma implementación que ClaseModelo pero con try and catch
     class Conexion {
 
         public static function getConection() {
@@ -7,7 +9,7 @@
 
             try {
 
-                // Conexión
+                // Datos de Conexión de la base de datos.
                 $con = new PDO('mysql:host=localhost; dbname=nigiri', 'root', '');
         
                 // Errores

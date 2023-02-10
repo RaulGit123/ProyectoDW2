@@ -1,58 +1,49 @@
-<?php 
-include ("ClaseModelo.php");
-include ("ClaseNigiri.php");
-    require_once("Conexion.php");
+<?php
+include("ClaseModelo.php");
+include("ClaseNigiri.php");
+require_once("Conexion.php");
 
-    class Validar {
+//Validar es una clase con funcion validarDatos para validar los datos de inicio de sesion . CtrlMain depende de ella.
+class Validar
+{
 
-        public function validarDatos() {
+    public function validarDatos()
+    {
 
-            try {
-                $con = null;
-                $sql = null;
-                $resultado = null;
-                $cantidad_resultado = null;
+        try {
+            $con = null;
+            $sql = null;
+            $resultado = null;
+            $cantidad_resultado = null;
 
-                // Recuperamos la conexión
-                $con = Conexion::getConection();
+            // Recuperamos la conexión
+            $con = Conexion::getConection();
 
-                // Validación de error
-                if ($con == "ERROR") {
-                    header("location:CtrlSalir.php");
-                    //posible enlace mal ... mirar controlador/ctrlsalir
-                }
+            // Validación de error
+            if ($con == "ERROR") {
+                header("location:CtrlSalir.php");
+            }
 
             $usu = $_SESSION["NombreUsuario"];
             $pass = $_SESSION["Contraseña"];
 
-                // Consulta
-                // $sql = "SELECT * FROM usuarios WHERE NombreUsuario = :USU AND Contraseña = :PASS";
-
-                // $resultado = $con->prepare($sql);
-                // $resultado->execute(array(":USU"=>$_SESSION["NombreUsuario"], ":PASS"=>$_SESSION["Contraseña"]));
-
-                $f1 = new Nigiri();
-            $resultado = $f1->Login($usu,$pass);
-
-                $cantidad_resultado = $resultado->rowCount();
-
-                if ($cantidad_resultado == 0) {
-
-                   header("location:controlador/CtrlSalir.php");
-                    //posible enlace mal ... mirar controlador/ctrlsalir
-                } 
-
-                
-            } catch (Exception $e) {
 
 
-            } finally {
-                $con = null;
-                $sql = null;
-                $resultado = null;
-                $cantidad_resultado = null;
+            $f1 = new Nigiri();
+            $resultado = $f1->Login($usu, $pass);
+            // si cantidad_resultado devuelve 0 saldrá de la sesión.
+            $cantidad_resultado = $resultado->rowCount();
+
+            if ($cantidad_resultado == 0) {
+
+                header("location:controlador/CtrlSalir.php");
             }
+        } catch (Exception $e) {
+        } finally {
+            $con = null;
+            $sql = null;
+            $resultado = null;
+            $cantidad_resultado = null;
         }
-
     }
-?>
+}
