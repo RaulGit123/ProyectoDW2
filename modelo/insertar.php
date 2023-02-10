@@ -10,7 +10,8 @@ require_once("Conexion.php");
 /*-------------- codigo para carga de imagen ------------------ */
 if (isset($_POST['insert'])) {
   //Recogemos el archivo enviado por el formulario
-  $archivo = $_FILES['imagen']['name'];
+  $archivold = $_FILES['imagen']['name'];
+  $archivo = strtolower($archivold);
   //Si el archivo contiene algo y es diferente de vacio
   if (isset($archivo) && $archivo != "") {
     //Obtenemos algunos datos necesarios sobre el archivo
