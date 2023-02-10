@@ -1,8 +1,6 @@
 @import 'comun.scss';
 .bg-dar{
     opacity: 1;
-    // background-color: #45586a33 !important;
-    // background-image: "../img/fondo-negro-seamless.jpg";
     
 }
 .card{
@@ -26,8 +24,6 @@ h4{
     font-family: Roboto Slab;
 }
 .peopleselected{
-    // width: 100px;
-    // height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -82,11 +78,7 @@ h4{
     text-align: center;
     font-size: 16pt;
 }
-// .botonReserva{
-//     display:flex;
-//     align-items: center;
-//     text-align: center;
-// }
+
 div.contenedor {
     display: flex;
     justify-content: center;
@@ -105,7 +97,6 @@ div.contenedor {
 body {
     font-family: Roboto Slab;
     color: white;
-//    @include oscurecer-img(0.4,"../img/fondo-negro-seamless.jpg");
    background-image: url(../img/fondo-negro-seamless.jpg);
 }
 

@@ -18,7 +18,6 @@ body {
     text-align: center;
     padding-top: 10.5rem;
     padding-bottom: 6rem;
-    // background-image: url("../img/principal.jpg");
     @include oscurecer-img(0.4,"../img/principal.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -94,7 +93,6 @@ body {
   }
   
   #aboutus {
-    // background-image: url(../img/fondo-negro.jpg);
     align-self: center;
   }
 
