@@ -1,3 +1,11 @@
+<?php
+include("../config/config.php");
+
+$code = $codeError ="ENTER YOUR CORRECT CODE PLEASE";
+
+?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +72,7 @@
 <div class="card bg-dar p-5">
 
 <article class="card-body mx-auto articulo" id="bg-article">
-	<h4 class="card-title mt-3 text-center text-uppercase">Verificar cuenta</h4>
+	<h4 class="card-title mt-3 text-center text-uppercase">Verify your account</h4>
 	<!-- <p class="text-center text-uppercase " style="color:white;">Disfruta de tu pedido en casa.</p> -->
 
 
@@ -85,7 +93,8 @@
             </div>
          
        
-            <input type="text" name="codigo" id="codigo" class="form-control " placeholder="Introduzca su código" >
+            <input type="text" name="codigo" id="codigo" class="form-control is-invalid " placeholder="Enter your code" >
+            <span class="invalid-feedback text-center"><?php echo $codeError; ?></span>
                
             </div>
 
@@ -100,10 +109,10 @@
 
 
             <div class="form-group">
-                <input type="submit" class="btn btn-primary btn-block" value="Ingresar código">
-                <input type="reset" class="btn btn-warning btn-block" value="Borrar código">
+                <input type="submit" class="btn btn-primary btn-block" value="Enter code">
+                <input type="reset" class="btn btn-warning btn-block" value="Clear code">
             </div>
-            <p class="text-center" style="color:white;">¿Aún no tienes una cuenta? <a href="register.php" class="btn btn-danger" >REGÍSTRATE</a> </p>   
+            <p class="text-center" style="color:white;">do you already have an account? <a href="register.php" class="btn btn-danger" >REGISTER</a> </p>   
         </form>
         </article>
         </div>    

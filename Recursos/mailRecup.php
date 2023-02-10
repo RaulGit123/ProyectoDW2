@@ -108,9 +108,14 @@ try {
     echo 'El mensaje se ha enviado con exito';
 
      header("location: ../modelo/sesion.php");
-    
+   
 } catch (Exception $e) {
-    echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";
+    //echo "El mensaje no se ha enviado: {$mail->ErrorInfo}";
+    $tiempo_espera=0.1;
+    $url= "../web/form_veripass.php";
+    echo '<script language="javascript">alert("Introduzca un email correcto");</script>';
+    header("refresh: $tiempo_espera; url=$url");
+    //header("location: ../web/form_veripass.php");
     
     
 }

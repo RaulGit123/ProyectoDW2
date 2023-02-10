@@ -69,7 +69,7 @@
                             </div>
 
 
-                            <input type="text" name="email" id="email" class="form-control " placeholder="User email">
+                            <input type="email" name="email" id="email" class="form-control " placeholder="User email" required>
 
                         </div>
                         <!-- form-group// -->

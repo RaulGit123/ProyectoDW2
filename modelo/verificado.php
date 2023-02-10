@@ -13,13 +13,16 @@ if($query -> rowCount() > 0)   {
     $codigo= $result -> Codigo;
     
     //Si coinciden códigos, se activa la cuenta
-    if($_POST["codigo"]==  $codigo){
+    if(trim($_POST["codigo"])==  $codigo){
       $con = Conexion::getConection();
       $sql = "UPDATE Usuarios SET Activado = 'si' WHERE Codigo ='$codigo' ";
       $query = $con -> prepare($sql); 
       $query -> execute(); 
      
       header("location:sesion.php");
+    }else{
+      header("location:../web/verificar.php");
+
     }
   }
 }
