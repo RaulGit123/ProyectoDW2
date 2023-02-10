@@ -25,7 +25,8 @@ try {
     $sqlBD = file_get_contents("nigiri.sql");
     //Ejecutamos la consulta
     $pdo->exec($sqlBD);
-    echo ("La BD ha sido creada");
+    // echo ("La BD ha sido creada");
+    header("Location: ../index.php");
     //Cerramos conexion
     $pdo = null;
 } catch (PDOException $e) {
