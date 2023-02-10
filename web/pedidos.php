@@ -126,6 +126,8 @@
             </div>
             <h1 class="text-uppercase">Enter your address</h1>
             <input id="dire" name="dire" type="text" value="<?php echo $dire;?>" required>
+            <h1 class="text-uppercase">Enter your phone number</h1>
+            <input id="phone" name="phone" type="tel" value="<?php #echo $dire;?>" placeholder="Phone number" required>
             <h1 class="text-uppercase">Choose a payment method</h1>
             <div id="metodos">
                 <img class="pp" src="img/pago/paypal.png" alt="paypal">
