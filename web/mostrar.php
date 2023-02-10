@@ -18,8 +18,6 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <!-- <link rel="stylesheet" href="../web/styles/menu.css">
-    <link rel="stylesheet" href="../web/styles/login.css"> -->
     <link rel="stylesheet" href="styles/pag_principal.css">
     <link rel="stylesheet" href="styles/mostrar.css">
     <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
@@ -46,11 +44,13 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </div>
     </nav>
+     <!-- header implementa la tabla que mostrará las comidas -->
     <header class="masthead">
         <div class="mt-3 masthead-heading text-uppercase"><?php echo "Welcome to Nigiri, " . $_SESSION["NombreUsuario"]; ?></div>
         <div class="masthead-subheading font-italic">View all dishes</div>
         <div class="card bg-dar">
             <article class="card-body mx-auto articulo" id="bg-article">
+                  <!-- form-group -->
                 <div class="form-group  ">
                     <table class="table table-dark table-hover bg-transparent">
                         <tr>
@@ -86,7 +86,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         } ?>
 
                 </div>
-
+  <!-- form-group FIN-->
             </article>
 
         </div>

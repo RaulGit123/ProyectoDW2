@@ -1,6 +1,6 @@
 <?php
 require_once("Conexion.php");
-
+//Clase para verificar código de usuario pasado por form web/verificar.php
 //Saber el código asignado al usuario
 $con = Conexion::getConection();
 $sql = "SELECT Codigo FROM Usuarios";

@@ -104,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_stmt_close($stmt);
 }
     
-    // Validate Contraseña
+    // Validamos Contraseña
     if(empty(trim($_POST["Contraseña"]))){
         $password_err = "Please , enter your password.";     
     } elseif(strlen(trim($_POST["Contraseña"])) < 6){
@@ -115,7 +115,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $Contraseña = trim($_POST["Contraseña"]);
     }
     
-    // Validate confirm Contraseña
+    // Validamos confirm Contraseña
     if(empty(trim($_POST["confirm_password"]))){
         $confirm_password_err = "Confirm your password.";     
     } else{
@@ -157,26 +157,26 @@ $listaProvincias = trim($_POST["provincia"]);
 
 
 
-    // Check input errors before inserting in database
+    // Checkeamos errores antes de enviarlo
 
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)&& empty($mail_err) && empty($name_err)&& empty($apellidos_err)&& empty($direccion_err)&& empty($localidad_err)){
         
-        // Prepare an insert statement
+        // preparado para insertar consulta los valores serán anonimos
         $sql = "INSERT INTO Usuarios (NombreUsuario,Nombre,Apellidos,Contraseña,CorreoElectronico,Direccion,Provincia,Rol,Activado,Codigo) VALUES (?,?,?,?,?,?,?,?,?,?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
+            // bindeamos los parametros de la consulta. el string  "sssssssiss" hace referencia a las values anonimas y su tipo (string,int)
             mysqli_stmt_bind_param($stmt, "sssssssiss", $param_username,$param_name,$param_apellidos,$param_password,$param_mail,$param_direccion,$param_provincia,$rol,$Activado,$Codigo);
             
             // Set parameters
             $param_username = $NombreUsuario;
-            $param_password = md5($Contraseña); // Creates a Contraseña hash
+            $param_password = md5($Contraseña); // Creamos la contraseña encriptada.
             $param_name = $nombre;
             $param_apellidos = $apellidos;
             $param_direccion = $direccion;
             $param_provincia = $listaProvincias;
             $param_mail =$mail;
-            $rol = 2;
+            $rol = 2;  //determinará el rol del usuario por defecto
             $Activado = "no";
             $Codigo = rand(1000,9999);
             
@@ -206,7 +206,6 @@ $listaProvincias = trim($_POST["provincia"]);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Nigiri</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -225,17 +224,15 @@ $listaProvincias = trim($_POST["provincia"]);
 
         <div class="container">
             <a class="navbar-brand" href="../index.php"><img src="img/logo2.png" alt="logo" /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> 
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                    <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> 
                     <li class="nav-item"><a class="nav-link" href="principal.php">Order Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="principal.php">Book Now</a></li>
                     <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
                 </ul>
             </div>
         </div>
@@ -246,7 +243,7 @@ $listaProvincias = trim($_POST["provincia"]);
 <div id="griddy">
 <div class="container">
 <br>  
-<!-- <p class="text-center" style="color:white;">Logo</p> -->
+
 <hr>
 
 
@@ -257,8 +254,6 @@ $listaProvincias = trim($_POST["provincia"]);
 
 <article class="card-body mx-auto articulo" id="bg-article">
 	<h4 class="card-title mt-3 text-center text-uppercase" style="color:white; max-width: 400px; font-family: Montserrat;" >Create Account</h4>
-	<!-- <p class="text-center text-uppercase " style="color:white;">Disfruta de tu pedido en casa.</p> -->
-
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
@@ -279,7 +274,6 @@ $listaProvincias = trim($_POST["provincia"]);
 
             </div>    
 
-	<!-- form-group// -->
     
     <!-- form group -->
 

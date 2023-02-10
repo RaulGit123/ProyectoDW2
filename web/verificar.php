@@ -15,7 +15,6 @@ $code = $codeError ="ENTER YOUR CORRECT CODE PLEASE";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verify email | Nigiri</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> 
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -73,9 +72,7 @@ $code = $codeError ="ENTER YOUR CORRECT CODE PLEASE";
 
 <article class="card-body mx-auto articulo" id="bg-article">
 	<h4 class="card-title mt-3 text-center text-uppercase">Verify your account</h4>
-	<!-- <p class="text-center text-uppercase " style="color:white;">Disfruta de tu pedido en casa.</p> -->
-
-
+	
     <form action="../modelo/verificado.php" method="post">
 
         

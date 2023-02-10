@@ -24,5 +24,3 @@ $db_clave = "";
 
 
 // Si todo va bien en $pdo tendremos el objeto que gestionará la conexión con la base de datos.
-
-?>

@@ -8,35 +8,18 @@ require 'PHPMailer/src/SMTP.php';
 
 require_once("../modelo/Conexion.php");
 
-
+//Esta hoja servirá para enviar un email con una contraseña nueva al usuario que tiene la sesión abierta para que pueda logear y modificar la contraseña si lo desea
     session_start();
  
-// $con = Conexion::getConection();
-// $sql = "SELECT CorreoElectronico FROM usuarios";
-// $resultado = $con->prepare($sql);
-// $resultado->execute();
-// $resultados = $resultado -> fetchAll(PDO::FETCH_OBJ); 
 
-// if($resultado -> rowCount() > 0)   { 
-//     foreach($resultados as $mailes) { 
-//     echo " <tr> 
-//     <td>".$mailes -> CorreoElectronico."</td>
-   
-    
-//     </tr>";
-    
-    
-    
-//        }
-//      }
 $mail = new PHPMailer(true);
 
-$contraseñaGenerada = rand(1000,9999);
-$contraseñaMD5 = md5($contraseñaGenerada);
-$mailUsuario = $_POST["email"];
+$contraseñaGenerada = rand(1000,9999);  //generamos la contraseña random que le enviaremos sin cifrar.
+$contraseñaMD5 = md5($contraseñaGenerada);  //Aquí la encriptaremos para meterla dentro del usuario con una consulta SQL
+$mailUsuario = $_POST["email"];  //mail recogido por post desde  web/form-veripass.php
 
+//establecemos conexión y hacemos consulta para introducir nueva contraseña enviada 
 $con = Conexion::getConection();
-//$sql = "SELECT Contraseña, NombreUsuario FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
 $sql="UPDATE Usuarios  SET Contraseña ='$contraseñaMD5' WHERE CorreoElectronico = '$mailUsuario'";
 $query = $con -> prepare($sql); 
 $query -> execute(); 
@@ -119,4 +102,3 @@ try {
     
     
 }
-?>

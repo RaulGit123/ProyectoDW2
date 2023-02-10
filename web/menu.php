@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="styles/menu.css">
     <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
 </head>
+
 <body id="page-top">
     <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -24,29 +26,30 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
                     <?php
-                        
-                        if (session_status()===PHP_SESSION_NONE){
-                            session_start();
-                        }
-                        if (!empty($_SESSION["NombreUsuario"])){
-                           ?>  
-                            <li class="nav-item"><a class="nav-link activo">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-                            <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li><?php
-                        }else {
-                            ?>
-                            <li class="nav-item"><a class="nav-link activo">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-                            <li class="nav-item"><a class="nav-link" href="principal.php">Order Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="principal.php">Book Now</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li><?php
-                        }
-                        ?>
-                        <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
+
+                    if (session_status() === PHP_SESSION_NONE) {
+                        session_start();
+                    }
+                    if (!empty($_SESSION["NombreUsuario"])) {
+                    ?>
+                        <li class="nav-item"><a class="nav-link activo">Our Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php"><?php echo "Welcome " . $_SESSION["NombreUsuario"]; ?></a></li><?php
+                                                                                                                                                        } else {
+                                                                                                                                                            ?>
+                        <li class="nav-item"><a class="nav-link activo">Our Menu</a></li>
+                        <li class="nav-item"><a class="nav-link" href="principal.php">Order Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="principal.php">Book Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li><?php
+                                                                                                                                                        }
+                                                                                                            ?>
+
                 </ul>
             </div>
         </div>
     </nav>
+    <!-- header-->
     <header class="masthead">
         <div class="px-0 container">
             <div class="my-3 masthead-heading text-uppercase">Our dishes</div>
@@ -54,12 +57,13 @@
         </div>
     </header>
     <section id="carta">
-        
+        <!-- section-->
     </section>
-    <?php 
+    <?php
     include_once('../config/CreacionJSON.php');
     ?>
     <script type="module" src="scripts/menu.js"></script>
-    <script src="scripts/comun.js"></script>
+    <script src="scripts/comun.js"></script> <!-- footer -->
 </body>
+
 </html>

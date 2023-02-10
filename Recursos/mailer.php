@@ -13,45 +13,22 @@ require_once("../modelo/Conexion.php");
 
     session_start();
  
-// $con = Conexion::getConection();
-// $sql = "SELECT CorreoElectronico FROM usuarios";
-// $resultado = $con->prepare($sql);
-// $resultado->execute();
-// $resultados = $resultado -> fetchAll(PDO::FETCH_OBJ); 
 
-// if($resultado -> rowCount() > 0)   { 
-//     foreach($resultados as $mailes) { 
-//     echo " <tr> 
-//     <td>".$mailes -> CorreoElectronico."</td>
-   
-    
-//     </tr>";
-    
-    
-    
-//        }
-//      }
 $mail = new PHPMailer(true);
 
-
+//capturamos el mail del usuario pasado por post para tomarlo como variable para el receptor del mail.
 $mailUsuario = $_POST["email"];
 
-// $con = Conexion::getConection();
-// $sql = "SELECT NombreUsuario,Codigo FROM usuarios WHERE CorreoElectronico = '$mailUsuario'";
-// $query = $con -> prepare($sql); 
-// $query -> execute(); 
-// $results = $query -> fetchAll(PDO::FETCH_OBJ);
 
+//obtenemos con una consulta de la funcion obtenerNombreCodigo de claseNigiri el código y nombreUsuario para la personalización del mail y el código que se enviará que se insertó en register
 $f1 = new Nigiri();
 $results = $f1->ObtenerNombreCodigo($mailUsuario);
 
-
-// if($query -> rowCount() > 0)   { 
   foreach($results as $result) { 
     $codigo= $result -> Codigo;
     $nombre= $result -> NombreUsuario;
   }
-// }
+
 
 
 

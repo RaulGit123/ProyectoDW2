@@ -1,11 +1,11 @@
-
 <?php
-      if (session_status()===PHP_SESSION_NONE){
-        session_start();
-    } ?>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+} ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styles/pag_principal.css">
     <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
 </head>
+
 <body id="page-top">
     <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -28,151 +29,153 @@
                 <i class="fas fa-bars my-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-              
-                <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
-                   
 
-                   <?php
-              
-               if (!empty($_SESSION["NombreUsuario"])){
-               ?>  
-                <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
-                <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
-                <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
-                <li class="nav-item"><a class="nav-link activo"><?php echo"Welcome ".$_SESSION["NombreUsuario"];?></a></li>
-            <?php }?>
-                           
-           </ul>
-                
+                <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
+
+
+                    <?php
+
+                    if (!empty($_SESSION["NombreUsuario"])) {
+                    ?>
+                        <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                        <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
+                        <li class="nav-item"><a class="nav-link activo"><?php echo "Welcome " . $_SESSION["NombreUsuario"]; ?></a></li>
+                    <?php } ?>
+
+                </ul>
+
             </div>
         </div>
     </nav>
     <div id="griddy">
-    <header class="masthead">
-       
-        <div class="mt-3 masthead-heading text-uppercase"><?php echo"Welcome to Nigiri, ".$_SESSION["NombreUsuario"];?></div>
+        <header class="masthead">
+
+            <div class="mt-3 masthead-heading text-uppercase"><?php echo "Welcome to Nigiri, " . $_SESSION["NombreUsuario"]; ?></div>
             <div class="masthead-subheading font-italic">Register a new dish.</div>
 
-            <div class="card bg-dar" >
-    <article class="card-body mx-auto articulo" id="bg-article">   
+            <div class="card bg-dar">
+                <article class="card-body mx-auto articulo" id="bg-article">
 
-        <form action="../modelo/insertar.php" method="post" enctype="multipart/form-data">
+                    <form action="../modelo/insertar.php" method="post" enctype="multipart/form-data">
 
-    <!--form-groud-->
-          
-    <div class="form-group input-group ">
+                        <!--form-groud-->
 
-    <div class="input-group-prepend">
+                        <div class="form-group input-group ">
 
-    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                            <div class="input-group-prepend">
 
-    </div>
+                                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
 
-
-    <input type="text" name="Nombre" class="form-control" placeholder="Name">
-   
-    </div>
-
-    <!--form-groud-->   
-     <!--form-groud-->
-          
-     <div class="form-group input-group ">
-
-    <div class="input-group-prepend">
-
-    <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
-
-    </div>
+                            </div>
 
 
-    <input type="text" name="Descripcion" class="form-control" placeholder="Description">
+                            <input type="text" name="Nombre" class="form-control" placeholder="Name">
 
-    </div>
-     <!--form-groud--> 
-     <!--form-groud-->
-          
-     <div class="form-group input-group ">
-
-    <div class="input-group-prepend">
-
-    <span class="input-group-text"> <i class="fa-solid fa-fish"></i> </span>
-
-    </div>
+                        </div>
 
 
-    <input type="text" name="Ingredientes" class="form-control" placeholder="Ingredients">
+                        <!--form-groud-->
 
-    </div>
- <!--form-groud-->    
- <!--form-groud-->
-          
-    <div class="form-group input-group ">
+                        <div class="form-group input-group ">
 
-    <div class="input-group-prepend">
+                            <div class="input-group-prepend">
 
-    <span class="input-group-text"> <i class="fa-solid fa-sack-dollar"></i> </span>
+                                <span class="input-group-text"> <i class="fa-solid fa-pen-to-square"></i> </span>
 
-    </div>
+                            </div>
 
 
-    <input type="text" name="Precio" class="form-control" placeholder="Price">
+                            <input type="text" name="Descripcion" class="form-control" placeholder="Description">
 
-    </div>
- <!--form-groud-->     
+                        </div>
 
- <!--image-->         
-    <div class="form-group input-group ">
+                        <!--form-groud-->
 
-    <div class="input-group-prepend">
+                        <div class="form-group input-group ">
 
-    <span class="input-group-text"> <i class="fa-solid fa-images"></i> </span>
+                            <div class="input-group-prepend">
 
-    </div>
+                                <span class="input-group-text"> <i class="fa-solid fa-fish"></i> </span>
 
-
-    <input type="file" name="imagen" id = "imagen" class="form-control Hiden" placeholder="Image">
-
-    </div>
-<!--image-->
-
- <!--form-groud-->
-          
-    <div class="form-group input-group ">
-
-    <div class="input-group-prepend">
-
-    <span class="input-group-text"> <i class="fa-solid fa-bars-staggered"></i> </span>
-
-    </div>
+                            </div>
 
 
-    <input type="text" name="Tipo" class="form-control" placeholder="Kind of food">
+                            <input type="text" name="Ingredientes" class="form-control" placeholder="Ingredients">
 
-    </div>
-<!--form-groud-->                            
+                        </div>
 
-       <div class="form-group ">
-        <input type="submit" class="btn btn-primary btn-block btn-lg text-uppercase" name="insert" value="Insert a new dish">
-        <input type="reset" class="btn btn-primary btn-block btn-lg text-uppercase" value="Clear form">
-        </div>
-        <a class="mt-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Back to admin</a>
-        </form>
-  
- <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
-        </div>
-    </header>
-    </article>
+                        <!--form-groud-->
+
+                        <div class="form-group input-group ">
+
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text"> <i class="fa-solid fa-sack-dollar"></i> </span>
+
+                            </div>
 
 
-    <section class="p-5 page-section" id="aboutus"> <!--id services-->
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Admin control</h2>
-                <h3 class="section-subheading mx-auto">Administrator control panel, the elements will be modified in real time, handle with care.</h3>
+                            <input type="text" name="Precio" class="form-control" placeholder="Price">
+
+                        </div>
+
+
+                        <!--image-->
+                        <div class="form-group input-group ">
+
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text"> <i class="fa-solid fa-images"></i> </span>
+
+                            </div>
+
+
+                            <input type="file" name="imagen" id="imagen" class="form-control Hiden" placeholder="Image">
+
+                        </div>
+                        <!--image-->
+
+                        <!--form-groud-->
+
+                        <div class="form-group input-group ">
+
+                            <div class="input-group-prepend">
+
+                                <span class="input-group-text"> <i class="fa-solid fa-bars-staggered"></i> </span>
+
+                            </div>
+
+
+                            <input type="text" name="Tipo" class="form-control" placeholder="Kind of food">
+
+                        </div>
+                        <!--form-groud-->
+
+                        <div class="form-group ">
+                            <input type="submit" class="btn btn-primary btn-block btn-lg text-uppercase" name="insert" value="Insert a new dish">
+                            <input type="reset" class="btn btn-primary btn-block btn-lg text-uppercase" value="Clear form">
+                        </div>
+                        <a class="mt-5 mr-2 p-4 px-3 btn btn-success btn-lg text-uppercase" href="admin.php">Back to admin</a>
+                    </form>
+
+                    <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
             </div>
-        </div>
-    </section>
+            <!--form-groud-->
+        </header>
+        </article>
+
+
+        <section class="p-5 page-section" id="aboutus">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Admin control</h2>
+                    <h3 class="section-subheading mx-auto">Administrator control panel, the elements will be modified in real time, handle with care.</h3>
+                </div>
+            </div>
+        </section>
     </div>
     <script src="scripts/comun.js"></script>
 </body>
+
 </html>
