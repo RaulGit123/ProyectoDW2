@@ -23,28 +23,30 @@ lista.forEach(ele => {
     }
 });
 
-//COSITAS DE DOM
+//Creación de elemento DOM a partir de texto
 function createElementFromHTML(htmlString) {
     var div = document.createElement('div');
     div.innerHTML = htmlString.trim();
     return div.firstChild;
 }
 
+//Pasar por ejemplo 9.9 (precio en formato float para operar) a "9,90€" (precio más visual para el cliente)
 function numeroAEuros(num) {
     num = parseFloat(num).toFixed(2);
     return num.toString().replace(".",",")+"€";
 }
 
+//Quitar la extensión al nombre de un archivo (nigiri.png -> nigiri)
 function quitarExtension(str) {
     str = str.split(".");
     return str[0];
 }
 
+//Construcción e implementación de la carta
 tipos.forEach(tipo => {
     let div1 = createElementFromHTML('<div class="px-0 container"></div>');
     let txtDiv2 = '<div class="masthead-subheading font-italic text-uppercase">'+tipo+'</div>';
     let div2 = createElementFromHTML(txtDiv2);
-    // div1.appendChild(div2);
     lista.forEach(plato => {
         if (plato.Tipo == tipo) {
             let div3 = createElementFromHTML('<div class="grid"></div>');
@@ -76,7 +78,6 @@ listaCantBase.forEach(ele => {
 
 listaMa.forEach(ele => {
     let id = ele.parentElement.id;
-    // console.log(id);
     ele.addEventListener("click", function(){
         let cant = parseInt(listaCant[id].innerHTML);
         listaCant[id].innerHTML = cant+1;
@@ -101,6 +102,7 @@ listaMe.forEach(ele => {
     });
 });
 
+//Construcción e implementación del carrito
 lista.forEach(ele => {
     let divEle = createElementFromHTML('<div class="elemento d-none" id="c'+ele.IdComida+'"></div>');
     let div1 = createElementFromHTML('<div><span></span> '+ele.Nombre+'</div>');
@@ -113,10 +115,9 @@ lista.forEach(ele => {
     divEle.appendChild(div2);
     divEle.appendChild(btnX);
     document.querySelector("#carrito").appendChild(divEle);
-
-    // console.log(ele);
 });
 
+//Actualizar total del carrito
 function actualizarCant(id,x) { //x = cant
     let elemento = document.querySelector('#c'+id);
     elemento.children[0].children[0].innerHTML = x+"x";
@@ -125,6 +126,7 @@ function actualizarCant(id,x) { //x = cant
     actualizarTotal();
 }
 
+//Eliminar cantidad al borrar del carrito
 function eliminarCant(id) {
     document.getElementById(id).children[1].innerHTML = 0;
     document.querySelector("#c"+id).classList.add("d-none");
@@ -132,8 +134,8 @@ function eliminarCant(id) {
     actualizarTotal();
 }
 
+//Actualizar visualmente el carrito
 let total = 0;
-
 function actualizarTotal() {
     total = 0;
     totalCarrito.forEach(precio => {
@@ -141,7 +143,6 @@ function actualizarTotal() {
             total+=precio;
         }
     });
-    // console.log(total);
     document.querySelector("#precioFinal").innerHTML = numeroAEuros(total);
 }
 
@@ -152,6 +153,7 @@ let pedido = {
 //idComida, cantidad
 let registroPedido = [];
 
+//Finalizar pedido
 document.querySelector("#fin").addEventListener("click",function(){
     let ready = true;
     if (metodoEscogido == "cc") {
@@ -168,6 +170,7 @@ document.querySelector("#fin").addEventListener("click",function(){
         });
     } else ready = false;
 
+    //Si está todo listo y validado, se envía todo a la base de datos
     if (ready && document.getElementById("dire").checkValidity() && document.getElementById("phone").checkValidity()) {
         pedido.idUsuario = parseInt(document.querySelector("#idUsu").innerHTML);
         pedido.precioFinal = total;
@@ -188,6 +191,7 @@ document.querySelector("#fin").addEventListener("click",function(){
         });
         document.querySelector("#precioReal").innerHTML = pedido.precioFinal;
 
+        //Convertir a JSON el registro pedido, y pasar variables por AJAX a GuardaPedido.php
         let regPedJSON = JSON.stringify(registroPedido);
         $.ajax({
             method: "POST",
@@ -206,6 +210,7 @@ document.querySelector("#fin").addEventListener("click",function(){
 
 let metodos = document.querySelector("#metodos").children;
 
+//Seleccionar imagen de método de pago, solo una a la vez
 Array.prototype.forEach.call(metodos, img => {
     img.addEventListener("click",function(){
         let seleccionado = document.querySelector(".seleccion");
@@ -217,6 +222,7 @@ Array.prototype.forEach.call(metodos, img => {
     });
 });
 
+//Elección de método de pago
 let metodoEscogido = "";
 function mostrarMetodo() {
     let cc = document.getElementById("cc");
@@ -234,12 +240,14 @@ function mostrarMetodo() {
     }
 }
 
+//Pasar a la pantalla de método de pago
 document.querySelector("#fafin").addEventListener("click", function(){
     if (total!=0) {
         document.querySelector("#pago").classList.remove("d-none");
     }
 });
 
+//Cerrar zona de pago
 document.querySelector(".close-btn").addEventListener("click", function(){
     document.querySelector("#pago").classList.add("d-none");
 });
