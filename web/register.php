@@ -11,7 +11,7 @@ $apellidos=$apellidos_err="";
 $direccion=$direccion_err="";
 $localidad=$localidad_err="";
 $listaProvincias=[];
-$codigo= rand(0,1000);;
+$codigo= md5( rand(0,1000) );;
 
 
 
@@ -178,7 +178,7 @@ $listaProvincias = trim($_POST["provincia"]);
             $param_mail =$mail;
             $rol = 2;
             $Activado = "no";
-            $Codigo = md5( rand(1000,9999) );
+            $Codigo = rand(1000,9999);
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
