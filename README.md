@@ -14,3 +14,8 @@ Contraseña: admins
 Para AWS:<br>
 Propietario del servidor: Raúl Rodríguez Minguet (r.rodriguezmin@gmail.com)<br>
 Nombre de la instancia: ProyectoDW2Final
+<IfModule dir_module>
+    #DirectoryIndex index.html
+    # XAMPP
+    DirectoryIndex index.html index.html.var index.php index.php3 index.php4
+</IfModule>

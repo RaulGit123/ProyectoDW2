@@ -26,7 +26,7 @@ try {
     //Ejecutamos la consulta
     $pdo->exec($sqlBD);
     // echo ("La BD ha sido creada");
-    header("Location: ../config/CreacionJSON.php");
+    header("Location: index.php");
     //Cerramos conexion
     $pdo = null;
 } catch (PDOException $e) {
