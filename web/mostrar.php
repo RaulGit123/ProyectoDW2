@@ -17,9 +17,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-    <!-- <link rel="stylesheet" href="../web/styles/menu.css">
-    <link rel="stylesheet" href="../web/styles/login.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="styles/pag_principal.css">
     <link rel="stylesheet" href="styles/mostrar.css">
     <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
@@ -34,7 +32,6 @@ if (session_status() === PHP_SESSION_NONE) {
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0"><?php
-
                     if (!empty($_SESSION["NombreUsuario"])) {
                     ?>
                         <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li>

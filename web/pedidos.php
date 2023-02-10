@@ -10,9 +10,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -27,7 +24,6 @@
             <a class="navbar-brand" href="index.php"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -37,6 +33,7 @@
                         if (session_status()===PHP_SESSION_NONE){
                             session_start();
                         }
+                        // Guardo el IdUsuario para recogerlo como dato, enviándolo a la base de datos al terminar el pedido
                         $nombre = $_SESSION["NombreUsuario"];
                         $con = Conexion::getConection();
                         $sql = "SELECT IdUsuarios FROM Usuarios WHERE NombreUsuario = '$nombre'";
@@ -50,8 +47,7 @@
                             }
                         }
                         
-
-                        // $con = Conexion::getConection();
+                        // Guardo la dirección del IdUsuario, para ponerla de forma predeterminada al proceder al pago
                         $sql = "SELECT Direccion FROM `Usuarios` WHERE IdUsuarios = $id;";
                         $query = $con -> prepare($sql); 
                         $query -> execute(); 
@@ -65,7 +61,7 @@
                         if (!empty($_SESSION["NombreUsuario"])){
                     
                            ?>  
-                            <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                            <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li>
                             <li class="nav-item"><a class="nav-link activo">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
                             <?php
@@ -83,13 +79,12 @@
                         }else {
                             header("location:principal.php");
                             ?>
-                            <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                            <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li>
                             <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Order Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Book Now</a></li>
                             <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li><?php
                         }
                         ?>
-                        <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
                 </ul>
             </div>
         </div>
@@ -97,12 +92,12 @@
     <section class="p-2 page-section" id="aboutus">
         <div class="container principal">
             <header class="masthead">
-                
+                <!-- Aquí se genera automáticamente el listado de platos, con pedidos.js -->
             </header>
             <div></div>
             <div id="zonaCarrito">
                 <div id="carrito">
-                    <h1>Basket summary</h1>
+                    <h1>Basket summary</h1> <!-- Aquí se genera automáticamente el listado de platos de forma oculta, con pedidos.js -->
                     
                 </div>
                 <div id="total">
@@ -121,13 +116,14 @@
     ?>
     <div id="pago" class="d-none">
         <div id="recuadro">
+            <!-- Cada uno de los campos tiene su expresión regular o requerimiento pertinente -->
             <div id="botonX">
                 <button class="close-btn"><i class="fas fa-times"></i></button>
             </div>
             <h1 class="text-uppercase">Enter your address</h1>
-            <input id="dire" name="dire" type="text" value="<?php echo $dire;?>" required>
+            <input id="dire" name="dire" type="text" value="<?php /*Dirección recogida anteriormente*/ echo $dire;?>" required>
             <h1 class="text-uppercase">Enter your phone number</h1>
-            <input id="phone" name="phone" type="text" value="<?php #echo $dire;?>" placeholder="Phone number" pattern="(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}" required>
+            <input id="phone" name="phone" type="text" placeholder="Phone number" pattern="(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}" required>
             <h1 class="text-uppercase">Choose a payment method</h1>
             <div id="metodos">
                 <img class="pp" src="img/pago/paypal.png" alt="paypal">

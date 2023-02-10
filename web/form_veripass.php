@@ -11,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recover password | Nigiri</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -26,7 +25,7 @@
 <nav class="stroke navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 
         <div class="container">
-            <a class="navbar-brand" href="../index.php"><!-- href . lleva a web/index.php --><img src="img/logo2.png" alt="logo" /></a>
+            <a class="navbar-brand" href="../index.php"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 
                 <i class="fas fa-bars ms-1"></i>
@@ -45,36 +44,23 @@
 
     <div id="griddy">
         <div class="container caja1">
-
-
             <div class="card bg-dar p-5">
-
                 <article class="card-body mx-auto articulo" id="bg-article">
                     <h4 class="card-title mt-3 text-center text-uppercase">GET NEW PASSWORD</h4>
 
                     <form action="../Recursos/mailRecup.php" method="post">
 
-
-
-
                         <!-- form-group// -->
-
 
                         <div class="form-group input-group ">
-
                             <div class="input-group-prepend">
-
                                 <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-
                             </div>
-
-
                             <input type="email" name="email" id="email" class="form-control " placeholder="User email" required>
-
                         </div>
+
                         <!-- form-group// -->
                      
-
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary btn-block" value="Get Password">
                             <input type="reset" class="btn btn-warning btn-block" value="Clear">

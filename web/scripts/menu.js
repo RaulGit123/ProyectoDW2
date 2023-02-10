@@ -22,26 +22,28 @@ lista.forEach(ele => {
     }
 });
 
-//COSITAS DE DOM
+//Creación de elemento DOM a partir de texto
 function createElementFromHTML(htmlString) {
     var div = document.createElement('div');
     div.innerHTML = htmlString.trim();
     return div.firstChild;
 }
 
+//Pasar por ejemplo 9.9 (precio en formato float para operar) a "9,90€" (precio más visual para el cliente)
 function numeroAEuros(num) {
     return num.replace(".",",")+"€";
 }
 
+//Quitar la extensión al nombre de un archivo (nigiri.png -> nigiri)
 function quitarExtension(str) {
     str = str.split(".");
     return str[0];
 }
 
+//Construcción e implementación de la carta
 tipos.forEach(tipo => {
     let div1 = createElementFromHTML('<div class="seccion-carta"></div>');
     let h1 = createElementFromHTML('<h1 class=" text-center text-uppercase">'+tipo+'</h1>');
-    // div1.appendChild(h1);
     lista.forEach(plato => {
         if (plato.Tipo == tipo) {
             let div2 = createElementFromHTML('<div class="card" style="width: 18rem;"></div>');

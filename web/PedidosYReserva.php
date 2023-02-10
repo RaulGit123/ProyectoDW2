@@ -14,15 +14,11 @@ if (session_status() === PHP_SESSION_NONE) {
     <title>Orders & bookings | Nigiri</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <!-- <link rel="stylesheet" href="styles/orders.css"> -->
     <link rel="stylesheet" href="styles/VerPedRes.css">
     <link rel="shortcut icon" href="img/logo2.png" type="image/x-icon">
 </head>
@@ -33,7 +29,6 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="container">
             <a class="navbar-brand" href="index.php"><img src="img/logo2.png" alt="logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -57,8 +52,6 @@ if (session_status() === PHP_SESSION_NONE) {
                         }
                     }
 
-
-                    
                     $sql = "SELECT Direccion FROM `Usuarios` WHERE IdUsuarios = $id;";
                     $query = $con->prepare($sql);
                     $query->execute();
@@ -72,7 +65,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     if (!empty($_SESSION["NombreUsuario"])) {
 
                     ?>
-                        <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                        <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="pedidos.php">Order Now</a></li>
                         <li class="nav-item"><a class="nav-link" href="reservas.php">Book Now</a></li>
                         <?php
@@ -88,13 +81,11 @@ if (session_status() === PHP_SESSION_NONE) {
                                                                 } else {
                                                                     header("location:principal.php");
                                                                         ?>
-                        <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li> <!--FALTA PONER HREF CON RESTO DE PÁGINAS, NO #x-->
+                        <li class="nav-item"><a class="nav-link" href="menu.php">Our Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Order Now</a></li>
                         <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Book Now</a></li>
                         <li class="nav-item"><a class="nav-link" href="../modelo/sesion.php">Log in</a></li><?php
-                                                                }
-                                                                ?>
-                    <!-- href="../controlador/CtrlSalir.php"> referenciará a finalizar la sesión -->
+                                                                }?>
                 </ul>
             </div>
         </div>
@@ -103,7 +94,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <header class="masthead">
             <div class="mt-3 mx-2 masthead-heading text-uppercase">Your orders and booking</div>
             <div class="font-italic masthead-subheading mt-5" id="kanji">礼</div>
-            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="paginaUsuario.php">Back</a> <!--AQUÍ TAMBIÉN!! ir a our menu-->
+            <a class="mt-5 p-4 px-5 btn btn-danger btn-xl text-uppercase" href="paginaUsuario.php">Back</a>
         </header>
             <!-- Los Pedidos del usuario  -->
             <div class="card-body mx-auto articulo" id="bg-article">
@@ -148,26 +139,16 @@ if (session_status() === PHP_SESSION_NONE) {
                             }
                             ?>
                         </table>
-
-
                     </article>
                 </div>
             </div>
-
-
 
             <!-- Las Reservas del usuario -->
             <div class="card-body mx-auto articulo" id="bg-article">
                 <h4 class="card-title mt-3 text-center text-uppercase your">Your bookings</h4>
 
-
                 <div class="form-group your">
                     <article class="card-body mx-auto articulo" id="bg-article">
-
-
-
-
-
                         <table class="table table-dark table-hover bg-transparent centrar">
                             <th>
                                 Table
@@ -190,7 +171,6 @@ if (session_status() === PHP_SESSION_NONE) {
                             $query->execute();
                             $results = $query->fetchAll(PDO::FETCH_OBJ);
 
-
                             if ($query->rowCount() > 0) {
                                 foreach ($results as $result) {
                                     echo " <tr> 
@@ -198,7 +178,6 @@ if (session_status() === PHP_SESSION_NONE) {
 <td>" . $result->FechaReserva . "</td>
 <td>" . $result->HoraReserva . "</td>
 <td>" . $result->NumeroPersonas . "</td>
-
 </tr>";
                                 }
                             } ?>
@@ -207,7 +186,6 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
             </div>
         </div>
-    
 
     <script src="scripts/comun.js"></script>
 

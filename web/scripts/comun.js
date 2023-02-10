@@ -1,4 +1,6 @@
+// EN ESTE ARCHIVO ESTÁN TODAS LAS FUNCIONALIDADES COMUNES PARA TODA LA PÁGINA
 
+//Función para comprimir el nav al scrollear
 window.onscroll = function () { scrollFunction() };
 function scrollFunction() {
     if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -8,6 +10,7 @@ function scrollFunction() {
     }
 }
 
+//Al pulsar la opción activa del nav, se scrollea con una transición hasta arriba de la página
 let activoExiste = document.querySelector('.activo') !== null;
 
 if (activoExiste) {
@@ -16,6 +19,7 @@ if (activoExiste) {
     });
 }
 
+//Hace que parpadee un botón al pulsar el elemento del nav en principal.php
 let aquiExiste = document.querySelector(".aqui") !== null;
 if (aquiExiste) {
     let boton = document.querySelector(".btn-xl");
@@ -30,7 +34,7 @@ if (aquiExiste) {
     });
 }
 
-
+//Creación e implementación del footer
 function createElementFromHTML(htmlString) {
     var div = document.createElement('div');
     div.innerHTML = htmlString.trim();
@@ -55,6 +59,7 @@ let div1 = createElementFromHTML(`<footer class="bg-dark text-center text-white"
     </div>
 </footer>`);
 
+//En caso de haber div de id griddy, poner el footer dentro. Si no, en el body.
 if (document.querySelector("#griddy") !== null) {
     document.querySelector("#griddy").appendChild(div1);
 } else document.querySelector("body").appendChild(div1);
