@@ -19,9 +19,11 @@ let listaHoras = document.querySelectorAll(".item");
 let HoraBaseDatos = document.querySelectorAll(".horas");
 //Para indicar el error si hay una misma reserva con la misma hora, fecha y mesa
 let MismoTodo = document.getElementById("respt");
-
+//Para usarlo como un booleano
 let horaseleccionada = "hola";
+//Variable para guardar la fecha
 let fechaguardada;
+//Variable para guardar la hora
 let horaguardada;
 //Sacar el dia que es en ese momento
 let fecha = new Date();
@@ -29,7 +31,7 @@ let añoActual = fecha.getFullYear();
 let hoy = fecha.getDate();
 let mesActual = fecha.getMonth() + 1; 
 
-
+//Evento que se activa cuando hace click en sumar personas
 listaMa.forEach(ele => {
     ele.addEventListener("click", function(){
         let cant = parseInt(listaCant[0].innerHTML);
@@ -38,7 +40,7 @@ listaMa.forEach(ele => {
     }
     });
 });
-
+//Evento que se activa cuando hace click en restar personas
 listaMe.forEach(ele => {
     ele.addEventListener("click", function(){
         let cant = parseInt(listaCant[0].innerHTML);
@@ -49,8 +51,8 @@ listaMe.forEach(ele => {
 });
 
 //Para seleccionar la hora 
+//Cuando seleccione una hora cambia a un color más oscuro, y todas las demás vuelven al color inicial(debido a que no puedes seleccionar 2 horas a la vez)
 let CuandoClick = function(){
-    // console.log(this.innerHTML);
     for (var i=0; i<listaHoras.length; i++){ 
         listaHoras[i].style.backgroundColor="rgba(255, 255, 255, 0.7)";
 }
@@ -66,13 +68,14 @@ ReservaPersonas.forEach(Com =>{
     Com.addEventListener("click",function(){
       
 
-
+//Si las personas son inferiores a 2 mostrara el error 
       if(listaCant[0].innerHTML<2){
         d_nested.classList.remove("d-none");
         MismoTodo.classList.add("d-none");
       }else{
         d_nested.classList.add("d-none");
       }
+      //Esta comprobación esta hecha debido a que al sacar la fecha actual, los digitos inferiores a 10, los saca separados y no acompañados de 0, por lo tanto produciria errores de comparación
       if(hoy<10 && mesActual>=10){
         fechaguardada = añoActual+"-"+mesActual+"-0"+hoy;
      }
@@ -84,14 +87,15 @@ ReservaPersonas.forEach(Com =>{
     }if(hoy>=10 && mesActual>=10){
       fechaguardada = añoActual+"-"+mesActual+"-"+hoy;
      }
-
+//Comprobación para que la fecha seleccionada por el usuario sea igual o superior a la actual
+//Si no se cumple mostrá el error
       if(listaFecha[0].value=="" || listaFecha[0].value<fechaguardada){
         d_nested2.classList.remove("d-none");
         MismoTodo.classList.add("d-none");
       }else{
         d_nested2.classList.add("d-none");
       }
-
+//Para detectar cual es la hora que ha elegido el usuario, en caso de que no seleccione ninguna mostrá el error
       if(horaseleccionada == "hola"){
       for (let i=0; i<listaHoras.length; i++){ 
         if(listaHoras[i].style.backgroundColor==="rgb(75, 75, 75)"){
@@ -111,7 +115,7 @@ ReservaPersonas.forEach(Com =>{
         d_nested3.classList.remove("d-none");
         MismoTodo.classList.add("d-none");
     }
-      
+      //Si se cumplen todas las comprobaciones, se enviara por ajax a GuardaReserva, y te podrá redirijir a PedidosYReserva.php para poder visualizar la reserva
     if(listaCant[0].innerHTML>=2 && listaFecha[0].value!="" && listaFecha[0].value>=fechaguardada && horaseleccionada == "adios"){
       horaseleccionada = "hola";
     var NumeroPersonas = listaCant[0].innerHTML;
@@ -120,6 +124,7 @@ ReservaPersonas.forEach(Com =>{
     console.log(NumeroPersonas);
     console.log(Fecha);
     console.log(Hora);
+    //Enviamos por ajax los datos introducidos por usuario
     $.ajax({
       method: "POST",
       url: "../modelo/GuardaReserva.php",
@@ -128,6 +133,7 @@ ReservaPersonas.forEach(Com =>{
              text3: $("#horita").text()
     },
     success:(data)=>{
+      //Si recibe datos de GuardaReserva quiere decir que puede reservar, sino mostrá un error
       if(parseInt(data.trim())!=0){
       window.location.href = "PedidosYReserva.php";
     }else{

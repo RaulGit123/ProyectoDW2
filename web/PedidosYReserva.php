@@ -43,6 +43,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     if (session_status() === PHP_SESSION_NONE) {
                         session_start();
                     }
+                    //Seleccionamos el id del usuario logeado
                     $nombre = $_SESSION["NombreUsuario"];
                     $con = Conexion::getConection();
                     $sql = "SELECT IdUsuarios FROM Usuarios WHERE NombreUsuario = '$nombre'";
@@ -57,7 +58,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     }
 
 
-                    // $con = Conexion::getConection();
+                    
                     $sql = "SELECT Direccion FROM `Usuarios` WHERE IdUsuarios = $id;";
                     $query = $con->prepare($sql);
                     $query->execute();
@@ -124,8 +125,9 @@ if (session_status() === PHP_SESSION_NONE) {
                                     Payment Method
                                 </th>
                             </tr>
+                            
                             <?php
-
+                            //Mostramos todos los pedidos realizados por el usuario
                             $con = Conexion::getConection();
                             $sql = "SELECT p.IdUsuarios,p.PrecioFinal , p.FechaPedido ,p.Direccion, p.MetodoPago FROM Pedidos p, Usuarios u WHERE p.IdUsuarios = u.IdUsuarios and u.NombreUsuario = '$Usuario'";
                             $query = $con->prepare($sql);

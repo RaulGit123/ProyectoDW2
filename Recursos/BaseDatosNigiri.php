@@ -1,13 +1,7 @@
 <?php
-//Nombre, apellido, email, contraseña, direccion, provincia
- /* Ejecutando este fichero crearemos la BD en nuestro servidor de BD.
- * Los datos de conexión son los siguientes, comprueba que coinciden con los tuyos, sino no funcionará.
- * Los leeremos de config.php
- $db_hostname = "localhost";
- $db_nombre = "usuarios";
- $db_usuario = "root";
- $db_clave = "";
-*/ 
+
+ /* Ejecutando este fichero crearemos la BD en nuestro servidor de BD.*/
+ 
 
  //En config.php tenemos los valores de conexión a la BD
 include ('config.php');

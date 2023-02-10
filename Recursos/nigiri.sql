@@ -1,28 +1,9 @@
--- phpMyAdmin SQL Dump
--- version 5.0.2
--- https://www.phpmyadmin.net/
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 25-11-2021 a las 11:09:15
--- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.10
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Base de datos: `nigiri`
---
-
 /*
-Borra la base de datos si ya existe, con el objetivo de hacer pruebas más rapido
+Borra la base de datos si ya existe
 */
 Drop Schema if exists `nigiri`;
 
@@ -31,10 +12,6 @@ Drop Schema if exists `nigiri`;
 CREATE DATABASE IF NOT EXISTS `nigiri` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `nigiri`;
 
--- --------------------------------------------------------
---
--- Estructura para la tabla UsuariosRegistrados
---
 
 CREATE TABLE `Roles` (
   `IdRoles` int NOT NULL AUTO_INCREMENT,
@@ -93,7 +70,6 @@ CREATE TABLE `RegistroPedidos` (
 
 CREATE TABLE `Mesa` (
   `IdMesa` int NOT NULL AUTO_INCREMENT,
-  -- `NombreMesa` varchar(100) NOT NULL,
   `Estado` varchar(100) NOT NULL,
   CONSTRAINT pkM PRIMARY KEY (`IdMesa`)
 );
@@ -110,25 +86,6 @@ CREATE TABLE `RegistroReservas` (
   FOREIGN KEY (Mesa) REFERENCES Mesa(IdMesa)
 );
 
-
-/*
-CREATE TABLE `Administrador` (
-  `IdAdmin` int NOT NULL AUTO_INCREMENT,
-  `NombreUsuario` varchar(100) NOT NULL,
-  `Contraseña` varchar(100) NOT NULL,
-  CONSTRAINT pkA PRIMARY KEY (`IdAdmin`)
-);*/
-/*
-CREATE TABLE `Trabajadores` (
-  `IdTrabajador` int NOT NULL AUTO_INCREMENT,
-  `NombreUsuario` varchar(100) NOT NULL,
-  `Nombre` varchar(100) NOT NULL,
-  `Contraseña` varchar(100) NOT NULL,
-  `CorreoElectronico` varchar(100) NOT NULL,
-  CONSTRAINT pkT PRIMARY KEY (`IdTrabajador`)
-);*/
-
-/*Insert Into `Administrador` (NombreUsuario,Contraseña) VALUES ("Admin","12345");*/
 Insert Into `Mesa` (Estado) VALUES ("vacia");
 Insert Into `Mesa` (Estado) VALUES ("vacia");
 Insert Into `Mesa` (Estado) VALUES ("vacia");
@@ -143,7 +100,6 @@ Insert Into Roles (NombreRol) VALUES ("Usuario");
  INSERT INTO Usuarios (NombreUsuario, Nombre, Apellidos, Contraseña, CorreoElectronico, Direccion, Provincia, Rol,Activado) VALUES 
  ("Pepe123","Pepe","Martinez Martinez",MD5("123123"),"pepe123@gmail.com","c/SoyUsuario","Valencia","2","si");
 
-/*Las secciones serán Entrantes, Ramen, Postres y Bebidas*/
 Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,Tipo) VALUES ("Gyoza","Gyoza is made from a thinly rolled dough filled with ground meat and vegetables, which can then be boiled and served hot with a dash of black vinegar and sesame oil or in a soup.",
 "· 250 gr of minced pork
 · 100g cabbage
@@ -233,7 +189,3 @@ Insert Into Comida (Nombre,Descripcion,Precio,Imagen,Tipo) VALUES ("Kirin","The 
 "3.50","kirin.jpg","Beverages");
 Insert Into Comida (Nombre,Descripcion,Precio,Imagen,Tipo) VALUES ("Coca-Cola","The usual, original and delicious, the one that refreshes millions of people around the world.",
 "1.50","CocaCola.jpg","Beverages");
--- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
--- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
--- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
--- Insert Into Comida (Nombre,Descripcion,Ingredientes,Precio,Imagen,tipo) VALUES ()
